@@ -1,0 +1,10 @@
+* text=auto
+
+# config files
+*.conf text eol=lf
+
+# scripts
+*.sh text eol=lf
+
+# lua
+*.lua text eol=lf
