@@ -3,8 +3,12 @@
 
 -- clear mappings
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>hp", "<nop>")
+vim.keymap.set("n", "<C-q>", "<nop>")
 
 -- core commands
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- builtin file explorer
 vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end) -- show open buffers
 vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>") -- close current buffer
 vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>") -- close all buffers
@@ -62,11 +66,3 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
--- builtin file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
--- noop
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<leader>hp", "<nop>")
-vim.keymap.set("n", "<C-q>", "<nop>")
