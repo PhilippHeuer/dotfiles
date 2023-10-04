@@ -1,8 +1,22 @@
 -- [[ Basic Keymaps ]]
 -- See `:help vim.keymap.set()`
 
--- quality of life
+-- clear mappings
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- core commands
+vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end) -- show open buffers
+vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>") -- close current buffer
+vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>") -- close all buffers
+vim.keymap.set({"n", "i"}, "<C-w>", "<cmd>w<CR>") -- write current buffer
+vim.keymap.set("n", "<leader>q", "<cmd>w<bar>bd<CR>") -- write and close current buffer
+
+-- buffer navigation
+vim.keymap.set("n", "<C-k>", "<cmd>bnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>bprev<CR>zz")
+
+-- format current buffer
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -10,9 +24,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- ctrl + c to escape in insert mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
-
--- file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- move selected line / block of text in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -34,21 +45,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- tmux sessionizer (tmux-sessionizer)
-vim.keymap.set("n", "<C-f>", "<cmd>!tms<CR>")
-
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tms<CR>")
 
 -- cmd
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- make current file executable
@@ -66,6 +63,10 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- builtin file explorer
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
 -- noop
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>hp", "<nop>")
+vim.keymap.set("n", "<C-q>", "<nop>")
