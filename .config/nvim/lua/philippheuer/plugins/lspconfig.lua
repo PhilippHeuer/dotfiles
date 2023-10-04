@@ -17,4 +17,13 @@ return {
       'folke/neodev.nvim',
     },
   },
+  {
+    'folke/trouble.nvim',
+    event = { 'BufRead' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      auto_open = false,
+      mode = 'workspace_diagnostics',
+    },
+  },
 }
