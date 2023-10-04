@@ -7,6 +7,9 @@ local plugins = {
     name = 'philippheuer.plugins.comment',
   },
   {
+    name = 'philippheuer.plugins.todo-comment',
+  },
+  {
     name = 'philippheuer.plugins.lspconfig',
   },
   {
@@ -38,7 +41,7 @@ local plugins = {
     config_name = 'philippheuer.plugins.treesitter-config',
   },
   {
-    -- NOTE: blazing fast file navigation
+    -- NOTE: quick file access
     name = 'philippheuer.plugins.harpoon',
   },
   {
@@ -55,10 +58,6 @@ local plugins = {
     -- NOTE: useless, but fun
     name = 'philippheuer.plugins.fun',
   },
-  -- LSPs that require special configuration
-  --{
-  --  name = 'philippheuer.lsp.java',
-  --},
   -- Theme / UI
   {
     name = 'philippheuer.plugins.theme',
