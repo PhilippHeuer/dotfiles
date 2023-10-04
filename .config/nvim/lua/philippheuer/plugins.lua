@@ -61,7 +61,6 @@ local plugins = {
   -- Theme / UI
   {
     name = 'philippheuer.plugins.theme',
-    config_name = 'philippheuer.plugins.theme-config',
   },
 }
 
