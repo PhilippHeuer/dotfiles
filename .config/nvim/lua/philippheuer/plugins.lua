@@ -47,7 +47,6 @@ local plugins = {
   {
     -- NOTE: github copilot
     name = 'philippheuer.plugins.copilot',
-    config_name = 'philippheuer.plugins.copilot-config',
   },
   {
     -- NOTE: code completion
