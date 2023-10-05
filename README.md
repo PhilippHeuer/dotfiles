@@ -4,6 +4,7 @@
 
 - clone this repository
 - run `./setup.sh` to symblink the config files from this repository.
+- add the init scripts to your `.bashrc`: `. $HOME/.config/bash/init.sh`
 
 ## authentication
 
