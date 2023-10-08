@@ -54,6 +54,10 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- cmd
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- make current file executable
 
+-- layout
+vim.keymap.set("n", "<leader>lh", "<cmd>split<CR>", { desc = "split horizontal" })
+vim.keymap.set("n", "<leader>lv", "<cmd>vsplit<CR>", { desc = "split vertical" })
+
 -- ui
 vim.keymap.set("n", "<leader>ut", "<cmd>:TransparentToggle<CR>")
 vim.keymap.set("n", "<leader>uc", "<cmd>:CloakToggle<CR>")
