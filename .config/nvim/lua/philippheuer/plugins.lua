@@ -26,7 +26,7 @@ local plugins = {
   -- NOTE: useless, but fun
   'philippheuer.plugins.fun',
   -- Theme / UI
-  'philippheuer.plugins.theme',
+  'philippheuer.theme.catppuccin',
 }
 
 -- Load Plugins
