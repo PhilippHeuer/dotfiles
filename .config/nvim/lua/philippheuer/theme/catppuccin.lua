@@ -13,15 +13,27 @@ return {
     },
   },
   {
-    "folke/tokyonight.nvim",
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true,
-      day_brightness = 0,
+      flavour = 'mocha',
+      transparent_background = false,
+      integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        harpoon = true,
+        which_key = true,
+        notify = false,
+        mini = false,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
     },
     config = function()
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
   {
@@ -30,7 +42,7 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
