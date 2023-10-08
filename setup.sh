@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 
 # bash config
-rm -rf ~/.config/bash
-ln -s $(pwd)/.config/bash ~/.config/bash
+rm -rf $HOME/.config/bash
+ln -s $(pwd)/.config/bash $HOME/.config/bash
 
-# tmux config
-rm -rf ~/.config/tmux/tmux.conf
-ln -s $(pwd)/.config/tmux/tmux.conf ~/.config/tmux/tmux.conf
-tmux source ~/.config/tmux/tmux.conf # force reload tmux config
+# tmux config - for each file in $(pwd)/.config/tmux
+mkdir -p $HOME/.config/tmux
+for path in $(pwd)/.config/tmux/*; do
+  filename=$(basename "$path")
+  rm "$HOME/.config/tmux/$filename" 2> /dev/null
+  ln -s "$path" "$HOME/.config/tmux/$filename"
+done
+tmux source $HOME/.config/tmux/tmux.conf # force reload tmux config
 
 # neovim
-rm -rf ~/.config/nvim
-ln -s $(pwd)/.config/nvim ~/.config/nvim
+rm -rf $HOME/.config/nvim 2> /dev/null
+ln -s $(pwd)/.config/nvim $HOME/.config/nvim
 
 # starship
-rm -rf ~/.config/starship.toml
-ln -s $(pwd)/.config/starship.toml ~/.config/starship.toml
+rm -rf $HOME/.config/starship.toml 2> /dev/null
+ln -s $(pwd)/.config/starship.toml $HOME/.config/starship.toml
