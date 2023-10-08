@@ -1,4 +1,6 @@
 return {
-  -- animations
-  'eandrju/cellular-automaton.nvim',
+  {
+    -- animations
+    'eandrju/cellular-automaton.nvim',
+  },
 }
