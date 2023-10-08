@@ -1,6 +1,7 @@
 -- Configure Plugins
 local plugins = {
   'philippheuer.plugins.editorconfig',
+  'philippheuer.plugins.tmux',
   'philippheuer.plugins.comment',
   'philippheuer.plugins.todo-comment',
   'philippheuer.plugins.lspconfig',

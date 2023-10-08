@@ -16,8 +16,8 @@ vim.keymap.set({"n", "i"}, "<C-w>", "<cmd>w<CR>") -- write current buffer
 vim.keymap.set("n", "<leader>q", "<cmd>w<bar>bd<CR>") -- write and close current buffer
 
 -- buffer navigation
-vim.keymap.set("n", "<C-k>", "<cmd>bnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>bprev<CR>zz")
+--vim.keymap.set("n", "<C-k>", "<cmd>bnext<CR>zz")
+--vim.keymap.set("n", "<C-j>", "<cmd>bprev<CR>zz")
 
 -- format current buffer
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
