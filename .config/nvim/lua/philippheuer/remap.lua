@@ -54,13 +54,18 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- cmd
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- make current file executable
 
+-- ui
+vim.keymap.set("n", "<leader>ut", "<cmd>:TransparentToggle<CR>", { desc = "toggle transparency background" })
+vim.keymap.set("n", "<leader>uc", "<cmd>:CloakToggle<CR>", { desc = "toggle secret cloaking" })
+vim.keymap.set("n", "<leader>ui", "<cmd>:TroubleToggle<CR>", { desc = "toggle issues" })
+
 -- layout
 vim.keymap.set("n", "<leader>lh", "<cmd>split<CR>", { desc = "split horizontal" })
 vim.keymap.set("n", "<leader>lv", "<cmd>vsplit<CR>", { desc = "split vertical" })
 
--- ui
-vim.keymap.set("n", "<leader>ut", "<cmd>:TransparentToggle<CR>")
-vim.keymap.set("n", "<leader>uc", "<cmd>:CloakToggle<CR>")
+-- troubles
+vim.keymap.set("n", "<leader>xw", "<cmd>:TroubleToggle workspace_diagnostics<CR>", { desc = "toggle workspace issues" })
+vim.keymap.set("n", "<leader>xd", "<cmd>:TroubleToggle document_diagnostics<CR>", { desc = "toggle document issues" })
 
 -- fun
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>");
