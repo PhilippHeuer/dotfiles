@@ -1,10 +1,10 @@
 -- Configure Plugins
 local plugins = {
+  'philippheuer.plugins.lspconfig',
   'philippheuer.plugins.editorconfig',
   'philippheuer.plugins.tmux',
   'philippheuer.plugins.comment',
   'philippheuer.plugins.todo-comment',
-  'philippheuer.plugins.lspconfig',
   -- NOTE: cloak sensitive information
   'philippheuer.plugins.cloak',
   -- NOTE: add colored ident lines
