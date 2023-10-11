@@ -48,9 +48,6 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
--- tmux sessionizer (tmux-sessionizer)
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tms<CR>")
-
 -- cmd
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- make current file executable
 
