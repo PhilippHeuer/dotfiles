@@ -1,5 +1,5 @@
 return {
-  filetypes = { "go", "gomod" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
   settings = {
     gopls = {
       analyses = {

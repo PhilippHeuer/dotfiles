@@ -11,7 +11,7 @@ return {
     },
     config = function()
       -- [[ document command categories ]]
-      require('which-key').register({
+      require('which-key').register {
         ['<leader>u'] = { name = '[U]I', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = '[L]ayout', _ = 'which_key_ignore' },
         ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
@@ -21,7 +21,7 @@ return {
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      })
+      }
     end,
   },
 }
