@@ -1,4 +1,17 @@
 -- [[ Configure Theme ]]
+
+-- reuse git status from gitsigns
+local function diff_source()
+  local gitsigns = vim.b.gitsigns_status_dict
+  if gitsigns then
+    return {
+      added = gitsigns.added,
+      modified = gitsigns.changed,
+      removed = gitsigns.removed
+    }
+  end
+end
+
 return {
   {
     -- Transparent background (provides vim.g.transparent_enabled)
@@ -46,6 +59,26 @@ return {
         component_separators = '|',
         section_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
+        globalstatus = false,
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {
+          'branch',
+          {
+            'diff',
+            source = diff_source
+          },
+          'diagnostics'
+        },
+        lualine_c = {'filename'},
+        lualine_x = {
+          'encoding',
+          'fileformat',
+          'filetype',
+        },
+        lualine_y = {'progress'},
+        lualine_z = {'location'},
       },
     },
   },
