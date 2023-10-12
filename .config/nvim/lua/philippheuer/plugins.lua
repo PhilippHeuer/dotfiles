@@ -19,6 +19,8 @@ local plugins = {
   'philippheuer.plugins.treesitter',
   -- NOTE: quick file access
   'philippheuer.plugins.harpoon',
+  -- NOTE: http client
+  'philippheuer.plugins.http',
   -- NOTE: github copilot
   'philippheuer.plugins.copilot',
   -- NOTE: code completion
