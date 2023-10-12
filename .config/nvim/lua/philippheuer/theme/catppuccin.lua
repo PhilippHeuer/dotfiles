@@ -73,6 +73,20 @@ return {
         },
         lualine_c = {'filename'},
         lualine_x = {
+          {
+            function()
+              local active_context = vim.g.http_context_active
+              if active_context ~= '' then
+                return 'HTTP Context: ' .. active_context
+              else
+                return ''
+              end
+            end,
+            color = {
+              fg = '#FF0000',
+              gui = 'bold'
+            },
+          },
           'encoding',
           'fileformat',
           'filetype',
