@@ -5,6 +5,7 @@ local plugins = {
   'philippheuer.plugins.tmux',
   'philippheuer.plugins.comment',
   'philippheuer.plugins.todo-comment',
+  'philippheuer.plugins.dressing', -- improves some default vim ui elements (input, select, ...)
   -- NOTE: cloak sensitive information
   'philippheuer.plugins.cloak',
   -- NOTE: add colored ident lines
