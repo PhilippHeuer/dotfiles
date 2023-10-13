@@ -34,7 +34,7 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
   -- See `:help K` for why this keymap
-  nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+  nmap("K", vim.lsp.buf.hover, "Show Documentation")
   nmap("<C-q>", vim.lsp.buf.signature_help, "Signature Documentation")
 
   -- Lesser used LSP functionality
@@ -49,6 +49,9 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
     vim.lsp.buf.format()
   end, { desc = "Format current buffer with LSP" })
+
+  -- Restart
+  nmap("<leader>rs", ":LspRestart<CR>", "Restart LSP")
 end
 
 -- Enable the following language servers
