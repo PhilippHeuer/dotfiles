@@ -15,6 +15,7 @@ return {
       },
     },
     config = function()
+      local actions = require("telescope.actions")
       local utils = require("philippheuer.utils")
 
       require("telescope").setup {
@@ -23,6 +24,9 @@ return {
             i = {
               ["<C-u>"] = false,
               ["<C-d>"] = false,
+              ["<C-k>"] = actions.move_selection_previous, -- select previous item
+              ["<C-j>"] = actions.move_selection_next, -- select next item
+              ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send all selected items to quickfix list
             },
           },
         },
