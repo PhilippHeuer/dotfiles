@@ -19,9 +19,6 @@ vim.keymap.set("n", "<leader>q", "<cmd>w<bar>bd<CR>") -- write and close current
 --vim.keymap.set("n", "<C-k>", "<cmd>bnext<CR>zz")
 --vim.keymap.set("n", "<C-j>", "<cmd>bprev<CR>zz")
 
--- format current buffer
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 -- remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -63,9 +60,6 @@ vim.keymap.set("n", "<leader>lv", "<cmd>vsplit<CR>", { desc = "split vertical" }
 -- troubles
 vim.keymap.set("n", "<leader>xw", "<cmd>:TroubleToggle workspace_diagnostics<CR>", { desc = "toggle workspace issues" })
 vim.keymap.set("n", "<leader>xd", "<cmd>:TroubleToggle document_diagnostics<CR>", { desc = "toggle document issues" })
-
--- fun
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 -- diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })

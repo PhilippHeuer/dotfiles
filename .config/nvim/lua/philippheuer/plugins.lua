@@ -1,35 +1,26 @@
 -- Configure Plugins
 local plugins = {
+  -- Core
   'philippheuer.plugins.lspconfig',
   'philippheuer.plugins.editorconfig',
   'philippheuer.plugins.tmux',
   'philippheuer.plugins.comment',
-  'philippheuer.plugins.todo-comment',
+  'philippheuer.plugins.todo-comment', -- highlighting for todo comments
   'philippheuer.plugins.dressing', -- improves some default vim ui elements (input, select, ...)
-  -- NOTE: cloak sensitive information
-  'philippheuer.plugins.cloak',
-  -- NOTE: add colored ident lines
-  'philippheuer.plugins.ident',
-  -- NOTE: documentation for keymaps
-  'philippheuer.plugins.whichkey',
-  -- NOTE: git status for the gutter
-  'philippheuer.plugins.git',
-  -- NOTE: telescope for fuzzy finding (files, lsp, etc)
-  'philippheuer.plugins.telescope',
-  -- NOTE: treesitter for syntax highlighting
-  'philippheuer.plugins.treesitter',
-  -- NOTE: quick file access
-  'philippheuer.plugins.harpoon',
-  -- NOTE: http client
-  'philippheuer.plugins.http',
-  -- NOTE: github copilot
-  'philippheuer.plugins.copilot',
-  -- NOTE: code completion
-  'philippheuer.plugins.completion',
-  -- NOTE: useless, but fun
-  'philippheuer.plugins.fun',
+  'philippheuer.plugins.cloak', -- cloak sensitive information
+  'philippheuer.plugins.format', -- formatting for various file types
+  'philippheuer.plugins.lint', -- linting for various file types
+  'philippheuer.plugins.ident', -- add colored ident lines
+  'philippheuer.plugins.whichkey', -- documentation for keymaps
+  'philippheuer.plugins.git', -- git status for the gutter
+  'philippheuer.plugins.telescope', -- fuzzy finding (files, lsp, etc)
+  'philippheuer.plugins.treesitter', -- syntax highlighting
+  'philippheuer.plugins.harpoon', -- bookmark files
+  'philippheuer.plugins.http', -- http client
+  'philippheuer.plugins.copilot', -- github copilot
+  'philippheuer.plugins.completion', -- code completion
   -- Theme / UI
-  'philippheuer.theme.catppuccin',
+  'philippheuer.theme.catppuccin', 
 }
 
 -- Load Plugins
