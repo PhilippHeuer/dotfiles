@@ -16,11 +16,15 @@
       vars:
         # renovate: datasource=github-releases depName=neovim/neovim
         nvim_version: "0.9.4"
-    # ripgrep file search
+    # cli tools
     - role: ripgrep
       vars:
         # renovate: datasource=github-releases depName=BurntSushi/ripgrep
         ripgrep_version: "13.0.0"
+    - role: fuzzmux
+      vars:
+        # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
+        fuzzmux_version: "0.1.0"
     # toolchains
     - role: nodejs
       vars:
