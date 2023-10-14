@@ -1,0 +1,14 @@
+---
+# check if version is the current one / delete if not matching
+- name: fuzzmux > check version
+  command: "tmx version"
+  register: fuzzmux_version_output
+  ignore_errors: true
+
+# download
+- name: fuzzmux > download
+  ansible.builtin.get_url:
+    url: "https://github.com/PhilippHeuer/fuzzmux/releases/download/v{{ fuzzmux_version }}/linux_amd64"
+    dest: "{{ ansible_env.HOME }}/.local/bin/tmx"
+    mode: u+x
+  when: "fuzzmux_version not in fuzzmux_version_output.stdout"
