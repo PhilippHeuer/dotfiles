@@ -9,6 +9,7 @@ return {
       -- Automatically install LSPs to stdpath for neovim
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       -- json and yaml schema store
       { "b0o/schemastore.nvim" },
@@ -20,6 +21,26 @@ return {
       -- Additional lua configuration, makes nvim stuff amazing!
       "folke/neodev.nvim",
     },
+    config = function()
+      -- Setup Tools (Linters, Formatters, etc.)
+      require("mason-tool-installer").setup {
+        ensure_installed = {
+          -- formatters
+          "stylua",
+          "prettier",
+          "isort",
+          "black",
+          "goimports",
+
+          -- linters
+          "golangci-lint",
+          "pylint",
+        },
+        auto_update = false,
+        run_on_start = false,
+        start_delay = 3000,
+      }
+    end,
   },
   {
     "folke/trouble.nvim",
