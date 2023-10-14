@@ -27,6 +27,6 @@
 # prepare
 - name: neovim > create config dir
   file:
-    path: "/home/{{ user }}/.config/nvim"
+    path: "{{ ansible_env.HOME }}/.config/nvim"
     state: directory
     mode: 0755

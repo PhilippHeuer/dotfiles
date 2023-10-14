@@ -1,0 +1,41 @@
+---
+# create dir
+- name: node > create installation dir
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/node"
+    state: directory
+    mode: 0755
+
+# check if version is the current one / delete if not matching
+- name: node > check version
+  command: "{{ ansible_env.HOME }}/.local/share/node/bin/node --version"
+  register: node_version_output
+  ignore_errors: true
+- name: node > delete old version
+  file:
+   path: "{{ ansible_env.HOME }}/.local/share/node"
+   state: absent
+  when: "nodejs_version not in node_version_output.stdout"
+
+# check
+- name: node > check installation
+  stat:
+    path: "/tmp/node-v{{ nodejs_version }}-linux-x64.tar.xz"
+  register: node_archive
+
+# download
+- name: node > download
+  get_url:
+    url: "https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-x64.tar.xz"
+    dest: "/tmp/node-v{{ nodejs_version }}-linux-x64.tar.xz"
+  when: not node_archive.stat.exists
+
+# install
+- name: node > install
+  ansible.builtin.unarchive:
+    src: "/tmp/node-v{{ nodejs_version }}-linux-x64.tar.xz"
+    dest: "{{ ansible_env.HOME }}/.local/share/node"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+  when: not node_archive.stat.exists

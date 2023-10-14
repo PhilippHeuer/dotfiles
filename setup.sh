@@ -4,6 +4,10 @@
 rm -rf $HOME/.config/bash
 ln -s $(pwd)/.config/bash $HOME/.config/bash
 
+# ansible config
+rm -rf $HOME/.ansible.cfg
+ln -s $(pwd)/.config/ansible/ansible.cfg $HOME/.ansible.cfg
+
 # tmux config - for each file in $(pwd)/.config/tmux
 mkdir -p $HOME/.config/tmux
 for path in $(pwd)/.config/tmux/*; do

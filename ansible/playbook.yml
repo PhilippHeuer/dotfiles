@@ -10,17 +10,22 @@
     - role: starship
       vars:
         # renovate: datasource=github-releases depName=starship/starship
-        starship_version: 1.16.0
+        starship_version: "1.16.0"
     # neovim text editor
     - role: neovim
       vars:
         # renovate: datasource=github-releases depName=neovim/neovim
-        nvim_version: 0.9.4
+        nvim_version: "0.9.4"
     # ripgrep file search
     - role: ripgrep
       vars:
         # renovate: datasource=github-releases depName=BurntSushi/ripgrep
-        ripgrep_version: 13.0.0
+        ripgrep_version: "13.0.0"
+    # toolchains
+    - role: nodejs
+      vars:
+        # renovate: datasource=github-releases depName=nodejs/node
+        nodejs_version: "20.8.1"
 
   # variables
   vars:
