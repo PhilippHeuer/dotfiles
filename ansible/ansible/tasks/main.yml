@@ -1,0 +1,9 @@
+---
+# install
+- name: ansible > community.general
+  become: yes
+  become_user: root
+  community.general.ansible_galaxy_install:
+    type: collection
+    name: community.general:7.5.0
+    force: true

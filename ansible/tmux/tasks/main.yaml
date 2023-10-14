@@ -1,0 +1,9 @@
+---
+# install
+- name: tmux > install
+  become: yes
+  become_user: root
+  apt:
+    name: tmux
+    state: present
+  when: ansible_distribution == 'Ubuntu'

@@ -1,0 +1,24 @@
+---
+- hosts: all
+  roles:
+    # ansible
+    - role: ansible
+    # tmux terminal multiplexer
+    - role: tmux
+    # starship terminal prompt
+    - role: starship
+      vars:
+        # renovate: datasource=github-releases depName=starship/starship
+        starship_version: 1.16.0
+    # neovim text editor
+    - role: neovim
+      vars:
+        # renovate: datasource=github-releases depName=neovim/neovim
+        nvim_version: 0.9.4
+  vars:
+    user: "{{ lookup('env','USER') }}"
+    # proxy support
+    proxy_env:
+      http_proxy: "{{ lookup('env','http_proxy') }}"
+      https_proxy: "{{ lookup('env','https_proxy') }}"
+      no_proxy: "{{ lookup('env','no_proxy') }}"

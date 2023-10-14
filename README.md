@@ -7,6 +7,8 @@
 ## installation
 
 - clone this repository
+- `/ansible` contains a ansible playbook to install the required software and prerequisites (see `ansible/README.md`)
+  - `ansible-playbook --connection=local --inventory 127.0.0.1, --ask-become-pass ansible/playbook.yml`
 - run `./setup.sh` to symblink the config files from this repository.
 - add the init scripts to your `.bashrc`: `. $HOME/.config/bash/init.sh`
 
