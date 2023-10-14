@@ -1,7 +1,8 @@
 ---
 - hosts: all
+  # roles
   roles:
-    # ansible
+    # ansible extensions
     - role: ansible
     # tmux terminal multiplexer
     - role: tmux
@@ -15,6 +16,13 @@
       vars:
         # renovate: datasource=github-releases depName=neovim/neovim
         nvim_version: 0.9.4
+    # ripgrep file search
+    - role: ripgrep
+      vars:
+        # renovate: datasource=github-releases depName=BurntSushi/ripgrep
+        ripgrep_version: 13.0.0
+
+  # variables
   vars:
     user: "{{ lookup('env','USER') }}"
     # proxy support
