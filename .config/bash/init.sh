@@ -5,10 +5,11 @@ export TERM=xterm-256color
 export GPG_TTY=$(tty)
 
 # paths
-export PATH="$PATH:~/.local/share/JetBrains/Toolbox/scripts:~/.local/share/JetBrains/Toolbox/bin"
+export PATH="$PATH:~/.local/bin:~/.local/share/JetBrains/Toolbox/scripts:~/.local/share/JetBrains/Toolbox/bin"
 
 # scripts
 . $HOME/.config/bash/node.sh
 . $HOME/.config/bash/rust.sh
 . $HOME/.config/bash/tmux.sh
+. $HOME/.config/bash/carapace.sh
 . $HOME/.config/bash/starship.sh

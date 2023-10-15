@@ -15,8 +15,6 @@
 
 # install
 - name: k9s > install
-  become: yes
-  become_user: root
   ansible.builtin.unarchive:
     src: "/tmp/k9s-v{{ k9s_version }}-linux_amd64.tar.gz"
     dest: "{{ ansible_env.HOME }}/.local/bin"

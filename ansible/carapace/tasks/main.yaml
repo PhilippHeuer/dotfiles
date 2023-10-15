@@ -1,0 +1,25 @@
+---
+# check version
+- name: carapace > check version
+  command: "carapace version"
+  register: carapace_version_output
+  ignore_errors: true
+
+# download
+- name: carapace > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/rsteube/carapace-bin/releases/download/v{{ carapace_version }}/carapace-bin_linux_amd64.tar.gz"
+    dest: "/tmp/carapace-v{{ carapace_version }}-linux_amd64.tar.gz"
+  when: "carapace_version not in carapace_version_output.stdout | default('')"
+
+# install
+- name: carapace > install
+  ansible.builtin.unarchive:
+    src: "/tmp/carapace-v{{ carapace_version }}-linux_amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --exclude=README.md
+    - --exclude=LICENSE
+  when: "carapace_version not in carapace_version_output.stdout | default('')"
