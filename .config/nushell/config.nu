@@ -66,10 +66,9 @@ $env.config = {
     }
 
     history: {
-        max_size: 100_000 # Session has to be reloaded for this to take effect
-        sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
-        file_format: "plaintext" # "sqlite" or "plaintext"
-        isolation: false # only available with sqlite file_format. true enables history isolation, false disables it. true will allow the history to be isolated to the current session using up/down arrows. false will allow the history to be shared across all sessions.
+        max_size: 100_000
+        sync_on_enter: true # share history between multiple sessions
+        file_format: "plaintext"
     }
 
     completions: {
@@ -102,7 +101,7 @@ $env.config = {
     buffer_editor: "" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: emacs # emacs, vi
+    edit_mode: vi # emacs, vi
     shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
 

@@ -4,6 +4,19 @@
 
 # dotfiles
 
+## overview
+
+| Component                                          | Description                                                 |
+| -------------------------------------------------- | ----------------------------------------------------------- |
+| [Nushell](https://www.nushell.sh)                  | Default Shell                                               |
+| [Starship](https://starship.rs/)                   | Shell Prompt                                                |
+| [TMUX](https://en.wikipedia.org/wiki/Tmux)         | Terminal Multiplexer                                        |
+| [Neovim](https://neovim.io/)                       | Text Editor                                                 |
+| [FuzzMux](https://github.com/PhilippHeuer/fuzzmux) | TMUX Session Manager - Fuzzy Search Projects, SSH, K8S, ... |
+| [Bat](https://github.com/sharkdp/bat)              | cat replacement                                             |
+| [Rg](https://github.com/BurntSushi/ripgrep)        | grep replacement                                            |
+| [K9S](https://github.com/derailed/k9s)             | kubernetes cli                                              |
+
 ## installation
 
 - clone this repository
