@@ -633,5 +633,8 @@ export alias edit = nvim
 export alias cat = ^bat --style=plain --paging=never --theme="OneHalfDark"
 export alias bat = ^bat --paging=never --theme="OneHalfDark"
 
+# carapace completions
+source ~/.cache/carapace/init.nu
+
 # starship prompt
 use ~/.cache/starship/init.nu

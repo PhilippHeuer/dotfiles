@@ -37,6 +37,10 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+# carapace completions
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
 # starship
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
