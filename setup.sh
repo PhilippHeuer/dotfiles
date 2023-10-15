@@ -21,6 +21,10 @@ tmux source $HOME/.config/tmux/tmux.conf # force reload tmux config
 rm -rf $HOME/.config/nvim 2> /dev/null
 ln -s $(pwd)/.config/nvim $HOME/.config/nvim
 
+# nushell
+rm -rf $HOME/.config/nushell
+ln -s $(pwd)/.config/nushell $HOME/.config/nushell
+
 # starship
 rm -rf $HOME/.config/starship.toml 2> /dev/null
 ln -s $(pwd)/.config/starship.toml $HOME/.config/starship.toml

@@ -6,7 +6,11 @@
     - role: ansible
     # tmux terminal multiplexer
     - role: tmux
-    # starship terminal prompt
+    # terminal
+    - role: nushell
+      vars:
+        # renovate: datasource=github-releases depName=nushell/nushell
+        nushell_version: "0.85.0"
     - role: starship
       vars:
         # renovate: datasource=github-releases depName=starship/starship
