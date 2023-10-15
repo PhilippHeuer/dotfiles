@@ -28,3 +28,8 @@ ln -s $(pwd)/.config/nushell $HOME/.config/nushell
 # starship
 rm -rf $HOME/.config/starship.toml 2> /dev/null
 ln -s $(pwd)/.config/starship.toml $HOME/.config/starship.toml
+
+# k9s
+mkdir -p $HOME/.config/k9s
+rm -rf $HOME/.config/k9s/skin.yml
+ln -s $(pwd)/.config/k9s/skin.yml $HOME/.config/k9s/skin.yml
