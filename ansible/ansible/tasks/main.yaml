@@ -3,6 +3,7 @@
 - name: ansible > community.general
   become: yes
   become_user: root
+  environment: "{{ proxy_env }}"
   community.general.ansible_galaxy_install:
     type: collection
     name: community.general:7.5.0

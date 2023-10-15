@@ -25,6 +25,7 @@
 
 # download
 - name: node > download
+  environment: "{{ proxy_env }}"
   get_url:
     url: "https://nodejs.org/dist/v{{ nodejs_version }}/node-v{{ nodejs_version }}-linux-x64.tar.xz"
     dest: "/tmp/node-v{{ nodejs_version }}-linux-x64.tar.xz"
