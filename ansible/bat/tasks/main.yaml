@@ -1,0 +1,45 @@
+---
+# check if version is the current one / delete if not matching
+- name: bat > check version
+  command: "bat --version"
+  register: bat_version_output
+  ignore_errors: true
+
+# download
+- name: bat > download
+  get_url:
+    url: "https://github.com/sharkdp/bat/releases/download/v{{ bat_version }}/bat-v{{ bat_version }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "/tmp/bat-v{{ bat_version }}-x86_64-unknown-linux-gnu.tar.gz"
+  when: "bat_version not in bat_version_output.stdout | default('')"
+
+# install
+- name: bat > install
+  become: yes
+  become_user: root
+  ansible.builtin.unarchive:
+    src: "/tmp/bat-v{{ bat_version }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=CHANGELOG.md
+    - --exclude=LICENSE-MIT
+    - --exclude=LICENSE-APACHE
+  when: "bat_version not in bat_version_output.stdout | default('')"
+
+# create theme dir
+- name: bat > create theme dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/bat/themes"
+    state: directory
+    mode: 0755
+
+# download theme
+#- name: bat > download theme
+#  get_url:
+#    url: "https://github.com/catppuccin/bat/blob/main/Catppuccin-mocha.tmTheme"
+#    dest: "{{ ansible_env.HOME }}/.config/bat/themes/Catppuccino-mocha.tmTheme"
+
+# rebuild bat cache
+#- name: bat > rebuild cache
+#  command: "bat cache --build"
