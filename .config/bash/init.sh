@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # defaults
+export TERM=xterm-256color
 export GPG_TTY=$(tty)
 
 # paths
