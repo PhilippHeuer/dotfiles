@@ -7,6 +7,7 @@
 - name: ripgrep > install
   become: yes
   become_user: root
+  environment: "{{ proxy_env }}"
   ansible.builtin.apt:
     deb: https://github.com/BurntSushi/ripgrep/releases/download/{{ ripgrep_version }}/ripgrep_{{ ripgrep_version }}_amd64.deb
     force: yes

@@ -13,9 +13,16 @@
 | [TMUX](https://en.wikipedia.org/wiki/Tmux)         | Terminal Multiplexer                                        |
 | [Neovim](https://neovim.io/)                       | Text Editor                                                 |
 | [FuzzMux](https://github.com/PhilippHeuer/fuzzmux) | TMUX Session Manager - Fuzzy Search Projects, SSH, K8S, ... |
-| [Bat](https://github.com/sharkdp/bat)              | cat replacement                                             |
-| [Rg](https://github.com/BurntSushi/ripgrep)        | grep replacement                                            |
-| [K9S](https://github.com/derailed/k9s)             | kubernetes cli                                              |
+
+**Tools**
+
+- [Ansible](https://www.ansible.com/) - Configuration Management
+- [KubeCTL](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/) - k8s cli
+- [K9S](https://github.com/derailed/k9s) - Kubernetes CLI
+- [Bat](https://github.com/sharkdp/bat) - cat with syntax highlighting
+- [Rg](https://github.com/BurntSushi/ripgrep) - gitignore aware recursive search
+
+**NOTE**: The Ansible Playbook installs all required software, but the default shell is not changed automatically. You can change the default shell by running `chsh -s $(which nu)`.
 
 ## installation
 

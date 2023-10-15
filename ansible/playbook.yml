@@ -33,6 +33,10 @@
       vars:
         # renovate: datasource=github-releases depName=sharkdp/bat
         bat_version: "0.24.0"
+    - role: kubectl
+      vars:
+        # renovate: datasource=github-releases depName=kubernetes/kubernetes
+        kubectl_version: "1.28.2"
     - role: k9s
       vars:
         # renovate: datasource=github-releases depName=derailed/k9s
