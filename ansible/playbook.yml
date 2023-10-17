@@ -49,7 +49,7 @@
     - role: nodejs
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
-        nodejs_version: "20.8.1"
+        nodejs_version: "21.0.0"
 
   # variables
   vars:
