@@ -1,9 +1,9 @@
 ---
 # check
-- name: starship > check installation
-  stat:
-    path: "/tmp/starship-{{ starship_version }}-linux64.tar.gz"
-  register: starship_archive
+- name: starship > check version
+  command: "starship --version"
+  register: starship_version_output
+  ignore_errors: true
 
 # download
 - name: starship > download
@@ -11,14 +11,12 @@
   get_url:
     url: "https://github.com/starship/starship/releases/download/v{{ starship_version }}/starship-x86_64-unknown-linux-gnu.tar.gz"
     dest: "/tmp/starship-{{ starship_version }}-linux64.tar.gz"
-  when: not starship_archive.stat.exists
+  when: "starship_version not in starship_version_output.stdout | default('')"
 
 # install
 - name: starship > install
-  become: yes
-  become_user: root
   ansible.builtin.unarchive:
     src: "/tmp/starship-{{ starship_version }}-linux64.tar.gz"
-    dest: /usr/local/bin
+    dest: "{{ ansible_env.HOME }}/.local/bin"
     remote_src: yes
-  when: not starship_archive.stat.exists
+  when: "starship_version not in starship_version_output.stdout | default('')"
