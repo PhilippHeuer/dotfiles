@@ -1,0 +1,12 @@
+---
+# check for wsl environment
+- name: wsl > check
+  stat:
+    path: /mnt/c/windows
+  register: is_wsl
+  run_once: true
+
+# include wsl-specific tasks
+- name: wsl > include tasks
+  include_tasks: wsl.yaml
+  when: is_wsl.stat.exists

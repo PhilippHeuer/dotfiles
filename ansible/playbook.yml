@@ -50,6 +50,8 @@
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
         nodejs_version: "21.0.0"
+    # wsl
+    - role: wsl
 
   # variables
   vars:
