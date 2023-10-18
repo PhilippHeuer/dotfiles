@@ -40,7 +40,7 @@
     - role: kubectl
       vars:
         # renovate: datasource=github-releases depName=kubernetes/kubernetes
-        kubectl_version: "1.28.2"
+        kubectl_version: "1.28.3"
     - role: k9s
       vars:
         # renovate: datasource=github-releases depName=derailed/k9s
