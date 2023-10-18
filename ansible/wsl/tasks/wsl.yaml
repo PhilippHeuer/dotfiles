@@ -1,0 +1,25 @@
+---
+# get windows name
+- name: wsl > get current user
+  ansible.builtin.command: "/mnt/c/windows/system32/WindowsPowerShell/v1.0/powershell.exe \\$Env:Username"
+  register: cmd_windows_user
+  run_once: true
+  when: is_wsl.stat.exists
+- name: wsl > set windows user
+  ansible.builtin.set_fact:
+    windows_user: "{{ cmd_windows_user.stdout }}"
+  when: is_wsl.stat.exists
+
+# .wslconfig
+- name: wsl > windows > user .wslconfig
+  copy:
+    src: .wslconfig
+    dest: "/mnt/c/Users/{{ windows_user }}/.wslconfig"
+
+# wsl.conf
+- name: wsl > distro > wsl.conf
+  become: yes
+  become_user: root
+  copy:
+    src: wsl.conf
+    dest: /etc/wsl.conf
