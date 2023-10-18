@@ -16,10 +16,6 @@ $env.config = {
         always_trash: false
     }
 
-    cd: {
-        abbreviations: false
-    }
-
     table: {
         mode: compact # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
         index_mode: auto # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
