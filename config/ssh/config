@@ -1,0 +1,10 @@
+Host *
+  SendEnv LANG LC_*
+  ForwardX11 no
+  ForwardAgent yes
+  AddressFamily inet
+  ServerAliveInterval 15
+  ConnectTimeout 20
+  Compression yes
+
+Include ~/.ssh/servers
