@@ -14,7 +14,7 @@
     - role: zellij
       vars:
         # renovate: datasource=github-releases depName=zellij-org/zellij
-        zellij_version: "0.38.0"
+        zellij_version: "0.38.2"
     # terminal
     - role: nushell
       vars:
