@@ -1,0 +1,43 @@
+[init]
+  defaultBranch = main
+
+[core]
+  editor = nvim
+  pager = delta
+
+[commit]
+  gpgsign = true
+
+[tag]
+  forcesignannotated = true
+
+[alias]
+	sw = !sh -c 'git stash && git checkout \"$0\"'
+	cp = !sh -c 'git commit -m \"$0\" && git push'
+	ri = !sh -c 'git rebase -i HEAD~$0'
+	as = !sh -c 'git add . && git status'
+	di = diff
+	df = diff --staged
+	fa = fetch -a
+	wa = worktree add
+	wr = worktree remove
+	wl = worktree list
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[credential]
+  helper = store
+  # helper = 'cache --timeout=3600'
+
+[include]
+  path = ~/.config/git/user
