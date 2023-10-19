@@ -1,0 +1,9 @@
+---
+
+# git
+- name: git > include git
+  include_tasks: git.yaml
+
+# diff
+- name: git > include delta
+  include_tasks: delta.yaml

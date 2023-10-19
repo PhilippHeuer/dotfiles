@@ -4,6 +4,11 @@
   roles:
     # ansible extensions
     - role: ansible
+    # core tools
+    - role: git
+      vars:
+        # renovate: datasource=github-releases depName=dandavison/delta
+        gitdelta_version: "0.16.5"
     # tmux terminal multiplexer
     - role: tmux
     - role: zellij
