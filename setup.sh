@@ -37,3 +37,7 @@ ln -s $(pwd)/config/k9s/skin.yml $HOME/.config/k9s/skin.yml
 # zellij
 rm -rf $HOME/.config/zellij
 ln -s $(pwd)/config/zellij $HOME/.config/zellij
+
+# git
+rm -rf $HOME/.config/git
+ln -s $(pwd)/config/git $HOME/.config/git
