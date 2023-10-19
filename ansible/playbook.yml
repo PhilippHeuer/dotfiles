@@ -6,6 +6,10 @@
     - role: ansible
     # tmux terminal multiplexer
     - role: tmux
+    - role: zellij
+      vars:
+        # renovate: datasource=github-releases depName=zellij-org/zellij
+        zellij_version: "0.38.0"
     # terminal
     - role: nushell
       vars:

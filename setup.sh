@@ -33,3 +33,7 @@ ln -s $(pwd)/config/starship.toml $HOME/.config/starship.toml
 mkdir -p $HOME/.config/k9s
 rm -rf $HOME/.config/k9s/skin.yml
 ln -s $(pwd)/config/k9s/skin.yml $HOME/.config/k9s/skin.yml
+
+# zellij
+rm -rf $HOME/.config/zellij
+ln -s $(pwd)/config/zellij $HOME/.config/zellij
