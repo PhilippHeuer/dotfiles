@@ -201,22 +201,6 @@ pane_frames false
 // Theme
 theme "catppuccin-mocha"
 
-themes {
-  catppuccin-mocha {
-    bg "#585b70" // Surface2
-    fg "#cdd6f4"
-    red "#f38ba8"
-    green "#a6e3a1"
-    blue "#89b4fa"
-    yellow "#f9e2af"
-    magenta "#f5c2e7" // Pink
-    orange "#fab387" // Peach
-    cyan "#89dceb" // Sky
-    black "#181825" // Mantle
-    white "#cdd6f4"
-  }
-}
-
 // Default Layout
 default_layout "compact"
 
@@ -224,7 +208,7 @@ default_layout "compact"
 default_mode "locked"
 
 // Toggle enabling the mouse mode.
-mouse_mode true
+mouse_mode false
 
 // Configure the scroll back buffer size
 scroll_buffer_size 10000
@@ -259,9 +243,3 @@ scroll_buffer_size 10000
 // Default: false
 //
 mirror_session true
-
-// The folder in which Zellij will look for layouts
-// layout_dir "~/.config/zellij/layouts"
-
-// The folder in which Zellij will look for themes
-// theme_dir "~/.config/zellij/themes"
