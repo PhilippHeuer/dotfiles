@@ -58,6 +58,10 @@
       vars:
         # renovate: datasource=github-releases depName=tbillington/kondo
         kondo_version: "0.7"
+    - role: sd
+      vars:
+        # renovate: datasource=github-releases depName=chmln/sd
+        sd_version: "0.7.6"
     # toolchains
     - role: nodejs
       vars:
@@ -68,6 +72,7 @@
 
   # variables
   vars:
+    # user
     user: "{{ lookup('env','USER') }}"
     # proxy support
     proxy_env:
