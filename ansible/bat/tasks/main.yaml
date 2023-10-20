@@ -15,8 +15,6 @@
 
 # install
 - name: bat > install
-  become: yes
-  become_user: root
   ansible.builtin.unarchive:
     src: "/tmp/bat-v{{ bat_version }}-x86_64-unknown-linux-gnu.tar.gz"
     dest: "{{ ansible_env.HOME }}/.local/bin"
@@ -26,6 +24,8 @@
     - --exclude=CHANGELOG.md
     - --exclude=LICENSE-MIT
     - --exclude=LICENSE-APACHE
+    - --exclude=README.md
+    - --exclude=autocomplete/*
   when: "bat_version not in bat_version_output.stdout | default('')"
 
 # create theme dir
