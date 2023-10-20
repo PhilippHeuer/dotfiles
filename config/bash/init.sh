@@ -12,4 +12,5 @@ export PATH="$PATH:~/.local/bin:~/.local/share/JetBrains/Toolbox/scripts:~/.loca
 . $HOME/.config/bash/rust.sh
 . $HOME/.config/bash/tmux.sh
 . $HOME/.config/bash/carapace.sh
+. $HOME/.config/bash/zoxide.sh
 . $HOME/.config/bash/starship.sh
