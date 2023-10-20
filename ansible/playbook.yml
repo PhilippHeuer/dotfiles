@@ -54,6 +54,10 @@
       vars:
         # renovate: datasource=github-releases depName=derailed/k9s
         k9s_version: "0.27.4"
+    - role: kondo
+      vars:
+        # renovate: datasource=github-releases depName=tbillington/kondo
+        kondo_version: "0.7"
     # toolchains
     - role: nodejs
       vars:
