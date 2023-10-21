@@ -1,0 +1,28 @@
+---
+# check
+- name: fzf > check version
+  command: "fzf --version"
+  register: fzf_version_output
+  ignore_errors: true
+
+# download
+- name: fzf > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-linux_amd64.tar.gz"
+    dest: "/tmp/fzf-{{ fzf_version }}.tar.gz"
+  when: "fzf_version not in fzf_version_output.stdout | default('')"
+
+# install
+- name: fzf > install
+  ansible.builtin.unarchive:
+    src: "/tmp/fzf-{{ fzf_version }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --exclude=README.md
+    - --exclude=CHANGELOG.md
+    - --exclude=LICENSE
+    - --exclude=man/*
+    - --exclude=completions/*
+  when: "fzf_version not in fzf_version_output.stdout | default('')"
