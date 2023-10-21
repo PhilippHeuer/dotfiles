@@ -1,6 +1,6 @@
 return {
   -- navigator
-  'christoomey/vim-tmux-navigator',
+  "christoomey/vim-tmux-navigator",
   keys = {
     -- primary mappings
     { "<C-h>", "<cmd>TmuxNavigateLeft<CR>", mode = {"n", "i"}, desc = "switch to left pane", {silent=true} },
