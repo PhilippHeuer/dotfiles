@@ -625,12 +625,19 @@ $env.config = {
 }
 
 # aliases
-export alias edit = nvim
-export alias cat = ^bat --style=plain --paging=never --theme="OneHalfDark"
-export alias bat = ^bat --paging=never --theme="OneHalfDark"
+source ~/.config/nushell/config/alias.nu
 
 # carapace completions
-source ~/.cache/carapace/init.nu
+if ('~/.cache/carapace/init.nu' | path exists) == true {
+    source ~/.cache/carapace/init.nu
+}
+
+# zoxide
+if ('~/.cache/zoxide/init.nu' | path exists) == true {
+    source ~/.cache/zoxide/init.nu
+}
 
 # starship prompt
-use ~/.cache/starship/init.nu
+if ('~/.cache/starship/init.nu' | path exists) == true {
+    source ~/.cache/starship/init.nu
+}

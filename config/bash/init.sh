@@ -11,6 +11,18 @@ export PATH="$PATH:~/.local/bin:~/.local/share/JetBrains/Toolbox/scripts:~/.loca
 . $HOME/.config/bash/node.sh
 . $HOME/.config/bash/rust.sh
 . $HOME/.config/bash/tmux.sh
-. $HOME/.config/bash/carapace.sh
-. $HOME/.config/bash/zoxide.sh
-. $HOME/.config/bash/starship.sh
+
+# carapace aliases
+if command -v carapace &>/dev/null; then
+    source <(carapace _carapace)
+fi
+
+# zoxide
+if command -v zoxide &>/dev/null; then
+    source <(zoxide init bash)
+fi
+
+# starship
+if command -v starship &>/dev/null; then
+    source <(starship init bash)
+fi

@@ -37,13 +37,23 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+# node
+source ~/.config/nushell/env/node.nu
+
 # carapace completions
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+if (^which carapace | is-empty) == false {
+    mkdir ~/.cache/carapace
+    carapace _carapace nushell | save -f ~/.cache/carapace/init.nu
+}
+
+# zoxide
+if (^which zoxide | is-empty) == false {
+    mkdir ~/.cache/zoxide
+    zoxide init nushell | save -f ~/.cache/zoxide/init.nu
+}
 
 # starship
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
-
-# customizations
-use ~/.config/nushell/env
+if (^which starship | is-empty) == false {
+    mkdir ~/.cache/starship
+    starship init nu | save -f ~/.cache/starship/init.nu
+}
