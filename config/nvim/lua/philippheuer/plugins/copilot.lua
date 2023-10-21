@@ -2,7 +2,7 @@
 return {
   {
     -- github/copilot.vim
-    'zbirenbaum/copilot.lua',
+    "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
@@ -11,7 +11,7 @@ return {
           javascript = true,
           typescript = true,
           sh = function ()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
+            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
               return false -- disable for .env files
             end
             return true

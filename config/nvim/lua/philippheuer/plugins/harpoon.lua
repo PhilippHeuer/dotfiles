@@ -1,9 +1,9 @@
 return {
   {
-    'ThePrimeagen/harpoon',
+    "ThePrimeagen/harpoon",
     lazy = false,
     dependencies = {
-      'nvim-lua/plenary.nvim',
+      "nvim-lua/plenary.nvim",
     },
     config = true,
     keys = {
