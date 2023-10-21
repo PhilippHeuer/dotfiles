@@ -625,7 +625,7 @@ $env.config = {
 }
 
 # aliases
-source ~/.config/nushell/config/alias.nu
+source ~/.config/nushell/config/aliases.nu
 
 # carapace completions
 if ('~/.cache/carapace/init.nu' | path exists) == true {
