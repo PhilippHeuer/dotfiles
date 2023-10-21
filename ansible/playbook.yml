@@ -69,7 +69,7 @@
     - role: fd
       vars:
         # renovate: datasource=github-releases depName=sharkdp/fd
-        fd_version: "8.7.0"
+        fd_version: "8.7.1"
     - role: zoxide
       vars:
         # renovate: datasource=github-releases depName=ajeetdsouza/zoxide
