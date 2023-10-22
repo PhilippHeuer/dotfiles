@@ -41,7 +41,7 @@
     - role: fuzzmux
       vars:
         # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
-        fuzzmux_version: "0.2.1"
+        fuzzmux_version: "0.3.0"
     - role: bat
       vars:
         # renovate: datasource=github-releases depName=sharkdp/bat
