@@ -9,6 +9,7 @@
       vars:
         # renovate: datasource=github-releases depName=dandavison/delta
         gitdelta_version: "0.16.5"
+    - role: ssh
     # tmux terminal multiplexer
     - role: tmux
     - role: zellij

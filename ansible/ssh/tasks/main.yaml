@@ -1,0 +1,9 @@
+---
+# sshfs
+- name: sshfs > install
+  become: yes
+  become_user: root
+  apt:
+    name: sshfs
+    state: present
+  when: ansible_distribution == 'Ubuntu'
