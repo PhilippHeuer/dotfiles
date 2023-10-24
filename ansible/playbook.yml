@@ -79,7 +79,7 @@
     - role: nodejs
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
-        nodejs_version: "21.0.0"
+        nodejs_version: "21.1.0"
     # wsl
     - role: wsl
 
