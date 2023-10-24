@@ -1,8 +1,0 @@
-# Settings apply across all Linux distros running on WSL 2
-[wsl2]
-
-# How much memory to assign to the WSL 2 VM.
-memory=16GB
-
-# Boolean specifying if ports bound to wildcard or localhost in the WSL 2 VM should be connectable from the host via localhost:port.
-localhostForwarding=true

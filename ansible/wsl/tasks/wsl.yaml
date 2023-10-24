@@ -10,12 +10,6 @@
     windows_user: "{{ cmd_windows_user.stdout }}"
   when: is_wsl.stat.exists
 
-# .wslconfig
-- name: wsl > windows > user .wslconfig
-  copy:
-    src: .wslconfig
-    dest: "/mnt/c/Users/{{ windows_user }}/.wslconfig"
-
 # wsl.conf
 - name: wsl > distro > wsl.conf
   become: yes
