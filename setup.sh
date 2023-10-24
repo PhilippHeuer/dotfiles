@@ -41,3 +41,7 @@ ln -s $(pwd)/config/zellij $HOME/.config/zellij
 # git
 rm -rf $HOME/.config/git
 ln -s $(pwd)/config/git $HOME/.config/git
+
+# ssh
+rm -rf $HOME/.ssh/config
+ln -s $(pwd)/config/ssh/config $HOME/.ssh/config
