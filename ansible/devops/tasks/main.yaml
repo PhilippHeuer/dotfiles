@@ -1,0 +1,12 @@
+---
+# kubectl
+- name: devops > include > kubectl
+  include_tasks: kubectl.yaml
+
+# k9s
+- name: devops > include > k9s
+  include_tasks: k9s.yaml
+
+# minioclient
+- name: devops > include > minioclient
+  include_tasks: minioclient.yaml
