@@ -4,8 +4,9 @@
 export TERM=xterm-256color
 export GPG_TTY=$(tty)
 
-# paths
-export PATH="$PATH:~/.local/bin:~/.local/share/JetBrains/Toolbox/scripts:~/.local/share/JetBrains/Toolbox/bin"
+# path
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin"
 
 # scripts
 . $HOME/.config/bash/node.sh

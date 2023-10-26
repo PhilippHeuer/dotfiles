@@ -47,14 +47,6 @@
       vars:
         # renovate: datasource=github-releases depName=sharkdp/bat
         bat_version: "0.24.0"
-    - role: kubectl
-      vars:
-        # renovate: datasource=github-releases depName=kubernetes/kubernetes
-        kubectl_version: "1.28.3"
-    - role: k9s
-      vars:
-        # renovate: datasource=github-releases depName=derailed/k9s
-        k9s_version: "0.27.4"
     - role: fzf
       vars:
         # renovate: datasource=github-releases depName=junegunn/fzf
@@ -79,11 +71,20 @@
       vars:
         # renovate: datasource=github-releases depName=cidverse/reposync
         reposync_version: "0.3.0"
-    # toolchains
+    # language toolchains
     - role: nodejs
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
         nodejs_version: "21.1.0"
+    # devops tooling
+    - role: devops
+      vars:
+        # renovate: datasource=github-releases depName=kubernetes/kubernetes
+        kubectl_version: "1.28.3"
+        # renovate: datasource=github-releases depName=derailed/k9s
+        k9s_version: "0.27.4"
+        # renovate: datasource=github-releases depName=minio/mc
+        minioclient_version: "RELEASE.2023-10-24T21-42-22Z"
     # wsl
     - role: wsl
 
