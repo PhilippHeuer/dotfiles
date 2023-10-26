@@ -3,6 +3,10 @@
 - name: devops > include > kubectl
   include_tasks: kubectl.yaml
 
+# helm
+- name: devops > include > helm
+  include_tasks: helm.yaml
+
 # k9s
 - name: devops > include > k9s
   include_tasks: k9s.yaml

@@ -1,0 +1,26 @@
+---
+# check version
+- name: helm > check version
+  command: "helm version"
+  register: helm_version_output
+  ignore_errors: true
+
+# download
+- name: helm > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://get.helm.sh/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+    dest: "/tmp/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+  when: "helm_version not in helm_version_output.stdout | default('')"
+
+# install
+- name: helm > install
+  ansible.builtin.unarchive:
+    src: "/tmp/helm-v{{ helm_version }}-linux-amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=README.md
+    - --exclude=LICENSE
+  when: "helm_version not in helm_version_output.stdout | default('')"
