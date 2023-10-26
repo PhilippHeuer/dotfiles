@@ -83,6 +83,8 @@
         kubectl_version: "1.28.3"
         # renovate: datasource=github-releases depName=derailed/k9s
         k9s_version: "0.27.4"
+        # renovate: datasource=github-releases depName=helm/helm
+        helm_version: "3.13.1"
         # renovate: datasource=github-releases depName=minio/mc
         minioclient_version: "RELEASE.2023-10-24T21-42-22Z"
     # wsl
