@@ -5,6 +5,19 @@
     # ansible extensions
     - role: ansible
     # core tools
+    - role: coretools
+      vars:
+        # renovate: datasource=github-releases depName=sharkdp/bat
+        bat_version: "0.24.0"
+        # renovate: datasource=github-releases depName=junegunn/fzf
+        fzf_version: "0.43.0"
+        # renovate: datasource=github-releases depName=chmln/sd
+        sd_version: "0.7.6"
+        # renovate: datasource=github-releases depName=sharkdp/fd
+        fd_version: "8.7.1"
+        # renovate: datasource=github-releases depName=aristocratos/btop
+        btop_version: "1.2.13"
+    # dev tools
     - role: git
       vars:
         # renovate: datasource=github-releases depName=dandavison/delta
@@ -39,26 +52,10 @@
       vars:
         # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
         fuzzmux_version: "0.3.0"
-    - role: bat
-      vars:
-        # renovate: datasource=github-releases depName=sharkdp/bat
-        bat_version: "0.24.0"
-    - role: fzf
-      vars:
-        # renovate: datasource=github-releases depName=junegunn/fzf
-        fzf_version: "0.43.0"
     - role: kondo
       vars:
         # renovate: datasource=github-releases depName=tbillington/kondo
         kondo_version: "0.7"
-    - role: sd
-      vars:
-        # renovate: datasource=github-releases depName=chmln/sd
-        sd_version: "0.7.6"
-    - role: fd
-      vars:
-        # renovate: datasource=github-releases depName=sharkdp/fd
-        fd_version: "8.7.1"
     - role: zoxide
       vars:
         # renovate: datasource=github-releases depName=ajeetdsouza/zoxide
