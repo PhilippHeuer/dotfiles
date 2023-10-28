@@ -1,6 +1,7 @@
 return {
   {
     "rest-nvim/rest.nvim",
+    commit = "8b62563",
     lazy = true,
     ft = { "http" },
     dependencies = {
@@ -14,7 +15,7 @@ return {
         encode_url = true,
         highlight = {
           enabled = true,
-          timeout = 150,
+          timeout = 300,
         },
         result = {
           show_url = true, -- toggle showing URL, HTTP info, headers at top the of result window
