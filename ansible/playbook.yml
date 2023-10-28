@@ -25,10 +25,6 @@
       vars:
         # renovate: datasource=github-releases depName=starship/starship
         starship_version: "1.16.0"
-    - role: carapace
-      vars:
-        # renovate: datasource=github-releases depName=rsteube/carapace-bin
-        carapace_version: "0.28.2"
     # neovim text editor
     - role: neovim
       vars:
