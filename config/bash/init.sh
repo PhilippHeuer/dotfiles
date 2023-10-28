@@ -13,11 +13,6 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/sha
 . $HOME/.config/bash/rust.sh
 . $HOME/.config/bash/tmux.sh
 
-# carapace aliases
-if command -v carapace &>/dev/null; then
-    source <(carapace _carapace)
-fi
-
 # zoxide
 if command -v zoxide &>/dev/null; then
     source <(zoxide init bash)

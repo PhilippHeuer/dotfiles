@@ -627,11 +627,6 @@ $env.config = {
 # aliases
 source ~/.config/nushell/config/aliases.nu
 
-# carapace completions
-if ('~/.cache/carapace/init.nu' | path exists) == true {
-    source ~/.cache/carapace/init.nu
-}
-
 # zoxide
 if ('~/.cache/zoxide/init.nu' | path exists) == true {
     source ~/.cache/zoxide/init.nu
