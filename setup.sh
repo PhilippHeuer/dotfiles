@@ -45,3 +45,7 @@ ln -s $(pwd)/config/git $HOME/.config/git
 # ssh
 rm -rf $HOME/.ssh/config
 ln -s $(pwd)/config/ssh/config $HOME/.ssh/config
+
+# btop
+rm $HOME/.config/btop/btop.conf
+ln -s $(pwd)/config/btop/btop.conf $HOME/.config/btop/btop.conf
