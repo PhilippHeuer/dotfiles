@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# help text
+show_help() {
+    cat <<EOF
+Find a pattern with rg and fzf.  Preview contents with bat.  Edit File.
+
+Usage:
+    fr [pattern]
+    - pattern: optional search pattern
+
+Dependencies:
+  1. rg       | recursively search current directory for lines matching a pattern
+  2. fzf      | command-line fuzzy finder
+  3. bat      | a cat clone with syntax highlighting and Git integration
+  4. \$EDITOR | Exported environment variable referring to your editor.
+
+Additional notes:
+    This script searches for text in files using Ripgrep (rg) and opens the selected file in \$EDITOR.
+    Use arrow keys or start typing to search. Press Enter to open the selected file.
+    Press 'ESC' to exit without opening a file.
+EOF
+}
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    show_help
+    exit 0
+fi
+
+# execute
+RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+INITIAL_QUERY="${*:-}"
+
+IFS=: read -ra selected < <(
+  FZF_DEFAULT_COMMAND="$RG_PREFIX $(printf %q "$INITIAL_QUERY")" \
+  fzf --ansi \
+      --disabled --query "$INITIAL_QUERY" \
+      --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
+      --delimiter : \
+      --preview 'bat --color=always {1} --highlight-line {2}' \
+      --preview-window 'left,50%,border-bottom,+{2}+3/3,~3'
+)
+[ -n "${selected[0]}" ] && $EDITOR "${selected[0]}" "+${selected[1]}"
