@@ -1,0 +1,24 @@
+---
+# fd
+- name: core utils > include > fd
+  include_tasks: fd.yaml
+
+# fzf
+- name: core utils > include > fzf
+  include_tasks: fzf.yaml
+
+# sd
+- name: core utils > include > sd
+  include_tasks: sd.yaml
+
+# bat
+- name: core utils > include > bat
+  include_tasks: bat.yaml
+
+# htop
+- name: core utils > include > htop
+  include_tasks: htop.yaml
+
+# btop
+- name: core utils > include > btop
+  include_tasks: btop.yaml
