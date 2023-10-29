@@ -8,6 +8,9 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin"
 
+# file manager
+export FILE=nnn
+
 # bat
 export BAT_THEME="OneHalfDark"
 

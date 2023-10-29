@@ -1,0 +1,29 @@
+---
+# check
+- name: nnn > check version
+  command: "nnn -V"
+  register: nnn_version_output
+  ignore_errors: true
+
+# download
+- name: nnn > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/jarun/nnn/releases/download/v{{ nnn_version }}/nnn-nerd-static-{{ nnn_version }}.x86_64.tar.gz"
+    dest: "/tmp/nnn-{{ nnn_version }}.tar.gz"
+  when: "nnn_version not in nnn_version_output.stdout | default('')"
+
+# install
+- name: nnn > install
+  ansible.builtin.unarchive:
+    src: "/tmp/nnn-{{ nnn_version }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+  when: "nnn_version not in nnn_version_output.stdout | default('')"
+
+# symlink
+- name: nnn > symlink
+  ansible.builtin.file:
+    src: "{{ ansible_env.HOME }}/.local/bin/nnn-nerd-static"
+    dest: "{{ ansible_env.HOME }}/.local/bin/nnn"
+    state: link

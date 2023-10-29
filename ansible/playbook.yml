@@ -17,6 +17,8 @@
         fd_version: "8.7.1"
         # renovate: datasource=github-releases depName=aristocratos/btop
         btop_version: "1.2.13"
+        # renovate: datasource=github-releases depName=jarun/nnn
+        nnn_version: "4.9"
     # dev tools
     - role: git
       vars:
