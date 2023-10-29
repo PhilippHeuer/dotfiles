@@ -49,3 +49,10 @@ ln -s $(pwd)/config/ssh/config $HOME/.ssh/config
 # btop
 rm $HOME/.config/btop/btop.conf
 ln -s $(pwd)/config/btop/btop.conf $HOME/.config/btop/btop.conf
+
+# scripts
+for path in $(pwd)/scripts/*; do
+  filename=$(basename "$path")
+  rm "$HOME/.local/bin/$filename" 2> /dev/null
+  ln -s "$path" "$HOME/.local/bin/$filename"
+done

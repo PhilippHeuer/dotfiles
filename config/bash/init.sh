@@ -8,6 +8,9 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin"
 
+# bat
+export BAT_THEME="OneHalfDark"
+
 # scripts
 . $HOME/.config/bash/node.sh
 . $HOME/.config/bash/rust.sh
