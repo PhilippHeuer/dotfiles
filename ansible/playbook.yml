@@ -2,10 +2,10 @@
 - hosts: all
   # roles
   roles:
-    # ansible extensions
+    # ansible
     - role: ansible
     # core tools
-    - role: coretools
+    - role: coreutils
       vars:
         # renovate: datasource=github-releases depName=sharkdp/bat
         bat_version: "0.24.0"
@@ -23,13 +23,12 @@
         # renovate: datasource=github-releases depName=dandavison/delta
         gitdelta_version: "0.16.5"
     - role: ssh
-    # tmux terminal multiplexer
+    # terminal
     - role: tmux
     - role: zellij
       vars:
         # renovate: datasource=github-releases depName=zellij-org/zellij
         zellij_version: "0.38.2"
-    # terminal
     - role: nushell
       vars:
         # renovate: datasource=github-releases depName=nushell/nushell
