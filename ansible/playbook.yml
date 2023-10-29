@@ -50,7 +50,7 @@
     - role: fuzzmux
       vars:
         # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
-        fuzzmux_version: "0.3.0"
+        fuzzmux_version: "0.3.1"
     - role: kondo
       vars:
         # renovate: datasource=github-releases depName=tbillington/kondo
