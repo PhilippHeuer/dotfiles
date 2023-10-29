@@ -22,3 +22,7 @@
 # btop
 - name: core utils > include > btop
   include_tasks: btop.yaml
+
+# nnn
+- name: core utils > include > nnn
+  include_tasks: nnn.yaml
