@@ -4,6 +4,11 @@
 [core]
   editor = nvim
   pager = delta
+  autocrlf     = input
+  eol          = lf
+  excludesfile = ~/.config/git/gitignore
+  preloadindex = true
+  fscache      = true
 
 [commit]
   gpgsign = true
@@ -11,17 +16,32 @@
 [tag]
   forcesignannotated = true
 
+[pull]
+  rebase = true # rebase instead of merge when pulling
+
+[fetch]
+  prune = true # remove remote branches that no longer exist on the server
+
 [alias]
-	sw = !sh -c 'git stash && git checkout \"$0\"'
-	cp = !sh -c 'git commit -m \"$0\" && git push'
-	ri = !sh -c 'git rebase -i HEAD~$0'
-	as = !sh -c 'git add . && git status'
-	di = diff
-	df = diff --staged
-	fa = fetch -a
-	wa = worktree add
-	wr = worktree remove
-	wl = worktree list
+  s = status --short --branch
+  sw = !sh -c 'git stash && git checkout \"$0\"'
+  di = diff
+  df = diff --staged
+  fa = fetch -a
+  wa = worktree add
+  wr = worktree remove
+  wl = worktree list
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  # add executable file
+  addx = !sh -c 'git add $0; git update-index --chmod=+x $0'
+  # log with relative dates
+  lr = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset  %s  %Cgreen(%cr)  %C(bold  blue)<%an>%Creset'
+  # log with absolute dates
+  la = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset  %s  %Cgreen(%cD)  %C(bold  blue)<%an>%Creset'
+  # list all tags
+  t = log --no-walk --tags --pretty=format:'%C(auto)%aI  %H  %d' --decorate=full
 
 [interactive]
   diffFilter = delta --color-only
@@ -38,6 +58,9 @@
 
 [diff]
   colorMoved = default
+
+[gc]
+  auto = 256
 
 [credential]
   helper = store
