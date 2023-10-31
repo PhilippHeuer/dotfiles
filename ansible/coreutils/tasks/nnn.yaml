@@ -27,3 +27,19 @@
     src: "{{ ansible_env.HOME }}/.local/bin/nnn-nerd-static"
     dest: "{{ ansible_env.HOME }}/.local/bin/nnn"
     state: link
+
+# create plugins dir
+- name: nnn > plugins > dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/nnn/plugins"
+    state: directory
+    mode: 0755
+
+# download plugins
+- name: nnn > plugins > download
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "{{ ansible_env.HOME }}/.config/nnn/plugins/{{ item.dest }}"
+  loop:
+    - { url: "https://raw.githubusercontent.com/jarun/nnn/master/plugins/preview-tui", dest: "preview-tui" }
