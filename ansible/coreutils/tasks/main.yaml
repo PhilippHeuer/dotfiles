@@ -24,5 +24,9 @@
   include_tasks: btop.yaml
 
 # nnn
-- name: core utils > include > nnn
-  include_tasks: nnn.yaml
+#- name: core utils > include > nnn
+#  include_tasks: nnn.yaml
+
+# exa
+- name: core utils > include > exa
+  include_tasks: exa.yaml
