@@ -14,3 +14,7 @@
 # minioclient
 - name: devops > include > minioclient
   include_tasks: minioclient.yaml
+
+# click
+- name: devops > include > click
+  include_tasks: click.yaml
