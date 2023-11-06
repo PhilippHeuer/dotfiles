@@ -31,3 +31,6 @@ fi
 if command -v starship &>/dev/null; then
     source <(starship init bash)
 fi
+
+# aliases
+. $HOME/.config/bash/aliases.sh
