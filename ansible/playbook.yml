@@ -72,6 +72,11 @@
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
         nodejs_version: "21.1.0"
+    # development tools
+    - role: dev
+      vars:
+        # renovate: datasource=github-releases depName=jesseduffield/lazygit
+        lazygit_version: "0.40.2"
     # devops tooling
     - role: devops
       vars:
