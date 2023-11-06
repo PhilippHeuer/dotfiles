@@ -6,16 +6,19 @@ export GPG_TTY=$(tty)
 
 # path
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin"
+export PATH="$PATH:$HOME/.local/share/node/bin" # node
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin" # jetbrains toolbox and apps
 
-# file manager
-export FILE=nnn
+# ansible
+export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"
 
 # bat
 export BAT_THEME="OneHalfDark"
 
+# lazygit
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/mocha-blue.yml"
+
 # scripts
-. $HOME/.config/bash/node.sh
 . $HOME/.config/bash/rust.sh
 . $HOME/.config/bash/tmux.sh
 

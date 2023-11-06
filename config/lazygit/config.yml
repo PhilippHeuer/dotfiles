@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+
+# Lazygit configuration file
+# 
+# see https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+gui:
+  showRandomTip: false
+  showBranchCommitHash: true # show commit hashes alongside branch names
+  showBottomLine: false # for hiding the bottom information line (unless it has important information to tell you)
+  nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
+  commandLogSize: 10
+  splitDiff: 'auto' # one of 'auto' | 'always'
+  border: 'rounded' # one of 'single' | 'double' | 'rounded' | 'hidden'
+  animateExplosion: false
+
+disableStartupPopups: true # disables the popup that shows when you start lazygit
+notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip' | 'quit'
