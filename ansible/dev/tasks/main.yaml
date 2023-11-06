@@ -1,0 +1,4 @@
+---
+# lazygit
+- name: dev > include > lazygit
+  include_tasks: lazygit.yaml
