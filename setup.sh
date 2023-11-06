@@ -1,58 +1,19 @@
 #!/usr/bin/env bash
 
-# bash config
-rm -rf $HOME/.config/bash
-ln -s $(pwd)/config/bash $HOME/.config/bash
+# properties
+config_dir="$(pwd)/config"
+destination_dir="$HOME/.config"
 
-# ansible config
-rm -rf $HOME/.ansible.cfg
-ln -s $(pwd)/config/ansible/ansible.cfg $HOME/.ansible.cfg
+cd "$config_dir" || exit
 
-# tmux config - for each file in $(pwd)/config/tmux
-mkdir -p $HOME/.config/tmux
-for path in $(pwd)/config/tmux/*; do
-  filename=$(basename "$path")
-  rm "$HOME/.config/tmux/$filename" 2> /dev/null
-  ln -s "$path" "$HOME/.config/tmux/$filename"
-done
-tmux source $HOME/.config/tmux/tmux.conf # force reload tmux config
-
-# neovim
-rm -rf $HOME/.config/nvim 2> /dev/null
-ln -s $(pwd)/config/nvim $HOME/.config/nvim
-
-# nushell
-rm -rf $HOME/.config/nushell
-ln -s $(pwd)/config/nushell $HOME/.config/nushell
-
-# starship
-rm -rf $HOME/.config/starship.toml 2> /dev/null
-ln -s $(pwd)/config/starship.toml $HOME/.config/starship.toml
-
-# k9s
-mkdir -p $HOME/.config/k9s
-rm -rf $HOME/.config/k9s/skin.yml
-ln -s $(pwd)/config/k9s/skin.yml $HOME/.config/k9s/skin.yml
-
-# zellij
-rm -rf $HOME/.config/zellij
-ln -s $(pwd)/config/zellij $HOME/.config/zellij
-
-# git
-rm -rf $HOME/.config/git
-ln -s $(pwd)/config/git $HOME/.config/git
-
-# ssh
-rm -rf $HOME/.ssh/config
-ln -s $(pwd)/config/ssh/config $HOME/.ssh/config
-
-# btop
-rm $HOME/.config/btop/btop.conf
-ln -s $(pwd)/config/btop/btop.conf $HOME/.config/btop/btop.conf
+find . -type d -exec mkdir -p "$destination_dir/{}" \; # sync directories
+find . -type f -exec sh -c 'ln -sf "$(readlink -f "$0")" "$1/$0"' {} "$destination_dir" \; # symlink files
 
 # scripts
 for path in $(pwd)/scripts/*; do
   filename=$(basename "$path")
-  rm "$HOME/.local/bin/$filename" 2> /dev/null
-  ln -s "$path" "$HOME/.local/bin/$filename"
+  ln -sf "$path" "$HOME/.local/bin/$filename"
 done
+
+# reload
+tmux source $HOME/.config/tmux/tmux.conf
