@@ -83,7 +83,7 @@
         # renovate: datasource=github-releases depName=kubernetes/kubernetes
         kubectl_version: "1.28.3"
         # renovate: datasource=github-releases depName=derailed/k9s
-        k9s_version: "0.27.4"
+        k9s_version: "0.28.0"
         # renovate: datasource=github-releases depName=helm/helm
         helm_version: "3.13.1"
         # renovate: datasource=github-releases depName=minio/mc
