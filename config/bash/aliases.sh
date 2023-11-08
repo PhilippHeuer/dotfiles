@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # diskfree
-alias df='df -h'
+alias df="df -h"
 
 # free memory
 alias free="free -mt"
@@ -10,4 +10,4 @@ alias free="free -mt"
 alias jctl="journalctl -p 3 -xb"
 
 # use nnn as file manager
-alias l='exa --long --header'
+alias l="exa --long --header"
