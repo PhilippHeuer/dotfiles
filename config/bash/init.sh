@@ -18,8 +18,12 @@ export BAT_THEME="OneHalfDark"
 # lazygit
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/mocha-blue.yml"
 
-# scripts
-. $HOME/.config/bash/rust.sh
+# rust
+if [ -f $HOME/.cargo/env ]; then
+  . $HOME/.cargo/env
+fi
+
+# tmux
 . $HOME/.config/bash/tmux.sh
 
 # zoxide
