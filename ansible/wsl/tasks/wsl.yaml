@@ -4,11 +4,10 @@
   ansible.builtin.command: "/mnt/c/windows/system32/WindowsPowerShell/v1.0/powershell.exe \\$Env:Username"
   register: cmd_windows_user
   run_once: true
-  when: is_wsl.stat.exists
+
 - name: wsl > set windows user
   ansible.builtin.set_fact:
     windows_user: "{{ cmd_windows_user.stdout }}"
-  when: is_wsl.stat.exists
 
 # wsl.conf
 - name: wsl > distro > wsl.conf
