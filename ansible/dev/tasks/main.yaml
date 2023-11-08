@@ -2,3 +2,7 @@
 # lazygit
 - name: dev > include > lazygit
   include_tasks: lazygit.yaml
+
+# github
+- name: dev > include > github
+  include_tasks: github.yaml

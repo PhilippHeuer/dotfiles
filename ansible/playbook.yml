@@ -75,6 +75,8 @@
     # development tools
     - role: dev
       vars:
+        # renovate: datasource=github-releases depName=cli/cli
+        gh_version: "2.38.0"
         # renovate: datasource=github-releases depName=jesseduffield/lazygit
         lazygit_version: "0.40.2"
     # devops tooling

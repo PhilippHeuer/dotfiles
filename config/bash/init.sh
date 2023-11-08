@@ -23,6 +23,9 @@ if [ -f $HOME/.cargo/env ]; then
   . $HOME/.cargo/env
 fi
 
+# registry auth
+export REGISTRY_AUTH_FILE="$HOME/.config/containers/auth.json"
+
 # tmux
 . $HOME/.config/bash/tmux.sh
 
