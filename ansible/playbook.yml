@@ -12,7 +12,7 @@
         # renovate: datasource=github-releases depName=junegunn/fzf
         fzf_version: "0.43.0"
         # renovate: datasource=github-releases depName=chmln/sd
-        sd_version: "0.7.6"
+        sd_version: "1.0.0"
         # renovate: datasource=github-releases depName=sharkdp/fd
         fd_version: "8.7.1"
         # renovate: datasource=github-releases depName=aristocratos/btop
