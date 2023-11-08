@@ -85,7 +85,7 @@
         # renovate: datasource=github-releases depName=derailed/k9s
         k9s_version: "0.28.0"
         # renovate: datasource=github-releases depName=helm/helm
-        helm_version: "3.13.1"
+        helm_version: "3.13.2"
         # renovate: datasource=github-releases depName=minio/mc
         minioclient_version: "RELEASE.2023-10-24T21-42-22Z"
         # renovate: datasource=github-releases depName=databricks/click
