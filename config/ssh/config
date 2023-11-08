@@ -7,4 +7,11 @@ Host *
   ConnectTimeout 20
   Compression yes
 
+# git over ssh
+Host github.com
+  HostName github.com
+  IdentityFile ~/.ssh/id_git
+  # tag: git
+
+# user config
 Include ~/.ssh/servers
