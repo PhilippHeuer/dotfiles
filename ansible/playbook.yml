@@ -10,7 +10,7 @@
         # renovate: datasource=github-releases depName=sharkdp/bat
         bat_version: "0.24.0"
         # renovate: datasource=github-releases depName=junegunn/fzf
-        fzf_version: "0.43.0"
+        fzf_version: "0.44.0"
         # renovate: datasource=github-releases depName=chmln/sd
         sd_version: "1.0.0"
         # renovate: datasource=github-releases depName=sharkdp/fd
