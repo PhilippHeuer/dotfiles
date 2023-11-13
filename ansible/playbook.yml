@@ -32,7 +32,7 @@
     - role: zellij
       vars:
         # renovate: datasource=github-releases depName=zellij-org/zellij
-        zellij_version: "0.39.0"
+        zellij_version: "0.39.1"
     - role: nushell
       vars:
         # renovate: datasource=github-releases depName=nushell/nushell
