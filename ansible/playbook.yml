@@ -71,7 +71,7 @@
     - role: nodejs
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
-        nodejs_version: "21.1.0"
+        nodejs_version: "21.2.0"
     # development tools
     - role: dev
       vars:
