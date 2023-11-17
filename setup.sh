@@ -9,6 +9,9 @@ cd "$config_dir" || exit
 find . -type d -exec mkdir -p "$destination_dir/{}" \; # sync directories
 find . -type f -exec sh -c 'ln -sf "$(readlink -f "$0")" "$1/$0"' {} "$destination_dir" \; # symlink files
 
+# ssh config
+ln -sf "$config_dir/ssh/config" "$HOME/.ssh/config"
+
 # scripts
 for path in $(pwd)/scripts/*; do
   filename=$(basename "$path")

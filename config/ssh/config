@@ -7,11 +7,21 @@ Host *
   ConnectTimeout 20
   Compression yes
 
+# user config
+Include ~/.config/ssh/servers
+
 # git over ssh
+
+# - github
 Host github.com
   HostName github.com
+  AddressFamily inet
   IdentityFile ~/.ssh/id_git
-  # tag: git
+  # tag: hidden
 
-# user config
-Include ~/.ssh/servers
+# - gitlab
+Host gitlab.com
+  HostName gitlab.com
+  AddressFamily inet
+  IdentityFile ~/.ssh/id_git
+  # tag: hidden
