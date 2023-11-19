@@ -1,0 +1,24 @@
+---
+# install
+- name: binfmt > qemu-user-static
+  become: yes
+  become_user: root
+  apt:
+    name: qemu-user-static
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+# config
+- name: binfmt > config
+  become: yes
+  become_user: root
+  copy:
+    src: qemu-static.conf
+    dest: /etc/binfmt.d/qemu-static.conf
+
+# service
+- name: binfmt > systemd-binfmt.service
+  ansible.builtin.systemd:
+    name: systemd-binfmt.service
+    enabled: true
+    state: started

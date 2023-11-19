@@ -2,8 +2,9 @@
 - hosts: all
   # roles
   roles:
-    # ansible
+    - role: facts
     - role: ansible
+    - role: binfmt
     # core tools
     - role: coreutils
       vars:

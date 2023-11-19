@@ -1,0 +1,10 @@
+---
+# detect windows terminal / wsl
+- name: wsl > check
+  shell: echo $(uname -srm) | grep microsoft-standard-WSL2
+  register: wsl_check_output
+  ignore_errors: true
+
+- name: wsl > set fact
+  set_fact:
+    is_wsl: "{{ wsl_check_output.stdout is defined and wsl_check_output.stdout != '' }}"

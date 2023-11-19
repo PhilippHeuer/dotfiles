@@ -7,3 +7,23 @@
     name: tmux
     state: present
   when: ansible_distribution == 'Ubuntu'
+
+# service
+- name: tmux > service > create
+  become: yes
+  become_user: root
+  copy:
+    src: tmux.service
+    dest: /etc/systemd/system/tmux.service
+  when: is_wsl == True
+
+# enable and start service
+- name: tmux > service > enable
+  become: yes
+  become_user: root
+  ansible.builtin.systemd:
+    daemon_reload: true
+    name: tmux.service
+    enabled: true
+    state: started
+  when: is_wsl == True
