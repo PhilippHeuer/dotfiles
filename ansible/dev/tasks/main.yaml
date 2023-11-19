@@ -6,3 +6,7 @@
 # github
 - name: dev > include > github
   include_tasks: github.yaml
+
+# precommit
+- name: dev > include > precommit
+  include_tasks: precommit.yaml
