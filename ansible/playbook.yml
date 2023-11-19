@@ -81,6 +81,8 @@
         gh_version: "2.39.1"
         # renovate: datasource=github-releases depName=jesseduffield/lazygit
         lazygit_version: "0.40.2"
+        # renovate: datasource=pip depName=pre-commit
+        precommit_version: "3.5.0"
     # devops tooling
     - role: devops
       vars:

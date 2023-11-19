@@ -9,6 +9,7 @@
   excludesfile = ~/.config/git/gitignore
   preloadindex = true
   fscache      = true
+  hooksPath    = ~/.config/git/hooks
 
 [commit]
   gpgsign = true
