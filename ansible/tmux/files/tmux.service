@@ -1,0 +1,11 @@
+[Unit]
+Description=tmux server
+
+[Service]
+Type=forking
+User=1000
+ExecStart=/usr/bin/tmux start-server
+ExecStop=/usr/bin/tmux kill-server
+
+[Install]
+WantedBy=multi-user.target

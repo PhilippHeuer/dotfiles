@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# ensure tmux server is running
-tmux start-server
-
 # tmux history per window
 if [[ $TMUX_PANE ]]; then
   sessionName=$(tmux display-message -p "#S")
