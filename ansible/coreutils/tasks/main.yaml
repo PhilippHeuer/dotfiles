@@ -23,6 +23,10 @@
 - name: core utils > include > btop
   include_tasks: btop.yaml
 
+# fastfetch
+- name: core utils > include > fastfetch
+  include_tasks: fastfetch.yaml
+
 # nnn
 #- name: core utils > include > nnn
 #  include_tasks: nnn.yaml
