@@ -39,7 +39,7 @@
     - role: nushell
       vars:
         # renovate: datasource=github-releases depName=nushell/nushell
-        nushell_version: "0.87.0"
+        nushell_version: "0.87.1"
     - role: starship
       vars:
         # renovate: datasource=github-releases depName=starship/starship
