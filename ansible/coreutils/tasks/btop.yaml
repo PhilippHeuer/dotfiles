@@ -17,7 +17,6 @@
 - name: btop > install
   ansible.builtin.command:
     cmd: "tar -xjf /tmp/btop-{{ btop_version }}.tbz --strip-components 3 -C {{ ansible_env.HOME }}/.local/bin ./btop/bin/btop"
-    warn: false
   when: "btop_version not in btop_version_output.stdout | default('')"
 
 # create theme dir
@@ -31,7 +30,6 @@
 - name: btop > themes > embedded
   ansible.builtin.command:
     cmd: "tar -xjf /tmp/btop-{{ btop_version }}.tbz --strip-components 3 -C {{ ansible_env.HOME }}/.config/btop/themes ./btop/themes"
-    warn: false
   when: "btop_version not in btop_version_output.stdout | default('')"
 
 # theme - catppuccin
