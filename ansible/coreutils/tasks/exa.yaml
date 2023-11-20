@@ -16,6 +16,5 @@
 # install
 - name: exa > install
   ansible.builtin.command:
-    cmd: "unzip -j -o /tmp/exa-v{{ exa_version }}.zip 'bin/exa' -d {{ ansible_env.HOME }}/.local/bin/"
-    warn: false
+    cmd: "unzip -j -o /tmp/exa-v{{ exa_version }}.zip 'bin/exa' -d {{ ansible_env.HOME }}/.local/bin/"  
   when: "exa_version not in exa_version_output.stdout | default('')"
