@@ -26,6 +26,9 @@ fi
 # registry auth
 export REGISTRY_AUTH_FILE="$HOME/.config/containers/auth.json"
 
+# editor
+export EDITOR="nvim"
+
 # tmux
 . $HOME/.config/bash/tmux.sh
 
