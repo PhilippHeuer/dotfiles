@@ -10,3 +10,7 @@
 # precommit
 - name: dev > include > precommit
   include_tasks: precommit.yaml
+
+# ripgrep
+- name: editor > include > ripgrep
+  include_tasks: ripgrep.yaml

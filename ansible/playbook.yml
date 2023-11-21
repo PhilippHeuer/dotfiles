@@ -44,16 +44,11 @@
       vars:
         # renovate: datasource=github-releases depName=starship/starship
         starship_version: "1.16.0"
-    # neovim text editor
-    - role: neovim
+    # editor
+    - role: editor
       vars:
         # renovate: datasource=github-releases depName=neovim/neovim
         nvim_version: "0.9.4"
-    # cli tools
-    - role: ripgrep
-      vars:
-        # renovate: datasource=github-releases depName=BurntSushi/ripgrep
-        ripgrep_version: "13.0.0"
     - role: fuzzmux
       vars:
         # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
@@ -71,6 +66,7 @@
         # renovate: datasource=github-releases depName=cidverse/reposync
         reposync_version: "0.3.0"
     # language toolchains
+    - role: java
     - role: nodejs
       vars:
         # renovate: datasource=github-releases depName=nodejs/node
@@ -84,6 +80,8 @@
         lazygit_version: "0.40.2"
         # renovate: datasource=pip depName=pre-commit
         precommit_version: "3.5.0"
+        # renovate: datasource=github-releases depName=BurntSushi/ripgrep
+        ripgrep_version: "13.0.0"
     # devops tooling
     - role: devops
       vars:
