@@ -1,7 +1,7 @@
 ---
 # check version
 - name: gh > check version
-  command: "lazygit --version"
+  command: "gh --version"
   register: gh_version_output
   ignore_errors: true
 
