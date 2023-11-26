@@ -81,7 +81,7 @@
         # renovate: datasource=pip depName=pre-commit
         precommit_version: "3.5.0"
         # renovate: datasource=github-releases depName=BurntSushi/ripgrep
-        ripgrep_version: "13.0.0"
+        ripgrep_version: "14.0.0"
     # devops tooling
     - role: devops
       vars:
