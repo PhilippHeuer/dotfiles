@@ -36,9 +36,11 @@
   loop:
     - "github/gh-copilot"
   when: "item not in gh_extensions_output.stdout | default('')"
+  ignore_errors: true
 
 # upgrade extensions
 - name: gh > extensions > update
   ansible.builtin.command: "gh extension upgrade {{ item }}"
   loop:
     - "github/gh-copilot"
+  ignore_errors: true
