@@ -1,0 +1,7 @@
+---
+- name: ripgrep > install
+  become: yes
+  become_user: root
+  pacman:
+    name: ripgrep
+    state: present

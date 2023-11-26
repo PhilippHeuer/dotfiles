@@ -1,0 +1,7 @@
+---
+- name: lazygit > install
+  become: yes
+  become_user: root
+  pacman:
+    name: lazygit
+    state: present

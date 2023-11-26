@@ -1,0 +1,19 @@
+---
+- name: python > install
+  become: yes
+  become_user: root
+  pacman:
+    name: python
+    state: present
+- name: python-pip > install
+  become: yes
+  become_user: root
+  pacman:
+    name: python-pip
+    state: present
+- name: python-pipx > install
+  become: yes
+  become_user: root
+  pacman:
+    name: python-pipx
+    state: present

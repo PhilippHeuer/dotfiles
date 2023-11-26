@@ -1,0 +1,25 @@
+---
+# check version
+- name: k9s > check version
+  command: "k9s version"
+  register: k9s_version_output
+  ignore_errors: true
+
+# download
+- name: k9s > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/derailed/k9s/releases/download/v{{ version.k9s }}/k9s_Linux_amd64.tar.gz"
+    dest: "/tmp/k9s-v{{ version.k9s }}-linux_amd64.tar.gz"
+  when: "version.k9s not in k9s_version_output.stdout | default('')"
+
+# install
+- name: k9s > install
+  ansible.builtin.unarchive:
+    src: "/tmp/k9s-v{{ version.k9s }}-linux_amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --exclude=README.md
+    - --exclude=LICENSE
+  when: "version.k9s not in k9s_version_output.stdout | default('')"

@@ -1,0 +1,8 @@
+---
+- name: starship > install
+  become: yes
+  become_user: root
+  pacman:
+    name: starship
+    state: present
+  when: ansible_distribution == 'Archlinux'

@@ -1,0 +1,15 @@
+---
+# install
+- name: neovim > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: neovim > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'
+
+# config dir
+- name: neovim > create config dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/nvim"
+    state: directory
+    mode: 0755

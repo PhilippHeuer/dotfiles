@@ -1,0 +1,8 @@
+---
+# install
+- name: s3fs > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: s3fs > debian / ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

@@ -1,0 +1,7 @@
+---
+- name: neovim > install
+  become: yes
+  become_user: root
+  pacman:
+    name: neovim
+    state: present

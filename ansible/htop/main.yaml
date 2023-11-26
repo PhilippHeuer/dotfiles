@@ -1,0 +1,8 @@
+---
+# install
+- name: htop > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: htop > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

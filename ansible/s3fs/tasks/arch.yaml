@@ -1,0 +1,7 @@
+---
+- name: s3fs > install
+  become: yes
+  become_user: root
+  pacman:
+    name: s3fs
+    state: present

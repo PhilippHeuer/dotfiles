@@ -1,0 +1,29 @@
+---
+# check if version is the current one / delete if not matching
+- name: node > check version
+  command: "nu --version"
+  register: nu_version_output
+  ignore_errors: true
+
+# download
+- name: nushell > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/nushell/nushell/releases/download/{{ version.nushell }}/nu-{{ version.nushell }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "/tmp/nu-{{ version.nushell }}-x86_64-unknown-linux-gnu.tar.gz"
+  when: "version.nushell not in nu_version_output.stdout | default('')"
+
+# install
+- name: nushell > install
+  become: yes
+  become_user: root
+  ansible.builtin.unarchive:
+    src: "/tmp/nu-{{ version.nushell }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: /usr/bin
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=README.md
+    - --exclude=LICENSE
+    - --exclude=nu_plugin_example
+  when: "version.nushell not in nu_version_output.stdout | default('')"

@@ -1,0 +1,24 @@
+---
+# install
+- name: lazygit > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: lazygit > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'
+
+# create theme dir
+- name: lazygit > theme > create dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/lazygit/themes"
+    state: directory
+    mode: 0755
+
+# theme - catppuccin
+- name: lazygit > themes > download
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "{{ item.url }}"
+    dest: "{{ ansible_env.HOME }}/.config/lazygit/themes/{{ item.dest }}"
+  loop:
+    - { url: "https://raw.githubusercontent.com/catppuccin/lazygit/main/themes-mergable/mocha/blue.yml", dest: "mocha-blue.yml" }

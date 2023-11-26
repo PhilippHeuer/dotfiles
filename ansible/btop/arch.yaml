@@ -1,0 +1,8 @@
+---
+- name: btop > install
+  become: yes
+  become_user: root
+  pacman:
+    name: btop
+    state: present
+  when: ansible_distribution == 'Archlinux'

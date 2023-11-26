@@ -1,0 +1,8 @@
+---
+# install
+- name: nodejs > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: nodejs > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'

@@ -1,4 +1,0 @@
----
-# neovim
-- name: editor > include > neovim
-  include_tasks: neovim.yaml

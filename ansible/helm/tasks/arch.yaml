@@ -1,0 +1,7 @@
+---
+- name: helm > install
+  become: yes
+  become_user: root
+  pacman:
+    name: helm
+    state: present

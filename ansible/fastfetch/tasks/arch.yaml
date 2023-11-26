@@ -1,0 +1,7 @@
+---
+- name: fastfetch > install
+  become: yes
+  become_user: root
+  pacman:
+    name: fastfetch
+    state: present

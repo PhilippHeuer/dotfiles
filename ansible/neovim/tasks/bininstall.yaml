@@ -1,0 +1,26 @@
+---
+# check
+- name: neovim > check installation
+  stat:
+    path: "/tmp/nvim-{{ version.neovim }}-linux64.tar.gz"
+  register: nvim_archive
+
+# download
+- name: neovim > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/neovim/neovim/releases/download/v{{ version.neovim }}/nvim-linux64.tar.gz"
+    dest: "/tmp/nvim-{{ version.neovim }}-linux64.tar.gz"
+  when: not nvim_archive.stat.exists
+
+# install
+- name: neovim > install
+  become: yes
+  become_user: root
+  ansible.builtin.unarchive:
+    src: "/tmp/nvim-{{ version.neovim }}-linux64.tar.gz"
+    dest: /usr/local
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+  when: not nvim_archive.stat.exists

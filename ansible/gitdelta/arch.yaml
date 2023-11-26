@@ -1,0 +1,8 @@
+---
+- name: git-delta > install
+  become: yes
+  become_user: root
+  pacman:
+    name: git-delta
+    state: present
+  when: ansible_distribution == 'Archlinux'
