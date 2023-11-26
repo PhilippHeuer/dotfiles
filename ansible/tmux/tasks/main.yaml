@@ -6,7 +6,14 @@
   apt:
     name: tmux
     state: present
-  when: ansible_distribution == 'Ubuntu'
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: tmux > install
+  become: yes
+  become_user: root
+  pacman:
+    name: tmux
+    state: present
+  when: ansible_distribution == 'Archlinux'
 
 # service
 - name: tmux > service > create

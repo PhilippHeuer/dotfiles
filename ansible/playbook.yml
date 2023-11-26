@@ -3,6 +3,7 @@
   # roles
   roles:
     - role: facts
+    - role: home
     - role: ansible
     - role: binfmt
     # core tools

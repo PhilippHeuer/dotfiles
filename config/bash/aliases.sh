@@ -16,7 +16,7 @@ alias l="exa --long --header"
 ghc-suggest() {
   context="Shell: $(basename $SHELL), Distro: $(source /etc/os-release && echo $NAME), Editor: $EDITOR"
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-    context="$context, Git Repo, Preferred Tools: rg"
+    context="$context, Git Repo, Preferred Tools: rg, bat"
   fi
 
   request="$@. $context"
