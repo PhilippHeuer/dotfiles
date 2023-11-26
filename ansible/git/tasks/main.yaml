@@ -1,8 +1,22 @@
 ---
-# git
-- name: git > include git
-  include_tasks: git.yaml
+# install
+- name: btop > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: btop > debian / ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-# diff
-- name: git > include delta
-  include_tasks: delta.yaml
+# proxy
+- name: git > http proxy
+  community.general.git_config:
+    name: http.proxy
+    value: "{{ proxy_env.http_proxy }}"
+    scope: global
+  when: proxy_env.http_proxy is defined and proxy_env.http_proxy is not none
+- name: git > https proxy
+  community.general.git_config:
+    name: https.proxy
+    value: "{{ proxy_env.https_proxy }}"
+    scope: global
+  when: proxy_env.https_proxy is defined and proxy_env.https_proxy is not none

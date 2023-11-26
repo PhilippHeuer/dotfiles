@@ -1,0 +1,7 @@
+---
+- name: zoxide > install
+  become: yes
+  become_user: root
+  pacman:
+    name: zoxide
+    state: present

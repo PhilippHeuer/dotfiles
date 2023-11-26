@@ -1,0 +1,8 @@
+---
+- name: bat > install (pacman)
+  become: yes
+  become_user: root
+  pacman:
+    name: bat
+    state: present
+  when: ansible_distribution == 'Archlinux'

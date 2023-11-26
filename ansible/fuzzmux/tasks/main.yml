@@ -9,7 +9,7 @@
 - name: fuzzmux > download
   environment: "{{ proxy_env }}"
   ansible.builtin.get_url:
-    url: "https://github.com/PhilippHeuer/fuzzmux/releases/download/v{{ fuzzmux_version }}/linux_amd64"
+    url: "https://github.com/PhilippHeuer/fuzzmux/releases/download/v{{ version.fuzzmux }}/linux_amd64"
     dest: "{{ ansible_env.HOME }}/.local/bin/tmx"
     mode: u+x
-  when: "fuzzmux_version not in fuzzmux_version_output.stdout | default('')"
+  when: "version.fuzzmux not in fuzzmux_version_output.stdout | default('')"

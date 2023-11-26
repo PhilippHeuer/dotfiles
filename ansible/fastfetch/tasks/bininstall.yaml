@@ -1,0 +1,50 @@
+---
+# check
+- name: fastfetch > check version
+  command: "fastfetch --version"
+  register: fastfetch_version_output
+  ignore_errors: true
+
+# download
+- name: fastfetch > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/fastfetch-cli/fastfetch/releases/download/{{ version.fastfetch }}/fastfetch-{{ version.fastfetch }}-Linux.tar.gz"
+    dest: "/tmp/fastfetch-{{ version.fastfetch }}.tar.gz"
+  when: "version.fastfetch not in fastfetch_version_output.stdout | default('')"
+
+# temp dir
+- name: fastfetch > create temp dir
+  file:
+    path: "/tmp/fastfetch-{{ version.fastfetch }}"
+    state: directory
+    mode: 0755
+  when: "version.fastfetch not in fastfetch_version_output.stdout | default('')"
+
+# extract
+- name: fastfetch > extract
+  ansible.builtin.unarchive:
+    src: "/tmp/fastfetch-{{ version.fastfetch }}.tar.gz"
+    dest: "/tmp/fastfetch-{{ version.fastfetch }}"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+  when: "version.fastfetch not in fastfetch_version_output.stdout | default('')"
+
+# install
+- name: fastfetch > install
+  shell: |
+    cp /tmp/fastfetch-{{ version.fastfetch }}/usr/bin/fastfetch {{ paths.bin }}/fastfetch
+    cp /tmp/fastfetch-{{ version.fastfetch }}/usr/share/bash-completion/fastfetch ~/.local/share/bash-completion/fastfetch
+    cp -R /tmp/fastfetch-{{ version.fastfetch }}/usr/share/fastfetch ~/.local/share/fastfetch
+  when: "version.fastfetch not in fastfetch_version_output.stdout | default('')"
+
+# cleanup
+- name: fastfetch > cleanup
+  ansible.builtin.file:
+    path: "/tmp/{{ item }}"
+    state: absent
+  with_items:
+    - "fastfetch-{{ version.fastfetch }}.tar.gz"
+    - "fastfetch-{{ version.fastfetch }}"
+  when: "version.fastfetch not in fastfetch_version_output.stdout | default('')"

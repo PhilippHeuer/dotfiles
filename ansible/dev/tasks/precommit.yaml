@@ -1,5 +1,0 @@
----
-# install precommit
-- name: precommit > install
-  ansible.builtin.pip:
-    name: "pre-commit=={{ precommit_version }}"

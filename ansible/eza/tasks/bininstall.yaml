@@ -1,0 +1,24 @@
+---
+# check if version is the current one / delete if not matching
+- name: eza > check version
+  command: "eza --version"
+  register: eza_version_output
+  ignore_errors: true
+
+# download
+- name: eza > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/eza-community/eza/releases/download/v{{ version.eza }}/eza_x86_64-unknown-linux-gnu.tar.gz"
+    dest: "/tmp/eza-v{{ version.eza }}.tar.gz"
+  when: "version.eza not in eza_version_output.stdout | default('')"
+
+# install
+- name: eza > install
+  ansible.builtin.unarchive:
+    src: "/tmp/eza-v{{ version.eza }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+  when: "version.eza not in eza_version_output.stdout | default('')"

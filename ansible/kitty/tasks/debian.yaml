@@ -1,0 +1,7 @@
+---
+- name: kitty > install
+  become: yes
+  become_user: root
+  apt:
+    name: kitty
+    state: present

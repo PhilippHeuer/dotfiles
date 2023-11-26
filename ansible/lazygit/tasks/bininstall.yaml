@@ -1,0 +1,25 @@
+---
+# check version
+- name: lazygit > check version
+  command: "lazygit --version"
+  register: lazygit_version_output
+  ignore_errors: true
+
+# download
+- name: lazygit > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ version.lazygit }}/lazygit_{{ version.lazygit }}_Linux_x86_64.tar.gz"
+    dest: "/tmp/lazygit-v{{ version.lazygit }}-linux-amd64.tar.gz"
+  when: "version.lazygit not in lazygit_version_output.stdout | default('')"
+
+# install
+- name: lazygit > install
+  ansible.builtin.unarchive:
+    src: "/tmp/lazygit-v{{ version.lazygit }}-linux-amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --exclude=README.md
+    - --exclude=LICENSE
+  when: "version.lazygit not in lazygit_version_output.stdout | default('')"

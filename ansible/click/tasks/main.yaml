@@ -1,0 +1,27 @@
+---
+# check version
+- name: click > check version
+  command: "click --version"
+  register: click_version_output
+  ignore_errors: true
+
+# download
+- name: click > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/databricks/click/releases/download/v{{ version.click }}/click-v{{ version.click }}-x86_64-unknown-linux-musl.tar.gz"
+    dest: "/tmp/click-v{{ version.click }}-linux-amd64.tar.gz"
+  when: "version.click not in click_version_output.stdout | default('')"
+
+# install
+- name: click > install
+  ansible.builtin.unarchive:
+    src: "/tmp/click-v{{ version.click }}-linux-amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=README.md
+    - --exclude=LICENSE
+    - --exclude=CHANGELOG.md
+  when: "version.click not in click_version_output.stdout | default('')"

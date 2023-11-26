@@ -1,0 +1,8 @@
+---
+- name: zellij > install
+  become: yes
+  become_user: root
+  pacman:
+    name: zellij
+    state: present
+  when: ansible_distribution == 'Archlinux'

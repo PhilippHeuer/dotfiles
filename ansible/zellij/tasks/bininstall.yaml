@@ -1,0 +1,22 @@
+---
+# check
+- name: zellij > check version
+  command: "zellij --version"
+  register: zellij_version_output
+  ignore_errors: true
+
+# download
+- name: zellij > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/zellij-org/zellij/releases/download/v{{ version.zellij }}/zellij-x86_64-unknown-linux-musl.tar.gz"
+    dest: "/tmp/zellij-{{ version.zellij }}.tar.gz"
+  when: "version.zellij not in zellij_version_output.stdout | default('')"
+
+# install
+- name: zellij > install
+  ansible.builtin.unarchive:
+    src: "/tmp/zellij-{{ version.zellij }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+  when: "version.zellij not in zellij_version_output.stdout | default('')"

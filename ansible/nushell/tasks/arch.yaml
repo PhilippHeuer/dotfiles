@@ -1,0 +1,7 @@
+---
+- name: nushell > install
+  become: yes
+  become_user: root
+  pacman:
+    name: nushell
+    state: present

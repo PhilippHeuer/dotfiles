@@ -1,0 +1,7 @@
+---
+- name: git > install
+  become: yes
+  become_user: root
+  apt:
+    name: git
+    state: present

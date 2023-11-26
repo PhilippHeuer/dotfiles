@@ -1,0 +1,29 @@
+---
+# install
+- name: github-cli > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: github-cli > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'
+
+# check extensions
+- name: gh > check extensions
+  command: "gh extension list"
+  register: gh_extensions_output
+  ignore_errors: true
+
+# install extensions
+- name: gh > extensions > install
+  ansible.builtin.command: "gh extension install {{ item }}"
+  loop:
+    - "github/gh-copilot"
+  when: "item not in gh_extensions_output.stdout | default('')"
+  ignore_errors: true
+
+# upgrade extensions
+- name: gh > extensions > update
+  ansible.builtin.command: "gh extension upgrade {{ item }}"
+  loop:
+    - "github/gh-copilot"
+  ignore_errors: true

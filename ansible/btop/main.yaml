@@ -1,0 +1,33 @@
+---
+# install
+- name: btop > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: btop > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'
+
+# create theme dir
+- name: btop > create theme dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/btop/themes"
+    state: directory
+    mode: 0755
+
+# theme
+- name: btop > themes > embedded
+  ansible.builtin.command:
+    cmd: "tar -xjf /tmp/btop-{{ btop_version }}.tbz --strip-components 3 -C {{ ansible_env.HOME }}/.config/btop/themes ./btop/themes"
+  when: "btop_version not in btop_version_output.stdout | default('')"
+
+# theme - catppuccin
+- name: btop > themes > catppuccin
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "https://github.com/catppuccin/btop/blob/1.0.0/themes/{{ item.url }}"
+    dest: "{{ ansible_env.HOME }}/.config/btop/themes/{{ item.dest }}"
+  loop:
+    - { url: "catppuccin_mocha.theme", dest: "catppuccin_mocha.theme" }
+    - { url: "catppuccin_macchiato.theme", dest: "catppuccin_macchiato.theme" }
+    - { url: "catppuccin_latte.theme", dest: "catppuccin_latte.theme" }
+    - { url: "catppuccin_frappe.theme", dest: "catppuccin_frappe.theme" }

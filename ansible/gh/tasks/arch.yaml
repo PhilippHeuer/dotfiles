@@ -1,0 +1,7 @@
+---
+- name: github-cli > install
+  become: yes
+  become_user: root
+  pacman:
+    name: github-cli
+    state: present

@@ -9,7 +9,7 @@
 - name: reposync > download
   environment: "{{ proxy_env }}"
   ansible.builtin.get_url:
-    url: "https://github.com/cidverse/reposync/releases/download/v{{ reposync_version }}/linux_amd64"
+    url: "https://github.com/cidverse/reposync/releases/download/v{{ version.reposync }}/linux_amd64"
     dest: "{{ ansible_env.HOME }}/.local/bin/reposync"
     mode: u+x
-  when: "reposync_version not in reposync_version_output.stdout | default('')"
+  when: "version.reposync not in reposync_version_output.stdout | default('')"

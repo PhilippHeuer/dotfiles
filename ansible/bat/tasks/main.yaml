@@ -1,0 +1,25 @@
+---
+# install
+- name: bat > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: bat > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'
+
+# create theme dir
+- name: bat > create theme dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/bat/themes"
+    state: directory
+    mode: 0755
+
+# download theme
+#- name: bat > download theme
+#  get_url:
+#    url: "https://github.com/catppuccin/bat/blob/main/Catppuccin-mocha.tmTheme"
+#    dest: "{{ ansible_env.HOME }}/.config/bat/themes/Catppuccino-mocha.tmTheme"
+
+# rebuild bat cache
+#- name: bat > rebuild cache
+#  command: "bat cache --build"

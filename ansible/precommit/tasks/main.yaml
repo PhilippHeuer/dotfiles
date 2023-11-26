@@ -1,0 +1,7 @@
+---
+# install precommit
+- name: precommit > install
+  environment: "{{ proxy_env }}"
+  community.general.pipx:
+    name: "pre-commit=={{ version.precommit }}"
+    state: present

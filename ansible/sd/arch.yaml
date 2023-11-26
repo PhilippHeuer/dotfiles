@@ -1,0 +1,7 @@
+---
+- name: sd > install
+  become: yes
+  become_user: root
+  pacman:
+    name: sd
+    state: present

@@ -10,7 +10,7 @@ alias free="free -mt"
 alias jctl="journalctl -p 3 -xb"
 
 # use nnn as file manager
-alias l="exa --long --header"
+alias l="eza --long --header"
 
 # gh copilot suggest
 ghc-suggest() {

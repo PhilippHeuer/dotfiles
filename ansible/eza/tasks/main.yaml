@@ -1,0 +1,8 @@
+---
+# install
+- name: eza > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: eza > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux'

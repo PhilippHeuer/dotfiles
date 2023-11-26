@@ -1,0 +1,7 @@
+---
+- name: git > install
+  become: yes
+  become_user: root
+  pacman:
+    name: git
+    state: present

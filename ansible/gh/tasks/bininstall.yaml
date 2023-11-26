@@ -1,0 +1,25 @@
+---
+# check version
+- name: gh > check version
+  command: "gh --version"
+  register: gh_version_output
+  ignore_errors: true
+
+# download
+- name: gh > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/cli/cli/releases/download/v{{ version.gh }}/gh_{{ version.gh }}_linux_amd64.tar.gz"
+    dest: "/tmp/gh-v{{ version.gh }}-linux-amd64.tar.gz"
+  when: "version.gh not in gh_version_output.stdout | default('')"
+
+# install
+- name: gh > install
+  ansible.builtin.unarchive:
+    src: "/tmp/gh-v{{ gh_version }}-linux-amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=LICENSE
+  when: "version.gh not in gh_version_output.stdout | default('')"

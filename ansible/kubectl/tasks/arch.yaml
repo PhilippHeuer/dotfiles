@@ -1,0 +1,7 @@
+---
+- name: kubectl > install
+  become: yes
+  become_user: root
+  pacman:
+    name: kubectl
+    state: present

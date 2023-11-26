@@ -1,0 +1,14 @@
+---
+- name: ripgrep > version
+  ansible.builtin.command: "rg --version"
+  register: rg_version_output
+  ignore_errors: true
+
+- name: ripgrep > install
+  become: yes
+  become_user: root
+  environment: "{{ proxy_env }}"
+  ansible.builtin.apt:
+    deb: https://github.com/BurntSushi/ripgrep/releases/download/{{ version.ripgrep }}/ripgrep_{{ version.ripgrep }}-1_amd64.deb
+    force: yes
+  when: version.ripgrep not in rg_version_output.stdout

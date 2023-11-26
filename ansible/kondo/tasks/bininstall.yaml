@@ -1,0 +1,22 @@
+---
+# check
+- name: kondo > check version
+  command: "kondo --version"
+  register: kondo_version_output
+  ignore_errors: true
+
+# download
+- name: kondo > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/tbillington/kondo/releases/download/v{{ version.kondo }}/kondo-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "/tmp/kondo-{{ version.kondo }}.tar.gz"
+  when: "version.kondo not in kondo_version_output.stdout | default('')"
+
+# install
+- name: kondo > install
+  ansible.builtin.unarchive:
+    src: "/tmp/kondo-{{ version.kondo }}.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+  when: "version.kondo not in kondo_version_output.stdout | default('')"

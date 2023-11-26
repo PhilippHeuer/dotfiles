@@ -1,0 +1,7 @@
+---
+- name: nodejs > install
+  become: yes
+  become_user: root
+  pacman:
+    name: nodejs
+    state: present

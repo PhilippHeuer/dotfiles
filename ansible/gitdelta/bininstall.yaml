@@ -1,0 +1,26 @@
+---
+# check version
+- name: git-delta > check version
+  command: "delta --version"
+  register: gitdelta_version_output
+  ignore_errors: true
+
+# download
+- name: git-delta > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/dandavison/delta/releases/download/{{ version.gitdelta }}/delta-{{ version.gitdelta }}-x86_64-unknown-linux-gnu.tar.gz"
+    dest: "/tmp/delta-v{{ version.gitdelta }}-linux_amd64.tar.gz"
+  when: "version.gitdelta not in gitdelta_version_output.stdout | default('')"
+
+# install
+- name: git-delta > install
+  ansible.builtin.unarchive:
+    src: "/tmp/delta-v{{ version.gitdelta }}-linux_amd64.tar.gz"
+    dest: "{{ ansible_env.HOME }}/.local/bin"
+    remote_src: yes
+    extra_opts:
+    - --strip-components=1
+    - --exclude=README.md
+    - --exclude=LICENSE
+  when: "version.gitdelta not in gitdelta_version_output.stdout | default('')"

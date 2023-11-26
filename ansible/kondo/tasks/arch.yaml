@@ -1,0 +1,7 @@
+---
+- name: kondo > install
+  become: yes
+  become_user: root
+  pacman:
+    name: kondo
+    state: present
