@@ -108,7 +108,7 @@
       # renovate: datasource=github-releases depName=dandavison/delta
       gitdelta: "0.16.5"
       # renovate: datasource=github-releases depName=zellij-org/zellij
-      zellij: "0.39.1"
+      zellij: "0.39.2"
       # renovate: datasource=github-releases depName=nushell/nushell
       nushell: "0.87.1"
       # renovate: datasource=github-releases depName=starship/starship
