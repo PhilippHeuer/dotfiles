@@ -1,7 +1,0 @@
----
-- name: kitty > install
-  become: yes
-  become_user: root
-  pacman:
-    name: kitty
-    state: present

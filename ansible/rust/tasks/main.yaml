@@ -1,0 +1,5 @@
+---
+# install
+- name: rust > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'

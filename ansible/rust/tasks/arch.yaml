@@ -1,7 +1,7 @@
 ---
-- name: kitty > install
+- name: rust > install
   become: yes
   become_user: root
-  apt:
-    name: kitty
+  pacman:
+    name: rust
     state: present
