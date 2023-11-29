@@ -12,6 +12,9 @@ alias jctl="journalctl -p 3 -xb"
 # use nnn as file manager
 alias l="eza --long --header"
 
+# modern apt replacement
+alias apt="sudo nala"
+
 # gh copilot suggest
 ghc-suggest() {
   context="Shell: $(basename $SHELL), Distro: $(source /etc/os-release && echo $NAME), Editor: $EDITOR"

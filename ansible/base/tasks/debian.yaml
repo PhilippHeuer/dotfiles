@@ -1,0 +1,8 @@
+---
+# modern wrapper for the apt
+- name: nala > install
+  become: yes
+  become_user: root
+  apt:
+    name: nala
+    state: present

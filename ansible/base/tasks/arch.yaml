@@ -1,0 +1,33 @@
+---
+# requirements
+- name: aur > requirements
+  become: yes
+  become_user: root
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - base-devel
+
+# yay
+#- name: yay > clone
+#  git:
+#    repo: https://aur.archlinux.org/yay-bin.git
+#    dest: /tmp/yay-bin
+#    update: yes
+#- name: yay > install
+#  shell: |
+#    cd /tmp/yay-bin
+#    makepkg -si --noconfirm
+
+# paru
+#- name: paru > clone
+#  git:
+#    repo: https://aur.archlinux.org/paru.git
+#    dest: /tmp/paru-bin
+#    update: yes
+#- name: paru > install
+#  shell: |
+#    cd /tmp/paru-bin
+#    makepkg -si --noconfirm
