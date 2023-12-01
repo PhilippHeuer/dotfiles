@@ -1,9 +1,21 @@
 ---
 - hosts: all
+
+  # tags
+  tags:
+    - base
+    - core
+    - dev
+    - ops
+    - desktop
+    - sway
+    - alacritty
+
   # roles
   roles:
     - role: facts         # gather facts
     - role: home          # prepare home directory
+    - role: vm            # virtualization
     - role: ansible       # ansible configuration
     - role: binfmt        # binfmt support
     # base configuration
@@ -71,6 +83,18 @@
       tags: [ops]
     - role: s3fs          # fuse-based file system backed by amazon s3
       tags: [ops]
+    # desktop
+    - role: xorg          # xorg server
+      tags: [desktop]
+    # desktop - terminal emulator (choose one)
+    - role: alacritty     # alacritty
+      tags: [desktop, alacritty]
+    # desktop - window manager (choose one)
+    - role: sway          # sway
+      tags: [desktop, sway]
+    # desktop - apps
+    - role: rofi          # application launcher
+      tags: [desktop]
     # wsl
     - role: wsl           # windows subsystem for linux configuration
 

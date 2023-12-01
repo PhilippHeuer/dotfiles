@@ -1,0 +1,8 @@
+---
+# requirements
+- name: virt-what
+  become: yes
+  become_user: root
+  pacman:
+    name: "virt-what"
+    state: present
