@@ -1,0 +1,24 @@
+---
+# install
+- name: alacritty > arch
+  include_tasks: arch.yaml
+  when: is_wsl == False and ansible_distribution == 'Archlinux'
+
+# create theme dir
+- name: alacritty > create theme dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/alacritty/themes"
+    state: directory
+    mode: 0755
+
+# theme - catppuccin
+- name: alacritty > themes > catppuccin
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "https://raw.githubusercontent.com/catppuccin/alacritty/main/{{ item.url }}"
+    dest: "{{ ansible_env.HOME }}/.config/alacritty/themes/{{ item.dest }}"
+  loop:
+    - { url: "catppuccin-frappe.yml", dest: "catppuccin-frappe.yml" }
+    - { url: "catppuccin-latte.yml", dest: "catppuccin-latte.yml" }
+    - { url: "catppuccin-macchiato.yml", dest: "catppuccin-macchiato.yml" }
+    - { url: "catppuccin-mocha.yml", dest: "catppuccin-mocha.yml" }
