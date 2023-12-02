@@ -16,7 +16,7 @@ configuration {
 
 /* foint */
 * {
-    font: "JetBrainsMono Nerd Font Mono 10";
+    font: "JetBrainsMono NFM 10";
 }
 
 /* colors */

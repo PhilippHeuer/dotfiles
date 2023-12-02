@@ -13,10 +13,8 @@ set $down j
 set $up k
 set $right l
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-#output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
 # user config
 include ~/.config/sway/config.d/*
+
+# start scripts
+exec "~/.config/sway/scripts/background.sh"
