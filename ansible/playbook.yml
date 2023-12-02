@@ -9,6 +9,7 @@
     - ops
     - desktop
     - sway
+    - hyprland
     - alacritty
 
   # roles
@@ -92,6 +93,8 @@
     # desktop - window manager (choose one)
     - role: sway          # sway
       tags: [desktop, sway]
+    - role: hyprland      # hyprland
+      tags: [desktop, hyprland]
     # desktop - apps
     - role: rofi          # application launcher
       tags: [desktop]
