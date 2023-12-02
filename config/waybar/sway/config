@@ -1,0 +1,100 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/scratchpad",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    "tray",
+    "backlight",
+    "temperature",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "clock",
+    "custom/exit"
+  ],
+  "tray": {
+    "icon-size": 24
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": [
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "sway/window": {
+    "format": "<span style=\"italic\">{}</span>",
+    "max-length": 50
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{icon} {name}",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "urgent": " ",
+      "focused": " ",
+      "default": " "
+    }
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "cpu": {
+    "format": "{usage}% C",
+    "tooltip": "false"
+  },
+  "memory": {
+    "format": "{}% M",
+    "tooltip": "false"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "clock": {
+    "format": "{:%d.%m.%Y %H:%M}",
+    "interval": 15
+  },
+  "custom/exit": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "swaymsg exit"
+  }
+}
