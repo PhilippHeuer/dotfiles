@@ -1,14 +1,14 @@
 font:
   normal:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono NFM"
     style:  Medium
   bold:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono NFM"
     style:  Bold
   italic:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono NFM"
     style:  MediumItalic
   bold_italic:
-    family: "JetBrainsMono Nerd Font Mono"
+    family: "JetBrainsMono NFM"
     style: BoldItalic
   size: 10.00
