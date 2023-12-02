@@ -95,6 +95,8 @@
     # desktop - apps
     - role: rofi          # application launcher
       tags: [desktop]
+    - role: firefox       # firefox web browser
+      tags: [desktop]
     # wsl
     - role: wsl           # windows subsystem for linux configuration
 
