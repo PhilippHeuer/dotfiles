@@ -3,10 +3,5 @@
 #
 # Read `man 5 sway-bar` for more information about this section.
 
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command i3status
-}
+# status bar
+exec_always 'pkill waybar; waybar -c ~/.config/waybar/sway/config -s ~/.config/waybar/sway/style.css'

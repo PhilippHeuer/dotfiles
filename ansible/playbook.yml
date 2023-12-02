@@ -98,7 +98,7 @@
     # desktop - apps
     - role: rofi          # application launcher
       tags: [desktop]
-    - role: thunar     # file manager
+    - role: thunar        # file manager
       tags: [desktop]
     - role: firefox       # firefox web browser
       tags: [desktop]
