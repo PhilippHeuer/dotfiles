@@ -28,3 +28,10 @@
     name: unzip
     state: present
   when: ansible_distribution == 'Archlinux'
+
+# wallpaper dir
+- name: home > wallpaper > create dir
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/wallpapers"
+    state: directory
+    mode: 0755
