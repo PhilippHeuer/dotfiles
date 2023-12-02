@@ -7,5 +7,11 @@
     name: "{{ item }}"
     state: present
   loop:
+    # graphical file manager
     - thunar
+    # virtual filesystem implementation for GIO, adds missing functionality to thunar such as automount usb drives
+    - gvfs
+    # provides a front ent for thunar to work with compressed files
     - thunar-archive-plugin
+    # backend set of tools for working with compressed files
+    - file-roller

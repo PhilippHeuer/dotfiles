@@ -1,0 +1,7 @@
+---
+# install
+#
+# hyprland does not support virtual machines
+- name: hyprland > arch
+  include_tasks: arch.yaml
+  when: virt_type.stdout == '' and ansible_distribution == 'Archlinux'
