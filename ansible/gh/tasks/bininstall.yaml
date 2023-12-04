@@ -16,7 +16,7 @@
 # install
 - name: gh > install
   ansible.builtin.unarchive:
-    src: "/tmp/gh-v{{ gh_version }}-linux-amd64.tar.gz"
+    src: "/tmp/gh-v{{ version.gh }}-linux-amd64.tar.gz"
     dest: "{{ ansible_env.HOME }}/.local"
     remote_src: yes
     extra_opts:

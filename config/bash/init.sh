@@ -8,6 +8,7 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/node/bin" # node
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin" # jetbrains toolbox and apps
+export PATH="$PATH:$HOME/.config/bin" # scripts
 
 # ansible
 export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"

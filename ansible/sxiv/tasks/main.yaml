@@ -1,0 +1,5 @@
+---
+# install
+- name: sxiv > arch
+  include_tasks: arch.yaml
+  when: is_wsl == False and ansible_distribution == 'Archlinux'

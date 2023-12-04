@@ -4,5 +4,5 @@
   become: yes
   become_user: root
   pacman:
-    name: rofi
+    name: "sxiv"
     state: present

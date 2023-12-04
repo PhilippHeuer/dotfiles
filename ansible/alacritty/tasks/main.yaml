@@ -2,7 +2,10 @@
 # install
 - name: alacritty > arch
   include_tasks: arch.yaml
-  when: is_wsl == False and ansible_distribution == 'Archlinux'
+  when: ansible_distribution == 'Archlinux'
+- name: alacritty > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 # create theme dir
 - name: alacritty > create theme dir

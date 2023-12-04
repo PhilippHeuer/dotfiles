@@ -2,4 +2,7 @@
 # install
 - name: rofi > arch
   include_tasks: arch.yaml
-  when: is_wsl == False and ansible_distribution == 'Archlinux'
+  when: ansible_distribution == 'Archlinux'
+- name: wofi > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

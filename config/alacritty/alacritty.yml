@@ -5,7 +5,6 @@ env:
   WINT_X11_SCALE_FACTOR: '1.0'
 
 import:
-  - ~/.config/alacritty/fonts.yml
   - ~/.config/alacritty/themes/catppuccin-mocha.yml
 
 live_config_reload: true
@@ -17,6 +16,7 @@ scrolling:
 selection:
   save_to_clipboard: true
 
+# window
 window:
   class:
     general: Alacritty
@@ -25,3 +25,19 @@ window:
   padding:
     x: 0
     y: 0
+
+# font
+font:
+  normal:
+    family: "JetBrainsMonoNL NFM"
+    style:  Medium
+  bold:
+    family: "JetBrainsMonoNL NFM"
+    style:  Bold
+  italic:
+    family: "JetBrainsMonoNL NFM"
+    style:  MediumItalic
+  bold_italic:
+    family: "JetBrainsMonoNL NFM"
+    style: BoldItalic
+  size: 11.00

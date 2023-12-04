@@ -1,12 +1,22 @@
+### Settings
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
 ### Key bindings
 #
 # Basics:
 #
 # Start a terminal
 bindsym $mod+Return exec $term
+bindsym $mod+t exec $term
 
 # Start your launcher
 bindsym $mod+Space exec $menu
+bindsym $mod+m exec $menu
 
 # Kill focused window
 bindsym $mod+q kill

@@ -1,2 +1,0 @@
-# application launcher
-set $menu "rofi -show"

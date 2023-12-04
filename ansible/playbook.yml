@@ -21,6 +21,7 @@
     - role: binfmt        # binfmt support
     # base configuration
     - role: base          # basic distro configuration
+    - role: fonts         # fonts
     # ssh
     - role: ssh           # ssh client configuration
     # core tools
@@ -99,6 +100,8 @@
     - role: rofi          # application launcher
       tags: [desktop]
     - role: thunar        # file manager
+      tags: [desktop]
+    - role: sxiv          # image viewer
       tags: [desktop]
     - role: firefox       # firefox web browser
       tags: [desktop]
