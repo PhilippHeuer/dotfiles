@@ -4,6 +4,10 @@
 
 ### Variables
 #
+
+# default size
+set $displaySize "1080x720"
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
@@ -16,6 +20,9 @@ set $menu "rofi -show"
 
 # user config
 include ~/.config/sway/config.d/*
+
+# resolution
+output WL-1 pos 0 0 res "$displaySize"
 
 # start scripts
 exec "~/.config/sway/scripts/background.sh"

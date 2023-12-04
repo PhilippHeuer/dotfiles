@@ -18,8 +18,9 @@ cleanup() {
   if [ -n "$last_pid" ]; then
     kill "$last_pid"
   fi
+  exit 0
 }
-trap cleanup EXIT TERM
+trap cleanup EXIT TERM INT HUP QUIT ABRT
 
 # logic
 while true; do

@@ -90,12 +90,12 @@
       tags: [desktop]
     # desktop - terminal emulator (choose one)
     - role: alacritty     # alacritty
-      tags: [desktop, alacritty]
+      tags: [desktop]
     # desktop - window manager (choose one)
     - role: sway          # sway
-      tags: [desktop, sway]
+      tags: [desktop]
     - role: hyprland      # hyprland
-      tags: [desktop, hyprland]
+      tags: [desktop]
     # desktop - apps
     - role: rofi          # application launcher
       tags: [desktop]
