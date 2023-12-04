@@ -14,3 +14,10 @@
     name: sshfs
     state: present
   when: ansible_distribution == 'Archlinux'
+- name: sshfs > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: sshfs
+    state: present
+  when: ansible_distribution == 'openSUSE Tumbleweed'

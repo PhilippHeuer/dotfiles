@@ -1,0 +1,7 @@
+---
+- name: rust > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: rust
+    state: present

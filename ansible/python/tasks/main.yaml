@@ -6,3 +6,6 @@
 - name: python > debian / ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: python > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

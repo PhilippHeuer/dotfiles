@@ -1,19 +1,14 @@
 ---
 # install
-- name: binfmt > qemu-user-static
-  become: yes
-  become_user: root
-  apt:
-    name: qemu-user-static
-    state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-- name: binfmt > qemu-user-static
-  become: yes
-  become_user: root
-  pacman:
-    name: qemu-user-static
-    state: present
+- name: binfmt > arch
+  include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: binfmt > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: binfmt > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 
 # config
 - name: binfmt > config

@@ -1,0 +1,7 @@
+---
+- name: fastfetch > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: fastfetch
+    state: present

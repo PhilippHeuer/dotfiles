@@ -1,0 +1,7 @@
+---
+- name: binfmt > qemu-user-static
+  become: yes
+  become_user: root
+  apt:
+    name: qemu-user-static
+    state: present

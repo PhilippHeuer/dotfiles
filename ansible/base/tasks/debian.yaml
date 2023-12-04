@@ -6,3 +6,12 @@
   apt:
     name: nala
     state: present
+
+# unzip
+- name: unzip > install
+  become: yes
+  become_user: root
+  apt:
+    name: unzip
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

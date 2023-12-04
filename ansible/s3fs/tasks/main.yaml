@@ -6,3 +6,6 @@
 - name: s3fs > debian / ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: s3fs > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

@@ -6,6 +6,9 @@
 - name: sway > debian or ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: sway > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 
 # create theme dir
 - name: sway > create theme dir

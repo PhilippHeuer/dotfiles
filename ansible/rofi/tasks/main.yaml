@@ -6,3 +6,6 @@
 - name: rofi > debian or ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: rofi > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

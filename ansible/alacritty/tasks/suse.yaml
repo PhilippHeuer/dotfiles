@@ -1,0 +1,7 @@
+---
+- name: alacritty > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: alacritty
+    state: present

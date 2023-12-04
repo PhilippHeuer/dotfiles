@@ -1,4 +1,12 @@
 ---
+# unzip
+- name: unzip > install
+  become: yes
+  become_user: root
+  pacman:
+    name: unzip
+    state: present
+
 # requirements
 - name: aur > requirements
   become: yes

@@ -1,11 +1,7 @@
 ---
-# install
 - name: install
   become: yes
   become_user: root
   pacman:
-    name: "{{ item }}"
+    name: alacritty
     state: present
-  loop:
-    - alacritty
-    - ttf-jetbrains-mono-nerd

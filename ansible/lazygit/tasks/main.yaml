@@ -3,9 +3,12 @@
 - name: lazygit > arch
   include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: lazygit > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 - name: lazygit > bin install
   include_tasks: bininstall.yaml
-  when: ansible_distribution != 'Archlinux'
+  when: ansible_distribution != 'Archlinux' and ansible_distribution != 'openSUSE Tumbleweed'
 
 # create theme dir
 - name: lazygit > theme > create dir

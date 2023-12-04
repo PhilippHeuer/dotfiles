@@ -1,5 +1,4 @@
 ---
-# install
 - name: install
   become: yes
   become_user: root

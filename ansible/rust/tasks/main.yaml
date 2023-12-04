@@ -3,3 +3,6 @@
 - name: rust > arch
   include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: rust > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

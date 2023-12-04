@@ -1,0 +1,8 @@
+---
+# unzip
+- name: unzip > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: unzip
+    state: present

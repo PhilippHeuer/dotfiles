@@ -1,0 +1,7 @@
+---
+- name: htop > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: htop
+    state: present
