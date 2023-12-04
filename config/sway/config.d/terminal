@@ -1,3 +1,0 @@
-# terminal
-set $term alacritty
-set $term_cwd $term --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"

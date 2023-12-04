@@ -3,6 +3,10 @@
 - name: install
   become: yes
   become_user: root
-  pacman:
-    name: rofi
+  apt:
+    name: "{{ item }}"
     state: present
+  loop:
+    - sway
+    - swaybg
+    - waybar

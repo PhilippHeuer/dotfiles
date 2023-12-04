@@ -3,6 +3,6 @@
 - name: install
   become: yes
   become_user: root
-  pacman:
+  apt:
     name: rofi
     state: present

@@ -1,0 +1,15 @@
+---
+# user fonts dir
+- name: fonts > create dir
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/fonts"
+    state: directory
+    mode: 0755
+
+# install
+- name: fonts > jetbrains mono nerd font
+  include_tasks: jetbrainsmono.yaml
+
+# reload font cache
+- name: fonts > reload font cache
+  command: "fc-cache -f -v"

@@ -2,19 +2,34 @@
 
 # properties
 image_dir="$HOME/.local/share/backgrounds"
+lock_file="/tmp/sway-background-script.lock"
 last_pid=""
+
+# check lock file
+if [ -e "$lock_file" ]; then
+  echo "Script is already running. Exiting."
+  exit 1
+fi
+echo $$ > "$lock_file"
 
 # cleanup
 cleanup() {
+  rm -f "$lock_file"
   if [ -n "$last_pid" ]; then
     kill "$last_pid"
   fi
 }
-trap cleanup EXIT
+trap cleanup EXIT TERM
 
 # logic
 while true; do
-  (swaybg -i $(find "$image_dir/." -type f | shuf -n1) -m fill) &
+  bgimage=$(find "$image_dir/." -type f | shuf -n1)
+  if [ -z "$bgimage" ]; then
+    echo "No images found in $image_dir"
+    exit 1
+  fi
+
+  (swaybg -i $bgimage -m fill) &
   new_pid=$!
   sleep 1
 

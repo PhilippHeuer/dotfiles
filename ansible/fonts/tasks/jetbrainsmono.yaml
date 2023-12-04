@@ -1,0 +1,17 @@
+---
+# download
+- name: fonts > jetbrains mono > download
+  environment: "{{ proxy_env }}"
+  get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.tar.xz"
+    dest: "/tmp/JetBrainsMono.tar.xz"
+
+# install
+- name: fonts > jetbrains mono > install
+  ansible.builtin.unarchive:
+    src: "/tmp/JetBrainsMono.tar.xz"
+    dest: "{{ ansible_env.HOME }}/.local/share/fonts"
+    remote_src: yes
+    extra_opts:
+    - "--exclude=README.md"
+    - "--exclude=OFL.txt"
