@@ -1,0 +1,7 @@
+---
+- name: minio-client > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: minio-client
+    state: present

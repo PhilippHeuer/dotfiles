@@ -1,0 +1,7 @@
+---
+- name: nodejs21 > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: nodejs21
+    state: present

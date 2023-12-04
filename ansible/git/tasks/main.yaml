@@ -1,11 +1,14 @@
 ---
 # install
-- name: btop > arch
+- name: git > arch
   include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
-- name: btop > debian / ubuntu
+- name: git > debian / ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: git > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 
 # proxy
 - name: git > http proxy

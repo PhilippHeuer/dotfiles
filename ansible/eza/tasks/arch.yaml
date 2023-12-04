@@ -1,8 +1,7 @@
 ---
-- name: eza > install (pacman)
+- name: eza > install
   become: yes
   become_user: root
   pacman:
     name: eza
     state: present
-  when: ansible_distribution == 'Archlinux'

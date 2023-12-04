@@ -5,4 +5,3 @@
   pacman:
     name: starship
     state: present
-  when: ansible_distribution == 'Archlinux'

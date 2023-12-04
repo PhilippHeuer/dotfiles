@@ -6,5 +6,5 @@
   environment: "{{ proxy_env }}"
   community.general.ansible_galaxy_install:
     type: collection
-    name: community.general:7.5.0
+    name: community.general:8.0.2
     force: true

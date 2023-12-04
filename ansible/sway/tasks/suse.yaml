@@ -1,0 +1,11 @@
+---
+- name: install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - sway
+    - swaybg
+    - waybar

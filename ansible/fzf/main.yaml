@@ -3,6 +3,9 @@
 - name: fzf > arch
   include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: fzf > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 - name: fzf > bin install
   include_tasks: bininstall.yaml
-  when: ansible_distribution != 'Archlinux'
+  when: ansible_distribution != 'Archlinux' and ansible_distribution != 'openSUSE Tumbleweed'

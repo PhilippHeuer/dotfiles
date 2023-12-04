@@ -1,0 +1,11 @@
+---
+- name: python3 > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - python311
+  - python311-pip
+  - python311-pipx

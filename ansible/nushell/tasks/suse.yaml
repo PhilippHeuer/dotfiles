@@ -1,0 +1,14 @@
+---
+- name: nushell > shells repo
+  become: yes
+  become_user: root
+  community.general.zypper_repository:
+    repo: 'https://download.opensuse.org/repositories/shells/openSUSE_Tumbleweed/shells.repo'
+    state: present
+
+- name: nushell > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: nushell
+    state: present

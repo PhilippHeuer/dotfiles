@@ -3,6 +3,9 @@
 - name: sd > arch
   include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: sd > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 - name: sd > bin install
   include_tasks: bininstall.yaml
-  when: ansible_distribution != 'Archlinux'
+  when: ansible_distribution != 'Archlinux' and ansible_distribution != 'openSUSE Tumbleweed'

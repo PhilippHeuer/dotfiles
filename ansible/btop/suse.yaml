@@ -1,0 +1,7 @@
+---
+- name: btop > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: btop
+    state: present

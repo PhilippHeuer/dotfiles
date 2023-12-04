@@ -6,6 +6,9 @@
 - name: alacritty > debian or ubuntu
   include_tasks: debian.yaml
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: alacritty > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 
 # create theme dir
 - name: alacritty > create theme dir

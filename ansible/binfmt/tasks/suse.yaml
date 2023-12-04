@@ -1,0 +1,7 @@
+---
+- name: binfmt > qemu-user-static
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: qemu
+    state: present

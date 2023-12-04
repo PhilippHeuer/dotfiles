@@ -1,0 +1,8 @@
+---
+# requirements
+- name: virt-what
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: "virt-what"
+    state: present
