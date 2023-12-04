@@ -13,3 +13,4 @@
 # reload font cache
 - name: fonts > reload font cache
   command: "fc-cache -f -v"
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

@@ -21,36 +21,40 @@
             "format": "┌────────────── \u001b[1mSoftware\u001b[0m ────────────────────────────────────────┐"
         },
         {
-            "key": "  Distro       ",
+            "key": "  Distro        ",
             "type": "os"
         },
         {
-            "key": "  Host         ",
+            "key": "  Host          ",
             "type": "host"
         },
         {
-            "key": "  Kernel       ",
+            "key": "  Kernel        ",
             "type": "kernel",
             "format": "{1} {2}"
         },
         {
-            "key": "  LoginManager ",
+            "key": "  Desktop       ",
+            "type": "de"
+        },
+        {
+            "key": "  WindowManager ",
             "type": "wm"
         },
         {
-            "key": "  WM Theme     ",
+            "key": "  WM Theme      ",
             "type": "wmtheme"
         },
         {
-            "key": "  Terminal     ",
+            "key": "  Terminal      ",
             "type": "terminal"
         },
         {
-            "key": "  Shell        ",
+            "key": "  Shell         ",
             "type": "shell"
         },
         {
-            "key": "  Font         ",
+            "key": "  Font          ",
             "type": "terminalfont"
         },
         {
@@ -58,39 +62,39 @@
             "format": "├────────────── \u001b[1mHardware\u001b[0m ────────────────────────────────────────┤"
         },
         {
-            "key": "  CPU          ",
+            "key": "  CPU           ",
             "type": "cpu"
         },
         {
-            "key": "  GPU          ",
+            "key": "  GPU           ",
             "type": "gpu"
         },
         {
-            "key": "  Memory       ",
+            "key": "  Memory        ",
             "type": "memory"
         },
         {
-            "key": "  Swap         ",
+            "key": "  Swap          ",
             "type": "swap"
         },
         {
-            "key": "  Disk         ",
+            "key": "  Disk          ",
             "type": "disk"
         },
         {
-            "key": "  Display      ",
+            "key": "  Display       ",
             "type": "display"
         },
         {
-            "key": "  Backlight    ",
+            "key": "  Backlight     ",
             "type": "brightness"
         },
         {
-            "key": "  Battery      ",
+            "key": "  Battery       ",
             "type": "battery"
         },
         {
-            "key": "  Uptime       ",
+            "key": "  Uptime        ",
             "type": "uptime"
         },
         {

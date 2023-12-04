@@ -5,7 +5,7 @@ Description=tmux server
 Type=forking
 User=1000
 ExecStart=/usr/bin/tmux start-server
-ExecStop=/usr/bin/tmux kill-server
+ExecStop=/usr/bin/tmux kill-server || /bin/true
 
 [Install]
 WantedBy=multi-user.target
