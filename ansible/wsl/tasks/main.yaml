@@ -1,12 +1,14 @@
----
-# check for wsl environment
-- name: wsl > check
-  stat:
-    path: /mnt/c/windows
-  register: is_wsl
-  run_once: true
 
-# include wsl-specific tasks
-- name: wsl > include tasks
-  include_tasks: wsl.yaml
-  when: is_wsl.stat.exists
+---
+# install
+- name: tmux > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
+
+# wsl.conf
+- name: wsl > distro > wsl.conf
+  become: yes
+  become_user: root
+  copy:
+    src: wsl.conf
+    dest: /etc/wsl.conf

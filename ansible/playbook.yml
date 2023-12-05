@@ -108,6 +108,7 @@
       tags: [desktop]
     # wsl
     - role: wsl           # windows subsystem for linux configuration
+      when: is_wsl == True
 
   # variables
   vars:
