@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # properties
-image_dir="$HOME/.local/share/backgrounds"
+image_dir="$HOME/.local/share/wallpapers"
 lock_file="/tmp/sway-background-script.lock"
 last_pid=""
 

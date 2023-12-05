@@ -1,0 +1,12 @@
+---
+- name: wsl > patterns
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: "{{ item }}"
+    state: present
+    type: pattern
+  loop:
+  - wsl_gui
+  - wsl_base
+  - wsl_systemd

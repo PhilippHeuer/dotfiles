@@ -1,8 +1,0 @@
----
-# wsl.conf
-- name: wsl > distro > wsl.conf
-  become: yes
-  become_user: root
-  copy:
-    src: wsl.conf
-    dest: /etc/wsl.conf
