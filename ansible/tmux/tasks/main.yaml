@@ -1,19 +1,14 @@
 ---
 # install
-- name: tmux > install
-  become: yes
-  become_user: root
-  apt:
-    name: tmux
-    state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-- name: tmux > install
-  become: yes
-  become_user: root
-  pacman:
-    name: tmux
-    state: present
+- name: tmux > arch
+  include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
+- name: tmux > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: tmux > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
 
 # service
 - name: tmux > service > create

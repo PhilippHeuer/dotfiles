@@ -1,0 +1,7 @@
+---
+- name: tmux > install
+  become: yes
+  become_user: root
+  pacman:
+    name: tmux
+    state: present
