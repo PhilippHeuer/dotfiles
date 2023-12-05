@@ -1,0 +1,7 @@
+directories:
+- path: config
+  target: $HOME/.config
+- path: config/ssh
+  target: $HOME/.ssh
+- path: scripts
+  target: $HOME/.local/bin

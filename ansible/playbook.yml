@@ -22,6 +22,7 @@
     # base configuration
     - role: base          # basic distro configuration
     - role: fonts         # fonts
+    - role: dotfilescli   # simple cli tool to manage dotfiles
     # ssh
     - role: ssh           # ssh client configuration
     # core tools
@@ -86,7 +87,7 @@
     - role: s3fs          # fuse-based file system backed by amazon s3
       tags: [ops]
     # desktop
-    - role: xorg          # xorg server
+    - role: wayland       # wayland
       tags: [desktop]
     # desktop - terminal emulator (choose one)
     - role: alacritty     # alacritty
@@ -177,3 +178,5 @@
       minioclient: "RELEASE.2023-11-20T16-30-59Z"
       # renovate: datasource=github-releases depName=databricks/click
       click: "0.6.3"
+      # renovate: datasource=github-releases depName=PhilippHeuer/dotfiles-cli
+      dotfilescli: "0.1.0"

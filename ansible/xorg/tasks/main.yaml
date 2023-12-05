@@ -1,8 +1,0 @@
----
-# install
-- name: xorg > arch
-  include_tasks: arch.yaml
-  when: is_wsl == False and ansible_distribution == 'Archlinux'
-- name: xorg > debian or ubuntu
-  include_tasks: debian.yaml
-  when: is_wsl == False and (ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu')

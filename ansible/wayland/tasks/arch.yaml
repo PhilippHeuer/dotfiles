@@ -1,0 +1,21 @@
+---
+# ensure user has video group membership
+- name: groups > append video
+  become: yes
+  become_user: root
+  user:
+    name: '{{ user }}'
+    groups: video
+    append: yes
+
+# install
+- name: install
+  become: yes
+  become_user: root
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - xorg-wayland
+    - xorg-xinit
+    - xf86-video-vesa

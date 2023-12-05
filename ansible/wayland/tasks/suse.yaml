@@ -1,6 +1,8 @@
 ---
 # ensure user has video group membership
 - name: groups > append video
+  become: yes
+  become_user: root
   user:
     name: '{{ user }}'
     groups: video
@@ -10,10 +12,8 @@
 - name: install
   become: yes
   become_user: root
-  pacman:
+  community.general.zypper:
     name: "{{ item }}"
     state: present
   loop:
-    - xorg-server
-    - xorg-xinit
-    - xf86-video-vesa
+    - xwayland

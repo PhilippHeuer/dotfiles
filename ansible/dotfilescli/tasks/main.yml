@@ -1,0 +1,15 @@
+---
+# check
+- name: dotfiles-cli > check version
+  command: "dotfiles version"
+  register: dotfilescli_version_output
+  ignore_errors: true
+
+# download
+- name: dotfiles-cli > download
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "https://github.com/PhilippHeuer/dotfiles-cli/releases/download/v{{ version.dotfilescli }}/linux_amd64"
+    dest: "{{ ansible_env.HOME }}/.local/bin/dotfiles"
+    mode: u+x
+  when: "version.dotfilescli not in dotfilescli_version_output.stdout | default('')"

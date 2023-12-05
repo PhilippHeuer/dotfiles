@@ -1,22 +1,10 @@
 #!/usr/bin/env bash
 
 # properties
-config_dir="$(pwd)/config"
-destination_dir="$HOME/.config"
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd "$config_dir" || exit
-
-find . -type d -exec mkdir -p "$destination_dir/{}" \; # sync directories
-find . -type f -exec sh -c 'ln -sf "$(readlink -f "$0")" "$1/$0"' {} "$destination_dir" \; # symlink files
-
-# ssh config
-ln -sf "$config_dir/ssh/config" "$HOME/.ssh/config"
-
-# scripts
-for path in $(pwd)/scripts/*; do
-  filename=$(basename "$path")
-  ln -sf "$path" "$HOME/.local/bin/$filename"
-done
+# install dotfiles
+dotfiles install "$script_dir" --mode symlink
 
 # reload
 tmux source $HOME/.config/tmux/tmux.conf
