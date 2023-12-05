@@ -1,0 +1,7 @@
+---
+- name: go > install
+  become: yes
+  become_user: root
+  community.general.zypper:
+    name: go
+    state: present
