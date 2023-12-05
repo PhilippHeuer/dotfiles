@@ -1,0 +1,11 @@
+---
+# install
+- name: golang > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: golang > debian / ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: golang > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

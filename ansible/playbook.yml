@@ -8,9 +8,6 @@
     - dev
     - ops
     - desktop
-    - sway
-    - hyprland
-    - alacritty
 
   # roles
   roles:
@@ -56,6 +53,7 @@
     - role: java
     - role: nodejs
     - role: python
+    - role: golang
     # development tools
     - role: git           # distributed version control system
       tags: [dev]
