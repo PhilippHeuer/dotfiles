@@ -1,2 +1,8 @@
 # nushell
 config/nushell/history.txt
+
+# ssh
+config/ssh/servers
+
+# docs (wip)
+docs
