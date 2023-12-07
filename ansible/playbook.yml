@@ -16,12 +16,15 @@
     - role: vm            # virtualization
     - role: ansible       # ansible configuration
     - role: binfmt        # binfmt support
+
     # base configuration
     - role: base          # basic distro configuration
     - role: fonts         # fonts
     - role: dotfilescli   # simple cli tool to manage dotfiles
+
     # ssh
     - role: ssh           # ssh client configuration
+
     # core tools
     - role: bat           # cat clone with syntax highlighting
       tags: [core]
@@ -41,19 +44,23 @@
       tags: [core]
     - role: zoxide        # fast cd command that learns your habits
       tags: [core]
+
     # terminal
     - role: tmux          # terminal multiplexer
     - role: zellij        # terminal multiplexer (alternative to tmux)
     - role: nushell       # modern shell written in rust
     - role: starship      # cross-shell prompt
+
     # editor
     - role: neovim        # vim-fork focused on extensibility and usability
     - role: fuzzmux       # fuzzy finder for ssh, projects, k8s, and more to create terminal multiplexer sessions
+
     # language toolchains
     - role: java
     - role: nodejs
     - role: python
     - role: golang
+
     # development tools
     - role: git           # distributed version control system
       tags: [dev]
@@ -71,19 +78,23 @@
       tags: [dev]
     - role: ripgrep       # grep-like text search for source code
       tags: [dev]
-    # ops
+
+    # k8s
     - role: kubectl       # kubernetes cli
       tags: [ops]
     - role: k9s           # terminal UI to interact with your kubernetes clusters
       tags: [ops]
     - role: helm          # package manager for kubernetes
       tags: [ops]
-    - role: minioclient   # minio client
-      tags: [ops]
     - role: click         # cli interactive controller for kubernetes
+      tags: [ops]
+
+    # s3
+    - role: minioclient   # minio client
       tags: [ops]
     - role: s3fs          # fuse-based file system backed by amazon s3
       tags: [ops]
+
     # desktop
     - role: wayland       # wayland
       tags: [desktop]
@@ -104,6 +115,7 @@
       tags: [desktop]
     - role: firefox       # firefox web browser
       tags: [desktop]
+
     # wsl
     - role: wsl           # windows subsystem for linux configuration
       when: is_wsl == True
