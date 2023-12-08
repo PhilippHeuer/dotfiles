@@ -59,7 +59,7 @@
   desktop = {
     imports = [
       # desktop
-      #./xwayland.nix
+      ./wayland.nix
 
       # terminal emulator (choose one)
       ./alacritty.nix
@@ -72,7 +72,17 @@
       ./sxiv.nix
 
       # browser
-      ./firefox.nix
+      # ./firefox.nix
+    ];
+  };
+  wm-sway = {
+    imports = [
+      ./sway.nix
+    ];
+  };
+  wm-hyprland = {
+    imports = [
+      ./hyprland.nix
     ];
   };
 }

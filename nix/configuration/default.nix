@@ -43,6 +43,8 @@ in {
       inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
+      nixosRoles.desktop
+      nixosRoles.wm-sway
     ];
   };
 }
