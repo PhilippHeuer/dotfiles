@@ -78,6 +78,8 @@
       tags: [dev]
     - role: ripgrep       # grep-like text search for source code
       tags: [dev]
+    - role: onefetch      # terminal tool to display git repository summary
+      tags: [dev]
 
     # k8s
     - role: kubectl       # kubernetes cli
@@ -191,3 +193,5 @@
       click: "0.6.3"
       # renovate: datasource=github-releases depName=PhilippHeuer/dotfiles-cli
       dotfilescli: "0.1.0"
+      # renovate: datasource=github-releases depName=o2sh/onefetch
+      onefetch: "2.19.0"

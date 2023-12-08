@@ -1,0 +1,7 @@
+---
+- name: onefetch > install
+  become: yes
+  become_user: root
+  pacman:
+    name: onefetch
+    state: present

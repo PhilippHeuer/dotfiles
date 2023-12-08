@@ -57,6 +57,8 @@
   discard = checkout --
   # list conflicts
   list-conflicts = diff --name-only --diff-filter=U
+  # summary
+  summary = !onefetch --no-bots
 
 [interactive]
   diffFilter = delta --color-only

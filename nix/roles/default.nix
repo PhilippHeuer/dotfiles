@@ -43,6 +43,7 @@
       ./lazygit.nix
       ./precommit.nix
       ./ripgrep.nix
+      ./onefetch.nix
 
       # k8s
       ./kubectl.nix
