@@ -1,6 +1,6 @@
 ---
 # check if version is the current one / delete if not matching
-- name: node > check version
+- name: nushell > check version
   command: "nu --version"
   register: nu_version_output
   ignore_errors: true
