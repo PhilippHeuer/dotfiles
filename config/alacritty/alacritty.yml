@@ -41,3 +41,14 @@ font:
     family: "JetBrainsMonoNL NFM"
     style: BoldItalic
   size: 11.00
+
+# mouse bindings
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+  - { mouse: Right,  action: Paste }
+
+# key bindings
+key_bindings:
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: V, mods: Control,       action: Paste }
