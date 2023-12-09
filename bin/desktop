@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# wm selection
+echo "Which window manager do you want to use?"
+echo "1) Sway"
+echo "2) Hyprland"
+read -r wm
+
+case $wm in
+  1)
+    wm_name="sway"
+    ;;
+  2)
+    wm_name="hyprland"
+    ;;
+  *)
+    echo "Invalid selection. Exiting."
+    exit 1
+    ;;
+esac
+echo "You selected $wm_name"
+
+# remove wslg .X11-unix mount to delegate via xwayland
+if [[ -z $WSL_DISTRO_NAME ]]; then
+    if findmnt --target "/tmp/.X11-unix" &> /dev/null; then
+        sudo umount /tmp/.X11-unix
+        sudo chmod 1755 /tmp/.X11-unix/
+    fi
+fi
+
+# start window manager
+if [[ $wm_name == "sway" ]]; then
+    # configure and start sway
+    echo "set \$displaySize \"1280x720\"" > ~/.config/sway/config.d/displaySize
+    sway -d
+fi

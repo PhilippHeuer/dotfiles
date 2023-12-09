@@ -111,8 +111,8 @@ directories:
   rules:
   - rule: inPath("starship")
 
-# scripts
-- path: config/bin
+# bin / scripts
+- path: bin
   target: $HOME/.local/bin
 
 # ssh
