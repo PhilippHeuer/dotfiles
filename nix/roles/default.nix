@@ -56,23 +56,9 @@
       ./s3fs.nix
     ];
   };
-  desktop = {
+  wm = {
     imports = [
-      # desktop
       ./wayland.nix
-
-      # terminal emulator (choose one)
-      ./alacritty.nix
-
-      # window manager (choose one)
-      ./sway.nix
-      # ./hyprland.nix
-      ./rofi.nix
-      ./thunar.nix
-      ./sxiv.nix
-
-      # browser
-      # ./firefox.nix
     ];
   };
   wm-sway = {
@@ -85,17 +71,12 @@
       ./hyprland.nix
     ];
   };
+  desktop = {
+    imports = [
+      ./alacritty.nix
+      ./rofi.nix
+      ./thunar.nix
+      ./sxiv.nix
+    ];
+  };
 }
-
-## base configuration
-# #   - role: binfmt        # binfmt support
-# #   - role: base          # basic distro configuration
-#
-#    # desktop - apps
-#    rofi # role: rofi
-#    xfce.thunar # role: thunar
-#    sxiv # role: sxiv
-#    firefox # role: firefox
-#
-#    xdg-utils # for opening default programs when clicking links
-#    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout

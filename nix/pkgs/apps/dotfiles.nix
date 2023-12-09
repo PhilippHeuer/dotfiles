@@ -7,7 +7,7 @@
 
 buildGoModule rec {
   pname = "dotfiles-cli";
-  version = "v0.1.0";
+  version = "v0.2.0";
 
   src = fetchFromGitHub {
     owner = "PhilippHeuer";
