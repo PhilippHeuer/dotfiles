@@ -2,13 +2,13 @@ directories:
 # alacritty
 - path: config/alacritty
   target: $HOME/.config/alacritty
-  conditions:
+  rules:
   - rule: inPath("alacritty")
 
 # ansible
 - path: config/ansible
   target: $HOME/.config/ansible
-  conditions:
+  rules:
   - rule: inPath("ansible")
 
 # bash
@@ -18,55 +18,55 @@ directories:
 # bat
 - path: config/bat
   target: $HOME/.config/bat
-  conditions:
+  rules:
   - rule: inPath("bat")
 
 # btop
 - path: config/btop
   target: $HOME/.config/btop
-  conditions:
+  rules:
   - rule: inPath("btop")
 
 # fastfetch
 - path: config/fastfetch
   target: $HOME/.config/fastfetch
-  conditions:
+  rules:
   - rule: inPath("fastfetch")
 
 # gh copilot
 - path: config/gh-copilot
   target: $HOME/.config/gh-copilot
-  conditions:
+  rules:
   - rule: inPath("gh")
 
 # git
 - path: config/git
   target: $HOME/.config/git
-  conditions:
+  rules:
   - rule: inPath("git")
 
 # k9s
 - path: config/k9s
   target: $HOME/.config/k9s
-  conditions:
+  rules:
   - rule: inPath("k9s")
 
 # lazygit
 - path: config/lazygit
   target: $HOME/.config/lazygit
-  conditions:
+  rules:
   - rule: inPath("lazygit")
 
 # nushell
 - path: config/nushell
   target: $HOME/.config/nushell
-  conditions:
+  rules:
   - rule: inPath("nu")
 
 # neovim
 - path: config/nvim
   target: $HOME/.config/nvim
-  conditions:
+  rules:
   - rule: inPath("nvim")
 
 # precommit
@@ -76,19 +76,19 @@ directories:
 # rofi
 - path: config/rofi
   target: $HOME/.config/rofi
-  conditions:
+  rules:
   - rule: inPath("rofi")
 
 # sway
 - path: config/sway
   target: $HOME/.config/sway
-  conditions:
+  rules:
   - rule: inPath("sway")
 
 # tmux
 - path: config/tmux
   target: $HOME/.config/tmux
-  conditions:
+  rules:
   - rule: inPath("tmux")
 
 # waybar
@@ -102,13 +102,13 @@ directories:
 # zellij
 - path: config/zellij
   target: $HOME/.config/zellij
-  conditions:
+  rules:
   - rule: inPath("zellij")
 
 # starship
 - path: config/starship.toml
   target: $HOME/.config/starship.toml
-  conditions:
+  rules:
   - rule: inPath("starship")
 
 # scripts
