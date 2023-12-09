@@ -1,7 +1,120 @@
 directories:
-- path: config
-  target: $HOME/.config
+# alacritty
+- path: config/alacritty
+  target: $HOME/.config/alacritty
+  conditions:
+  - rule: inPath("alacritty")
+
+# ansible
+- path: config/ansible
+  target: $HOME/.config/ansible
+  conditions:
+  - rule: inPath("ansible")
+
+# bash
+- path: config/bash
+  target: $HOME/.config/bash
+
+# bat
+- path: config/bat
+  target: $HOME/.config/bat
+  conditions:
+  - rule: inPath("bat")
+
+# btop
+- path: config/btop
+  target: $HOME/.config/btop
+  conditions:
+  - rule: inPath("btop")
+
+# fastfetch
+- path: config/fastfetch
+  target: $HOME/.config/fastfetch
+  conditions:
+  - rule: inPath("fastfetch")
+
+# gh copilot
+- path: config/gh-copilot
+  target: $HOME/.config/gh-copilot
+  conditions:
+  - rule: inPath("gh")
+
+# git
+- path: config/git
+  target: $HOME/.config/git
+  conditions:
+  - rule: inPath("git")
+
+# k9s
+- path: config/k9s
+  target: $HOME/.config/k9s
+  conditions:
+  - rule: inPath("k9s")
+
+# lazygit
+- path: config/lazygit
+  target: $HOME/.config/lazygit
+  conditions:
+  - rule: inPath("lazygit")
+
+# nushell
+- path: config/nushell
+  target: $HOME/.config/nushell
+  conditions:
+  - rule: inPath("nu")
+
+# neovim
+- path: config/nvim
+  target: $HOME/.config/nvim
+  conditions:
+  - rule: inPath("nvim")
+
+# precommit
+- path: config/precommit
+  target: $HOME/.config/precommit
+
+# rofi
+- path: config/rofi
+  target: $HOME/.config/rofi
+  conditions:
+  - rule: inPath("rofi")
+
+# sway
+- path: config/sway
+  target: $HOME/.config/sway
+  conditions:
+  - rule: inPath("sway")
+
+# tmux
+- path: config/tmux
+  target: $HOME/.config/tmux
+  conditions:
+  - rule: inPath("tmux")
+
+# waybar
+- path: config/waybar
+  target: $HOME/.config/waybar
+
+# X11
+- path: config/X11
+  target: $HOME/.config/X11
+
+# zellij
+- path: config/zellij
+  target: $HOME/.config/zellij
+  conditions:
+  - rule: inPath("zellij")
+
+# starship
+- path: config/starship.toml
+  target: $HOME/.config/starship.toml
+  conditions:
+  - rule: inPath("starship")
+
+# scripts
+- path: config/bin
+  target: $HOME/.local/bin
+
+# ssh
 - path: config/ssh
   target: $HOME/.ssh
-- path: scripts
-  target: $HOME/.local/bin

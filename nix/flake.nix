@@ -19,7 +19,8 @@
 #          ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 #
 # » Implemented machines:
-#    • wsl → WSL on the daily driver.
+#    • desktop → Desktop machine.
+#    • wsl     → WSL on the daily driver.
 #
 {
   description = "NixOS System Configuration";
@@ -35,17 +36,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
-    # flake parts - https://flake.parts
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
     # community
     impermanence.url = "github:nix-community/impermanence";
-
-    # home manager
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # hyprland
     hyprland = {

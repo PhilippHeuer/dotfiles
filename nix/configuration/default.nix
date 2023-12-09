@@ -28,10 +28,13 @@ in {
   desktop = mkConfiguration {
     username = "phx";
     extraModules = [
+      # nixos
       ../nixos/kernel.nix
-      ./desktop
+      ../nixos/user.nix
       # roles
       nixosRoles.default
+      # variant
+      ./desktop
     ];
   };
 
@@ -39,12 +42,15 @@ in {
   wsl = mkConfiguration {
     username = "phx";
     extraModules = [
-      ./wsl
+      # nixos
       inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
-      nixosRoles.desktop
+      nixosRoles.wm
       nixosRoles.wm-sway
+      nixosRoles.desktop
+      # variant
+      ./wsl
     ];
   };
 }
