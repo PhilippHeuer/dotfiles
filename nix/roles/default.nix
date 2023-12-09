@@ -26,7 +26,7 @@
 
       # editor
       ./neovim.nix
-      # fuzzmux # role: fuzzmux
+      ./fuzzmux.nix
 
       # language toolchains
       ./java.nix
