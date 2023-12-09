@@ -9,22 +9,3 @@
 - name: sway > openSUSE
   include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
-
-# create theme dir
-- name: sway > create theme dir
-  file:
-    path: "{{ ansible_env.HOME }}/.config/sway/themes"
-    state: directory
-    mode: 0755
-
-# theme - catppuccin
-- name: sway > themes > catppuccin
-  environment: "{{ proxy_env }}"
-  ansible.builtin.get_url:
-    url: "https://github.com/catppuccin/i3/blob/main/themes/{{ item.url }}"
-    dest: "{{ ansible_env.HOME }}/.config/sway/themes/{{ item.dest }}"
-  loop:
-    - { url: "catppuccin-mocha", dest: "catppuccin-mocha" }
-    - { url: "catppuccin-macchiato", dest: "catppuccin-macchiato" }
-    - { url: "catppuccin-latte", dest: "catppuccin-latte" }
-    - { url: "catppuccin-frappe", dest: "catppuccin-frappe" }
