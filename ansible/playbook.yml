@@ -190,4 +190,4 @@
       # renovate: datasource=github-releases depName=databricks/click
       click: "0.6.3"
       # renovate: datasource=github-releases depName=PhilippHeuer/dotfiles-cli
-      dotfilescli: "0.1.0"
+      dotfilescli: "0.2.0"
