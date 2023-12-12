@@ -35,6 +35,7 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.desktop
+      nixosRoles.media
       # variant
       ./desktop
     ];
@@ -51,6 +52,7 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.desktop
+      nixosRoles.media
       # variant
       ./laptop
     ];
@@ -67,6 +69,7 @@ in {
       nixosRoles.wm-sway
       nixosRoles.wm-hyprland
       nixosRoles.desktop
+      nixosRoles.media
       # variant
       ./wsl
     ];
