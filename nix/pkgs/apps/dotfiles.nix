@@ -13,9 +13,9 @@ buildGoModule rec {
     owner = "PhilippHeuer";
     repo = "dotfiles-cli";
     rev = version;
-    sha256 = "sha256-vmfI0M98PPeksmQP0SwJMmIW2M3d24Xk8ElTeIDt/G0=";
+    sha256 = "sha256-jVACH9JJBZNRwRyWTSxACiqM3I7iyfPWY51qbfQ9fyg=";
   };
-  vendorHash = "sha256-vENzC9TEFwGeDXKGGQgmc4E/VHRSUPUjvoS713K3af4=";
+  vendorHash = "sha256-xgSJcdyl562rfJnTZhnnZZcs6mH63gM7muFEbJ+CSHs=";
 
   ldflags = [
     "-X main.version=${version}"

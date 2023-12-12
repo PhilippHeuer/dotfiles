@@ -46,8 +46,8 @@ in {
       inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
-      nixosRoles.wm
       nixosRoles.wm-sway
+      nixosRoles.wm-hyprland
       nixosRoles.desktop
       # variant
       ./wsl
