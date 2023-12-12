@@ -20,15 +20,20 @@ case $wm in
 esac
 echo "You selected $wm_name"
 
-# remove wslg .X11-unix mount to delegate via xwayland
-if [[ -z $WSL_DISTRO_NAME ]]; then
-    if findmnt --target "/tmp/.X11-unix" &> /dev/null; then
-        sudo umount /tmp/.X11-unix
-        sudo chmod 1755 /tmp/.X11-unix/
-    fi
+# remove wslg .X11-unix mount, delegate via xwayland
+if [[ "$WSL_DISTRO_NAME" == "NixOS" ]]; then
+  if findmnt --target "/tmp/.X11-unix" &> /dev/null; then
+    # umount will fail with device is busy, rename it
+    sudo mv /tmp/.X11-unix /tmp/.X11-unix-wslg
+  fi
+elif [[ -n $WSL_DISTRO_NAME ]]; then
+  if findmnt --target "/tmp/.X11-unix" &> /dev/null; then
+    sudo umount /tmp/.X11-unix
+    sudo chmod 1755 /tmp/.X11-unix/
+  fi
 fi
 
-# start window manager
+# start sway
 if [[ $wm_name == "sway" ]]; then
     # configure and start sway
     echo "set \$displaySize \"1280x720\"" > ~/.config/sway/config.d/displaySize

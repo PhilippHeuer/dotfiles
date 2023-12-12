@@ -56,19 +56,14 @@
       ./s3fs.nix
     ];
   };
-  wm = {
-    imports = [
-      ./wayland.nix
-    ];
-  };
   wm-sway = {
     imports = [
-      ./sway.nix
+      ./wm-sway.nix
     ];
   };
   wm-hyprland = {
     imports = [
-      ./hyprland.nix
+      ./wm-hyprland.nix
     ];
   };
   desktop = {

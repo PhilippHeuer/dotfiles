@@ -73,7 +73,8 @@
         # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
         stateVersion = "23.11";
 
-        config.allowUnfree = true; # allow unfree packages
+        # allow unfree packages
+        config.allowUnfree = true;
       });
     in
     {

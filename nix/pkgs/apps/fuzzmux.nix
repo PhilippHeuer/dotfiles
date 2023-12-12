@@ -13,9 +13,9 @@ buildGoModule rec {
     owner = "PhilippHeuer";
     repo = "fuzzmux";
     rev = version;
-    sha256 = "sha256-vmfI0M98PPeksmQP0SwJMmIW2M3d24Xk8ElTeIDt/G0=";
+    sha256 = "sha256-MlqFxIv3O9XX4DEeddvAUdD5w3ebMFyoQSZ31yZbSK8=";
   };
-  vendorHash = "sha256-vENzC9TEFwGeDXKGGQgmc4E/VHRSUPUjvoS713K3af4=";
+  vendorHash = "sha256-20KQrQVtJr2dQ9AnlUTA5R4JCOnTwx6KAcgadXa0FfQ=";
 
   ldflags = [
     "-X main.version=${version}"
