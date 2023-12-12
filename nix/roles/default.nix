@@ -71,7 +71,13 @@
       ./alacritty.nix
       ./rofi.nix
       ./thunar.nix
-      ./sxiv.nix
+    ];
+  };
+  media = {
+    imports = [
+      ./mpv.nix # video player
+      ./mpvpaper.nix # video wallpaper
+      ./sxiv.nix # image viewer
     ];
   };
 }

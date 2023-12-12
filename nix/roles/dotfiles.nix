@@ -1,8 +1,6 @@
+{ self, pkgs, ... }:
+
 {
-  self,
-  pkgs,
-  ...
-}: {
   environment.systemPackages = with pkgs; [
     self.packages.${pkgs.system}.dotfiles
   ];
