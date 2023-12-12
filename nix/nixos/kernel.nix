@@ -1,9 +1,6 @@
+{ lib, pkgs, config, ... }:
+
 {
-  lib,
-  pkgs,
-  config,
-  ...
-}: {
   boot = {
     # enable in-memory /tmp
     # tmp.useTmpfs = true;

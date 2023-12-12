@@ -1,6 +1,7 @@
 # nix os configuration
 #
 { inputs, lib, ... }:
+
 {
   nix = {
     settings = {

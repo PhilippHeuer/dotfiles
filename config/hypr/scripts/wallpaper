@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+
+import json
+import os
+import subprocess
+import sys
+
+# set the directory path where your wallpaper images are stored
+WALLPAPER_DIR = os.path.expanduser("~/.local/share/backgrounds")
+STATE_DIR = os.path.expanduser("~/.local/state")
+STATE_FILE = os.path.join(STATE_DIR, "wallpaper.state")
+
+# create a list of all image files in the specified directory
+WALLPAPERS = [os.path.join(WALLPAPER_DIR, f) for f in os.listdir(WALLPAPER_DIR) if os.path.isfile(os.path.join(WALLPAPER_DIR, f))]
+
+# create the state directory if it doesn't exist
+os.makedirs(STATE_DIR, exist_ok=True)
+
+# get the current index
+current_filename = ""
+if os.path.exists(STATE_FILE):
+    with open(STATE_FILE, "r") as state_file:
+        state = json.load(state_file)
+        current_filename = state.get('current_filename', "")
+current_index = WALLPAPERS.index(current_filename) if current_filename in WALLPAPERS else 0
+
+# set wallpaper by filename
+def set_wallpaper(file_path):
+    new_index = WALLPAPERS.index(file_path) if file_path in WALLPAPERS else 0
+    print("setting wallpaper to {} (index {})".format(file_path, new_index))
+
+    # set wallpaper
+    command = [
+        "swww", "img", file_path,
+        "--transition-bezier", ".43,1.19,1,.4",
+        "--transition-type", "grow",
+        "--transition-duration", "0.5",
+        "--transition-fps", "60",
+        "--invert-y"
+    ]
+    try:
+        cursor_pos = subprocess.check_output(["hyprctl", "cursorpos"], text=True).strip()
+        if cursor_pos:
+            command.extend(["--transition-pos", cursor_pos])
+    except Exception as e:
+        pass
+    subprocess.run(command, check=True)
+
+    # Save the current filename to the state file
+    with open(STATE_FILE, "w") as state_file:
+        state = {
+            'current_filename': file_path,
+        }
+        json.dump(state, state_file)
+
+# set wallpaper by index
+def set_wallpaper_index(next_index):
+    next_index = next_index % len(WALLPAPERS)
+    set_wallpaper(os.path.join(WALLPAPER_DIR, WALLPAPERS[next_index]))
+
+# main script
+if len(sys.argv) < 2:
+    print("Usage: {} {{set|next|prev}} [current_wallpaper]".format(sys.argv[0]))
+    sys.exit(1)
+
+mode = sys.argv[1]
+
+if mode == "set":
+    # set wallpaper
+    if len(sys.argv) > 2:
+        set_wallpaper(os.path.join(WALLPAPER_DIR, sys.argv[2]))
+    else:
+        set_wallpaper(os.path.join(WALLPAPER_DIR, WALLPAPERS[0]))
+elif mode == "next":
+    # next wallpaper
+    set_wallpaper_index(current_index + 1)
+elif mode == "prev":
+    # previous wallpaper
+    set_wallpaper_index(current_index - 1)
+elif mode == "restore":
+    # previous wallpaper
+    set_wallpaper_index(current_index)
+else:
+    print("Usage: {} {{set|next|prev}} [file]".format(sys.argv[0]))
+    print("Using WALLPAPER_DIR = ", WALLPAPER_DIR)
+    sys.exit(1)

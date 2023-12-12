@@ -111,6 +111,24 @@ directories:
   rules:
   - rule: inPath("starship")
 
+# hyprland
+- path: config/hypr
+  target: $HOME/.config/hypr
+  rules:
+  - rule: inPath("Hyprland")
+
+# wlogout
+- path: config/wlogout
+  target: $HOME/.config/wlogout
+  rules:
+  - rule: inPath("wlogout")
+
+# dunst notification daemon
+- path: config/dunst
+  target: $HOME/.config/dunst
+  rules:
+  - rule: inPath("dunst")
+
 # bin / scripts
 - path: bin
   target: $HOME/.local/bin
