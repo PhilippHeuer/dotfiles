@@ -3,24 +3,32 @@
 ## Apply Configurations
 
 - `desktop`: `sudo nixos-rebuild switch --flake .#desktop`
+- `laptop`: `sudo nixos-rebuild switch --flake .#laptop`
 - `wsl`: `sudo nixos-rebuild switch --flake .#wsl`
 
-## Flakes
+## Bootloader
 
-- regenerate `hardware-configuration.nix` -> `sudo nixos-generate-config`
+- cleanup -> `sudo nix-collect-garbage --delete-older-than 7d`
+- generate -> `sudo nixos-rebuild boot`
+
+## Hardware
+
+You can regenerate `hardware-configuration.nix` with `sudo nixos-generate-config`.
 
 ## Generations
 
 - list: `nix profile history --profile /nix/var/nix/profiles/system`
 - delete: `sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d`
 
-## WSL
+## First Run
 
-## Update NixOS Release
+- Flakes are still experimental, so you need to enable them in `/etc/nixos/configuration.nix`:
 
-```bash
-sudo nix-channel --add https://nixos.org/channels/nixos-23.11 nixos
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-sudo nix-channel --update
-sudo nixos-rebuild switch
+```nix
+# Enable Flakes and the new command-line tool
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
+
+- add `git` to the `environment.systemPackages` list.
+
+Finally, run `sudo nixos-rebuild switch` to apply the changes.

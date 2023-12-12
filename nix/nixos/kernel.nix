@@ -17,6 +17,8 @@
 
     # kernel packages
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+
+    # initrd systemd
     initrd.systemd.enable = lib.mkDefault true;
   };
 
