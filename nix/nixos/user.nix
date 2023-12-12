@@ -1,10 +1,10 @@
-{
-  lib,
-  config,
-  username,
-  pkgs,
-  ...
-}: let
+### user configuration
+#
+# generate a hashed password with: mkpasswd -m sha-512 <password>
+
+{ lib, config, username, pkgs, ... }:
+
+let
   sudoRule = {
     users = ["${username}"];
     commands = [
@@ -25,6 +25,7 @@ in {
 
   users.users.${username} = {
     isNormalUser = true;
+    hashedPassword = "$6$spcFyCpOwSWB3CEb$thhYDrJDeRyqWw.cWr0Ar41UPCXZh2.Tgw4PJAFBnT4xHCpgdrJo/OweMeY/R5QEINDJSCH1QbXB/vcDax4ZT0";
     extraGroups =
       [
         "wheel"
@@ -37,5 +38,10 @@ in {
       ++ lib.optionals config.virtualisation.podman.enable ["podman"]
       ++ lib.optionals config.virtualisation.libvirtd.enable ["libvirtd"]
       ++ lib.optionals config.programs.adb.enable ["adbusers"];
+    
+    # ssh keys
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAbhI9hxpDxO8QQ4mrGeAvyypyarZ6SQwb6Is+Iz3uJ phx"
+    ];
   };
 }

@@ -31,10 +31,28 @@ in {
       # nixos
       ../nixos/kernel.nix
       ../nixos/user.nix
+      ../nixos/ssh.nix
       # roles
       nixosRoles.default
+      nixosRoles.desktop
       # variant
       ./desktop
+    ];
+  };
+
+  # laptop
+  laptop = mkConfiguration {
+    username = "phx";
+    extraModules = [
+      # nixos
+      ../nixos/kernel.nix
+      ../nixos/user.nix
+      ../nixos/ssh.nix
+      # roles
+      nixosRoles.default
+      nixosRoles.desktop
+      # variant
+      ./laptop
     ];
   };
 

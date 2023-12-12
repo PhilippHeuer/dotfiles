@@ -1,6 +1,8 @@
 # locale
 #
-{ lib, ... }: {
+{ lib, ... }:
+
+{
   # time zone
   time.timeZone = lib.mkDefault "Europe/Berlin";
 
@@ -28,4 +30,7 @@
       "de_DE.UTF-8/UTF-8"
     ];
   };
+
+  # console keymap
+  console.keyMap = "de";
 }

@@ -33,7 +33,7 @@
     # stable: github:nixos/nixpkgs/nixos-23.11
     # unstable: github:nixos/nixpkgs/nixos-unstable
     #
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     hardware.url = "github:nixos/nixos-hardware";
 
     # community
