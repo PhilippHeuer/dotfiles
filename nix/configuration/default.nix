@@ -29,8 +29,10 @@ in {
     username = "phx";
     extraModules = [
       # nixos
+      ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/user.nix
+      ../nixos/audio.nix
       ../nixos/ssh.nix
       # roles
       nixosRoles.default
@@ -41,16 +43,19 @@ in {
     ];
   };
 
-  # laptop
+  # laptop (for testing)
   laptop = mkConfiguration {
     username = "phx";
     extraModules = [
       # nixos
+      ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/user.nix
+      ../nixos/audio.nix
       ../nixos/ssh.nix
       # roles
       nixosRoles.default
+      nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
       # variant

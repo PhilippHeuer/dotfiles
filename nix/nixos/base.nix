@@ -1,9 +1,6 @@
+{ lib, pkgs, config, ... }:
+
 {
-  lib,
-  pkgs,
-  config,
-  ...
-}: {
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave
@@ -23,6 +20,9 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # allows some programs (traceroute, ping, ...) to be run without root privileges (SUID wrapper)
+  programs.mtr.enable = true;
 
   # increase open file limit for sudoers
   security.pam.loginLimits = [

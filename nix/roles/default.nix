@@ -58,11 +58,13 @@
   };
   wm-sway = {
     imports = [
+      ./wm.nix
       ./wm-sway.nix
     ];
   };
   wm-hyprland = {
     imports = [
+      ./wm.nix
       ./wm-hyprland.nix
     ];
   };

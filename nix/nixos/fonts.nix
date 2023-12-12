@@ -1,8 +1,10 @@
+{ pkgs, ... }:
+
 {
-  pkgs,
-  ...
-}: {
   fonts = {
+    # enable default fonts
+    enableDefaultFonts = true;
+  
     # creates /run/current-system/sw/share/X11/fonts
     fontDir.enable = true;
 
@@ -18,6 +20,7 @@
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
         monospace = [
+          "JetBrainsMono Nerd Font Mono"
           "Noto Sans Mono CJK SC"
           "Sarasa Mono SC"
           "DejaVu Sans Mono"
