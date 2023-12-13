@@ -29,18 +29,24 @@ window:
 # font
 font:
   normal:
-    family: "JetBrainsMonoNL NFM"
+    family: "JetBrainsMono Nerd Font Mono"
     style:  Medium
   bold:
-    family: "JetBrainsMonoNL NFM"
+    family: "JetBrainsMono Nerd Font Mono"
     style:  Bold
   italic:
-    family: "JetBrainsMonoNL NFM"
+    family: "JetBrainsMono Nerd Font Mono"
     style:  MediumItalic
   bold_italic:
-    family: "JetBrainsMonoNL NFM"
+    family: "JetBrainsMono Nerd Font Mono"
     style: BoldItalic
   size: 11.00
+
+# mouse cursor
+mousetrue:
+  hide_when_typing: true
+  url:
+    modifiers: Command
 
 # mouse bindings
 mouse_bindings:
