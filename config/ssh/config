@@ -1,3 +1,7 @@
+# add keys to ssh-agent
+AddKeysToAgent yes
+
+# default config
 Host *
   SendEnv LANG LC_*
   ForwardX11 no
