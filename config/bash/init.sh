@@ -10,6 +10,11 @@ export PATH="$PATH:$HOME/.local/share/node/bin" # node
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/share/JetBrains/Toolbox/bin" # jetbrains toolbox and apps
 export PATH="$PATH:$HOME/.config/bin" # scripts
 
+# start ssh agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+fi
+
 # ansible
 export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"
 
