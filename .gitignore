@@ -6,3 +6,6 @@ config/ssh/servers
 
 # docs (wip)
 docs
+
+# user config
+config/git/user
