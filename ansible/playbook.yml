@@ -182,7 +182,7 @@
       # renovate: datasource=github-releases depName=BurntSushi/ripgrep
       ripgrep: "14.0.3"
       # renovate: datasource=github-releases depName=kubernetes/kubernetes
-      kubectl: "1.28.4"
+      kubectl: "1.29.0"
       # renovate: datasource=github-releases depName=derailed/k9s
       k9s: "0.29.1"
       # renovate: datasource=github-releases depName=helm/helm
