@@ -1,11 +1,7 @@
 ---
-# install
 - name: install
   become: yes
   become_user: root
   pacman:
-    name: "{{ item }}"
+    name: dunst
     state: present
-  loop:
-    - hyprland
-    - swww

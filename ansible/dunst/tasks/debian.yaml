@@ -3,7 +3,5 @@
   become: yes
   become_user: root
   apt:
-    name: "{{ item }}"
+    name: dunst
     state: present
-  loop:
-    - sway

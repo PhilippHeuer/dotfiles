@@ -23,6 +23,6 @@ killall xdg-desktop-portal
 
 # start in proper order
 sleep 1
-$portal_dir/xdg-desktop-portal-hyprland &
-sleep 2
 $portal_dir/xdg-desktop-portal &
+sleep 2
+$portal_dir/xdg-desktop-portal-wlr &

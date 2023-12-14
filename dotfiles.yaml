@@ -129,9 +129,13 @@ directories:
   rules:
   - rule: inPath("dunst")
 
-# bin / scripts
+# binaries
 - path: bin
   target: $HOME/.local/bin
+
+# scripts
+- path: scripts
+  target: $HOME/.local/scripts
 
 # ssh
 - path: config/ssh

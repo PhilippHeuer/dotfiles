@@ -103,7 +103,15 @@
     # desktop - terminal emulator (choose one)
     - role: alacritty     # alacritty
       tags: [desktop]
-    # desktop - window manager (choose one)
+    # desktop - window manager
+    - role: cliphist      # clipboard history
+      tags: [desktop]
+    - role: waybar        # waybar
+      tags: [desktop]
+    - role: dunst         # dunst notifications
+      tags: [desktop]
+    - role: swww          # wayland wallpaper daemon
+      tags: [desktop]
     - role: sway          # sway
       tags: [desktop]
     - role: hyprland      # hyprland
@@ -195,3 +203,7 @@
       dotfilescli: "0.2.1"
       # renovate: datasource=github-releases depName=o2sh/onefetch
       onefetch: "2.19.0"
+      # renovate: datasource=github-releases depName=Horus645/swww
+      swww: "0.8.1"
+      # renovate: datasource=github-releases depName=sentriz/cliphist
+      cliphist: "0.4.0"

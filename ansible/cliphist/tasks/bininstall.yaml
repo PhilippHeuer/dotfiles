@@ -1,0 +1,15 @@
+---
+# check
+- name: cliphist > check version
+  command: "cliphist --version"
+  register: cliphist_version_output
+  ignore_errors: true
+
+# download
+- name: cliphist > download
+  environment: "{{ proxy_env }}"
+  ansible.builtin.get_url:
+    url: "https://github.com/sentriz/cliphist/releases/download/v{{ version.reposync }}/v{{ version.reposync }}-linux-amd64"
+    dest: "{{ ansible_env.HOME }}/.local/bin/cliphist"
+    mode: u+x
+  when: "version.cliphist not in cliphist_version_output.stdout | default('')"

@@ -1,5 +1,4 @@
 ---
-# install
 - name: install
   become: yes
   become_user: root
@@ -7,5 +6,4 @@
     name: "{{ item }}"
     state: present
   loop:
-    - hyprland
     - swww

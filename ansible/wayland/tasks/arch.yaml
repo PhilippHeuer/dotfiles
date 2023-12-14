@@ -19,3 +19,4 @@
     - xorg-wayland
     - xorg-xinit
     - xf86-video-vesa
+    - wl-clipboard

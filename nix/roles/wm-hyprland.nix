@@ -19,6 +19,7 @@
     swaylock-effects # needed for logout menu (swaylock with screenshot + blur)
     gettext # needed by hyprland scripts
     jq # needed by hyprland scripts
+    cliphist # clipboard history
   ];
 
   # swaylock needs setuid to lock the screen

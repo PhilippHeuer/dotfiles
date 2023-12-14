@@ -1,0 +1,14 @@
+---
+# install
+- name: swww > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+#- name: swww > debian or ubuntu
+#  include_tasks: debian.yaml
+#  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: swww > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
+- name: swww > bin install
+  include_tasks: bininstall.yaml
+  when: ansible_distribution != 'Archlinux' and ansible_distribution != 'openSUSE Tumbleweed'

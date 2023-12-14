@@ -1,11 +1,9 @@
 ---
-# install
 - name: install
   become: yes
   become_user: root
-  pacman:
+  community.general.zypper:
     name: "{{ item }}"
     state: present
   loop:
-    - hyprland
     - swww

@@ -1,9 +1,8 @@
 ---
+# requirements
 - name: install
   become: yes
   become_user: root
   apt:
-    name: "{{ item }}"
+    name: firefox
     state: present
-  loop:
-    - sway
