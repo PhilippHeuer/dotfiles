@@ -3,8 +3,8 @@
 {
   fonts = {
     # enable default fonts
-    enableDefaultFonts = true;
-  
+    enableDefaultPackages = true;
+
     # creates /run/current-system/sw/share/X11/fonts
     fontDir.enable = true;
 

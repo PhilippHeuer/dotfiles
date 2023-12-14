@@ -1,0 +1,4 @@
+dependencies:
+- { role: swww }
+- { role: waybar }
+- { role: dunst }

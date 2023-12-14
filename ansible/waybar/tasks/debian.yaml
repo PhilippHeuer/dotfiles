@@ -3,7 +3,5 @@
   become: yes
   become_user: root
   apt:
-    name: "{{ item }}"
+    name: waybar
     state: present
-  loop:
-    - sway

@@ -1,0 +1,11 @@
+---
+# install
+- name: dunst > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: dunst > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: dunst > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'

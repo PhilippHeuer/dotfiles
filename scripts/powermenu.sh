@@ -1,5 +1,25 @@
 #!/usr/bin/env bash
 
+###
+# script to display the power menu
+#
+# supported window managers:
+# - sway
+# - hyprland
+#
+# special cases:
+# - on wsl this clsoes the current session directly
+###
+
+# common functions
+source ~/.local/scripts/common.sh
+
+# exit directly if in wsl, no power menu available
+if [ "$(is_wsl)" == "true" ]; then
+  ~/.local/scripts/exitdesktop.sh
+  exit 0
+fi
+
 # check if wlogout is already running
 if pgrep -x "wlogout" > /dev/null
 then

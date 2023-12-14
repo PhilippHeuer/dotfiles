@@ -1,0 +1,23 @@
+---
+# ppa
+- name: mozilla ppa > install
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: "ppa:mozillateam/ppa"
+    state: present
+
+- name: mozilla ppa > preferences
+  become: yes
+  template:
+    src: "apt-pref-firefox.j2"
+    dest: "/etc/apt/preferences.d/mozilla-firefox"
+
+# install
+- name: install
+  become: yes
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - firefox
+  - firefox-locale-en

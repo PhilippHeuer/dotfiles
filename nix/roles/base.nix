@@ -9,5 +9,6 @@
     curl
     unzip
     nix-bash-completions
+    psmisc # killall
   ];
 }

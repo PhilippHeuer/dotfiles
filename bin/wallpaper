@@ -2,8 +2,15 @@
 
 import json
 import os
+import signal
 import subprocess
 import sys
+import time
+
+###
+# set wallpaper
+#
+# supported formats: jpeg, png, gif, pnm, tga, tiff, webp, bmp, farbfeld
 
 # set the directory path where your wallpaper images are stored
 WALLPAPER_DIR = os.path.expanduser("~/.local/share/backgrounds")
@@ -24,27 +31,26 @@ if os.path.exists(STATE_FILE):
         current_filename = state.get('current_filename', "")
 current_index = WALLPAPERS.index(current_filename) if current_filename in WALLPAPERS else 0
 
+# detect environment
+def detect_mode():
+    if os.environ.get('DESKTOP_SESSION') == 'hyprland':
+        return 'hyprland'
+    elif os.environ.get('SWAYSOCK') is not None:
+        return 'sway'
+    else:
+        return 'unknown'
+
 # set wallpaper by filename
 def set_wallpaper(file_path):
     new_index = WALLPAPERS.index(file_path) if file_path in WALLPAPERS else 0
-    print("setting wallpaper to {} (index {})".format(file_path, new_index))
+    mode = detect_mode()
+    print("setting wallpaper to {} (index {}, mode {})".format(file_path, new_index, mode))
 
-    # set wallpaper
-    command = [
-        "swww", "img", file_path,
-        "--transition-bezier", ".43,1.19,1,.4",
-        "--transition-type", "grow",
-        "--transition-duration", "0.5",
-        "--transition-fps", "60",
-        "--invert-y"
-    ]
-    try:
-        cursor_pos = subprocess.check_output(["hyprctl", "cursorpos"], text=True).strip()
-        if cursor_pos:
-            command.extend(["--transition-pos", cursor_pos])
-    except Exception as e:
-        pass
-    subprocess.run(command, check=True)
+    # hyprland
+    if mode == 'hyprland':
+        set_wallpaper_swww(file_path)
+    elif mode == 'sway':
+        set_wallpaper_swaybg(file_path)
 
     # Save the current filename to the state file
     with open(STATE_FILE, "w") as state_file:
@@ -57,6 +63,52 @@ def set_wallpaper(file_path):
 def set_wallpaper_index(next_index):
     next_index = next_index % len(WALLPAPERS)
     set_wallpaper(os.path.join(WALLPAPER_DIR, WALLPAPERS[next_index]))
+
+# set wallpaper by filename
+def set_wallpaper_swww(file_path):
+    # set wallpaper
+    command = [
+        "swww", "img", file_path,
+        "--transition-bezier", ".43,1.19,1,.4",
+        "--transition-type", "grow",
+        "--transition-duration", "0.5",
+        "--transition-fps", "60",
+        "--invert-y"
+    ]
+    # hyprland specific: set the transition position to the cursor position
+    try:
+        cursor_pos = subprocess.check_output(["hyprctl", "cursorpos"], text=True).strip()
+        if cursor_pos:
+            command.extend(["--transition-pos", cursor_pos])
+    except Exception as e:
+        pass
+    subprocess.run(command, check=True)
+
+# set wallpaper by filename
+def set_wallpaper_swaybg(file_path):
+    # set wallpaper
+    command = [
+        "swaybg",
+        "-i", file_path,
+        "-m", "fill", # stretch, fill, fit, center, tile
+    ]
+    pid = subprocess.Popen(command).pid
+
+    time.sleep(0.5) # wait for swaybg to start
+    kill_except_pid("swaybg", pid, time.time() - 0.5) # kill any existing swaybg processes
+
+# kill processes, exclude pid
+def kill_except_pid(arg, exclude_pid, older_than):
+    for pid in [pid for pid in os.listdir('/proc') if pid.isdigit()]:
+        try:
+            pid_path = os.path.join('/proc', pid)
+            cmdline = open(os.path.join('/proc', pid, 'cmdline'), 'rb').read().decode('utf-8')
+            ctime = os.path.getctime(pid_path)
+
+            if arg in cmdline and int(pid) != exclude_pid and ctime <= older_than:
+                os.kill(int(pid), signal.SIGTERM)
+        except (IOError, ProcessLookupError):
+            pass
 
 # main script
 if len(sys.argv) < 2:

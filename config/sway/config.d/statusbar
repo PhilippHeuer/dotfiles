@@ -1,7 +1,0 @@
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-
-# status bar
-exec_always 'pkill waybar; waybar -c ~/.config/waybar/sway/config -s ~/.config/waybar/sway/style.css'

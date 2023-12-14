@@ -1,9 +1,8 @@
 ---
+# requirements
 - name: install
   become: yes
   become_user: root
-  apt:
-    name: "{{ item }}"
+  community.general.zypper:
+    name: firefox
     state: present
-  loop:
-    - sway

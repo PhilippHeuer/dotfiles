@@ -1,0 +1,42 @@
+---
+# check if version is the current one / delete if not matching
+- name: swww > check version
+  command: "swww --version"
+  register: swww_version_output
+  ignore_errors: true
+
+- name: swww > create temp dir
+  ansible.builtin.file:
+    path: "/tmp/swww"
+    state: directory
+  when: "version.swww not in swww_version_output.stdout | default('')"
+
+- name: swww > clone
+  ansible.builtin.git:
+    repo: "https://github.com/Horus645/swww.git"
+    dest: "/tmp/swww"
+    single_branch: yes
+    version: v{{ version.swww }}
+  when: "version.swww not in swww_version_output.stdout | default('')"
+
+- name: swww > build
+  ansible.builtin.command:
+    cmd: "cargo build --release"
+    chdir: "/tmp/swww"
+  when: "version.swww not in swww_version_output.stdout | default('')"
+
+- name: swww > install swww
+  become: true
+  ansible.builtin.copy:
+    src: "/tmp/swww/target/release/swww"
+    dest: "/usr/local/bin/swww"
+    mode: "0755"
+  when: "version.swww not in swww_version_output.stdout | default('')"
+
+- name: swww > install swww-daemon
+  become: true
+  ansible.builtin.copy:
+    src: "/tmp/swww/target/release/swww-daemon"
+    dest: "/usr/local/bin/swww-daemon"
+    mode: "0755"
+  when: "version.swww not in swww_version_output.stdout | default('')"

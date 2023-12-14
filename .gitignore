@@ -4,8 +4,11 @@ config/nushell/history.txt
 # ssh
 config/ssh/servers
 
-# docs (wip)
+# docs
 docs
 
 # user config
 config/git/user
+
+# work in progress files
+wip

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+###
+# script to start a window manager from the terminal / in WSL
+###
+
 # wm selection
 echo "Which window manager do you want to use?"
 echo "1) Sway"
@@ -29,13 +33,20 @@ if [[ "$WSL_DISTRO_NAME" == "NixOS" ]]; then
 elif [[ -n $WSL_DISTRO_NAME ]]; then
   if findmnt --target "/tmp/.X11-unix" &> /dev/null; then
     sudo umount /tmp/.X11-unix
-    sudo chmod 1755 /tmp/.X11-unix/
+    mkdir -p /tmp/.X11-unix
+    chmod 1755 /tmp/.X11-unix/
   fi
 fi
 
 # start sway
 if [[ $wm_name == "sway" ]]; then
-    # configure and start sway
-    echo "set \$displaySize \"1280x720\"" > ~/.config/sway/config.d/displaySize
-    sway -d
+  # configure and start sway
+  echo "set \$displaySize \"1920x1080\"" > ~/.config/sway/config.d/displaySize
+  sway -d
+fi
+
+# start hyprland
+if [[ $wm_name == "hyprland" ]]; then
+  echo "Hyprland does not run in WSL yet."
+  exit 1
 fi

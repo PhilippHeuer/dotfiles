@@ -2,4 +2,13 @@
 # install
 - name: firefox > arch
   include_tasks: arch.yaml
-  when: is_wsl == False and ansible_distribution == 'Archlinux'
+  when: ansible_distribution == 'Archlinux'
+- name: firefox > debian
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian'
+- name: firefox > ubuntu
+  include_tasks: ubuntu.yaml
+  when: ansible_distribution == 'Ubuntu'
+- name: firefox > openSUSE
+  include_tasks: suse.yaml
+  when: ansible_distribution == 'openSUSE Tumbleweed'
