@@ -12,3 +12,8 @@
 - name: firefox > openSUSE
   include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
+
+# set as default browser
+- name: set as default browser
+  ansible.builtin.shell: |
+    xdg-settings set default-web-browser firefox.desktop

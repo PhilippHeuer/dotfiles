@@ -39,6 +39,7 @@ return {
           },
         },
       },
+      -- cloak_on_buffer_hidden = true,
     },
   },
 }
