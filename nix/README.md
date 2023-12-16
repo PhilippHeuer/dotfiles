@@ -1,5 +1,11 @@
 # NixOS
 
+## Common Commands
+
+- `nix flake show`: show flake information
+- `nix flake update`: update dependencies / lock file
+- `sudo nixos-generate-config`: generate hardware configuration file `hardware-configuration.nix`
+
 ## Apply Configurations
 
 - `desktop`: `sudo nixos-rebuild switch --flake .#desktop`
@@ -10,10 +16,6 @@
 
 - cleanup -> `sudo nix-collect-garbage --delete-older-than 7d`
 - generate -> `sudo nixos-rebuild boot`
-
-## Hardware
-
-You can regenerate `hardware-configuration.nix` with `sudo nixos-generate-config`.
 
 ## Generations
 

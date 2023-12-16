@@ -73,6 +73,7 @@
       ./alacritty.nix
       ./rofi.nix
       ./thunar.nix
+      ./firefox.nix
     ];
   };
   media = {
