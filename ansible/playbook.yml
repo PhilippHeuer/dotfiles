@@ -166,7 +166,7 @@
       # renovate: datasource=github-releases depName=zellij-org/zellij
       zellij: "0.39.2"
       # renovate: datasource=github-releases depName=nushell/nushell
-      nushell: "0.88.0"
+      nushell: "0.88.1"
       # renovate: datasource=github-releases depName=starship/starship
       starship: "1.16.0"
       # renovate: datasource=github-releases depName=neovim/neovim
