@@ -33,6 +33,7 @@ in {
       ../nixos/kernel.nix
       ../nixos/user.nix
       ../nixos/audio.nix
+      ../nixos/virtualization.nix
       ../nixos/ssh.nix
       # roles
       nixosRoles.default
@@ -52,6 +53,7 @@ in {
       ../nixos/kernel.nix
       ../nixos/user.nix
       ../nixos/audio.nix
+      ../nixos/virtualization.nix
       ../nixos/ssh.nix
       # roles
       nixosRoles.default

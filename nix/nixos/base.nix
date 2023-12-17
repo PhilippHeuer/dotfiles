@@ -39,4 +39,9 @@
       value = "1048576";
     }
   ];
+
+  # systemd extra config
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 }
