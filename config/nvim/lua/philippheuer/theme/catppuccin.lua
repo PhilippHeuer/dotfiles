@@ -87,6 +87,21 @@ return {
               gui = 'bold'
             },
           },
+          {
+            function()
+              local cloak_enabled = vim.b.cloak_enabled
+              if cloak_enabled == nil or cloak_enabled == true then
+                return ''
+              end
+              if cloak_enabled == false then
+                return 'secrets visible '
+              end
+            end,
+            color = {
+              fg = '#FF0000',
+              gui = 'bold'
+            },
+          },
           'encoding',
           'fileformat',
           'filetype',
