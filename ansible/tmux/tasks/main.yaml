@@ -10,22 +10,17 @@
   include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
 
-# service
-- name: tmux > service > create
-  become: yes
-  become_user: root
+# ssh agent service
+- name: tmux > tmux service > create
   copy:
-    src: tmux.service
-    dest: /etc/systemd/system/tmux.service
-  when: is_wsl == True
+    src: tmux-server.service
+    dest: "{{ ansible_env.HOME }}/.config/systemd/user/tmux-server.service"
 
 # enable and start service
-- name: tmux > service > enable
-  become: yes
-  become_user: root
+- name: tmux > tmux service > enable and start
   ansible.builtin.systemd:
-    daemon_reload: true
-    name: tmux.service
-    enabled: true
+    daemon_reload: yes
+    scope: user
+    name: tmux-server.service
+    enabled: yes
     state: started
-  when: is_wsl == True

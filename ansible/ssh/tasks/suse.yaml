@@ -1,0 +1,9 @@
+---
+- name: install
+  become: yes
+  community.general.zypper:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - openssh-client
+    - sshfs

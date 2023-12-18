@@ -1,23 +1,26 @@
 ---
-# sshfs
-- name: sshfs > install
-  become: yes
-  become_user: root
-  apt:
-    name: sshfs
-    state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-- name: sshfs > install
-  become: yes
-  become_user: root
-  pacman:
-    name: sshfs
-    state: present
+# install
+- name: ssh > arch
+  include_tasks: arch.yaml
   when: ansible_distribution == 'Archlinux'
-- name: sshfs > install
-  become: yes
-  become_user: root
-  community.general.zypper:
-    name: sshfs
-    state: present
+- name: ssh > debian / ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+- name: ssh > openSUSE
+  include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
+
+# ssh agent service
+- name: ssh > agent service > create
+  copy:
+    src: ssh-agent.service
+    dest: "{{ ansible_env.HOME }}/.config/systemd/user/ssh-agent.service"
+
+# enable and start service
+- name: ssh > agent service > enable and start
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    scope: user
+    name: ssh-agent.service
+    enabled: yes
+    state: started
