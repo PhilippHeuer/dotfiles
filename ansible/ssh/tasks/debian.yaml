@@ -1,0 +1,9 @@
+---
+- name: install
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - openssh-client
+    - sshfs
