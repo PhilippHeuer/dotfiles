@@ -2,7 +2,10 @@
 
 # defaults
 export TERM=xterm-256color
+
+# gpg
 export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # path
 export PATH="$PATH:$HOME/.local/bin"
@@ -11,7 +14,10 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/.local/sha
 export PATH="$PATH:$HOME/.config/bin" # scripts
 
 # ssh auth agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+if [ -z "$SSH_AUTH_SOCK" -a -n "$XDG_RUNTIME_DIR" ]; then
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) # gpg-agent
+  # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" # ssh-agent
+fi
 
 # ansible
 export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"
