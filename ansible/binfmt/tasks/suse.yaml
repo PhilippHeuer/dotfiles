@@ -3,5 +3,17 @@
   become: yes
   become_user: root
   community.general.zypper:
-    name: qemu
+    name: "{{ item }}"
     state: present
+  loop:
+  - qemu
+  - qemu-arm
+  - qemu-s390x
+  - qemu-ppc
+  - qemu-x86
+  - qemu-extra
+- name: binfmt > config
+  become: yes
+  copy:
+    src: qemu-suse.conf
+    dest: /etc/binfmt.d/qemu-static.conf

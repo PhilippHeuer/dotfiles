@@ -13,6 +13,13 @@
     state: directory
     mode: 0755
 
+# systemd user services
+- name: systemd > user service dir
+  file:
+    path: "{{ ansible_env.HOME }}/.config/systemd/user"
+    state: directory
+    mode: 0755
+
 # wallpaper dir
 - name: home > wallpaper > create dir
   file:
