@@ -174,7 +174,7 @@
       # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
       fuzzmux: "0.3.1"
       # renovate: datasource=github-releases depName=tbillington/kondo
-      kondo: "0.7"
+      kondo: "0.8"
       # renovate: datasource=github-releases depName=ajeetdsouza/zoxide
       zoxide: "0.9.2"
       # renovate: datasource=github-releases depName=cidverse/reposync
