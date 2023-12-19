@@ -24,3 +24,4 @@
     name: tmux-server.service
     enabled: yes
     state: started
+  ignore_errors: true

@@ -15,12 +15,6 @@
     tmp.cleanOnBoot = !config.boot.tmp.useTmpfs;
   };
 
-  # gpg agent
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
   # allows some programs (traceroute, ping, ...) to be run without root privileges (SUID wrapper)
   programs.mtr.enable = true;
 
