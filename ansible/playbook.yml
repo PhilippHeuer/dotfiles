@@ -154,7 +154,7 @@
       # renovate: datasource=github-releases depName=chmln/sd
       sd: "1.0.0"
       # renovate: datasource=github-releases depName=sharkdp/fd
-      fd: "8.7.1"
+      fd: "9.0.0"
       # renovate: datasource=github-releases depName=aristocratos/btop
       btop: "1.2.13"
       # renovate: datasource=github-releases depName=fastfetch-cli/fastfetch
