@@ -10,18 +10,9 @@
   include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
 
-# config
-- name: binfmt > config
-  become: yes
-  become_user: root
-  copy:
-    src: qemu-static.conf
-    dest: /etc/binfmt.d/qemu-static.conf
-
 # service
 - name: binfmt > systemd-binfmt.service
   become: yes
-  become_user: root
   ansible.builtin.systemd:
     name: systemd-binfmt.service
     enabled: true

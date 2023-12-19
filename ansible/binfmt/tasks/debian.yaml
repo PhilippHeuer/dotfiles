@@ -5,3 +5,8 @@
   apt:
     name: qemu-user-static
     state: present
+- name: binfmt > config
+  become: yes
+  copy:
+    src: qemu-static.conf
+    dest: /etc/binfmt.d/qemu-static.conf
