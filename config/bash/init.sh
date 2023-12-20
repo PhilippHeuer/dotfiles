@@ -5,7 +5,7 @@ export TERM=xterm-256color
 
 # gpg
 export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
+gpg-connect-agent updatestartuptty /bye >> ~/.local/share/gpg-agent.log 2>&1
 
 # path
 export PATH="$PATH:$HOME/.local/bin"
