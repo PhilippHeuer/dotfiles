@@ -14,6 +14,10 @@ directories:
 # bash
 - path: config/bash
   target: $HOME/.config/bash
+- path: config/bash/.bashrc
+  target: $HOME/.bashrc
+- path: config/bash/.bash_profile
+  target: $HOME/.bash_profile
 
 # bat
 - path: config/bat

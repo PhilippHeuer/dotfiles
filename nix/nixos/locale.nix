@@ -18,14 +18,15 @@
       LC_MEASUREMENT = lib.mkDefault "de_DE.UTF-8";
       LC_MONETARY = lib.mkDefault "de_DE.UTF-8";
       LC_NAME = lib.mkDefault "de_DE.UTF-8";
-      LC_NUMERIC = lib.mkDefault "de_DE.UTF-8";
+      #LC_NUMERIC = lib.mkDefault "de_DE.UTF-8";
       LC_PAPER = lib.mkDefault "de_DE.UTF-8";
       LC_TELEPHONE = lib.mkDefault "de_DE.UTF-8";
-      LC_TIME = lib.mkDefault "de_DE.UTF-8";
+      #LC_TIME = lib.mkDefault "de_DE.UTF-8";
     };
 
     # supported locales
     supportedLocales = lib.mkDefault [
+      "C.UTF-8/UTF-8"
       "en_US.UTF-8/UTF-8"
       "de_DE.UTF-8/UTF-8"
     ];

@@ -34,3 +34,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 - add `git` to the `environment.systemPackages` list.
 
 Finally, run `sudo nixos-rebuild switch` to apply the changes.
+
+## Resources
+
+- [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)
+- [NixOS Options](https://mynixos.com/)
