@@ -25,6 +25,9 @@
     wslConf.automount.options = "metadata,uid=1000,gid=1000,umask=022,fmask=111,case=off";
   };
 
-  # shell
-  users.defaultUserShell = pkgs.bash;
+  # X11 mount
+  wsl.wslgMountX11 = false;
+  systemd.tmpfiles.rules = [
+    "d /tmp/.X11-unix 1777 root root"
+  ];
 }
