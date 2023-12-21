@@ -29,9 +29,12 @@ echo "You selected $wm_name"
 
 # start sway
 if [[ $wm_name == "sway" ]]; then
-  # wsl - set display size to the screen resolution - 40px for the windows taskbar
+  # wsl - overwrite screen resolution
   if [ "$(is_wsl)" == "true" ]; then
-    echo "set \$displaySize \"1920x1040\"" > ~/.config/sway/config.d/displaySize
+    RESOLUTION_HEIGHT=$((RESOLUTION_HEIGHT - 40)) # 40px for the windows taskbar
+    echo "set \$displaySize \"${RESOLUTION_WIDTH}x${RESOLUTION_HEIGHT}\"" > ~/.config/sway/config.d/displaySize
+  else
+    rm -f ~/.config/sway/config.d/displaySize
   fi
 
   # start sway
@@ -40,6 +43,6 @@ fi
 
 # start hyprland
 if [[ $wm_name == "hyprland" ]]; then
-  echo "Hyprland does not run in WSL yet."
+  echo "Hyprland does not work in WSL yet. Exiting."
   exit 1
 fi

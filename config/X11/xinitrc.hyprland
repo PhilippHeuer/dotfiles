@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-exec hyprland
+export WLR_RENDERER_ALLOW_SOFTWARE=1
+exec Hyprland
