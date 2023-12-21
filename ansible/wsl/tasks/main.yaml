@@ -12,3 +12,23 @@
   copy:
     src: wsl.conf
     dest: /etc/wsl.conf
+
+# normalize wsl service
+- name: wsl > normalize > install script
+  become: yes
+  copy:
+    src: normalize-wsl.sh
+    dest: "/usr/local/sbin/normalize-wsl.sh"
+    mode: "0755"
+- name: wsl > normalize > create service
+  become: yes
+  copy:
+    src: normalize-wsl.service
+    dest: "/etc/systemd/system/normalize-wsl.service"
+- name: wsl > normalize > enable and start service
+  become: yes
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    name: normalize-wsl.service
+    enabled: yes
+    state: started

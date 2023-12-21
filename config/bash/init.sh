@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# defaults
-export TERM=xterm-256color
-
 # gpg
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >> ~/.local/share/gpg-agent.log 2>&1

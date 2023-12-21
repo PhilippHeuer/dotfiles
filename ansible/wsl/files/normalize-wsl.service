@@ -1,0 +1,10 @@
+[Unit]
+Description=Normalize WSL Distribution
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/local/sbin/normalize-wsl.sh
+
+[Install]
+WantedBy=multi-user.target
