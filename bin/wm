@@ -4,6 +4,9 @@
 # script to start a window manager from the terminal / in WSL
 ###
 
+# common functions
+source ~/.local/scripts/common.sh
+
 # wm selection
 echo "Which window manager do you want to use?"
 echo "1) Sway"

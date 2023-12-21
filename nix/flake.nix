@@ -51,7 +51,7 @@
 
     # wsl
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
+      url = "github:PhilippHeuer/NixOS-WSL"; # TODO: use nix-community/NixOS-WSL
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

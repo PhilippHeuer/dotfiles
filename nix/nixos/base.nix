@@ -38,4 +38,7 @@
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s
   '';
+
+  # default shell
+  users.defaultUserShell = pkgs.bash;
 }
