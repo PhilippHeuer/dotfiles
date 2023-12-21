@@ -7,3 +7,5 @@
     state: present
   loop:
     - sway
+    - swaybg
+    - wlr-randr
