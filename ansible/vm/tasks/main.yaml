@@ -16,13 +16,3 @@
   become_user: root
   command: virt-what
   register: virt_type
-
-# move card1 to card0
-- name: hyperv > move card1 to card0
-  become: yes
-  become_user: root
-  command: mv /dev/dri/card1 /dev/dri/card0
-  when: virt_type.stdout == 'hyperv'
-  args:
-    removes: /dev/dri/card1
-    creates: /dev/dri/card0
