@@ -24,6 +24,9 @@ return {
         "TelescopeBorder", -- Telescope border
       },
     },
+    config = function()
+      vim.cmd("TransparentEnable")
+    end,
   },
   {
     'catppuccin/nvim',
