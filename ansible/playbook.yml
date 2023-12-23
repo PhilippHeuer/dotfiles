@@ -100,7 +100,7 @@
     # desktop
     - role: wayland       # wayland
       tags: [desktop]
-    # desktop - terminal emulator (choose one)
+    # desktop - terminal emulator
     - role: alacritty     # alacritty
       tags: [desktop]
     # desktop - window manager
