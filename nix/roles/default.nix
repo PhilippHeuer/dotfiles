@@ -45,6 +45,9 @@
       ./ripgrep.nix
       ./onefetch.nix
 
+      # secret management
+      ./sops.nix
+
       # k8s
       ./kubectl.nix
       ./k9s.nix

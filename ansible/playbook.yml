@@ -81,6 +81,10 @@
     - role: onefetch      # terminal tool to display git repository summary
       tags: [dev]
 
+    # secret management
+    - role: sops          # Secrets OPerationS
+      tags: [secrets]
+
     # k8s
     - role: kubectl       # kubernetes cli
       tags: [ops]
@@ -207,3 +211,5 @@
       swww: "0.8.1"
       # renovate: datasource=github-releases depName=sentriz/cliphist
       cliphist: "0.4.0"
+      # renovate: datasource=github-releases depName=getsops/sops
+      sops: "3.8.1"
