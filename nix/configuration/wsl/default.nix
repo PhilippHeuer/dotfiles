@@ -26,14 +26,18 @@
     wslConf.automount.options = "metadata,uid=1000,gid=1000,umask=022,fmask=111,case=off";
   };
 
-  # X11 mount
+  # unmount wslg X11
   system.activationScripts = { # wsl automatically mounts /tmp/.X11-unix
     unmount-x11 = ''
       # unmount /tmp/.X11-unix if it is mounted
-      umount /tmp/.X11-unix || true
+      umount /tmp/.X11-unix 2>/dev/null || true
 
       # remove wslg x11 mount from systemd.tmpfiles.rules
       ${pkgs.gnused}/bin/sed -i "\|L /tmp/.X11-unix - - - - /mnt/wslg/.X11-unix|d" /etc/tmpfiles.d/00-nixos.conf
     '';
+  };
+
+  systemd.tmpfiles.settings = {
+    "10-wslg-x11" = lib.mkForce {};
   };
 }
