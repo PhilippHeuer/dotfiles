@@ -47,6 +47,7 @@
 
       # secret management
       ./sops.nix
+      ./vault.nix
 
       # k8s
       ./kubectl.nix
