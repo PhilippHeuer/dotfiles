@@ -60,11 +60,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1703194032,
-        "narHash": "sha256-ynsyO+BacfysxWm3R9owGPZfsClLXWEXNEfqMD6mBic=",
+        "lastModified": 1703287262,
+        "narHash": "sha256-gvSACF7FRNkSZ2s1pXlqeK/qw6QF7gn1gHTt6I1dwA4=",
         "owner": "hyprwm",
         "repo": "hyprland",
-        "rev": "bd952dcef2ead3b0b7e2d730930a3fc528813ee0",
+        "rev": "6c8e0f9863d86755d7931a9d6ad920b2049cf6a6",
         "type": "github"
       },
       "original": {
@@ -142,15 +142,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1703159516,
-        "narHash": "sha256-2rFpF062OFaUkhUQBS0frTI90EM0cDPueMvb7Gt9uU0=",
-        "owner": "PhilippHeuer",
+        "lastModified": 1703211095,
+        "narHash": "sha256-Mne3a6cP3XJrWxrCXtz5XkfC+9NQsMV/QpOESvjKt6c=",
+        "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "8cfd395bd5cb002f4beebd0ed6466067e7a1d7ce",
+        "rev": "04816e47a012515f45a2e5d491a558b538806d74",
         "type": "github"
       },
       "original": {
-        "owner": "PhilippHeuer",
+        "owner": "nix-community",
         "repo": "NixOS-WSL",
         "type": "github"
       }
