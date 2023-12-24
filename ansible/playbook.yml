@@ -84,6 +84,8 @@
     # secret management
     - role: sops          # Secrets OPerationS
       tags: [secrets]
+    #- role: vault         # hashicorp vault
+    #  tags: [secrets]
 
     # k8s
     - role: kubectl       # kubernetes cli

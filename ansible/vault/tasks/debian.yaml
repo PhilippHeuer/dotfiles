@@ -1,0 +1,20 @@
+---
+# hashicorp repository
+- name: hashicorp > vault > repository key
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+    keyring: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+- name: hashicorp > vault > repository
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
+    state: present
+
+# install vault
+- name:  hashicorp > vault > install
+  become: yes
+  apt: 
+    name: vault
+    state: latest

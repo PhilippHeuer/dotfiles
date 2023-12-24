@@ -1,0 +1,8 @@
+---
+# install
+- name: vault > arch
+  include_tasks: arch.yaml
+  when: ansible_distribution == 'Archlinux'
+- name: vault > debian or ubuntu
+  include_tasks: debian.yaml
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
