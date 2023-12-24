@@ -22,20 +22,25 @@ set $menu "rofi -show"
 # on startup
 #
 
+# services
 exec_always ~/.local/scripts/filter-not-wsl.sh && ~/.config/sway/scripts/resetxdgportal.sh # reset XDPH for screenshare
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway # for XDPH
 exec_always dbus-update-activation-environment --systemd --all # for XDPH
 exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP # for XDPH
 #exec_always /usr/lib/polkit-kde-authentication-agent-1 # authentication dialogue for GUI apps
-exec_always waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css # launch the system panel
 exec_always ~/.local/scripts/filter-not-wsl.sh && nm-applet --indicator # systray app for Network/Wifi
 exec_always ~/.local/scripts/filter-not-wsl.sh && blueman-applet # systray app for BT
 exec_always dunst # start notification demon
 exec_always wl-paste --type text --watch cliphist store # clipboard store text data
 exec_always wl-paste --type image --watch cliphist store # clipboard store image data
+
+# ui
+exec_always waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css # launch the system panel
 exec_always ~/.local/scripts/swww.sh # start wallpaper daemon
 
+###
 # user config
+#
 include ~/.config/sway/config.d/*
 
 # resolution

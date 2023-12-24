@@ -26,6 +26,7 @@
 
       # editor
       ./neovim.nix
+      ./vscode.nix
       ./fuzzmux.nix
 
       # language toolchains
