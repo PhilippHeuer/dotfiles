@@ -1,0 +1,23 @@
+---
+# corretto repository
+- name: openjdk > corretto > repository key
+  become: yes
+  become_user: root
+  ansible.builtin.apt_key:
+    url: https://apt.corretto.aws/corretto.key
+    state: present
+    keyring: /usr/share/keyrings/corretto.gpg
+- name: openjdk > coretto > repository
+  become: yes
+  become_user: root
+  ansible.builtin.apt_repository:
+    repo: deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main
+    state: present
+
+# coretto 21
+- name: openjdk > coretto 21 > install
+  become: yes
+  become_user: root
+  apt: 
+    name: java-21-amazon-corretto-jdk
+    state: latest
