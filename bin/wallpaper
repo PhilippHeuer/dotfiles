@@ -13,23 +13,39 @@ import time
 # supported formats: jpeg, png, gif, pnm, tga, tiff, webp, bmp, farbfeld
 
 # set the directory path where your wallpaper images are stored
-WALLPAPER_DIR = os.path.expanduser("~/.local/share/backgrounds")
+WALLPAPER_ROOT_DIR = os.path.expanduser("~/.local/share/backgrounds")
 STATE_DIR = os.path.expanduser("~/.local/state")
 STATE_FILE = os.path.join(STATE_DIR, "wallpaper.state")
+ALLOWED_EXTENSIONS = {".jpg", ".png", ".gif", ".pnm", ".tga", ".tiff", ".webp", ".bmp", ".farbfeld"}
 
-# create a list of all image files in the specified directory
-WALLPAPERS = [os.path.join(WALLPAPER_DIR, f) for f in os.listdir(WALLPAPER_DIR) if os.path.isfile(os.path.join(WALLPAPER_DIR, f))]
 
-# create the state directory if it doesn't exist
-os.makedirs(STATE_DIR, exist_ok=True)
+def initialize_directories():
+    os.makedirs(STATE_DIR, exist_ok=True)
 
-# get the current index
-current_filename = ""
-if os.path.exists(STATE_FILE):
-    with open(STATE_FILE, "r") as state_file:
-        state = json.load(state_file)
-        current_filename = state.get('current_filename', "")
-current_index = WALLPAPERS.index(current_filename) if current_filename in WALLPAPERS else 0
+
+def initialize_wallpaper_directory(category):
+    wallpaper_dir = os.path.join(WALLPAPER_ROOT_DIR, category)
+    os.makedirs(wallpaper_dir, exist_ok=True)
+    return wallpaper_dir
+
+
+def load_state():
+    state = {
+        "current_filename": "",
+        "category": "",
+    }
+
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, "r") as state_file:
+                cached_state = json.load(state_file)
+                state["current_filename"] = cached_state.get("current_filename", "")
+                state["category"] = cached_state.get("category", "")
+        except Exception as e:
+            print(f"Error loading state: {e}")
+
+    return state
+
 
 # detect environment
 def detect_mode():
@@ -40,29 +56,32 @@ def detect_mode():
     else:
         return 'unknown'
 
+
 # set wallpaper by filename
-def set_wallpaper(file_path):
-    new_index = WALLPAPERS.index(file_path) if file_path in WALLPAPERS else 0
-    mode = detect_mode()
-    print("setting wallpaper to {} (index {}, mode {})".format(file_path, new_index, mode))
+def set_wallpaper(state, wallpapers, file_path):
+    try:
+        new_index = wallpapers.index(file_path) if file_path in wallpapers else 0
+        mode = detect_mode()
+        print("setting wallpaper to {} (index {}, mode {})".format(file_path, new_index, mode))
 
-    # hyprland
-    if mode == 'hyprland':
-        set_wallpaper_swww(file_path)
-    elif mode == 'sway':
-        set_wallpaper_swaybg(file_path)
+        # hyprland
+        if mode == 'hyprland':
+            set_wallpaper_swww(file_path)
+        elif mode == 'sway':
+            set_wallpaper_swaybg(file_path)
 
-    # Save the current filename to the state file
-    with open(STATE_FILE, "w") as state_file:
-        state = {
-            'current_filename': file_path,
-        }
-        json.dump(state, state_file)
+        # Save the current filename to the state file
+        with open(STATE_FILE, "w") as state_file:
+            state["current_filename"] = file_path
+            json.dump(state, state_file)
+    except Exception as e:
+        print(f"Error setting wallpaper: {e}")
 
 # set wallpaper by index
-def set_wallpaper_index(next_index):
-    next_index = next_index % len(WALLPAPERS)
-    set_wallpaper(os.path.join(WALLPAPER_DIR, WALLPAPERS[next_index]))
+def set_wallpaper_index(state, wallpapers, next_index):
+    next_index = next_index % len(wallpapers)
+    set_wallpaper(state, wallpapers, wallpapers[next_index])
+
 
 # set wallpaper by filename
 def set_wallpaper_swww(file_path):
@@ -82,20 +101,25 @@ def set_wallpaper_swww(file_path):
             command.extend(["--transition-pos", cursor_pos])
     except Exception as e:
         pass
+
     subprocess.run(command, check=True)
 
 # set wallpaper by filename
 def set_wallpaper_swaybg(file_path):
-    # set wallpaper
-    command = [
-        "swaybg",
-        "-i", file_path,
-        "-m", "fill", # stretch, fill, fit, center, tile
-    ]
-    pid = subprocess.Popen(command).pid
+    try:
+        # set wallpaper
+        command = [
+            "swaybg",
+            "-i", file_path,
+            "-m", "fill", # stretch, fill, fit, center, tile
+        ]
+        pid = subprocess.Popen(command).pid
 
-    time.sleep(0.5) # wait for swaybg to start
-    kill_except_pid("swaybg", pid, time.time() - 0.5) # kill any existing swaybg processes
+        time.sleep(0.5) # wait for swaybg to start
+        kill_except_pid("swaybg", pid, time.time() - 0.5) # kill any existing swaybg processes
+    except Exception as e:
+        print(f"Error setting wallpaper: {e}")
+
 
 # kill processes, exclude pid
 def kill_except_pid(arg, exclude_pid, older_than):
@@ -110,29 +134,78 @@ def kill_except_pid(arg, exclude_pid, older_than):
         except (IOError, ProcessLookupError):
             pass
 
+
+def get_wallpapers(wallpaper_dir):
+    wallpapers = [os.path.join(wallpaper_dir, f) for f in os.listdir(wallpaper_dir)]
+    filtered_wallpapers = []
+
+    for file_path in wallpapers:
+        if os.path.isfile(file_path) and os.path.splitext(file_path)[1].lower() in ALLOWED_EXTENSIONS:
+            filtered_wallpapers.append(file_path)
+
+    return filtered_wallpapers
+
+
 # main script
-if len(sys.argv) < 2:
-    print("Usage: {} {{set|next|prev}} [current_wallpaper]".format(sys.argv[0]))
-    sys.exit(1)
+def main():
+    """
+    The main function of the script.
+    """
+    if len(sys.argv) < 2:
+        print("Usage: {} {{set|next|prev}} [current_wallpaper]".format(sys.argv[0]))
+        sys.exit(1)
 
-mode = sys.argv[1]
+    initialize_directories()
+    state = load_state()
+    wallpaper_dir = initialize_wallpaper_directory(state["category"])
 
-if mode == "set":
-    # set wallpaper
-    if len(sys.argv) > 2:
-        set_wallpaper(os.path.join(WALLPAPER_DIR, sys.argv[2]))
+    # create a list of all image files in the specified directory
+    wallpapers = get_wallpapers(wallpaper_dir)
+
+    # cli commands
+    mode = sys.argv[1]
+    if mode == "set":
+        # set wallpaper
+        if len(sys.argv) > 2:
+            set_wallpaper(state, wallpapers, os.path.join(wallpaper_dir, sys.argv[2]))
+        else:
+            set_wallpaper(state, wallpapers, os.path.join(wallpaper_dir, wallpapers[0]))
+    elif mode == "next":
+        # next wallpaper
+        current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
+        set_wallpaper_index(state, wallpapers, current_index + 1)
+    elif mode == "prev":
+        # previous wallpaper
+        current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
+        set_wallpaper_index(state, wallpapers, current_index - 1)
+    elif mode == "restore":
+        # current wallpaper
+        current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
+        set_wallpaper_index(state, wallpapers, current_index)
+    elif mode == "category":
+        if len(sys.argv) > 2:
+            state["category"] = sys.argv[2]
+        else:
+            state["category"] = ""
+        
+        # reload wallpapers
+        wallpaper_dir = initialize_wallpaper_directory(state["category"])
+        wallpapers = get_wallpapers(wallpaper_dir)
+        
+        # current wallpaper
+        current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
+        set_wallpaper_index(state, wallpapers, current_index)
+
+        # Save the current filename to the state file
+        with open(STATE_FILE, "w") as state_file:
+            json.dump(state, state_file)
+    elif mode == "state":
+        print("{}".format(json.dumps(state, indent=2)))
     else:
-        set_wallpaper(os.path.join(WALLPAPER_DIR, WALLPAPERS[0]))
-elif mode == "next":
-    # next wallpaper
-    set_wallpaper_index(current_index + 1)
-elif mode == "prev":
-    # previous wallpaper
-    set_wallpaper_index(current_index - 1)
-elif mode == "restore":
-    # previous wallpaper
-    set_wallpaper_index(current_index)
-else:
-    print("Usage: {} {{set|next|prev}} [file]".format(sys.argv[0]))
-    print("Using WALLPAPER_DIR = ", WALLPAPER_DIR)
-    sys.exit(1)
+        print("Usage: {} {{set|next|prev}} [file]".format(sys.argv[0]))
+        print("Using WALLPAPER_DIR = ", wallpaper_dir)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
