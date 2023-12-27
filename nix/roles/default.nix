@@ -79,6 +79,7 @@
       ./rofi.nix
       ./thunar.nix
       ./firefox.nix
+      ./silicon.nix # create beautiful images of source code
     ];
   };
   media = {

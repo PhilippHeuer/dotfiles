@@ -39,6 +39,10 @@ export EDITOR="nvim"
 # tmux
 . $HOME/.config/bash/tmux.sh
 
+# fzf tab completion
+. $HOME/.config/bash/scripts/fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
+
 # zoxide
 if command -v zoxide &>/dev/null; then
     source <(zoxide init bash)
