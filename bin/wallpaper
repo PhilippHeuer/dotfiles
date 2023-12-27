@@ -6,6 +6,7 @@ import signal
 import subprocess
 import sys
 import time
+import inquirer
 
 ###
 # set wallpaper
@@ -33,6 +34,7 @@ def load_state():
     state = {
         "current_filename": "",
         "category": "",
+        "filter": "",
     }
 
     if os.path.exists(STATE_FILE):
@@ -41,6 +43,7 @@ def load_state():
                 cached_state = json.load(state_file)
                 state["current_filename"] = cached_state.get("current_filename", "")
                 state["category"] = cached_state.get("category", "")
+                state["filter"] = cached_state.get("filter", "")
         except Exception as e:
             print(f"Error loading state: {e}")
 
@@ -183,11 +186,16 @@ def main():
         current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
         set_wallpaper_index(state, wallpapers, current_index)
     elif mode == "category":
-        if len(sys.argv) > 2:
-            state["category"] = sys.argv[2]
-        else:
-            state["category"] = ""
-        
+        wallpaper_directories = [d for d in os.listdir(WALLPAPER_ROOT_DIR) if os.path.isdir(os.path.join(WALLPAPER_ROOT_DIR, d))]
+        questions = [
+            inquirer.List('wallpaper_dir',
+                message="Theme:",
+                choices=wallpaper_directories,
+            ),
+        ]
+        answers = inquirer.prompt(questions)
+        state["category"] = answers['wallpaper_dir']
+
         # reload wallpapers
         wallpaper_dir = initialize_wallpaper_directory(state["category"])
         wallpapers = get_wallpapers(wallpaper_dir)
