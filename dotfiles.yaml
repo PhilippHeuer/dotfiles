@@ -133,6 +133,16 @@ directories:
   rules:
   - rule: inPath("dunst")
 
+# albert launcher
+- path: config/albert
+  target: $HOME/.config/albert
+  rules:
+  - rule: inPath("albert")
+- path: config/albert/albert.conf
+  target: $HOME/.config/albert.conf
+  rules:
+  - rule: inPath("albert")
+
 # binaries
 - path: bin
   target: $HOME/.local/bin

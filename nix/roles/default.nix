@@ -80,6 +80,7 @@
       ./thunar.nix
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
+      ./albert.nix # minimal launcher
     ];
   };
   media = {

@@ -26,7 +26,7 @@ def initialize_directories():
 
 def initialize_wallpaper_directory(category):
     wallpaper_dir = os.path.join(WALLPAPER_ROOT_DIR, category)
-    os.makedirs(wallpaper_dir, exist_ok=True)
+    os.makedirs(WALLPAPER_ROOT_DIR, exist_ok=True)
     return wallpaper_dir
 
 
