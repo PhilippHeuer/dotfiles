@@ -1,17 +1,12 @@
 ---
-# modern wrapper for the apt
-- name: nala > install
+# base packages
+- name: base packages > install
   become: yes
   become_user: root
   apt:
-    name: nala
+    name: "{{ item }}"
     state: present
-
-# unzip
-- name: unzip > install
-  become: yes
-  become_user: root
-  apt:
-    name: unzip
-    state: present
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  loop:
+  - nala # modern wrapper for the apt
+  - unzip # unzip
+  - libfido2-dev # fido2 usb driver
