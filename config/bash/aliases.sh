@@ -15,6 +15,9 @@ alias l="eza --long --header"
 # modern apt replacement
 alias apt="sudo nala"
 
+# list usb devices (as tree with verbose output)
+alias lsusb="cyme -t -v"
+
 # gh copilot suggest
 ghc-suggest() {
   context="Shell: $(basename $SHELL), Distro: $(source /etc/os-release && echo $NAME), Editor: $EDITOR"

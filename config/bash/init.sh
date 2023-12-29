@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-# gpg
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >> ~/.local/share/gpg-agent.log 2>&1
+# dumb terminal (e. g. rsync)
+if [ "$TERM" = "dumb" ]; then
+  return 0
+fi
 
 # path
 export PATH="$PATH:$HOME/.local/bin"
@@ -12,9 +13,20 @@ export PATH="$PATH:$HOME/.config/bin" # scripts
 
 # ssh auth agent
 if [ -z "$SSH_AUTH_SOCK" -a -n "$XDG_RUNTIME_DIR" ]; then
-  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket) # gpg-agent
-  # export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" # ssh-agent
+  # ssh agent
+  if pgrep -x ssh-agent > /dev/null; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+  fi
+
+  # gpg agent
+  if pgrep -x ssh-agent > /dev/null; then
+    gpg-connect-agent updatestartuptty /bye >> ~/.local/share/gpg-agent.log 2>&1
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  fi
 fi
+
+# gpg tty
+export GPG_TTY=$(tty)
 
 # ansible
 export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"

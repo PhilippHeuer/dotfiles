@@ -49,6 +49,7 @@
       # secret management
       ./sops.nix
       ./vault.nix
+      ./yubikey.nix
 
       # k8s
       ./kubectl.nix

@@ -10,57 +10,58 @@
   include_tasks: suse.yaml
   when: ansible_distribution == 'openSUSE Tumbleweed'
 
-## systemd unit files for ssh agent
-#- name: ssh > agent service > create
-#  copy:
-#    src: ssh-agent.service
-#    dest: "{{ ansible_env.HOME }}/.config/systemd/user/ssh-agent.service"
+# systemd unit files for ssh agent
+- name: ssh > agent service > create
+  copy:
+    src: ssh-agent.service
+    dest: "{{ ansible_env.HOME }}/.config/systemd/user/ssh-agent.service"
 
-## enable and start ssh service
-#- name: ssh > agent service > enable and start
-#  ansible.builtin.systemd:
-#    daemon_reload: yes
-#    scope: user
-#    name: ssh-agent.service
-#    enabled: yes
-#    state: started
-
-# systemd unit files for gpg agent
-- name: ssh > gpg agent > service
-  copy:
-    src: gpg-agent.service
-    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent.service"
-- name: ssh > gpg agent > socket > default
-  copy:
-    src: gpg-agent.socket
-    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent.socket"
-- name: ssh > gpg agent > socket > ssh
-  copy:
-    src: gpg-agent-ssh.socket
-    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent-ssh.socket"
-- name: ssh > gpg agent > socket > browser
-  copy:
-    src: gpg-agent-browser.socket
-    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent-browser.socket"
-
-# gpg agent config
-- name: ssh > gpg agent > config dir
-  become: true
-  file:
-    path: /etc/gnupg
-    state: directory
-    mode: 0755
-- name: ssh > gpg agent > config file
-  become: true
-  copy:
-    src: gpg-agent.conf
-    dest: /etc/gnupg/gpg-agent.conf
-
-# enable and start gpg service
+# enable and start ssh service
 - name: ssh > agent service > enable and start
   ansible.builtin.systemd:
     daemon_reload: yes
     scope: user
-    name: gpg-agent.service
+    name: ssh-agent.service
     enabled: yes
     state: started
+
+## systemd unit files for gpg agent
+#- name: ssh > gpg agent > service
+#  copy:
+#    src: gpg-agent.service
+#    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent.service"
+#- name: ssh > gpg agent > socket > default
+#  copy:
+#    src: gpg-agent.socket
+#    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent.socket"
+#- name: ssh > gpg agent > socket > ssh
+#  copy:
+#    src: gpg-agent-ssh.socket
+#    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent-ssh.socket"
+#- name: ssh > gpg agent > socket > browser
+#  copy:
+#    src: gpg-agent-browser.socket
+#    dest: "{{ ansible_env.HOME }}/.config/systemd/user/gpg-agent-browser.socket"
+#
+## gpg agent config
+#- name: ssh > gpg agent > config dir
+#  become: true
+#  file:
+#    path: /etc/gnupg
+#    state: directory
+#    mode: 0755
+#- name: ssh > gpg agent > config file
+#  become: true
+#  copy:
+#    src: gpg-agent.conf
+#    dest: /etc/gnupg/gpg-agent.conf
+#
+## enable and start gpg service
+#- name: ssh > agent service > enable and start
+#  ansible.builtin.systemd:
+#    daemon_reload: yes
+#    scope: user
+#    name: gpg-agent.service
+#    enabled: yes
+#    state: started
+#
