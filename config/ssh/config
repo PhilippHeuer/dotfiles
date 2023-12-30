@@ -10,6 +10,12 @@ Host *
   ConnectTimeout 20
   Compression yes
 
+# cache ssh connections
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/S.%r@%h:%p
+  ControlPersist 15m
+
 # user config
 Include ~/.config/ssh/servers
 
