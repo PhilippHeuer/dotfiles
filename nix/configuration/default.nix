@@ -55,6 +55,7 @@ in {
       ../nixos/audio.nix
       ../nixos/virtualization.nix
       ../nixos/ssh.nix
+      ../nixos/wifi.nix
       # roles
       nixosRoles.default
       nixosRoles.wm-hyprland

@@ -11,11 +11,9 @@
   # hostname
   networking.hostName = "nixos"; # Define your hostname.
 
-  # enables wireless support via wpa_supplicant.
-  # networking.wireless.enable = true;
-
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.scanRandMacAddress = false; # causes issues with some wifi networks
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
