@@ -1,0 +1,11 @@
+keys:
+- &primary age18hgjjawusp6al8kjgyt9r85zss3kw6dlws8e9ylw859z2a8umg2qkm5nx0
+creation_rules:
+  - path_regex: nix/secrets/default.yaml$
+    key_groups:
+      - age:
+        - *primary
+  - path_regex: nix/secrets/wifi.yaml$
+    key_groups:
+      - age:
+        - *primary

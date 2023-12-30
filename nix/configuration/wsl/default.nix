@@ -40,4 +40,7 @@
   systemd.tmpfiles.settings = {
     "10-wslg-x11" = lib.mkForce {};
   };
+
+  # secrets
+  sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";
 }
