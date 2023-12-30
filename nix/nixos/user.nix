@@ -23,9 +23,11 @@ in {
     defaultUserShell = pkgs.bash;
   };
 
+  sops.secrets."user/${username}/password".neededForUsers = true;
+
   users.users.${username} = {
     isNormalUser = true;
-    hashedPassword = "$6$spcFyCpOwSWB3CEb$thhYDrJDeRyqWw.cWr0Ar41UPCXZh2.Tgw4PJAFBnT4xHCpgdrJo/OweMeY/R5QEINDJSCH1QbXB/vcDax4ZT0";
+    hashedPasswordFile = config.sops.secrets."user/${username}/password".path;
     extraGroups =
       [
         "wheel"
