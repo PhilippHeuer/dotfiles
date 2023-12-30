@@ -35,6 +35,11 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 Finally, run `sudo nixos-rebuild switch` to apply the changes.
 
+## SOPS
+
+- generate a new private key `nix shell nixpkgs#age -c age-keygen -o ~/.config/sops/age/keys.txt`
+- get public key: `nix shell nixpkgs#age -c age-keygen -y ~/.config/sops/age/keys.txt`
+
 ## Resources
 
 - [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)

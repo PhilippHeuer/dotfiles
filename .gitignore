@@ -10,5 +10,8 @@ docs
 # user config
 config/git/user
 
+# sops
+config/sops/age/keys.txt
+
 # work in progress files
 wip

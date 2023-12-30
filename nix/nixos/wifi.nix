@@ -1,8 +1,9 @@
-### network connections
-{ lib, config, ... }:
+# network configuration
+{ lib, ... }:
 
 {
-  environment.etc."NetworkManager/system-connections/HOME.nmconnection".text = lib.mkForce ''
-# requires SOPS or other encryption
-'';
+  sops.secrets."networkmanager/wifi/home" = lib.mkDefault {
+    sopsFile = ../secrets/wifi.yaml;
+    path = "/etc/NetworkManager/system-connections/HOME.nmconnection";
+  };
 }
