@@ -15,8 +15,14 @@ alias l="eza --long --header"
 # modern apt replacement
 alias apt="sudo nala"
 
-# list usb devices (as tree with verbose output)
-alias lsusb="cyme -t -v"
+# usb devices
+alias list-usb="cyme -t -v" # tree, verbose
+
+# network
+alias list-adapters="nmcli dev status"
+alias list-wifi="nmcli dev wifi list"
+alias list-connections="nmcli con show"
+alias logs-network="sudo journalctl -fu NetworkManager"
 
 # gh copilot suggest
 ghc-suggest() {

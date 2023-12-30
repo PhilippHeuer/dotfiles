@@ -49,6 +49,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # sops
+    sops = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # wsl
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -56,7 +62,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, ... }@inputs:
+  outputs = { self, nixpkgs, nixos-wsl, sops, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
