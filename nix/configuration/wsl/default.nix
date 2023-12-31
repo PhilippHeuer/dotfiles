@@ -24,10 +24,18 @@
     wslConf.automount.mountFsTab = true;
     wslConf.automount.root = "/mnt"; # also update path in unmount-x11 activation script
     wslConf.automount.options = "metadata,uid=1000,gid=1000,umask=022,fmask=111,case=off";
+
+    # hostname
+    wslConf.network.hostname = "nixos";
   };
 
-  # unmount wslg X11
-  system.activationScripts = { # wsl automatically mounts /tmp/.X11-unix
+  # disable wslg x11 mount
+  systemd.tmpfiles.settings = {
+    "10-wslg-x11" = lib.mkForce {};
+  };
+
+  system.activationScripts = {
+    # unmount wslg X11 (wsl automatically mounts /tmp/.X11-unix)
     unmount-x11 = ''
       # unmount /tmp/.X11-unix if it is mounted
       umount /tmp/.X11-unix 2>/dev/null || true
@@ -35,10 +43,11 @@
       # remove wslg x11 mount from systemd.tmpfiles.rules
       ${pkgs.gnused}/bin/sed -i "\|L /tmp/.X11-unix - - - - /mnt/wslg/.X11-unix|d" /etc/tmpfiles.d/00-nixos.conf
     '';
-  };
 
-  systemd.tmpfiles.settings = {
-    "10-wslg-x11" = lib.mkForce {};
+    # remove hardcoded hostname
+    wslconf-hostname-fix = ''
+      ${pkgs.gnused}/bin/sed -i "\|hostname=nixos|d" /etc/wsl.conf
+    '';
   };
 
   # secrets

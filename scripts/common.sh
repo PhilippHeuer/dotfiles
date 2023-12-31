@@ -6,7 +6,8 @@
 # contains host-specific variables that can not be detected automatically, can be removed once wlr-randr works on wsl
 ###
 export MACHINE_ID=$(cat /etc/machine-id)
-if [ "$MACHINE_ID" = "983954ad97e846b3979d67824db9b64f" ] || [ "$MACHINE_ID" = "a2c89aee527d4f1eb3b3e43003815f9a" ]; then
+export HOSTNAME_HASH=$(echo $HOSTNAME | sha256sum | cut -d' ' -f1)
+if [ "$MACHINE_ID" = "a2c89aee527d4f1eb3b3e43003815f9a" ] || [ "$HOSTNAME_HASH" = "0b07d5bb3e7c90c906d04bef26b63bc7da006211e1501dbc7e000728e0451595" ]; then
     export RESOLUTION_WIDTH=3440
     export RESOLUTION_HEIGHT=1440
 else

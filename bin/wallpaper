@@ -91,6 +91,7 @@ def set_wallpaper_swww(file_path):
     # set wallpaper
     command = [
         "swww", "img", file_path,
+        "--resize", "fit",
         "--transition-bezier", ".43,1.19,1,.4",
         "--transition-type", "grow",
         "--transition-duration", "0.5",
@@ -114,7 +115,7 @@ def set_wallpaper_swaybg(file_path):
         command = [
             "swaybg",
             "-i", file_path,
-            "-m", "fill", # stretch, fill, fit, center, tile
+            "-m", "stretch", # stretch, fill, fit, center, tile
         ]
         pid = subprocess.Popen(command).pid
 

@@ -9,7 +9,7 @@
   users.defaultUserShell = pkgs.bash;
 
   # hostname
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "phx-laptop";
 
   # Enable networking
   networking.networkmanager.enable = true;
