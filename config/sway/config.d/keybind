@@ -18,6 +18,9 @@ bindsym $mod+t exec $term
 bindsym $mod+Space exec $menu
 bindsym $mod+m exec $menu
 
+# Browser
+bindsym $mod+w exec $browser
+
 # Kill focused window
 bindsym $mod+q kill
 bindsym $mod+c kill
@@ -102,7 +105,7 @@ bindsym $mod+v splitv
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen

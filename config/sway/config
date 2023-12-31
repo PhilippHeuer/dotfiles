@@ -14,6 +14,7 @@ set $mod Mod4
 # terminal
 set $term alacritty
 set $term_cwd $term --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"
+set $browser MOZ_ENABLE_WAYLAND=1 firefox
 
 # application launcher
 set $menu "~/.local/scripts/launcher.sh rofi"
@@ -36,7 +37,7 @@ exec_always wl-paste --type image --watch cliphist store # clipboard store image
 
 # ui
 exec_always ~/.local/scripts/swww.sh # start wallpaper daemon
-exec_always sleep 0.3 && waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css # launch the system panel
+exec_always sleep 1 && waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css # launch the system panel
 
 ###
 # user config
