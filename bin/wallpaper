@@ -27,6 +27,10 @@ def initialize_directories():
 def initialize_wallpaper_directory(category):
     wallpaper_dir = os.path.join(WALLPAPER_ROOT_DIR, category)
     os.makedirs(WALLPAPER_ROOT_DIR, exist_ok=True)
+
+    if not os.path.exists(wallpaper_dir):
+        raise FileNotFoundError(f"Wallpaper directory '{wallpaper_dir}' does not exist.")
+
     return wallpaper_dir
 
 

@@ -14,12 +14,12 @@ set $mod Mod4
 # terminal
 set $term alacritty
 set $term_cwd $term --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"
-set $browser MOZ_ENABLE_WAYLAND=1 firefox
+set $browser MOZ_ENABLE_WAYLAND=1 firefox -new-window
 
 # application launcher
 set $menu "~/.local/scripts/launcher.sh rofi"
 
-### 
+###
 # on startup
 #
 
