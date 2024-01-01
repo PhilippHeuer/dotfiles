@@ -29,6 +29,16 @@ echo "You selected $wm_name"
 
 # start sway
 if [[ $wm_name == "sway" ]]; then
+  # sway environment
+  export XDG_CURRENT_DESKTOP=sway
+  export XDG_SESSION_TYPE=wayland
+  export XDG_SESSION_DESKTOP=sway
+  export QT_QPA_PLATFORM=wayland
+  export QT_QPA_PLATFORMTHEME=qt5ct
+  export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+  export QT_AUTO_SCREEN_SCALE_FACTOR=1
+  export MOZ_ENABLE_WAYLAND=1
+
   # wsl - overwrite screen resolution
   if [ "$(is_wsl)" == "true" ]; then
     RESOLUTION_HEIGHT=$((RESOLUTION_HEIGHT - 40)) # 40px for the windows taskbar
@@ -38,7 +48,7 @@ if [[ $wm_name == "sway" ]]; then
   fi
 
   # start sway
-  sway -d
+  dbus-run-session sway -d
 fi
 
 # start hyprland
