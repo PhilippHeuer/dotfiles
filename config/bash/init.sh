@@ -35,7 +35,7 @@ export ANSIBLE_CONFIG="$HOME/.config/ansible/ansible.cfg"
 export BAT_THEME="OneHalfDark"
 
 # lazygit
-export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/mocha-blue.yml"
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/current.yml"
 
 # rust
 if [ -f $HOME/.cargo/env ]; then
