@@ -206,7 +206,7 @@
       # renovate: datasource=github-releases depName=databricks/click
       click: "0.6.3"
       # renovate: datasource=github-releases depName=PhilippHeuer/dotfiles-cli
-      dotfilescli: "0.2.1"
+      dotfilescli: "0.2.2"
       # renovate: datasource=github-releases depName=o2sh/onefetch
       onefetch: "2.19.0"
       # renovate: datasource=github-releases depName=Horus645/swww
