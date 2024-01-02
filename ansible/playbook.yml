@@ -164,7 +164,7 @@
       # renovate: datasource=github-releases depName=aristocratos/btop
       btop: "1.2.13"
       # renovate: datasource=github-releases depName=fastfetch-cli/fastfetch
-      fastfetch: "2.4.0"
+      fastfetch: "2.5.0"
       # renovate: datasource=github-releases depName=eza-community/eza
       eza: "0.17.0"
       # renovate: datasource=github-releases depName=dandavison/delta
