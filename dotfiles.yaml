@@ -30,6 +30,10 @@ directories:
   target: $HOME/.config/btop
   rules:
   - rule: inPath("btop")
+- path: config/btop/themes/catppuccin_mocha.theme
+  target: $HOME/.config/btop/themes/current.theme
+  rules:
+  - rule: inPath("btop") && theme == "catppuccin-mocha"
 
 # fastfetch
 - path: config/fastfetch
@@ -60,6 +64,10 @@ directories:
   target: $HOME/.config/lazygit
   rules:
   - rule: inPath("lazygit")
+- path: config/lazygit/themes/mocha-blue.yml
+  target: $HOME/.config/lazygit/themes/current.yml
+  rules:
+  - rule: inPath("lazygit") && theme == "catppuccin-mocha"
 
 # nushell
 - path: config/nushell
@@ -98,6 +106,12 @@ directories:
 # waybar
 - path: config/waybar
   target: $HOME/.config/waybar
+  rules:
+  - rule: inPath("waybar")
+- path: config/waybar/themes/Catppuccin-Mocha.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "catppuccin-mocha"
 
 # X11
 - path: config/X11
