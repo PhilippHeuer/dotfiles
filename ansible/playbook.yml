@@ -174,7 +174,7 @@
       # renovate: datasource=github-releases depName=nushell/nushell
       nushell: "0.88.1"
       # renovate: datasource=github-releases depName=starship/starship
-      starship: "1.17.0"
+      starship: "1.17.1"
       # renovate: datasource=github-releases depName=neovim/neovim
       neovim: "0.9.5"
       # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
