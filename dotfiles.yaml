@@ -108,10 +108,34 @@ directories:
   target: $HOME/.config/waybar
   rules:
   - rule: inPath("waybar")
-- path: config/waybar/themes/Catppuccin-Mocha.css
+- path: config/waybar/themes/catppuccin-mocha.css
   target: $HOME/.config/waybar/themes/current.css
   rules:
   - rule: inPath("waybar") && theme == "catppuccin-mocha"
+- path: config/waybar/themes/cyberpunk.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "cyberpunk"
+- path: config/waybar/themes/graphite-mono.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "graphite-mono"
+- path: config/waybar/themes/rose-pine.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "rose-pine"
+- path: config/waybar/themes/sakura.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "sakura"
+- path: config/waybar/themes/snow.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "snow"
+- path: config/waybar/themes/tokyo-night.css
+  target: $HOME/.config/waybar/themes/current.css
+  rules:
+  - rule: inPath("waybar") && theme == "tokyo-night"
 
 # X11
 - path: config/X11
@@ -156,6 +180,42 @@ directories:
   target: $HOME/.config/albert.conf
   rules:
   - rule: inPath("albert")
+
+# gtk
+- path: config/gtk-3.0
+  target: $HOME/.config/gtk-3.0
+
+# qt5
+- path: config/qt5ct
+  target: $HOME/.config/qt5ct
+- path: config/qt5ct/themes/catppuccin-mocha.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "catppuccin-mocha"
+- path: config/qt5ct/themes/cyberpunk.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "cyberpunk"
+- path: config/qt5ct/themes/graphite-mono.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "graphite-mono"
+- path: config/qt5ct/themes/rose-pine.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "rose-pine"
+- path: config/qt5ct/themes/sakura.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "sakura"
+- path: config/qt5ct/themes/snow.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "snow"
+- path: config/qt5ct/themes/tokyo-night.conf
+  target: $HOME/.config/qt5ct/themes/current.conf
+  rules:
+  - rule: theme == "tokyo-night"
 
 # binaries
 - path: bin
