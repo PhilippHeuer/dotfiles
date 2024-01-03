@@ -18,7 +18,15 @@ WALLPAPER_ROOT_DIR = os.path.expanduser("~/.local/share/backgrounds")
 STATE_DIR = os.path.expanduser("~/.local/state")
 STATE_FILE = os.path.join(STATE_DIR, "wallpaper.state")
 ALLOWED_EXTENSIONS = {".jpg", ".png", ".gif", ".pnm", ".tga", ".tiff", ".webp", ".bmp", ".farbfeld"}
-
+VALID_THEMES = [
+    "catppuccin-mocha",
+    "cyberpunk",
+    "graphite-mono",
+    "rose-pine",
+    "sakura",
+    "snow",
+    "tokyo-night"
+]
 
 def initialize_directories():
     os.makedirs(STATE_DIR, exist_ok=True)
@@ -69,7 +77,7 @@ def set_wallpaper(state, wallpapers, file_path):
     try:
         new_index = wallpapers.index(file_path) if file_path in wallpapers else 0
         mode = detect_mode()
-        print("setting wallpaper to {} (index {}, mode {})".format(file_path, new_index, mode))
+        print("Setting wallpaper to {} (index {}, mode {})".format(file_path, new_index, mode))
 
         # hyprland
         if mode == 'hyprland':
@@ -83,6 +91,7 @@ def set_wallpaper(state, wallpapers, file_path):
             json.dump(state, state_file)
     except Exception as e:
         print(f"Error setting wallpaper: {e}")
+
 
 # set wallpaper by index
 def set_wallpaper_index(state, wallpapers, next_index):
@@ -205,6 +214,16 @@ def main():
         wallpaper_dir = initialize_wallpaper_directory(state["category"])
         wallpapers = get_wallpapers(wallpaper_dir)
         
+        # update theme
+        theme = state["category"]
+        if theme not in VALID_THEMES:
+            theme = VALID_THEMES[0]
+
+        # activate theme
+        print(f"Activating theme {theme}")
+        os.environ["DOTFILE_THEME"] = theme
+        os.system(f'dotfiles install --mode symlink')
+
         # current wallpaper
         current_index = wallpapers.index(state["current_filename"]) if state["current_filename"] in wallpapers else 0
         set_wallpaper_index(state, wallpapers, current_index)
