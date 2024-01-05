@@ -53,6 +53,8 @@ fi
 
 # start hyprland
 if [[ $wm_name == "hyprland" ]]; then
+  #export WLR_RENDERER_ALLOW_SOFTWARE=1
+  #exec Hyprland
   echo "Hyprland does not work in WSL yet. Exiting."
   exit 1
 fi

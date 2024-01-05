@@ -12,7 +12,6 @@ set $right l
 #
 # Start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+t exec $term
 
 # Start your launcher
 bindsym $mod+Space exec $menu

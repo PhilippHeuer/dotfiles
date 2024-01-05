@@ -1,0 +1,6 @@
+# window: theme selector
+for_window [title="^select_theme$"] floating enable
+for_window [title="^select_theme$"] resize set 800 600
+
+# window: albert launcher
+for_window [title="^Albert$"] floating enable
