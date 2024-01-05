@@ -40,6 +40,7 @@
     "custom/r_end",
     "custom/l_end",
     //"custom/cliphist",
+    "custom/themechange",
     "custom/wallchange",
     "custom/power",
     "custom/r_end",
@@ -122,6 +123,15 @@
     "on-click-right": "~/.local/bin/wallpaper prev",
     "on-scroll-up": "~/.local/bin/wallpaper next",
     "on-scroll-down": "~/.local/bin/wallpaper prev",
+    "interval": "once",
+    "tooltip": true
+  },
+
+  // theme
+  "custom/themechange": {
+    "format": " {}",
+    "exec": "echo; echo switch theme",
+    "on-click": "alacritty -t select_theme -e ~/.local/bin/theme",
     "interval": "once",
     "tooltip": true
   },

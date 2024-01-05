@@ -210,10 +210,6 @@ directories:
   rules:
   - rule: inPath("waybar") && theme == "tokyo-night"
 
-# X11
-- path: config/X11
-  target: $HOME/.config/X11
-
 # zellij
 - path: config/zellij
   target: $HOME/.config/zellij
