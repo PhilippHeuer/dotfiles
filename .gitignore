@@ -13,5 +13,8 @@ config/git/user
 # sops
 config/sops/age/keys.txt
 
+# apply to host util scripts
+apply
+
 # work in progress files
 wip

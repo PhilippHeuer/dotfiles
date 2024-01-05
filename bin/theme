@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+import sys
+
+
+VALID_THEMES = [
+    "catppuccin-mocha",
+    "rose-pine",
+    "nord",
+    "tokyo-night"
+]
+
+
+def select_theme():
+    theme_options = "\n".join(VALID_THEMES)
+    fzf_command = f"echo -e '{theme_options}' | sort -u | fzf"
+    
+    try:
+        process = subprocess.Popen(fzf_command, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+        stdout, _ = process.communicate()
+
+        selected_theme = stdout.strip()
+        return selected_theme
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+
+def set_and_activate_theme(theme):
+    print(f"Activating theme {theme}")
+    os.environ["DOTFILE_THEME"] = theme
+    os.system('dotfiles install --mode symlink')
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        # Theme name provided as an argument
+        selected_theme = sys.argv[1]
+    else:
+        # No argument provided, use fzf to select theme
+        selected_theme = select_theme()
+
+    if selected_theme:
+        set_and_activate_theme(selected_theme)
+    else:
+        print("No theme selected.")

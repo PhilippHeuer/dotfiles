@@ -5,17 +5,15 @@
 #
 
 # fzf
-curl -S -s -L "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh" -o "config/bash/scripts/fzf-bash-completion.sh"
+curl -S -s -L "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh" -o "config/bash/init/fzf-bash-completion.sh"
 
 ###
 # Pulls the latest versions of the themes from their respective repositories.
 #
 
 # alacritty themes
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-frappe.yml" -o "config/alacritty/themes/catppuccin-frappe.yml"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-latte.yml" -o "config/alacritty/themes/catppuccin-latte.yml"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-macchiato.yml" -o "config/alacritty/themes/catppuccin-macchiato.yml"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.yml" -o "config/alacritty/themes/catppuccin-mocha.yml"
+curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.toml" -o "config/alacritty/themes/catppuccin-mocha.toml"
+curl -S -s -L "https://raw.githubusercontent.com/rose-pine/alacritty/main/dist/rose-pine.toml" -o "config/alacritty/themes/rose-pine.toml"
 
 # bat themes
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-frappe.tmTheme" -o "config/bat/themes/Catppuccin-frappe.tmTheme"
@@ -28,6 +26,7 @@ curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/cat
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_latte.theme" -o "config/btop/themes/catppuccin_latte.theme"
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_macchiato.theme" -o "config/btop/themes/catppuccin_macchiato.theme"
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme" -o "config/btop/themes/catppuccin_mocha.theme"
+sed -i 's/theme\[main_bg\]="#[0-9A-Fa-f]\{6\}"/theme[main_bg]=""/' config/btop/themes/*.theme
 
 # sway themes
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-frappe" -o "config/sway/themes/catppuccin-frappe"
