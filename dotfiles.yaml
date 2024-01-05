@@ -1,9 +1,26 @@
+# directories
 directories:
 # alacritty
 - path: config/alacritty
   target: $HOME/.config/alacritty
   rules:
   - rule: inPath("alacritty")
+- path: config/alacritty/themes/catppuccin-mocha.yml
+  target: $HOME/.config/alacritty/themes/current.yml
+  rules:
+  - rule: inPath("alacritty") && theme == "catppuccin-mocha"
+- path: config/alacritty/themes/rose-pine.yml
+  target: $HOME/.config/alacritty/themes/current.yml
+  rules:
+  - rule: inPath("alacritty") && theme == "rose-pine"
+- path: config/alacritty/themes/nord.yml
+  target: $HOME/.config/alacritty/themes/current.yml
+  rules:
+  - rule: inPath("alacritty") && theme == "nord"
+- path: config/alacritty/themes/tokyo-night.yml
+  target: $HOME/.config/alacritty/themes/current.yml
+  rules:
+  - rule: inPath("alacritty") && theme == "tokyo-night"
 
 # ansible
 - path: config/ansible
@@ -19,11 +36,29 @@ directories:
 - path: config/bash/.bash_profile
   target: $HOME/.bash_profile
 
-# bat
-- path: config/bat
-  target: $HOME/.config/bat
+# bat themes
+- path: config/bat/themes
+  target: $HOME/.config/bat/themes
   rules:
   - rule: inPath("bat")
+
+# bat theme init scripts
+- path: config/bat/init/catppuccin-mocha.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "catppuccin-mocha"
+- path: config/bat/init/rose-pine.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "rose-pine"
+- path: config/bat/init/nord.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "nord"
+- path: config/bat/init/tokyo-night.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "tokyo-night"
 
 # btop
 - path: config/btop
@@ -34,6 +69,18 @@ directories:
   target: $HOME/.config/btop/themes/current.theme
   rules:
   - rule: inPath("btop") && theme == "catppuccin-mocha"
+- path: config/btop/themes/rose-pine.theme
+  target: $HOME/.config/btop/themes/current.theme
+  rules:
+  - rule: inPath("btop") && theme == "rose-pine"
+- path: config/btop/themes/nord.theme
+  target: $HOME/.config/btop/themes/current.theme
+  rules:
+  - rule: inPath("btop") && theme == "nord"
+- path: config/btop/themes/tokyo-night.theme
+  target: $HOME/.config/btop/themes/current.theme
+  rules:
+  - rule: inPath("btop") && theme == "tokyo-night"
 
 # fastfetch
 - path: config/fastfetch
@@ -68,6 +115,10 @@ directories:
   target: $HOME/.config/lazygit/themes/current.yml
   rules:
   - rule: inPath("lazygit") && theme == "catppuccin-mocha"
+- path: config/lazygit/themes/rose-pine.yml
+  target: $HOME/.config/lazygit/themes/current.yml
+  rules:
+  - rule: inPath("lazygit") && theme == "rose-pine"
 
 # nushell
 - path: config/nushell
@@ -103,6 +154,40 @@ directories:
   rules:
   - rule: inPath("tmux")
 
+# fzf
+- path: config/fzf
+  target: $HOME/.config/fzf
+  rules:
+  - rule: inPath("fzf")
+- path: config/fzf/themes/catppuccin-mocha.sh
+  target: $HOME/.config/fzf/init/theme.sh
+  rules:
+  - rule: inPath("fzf") && theme == "catppuccin-mocha"
+- path: config/fzf/themes/rose-pine.sh
+  target: $HOME/.config/fzf/init/theme.sh
+  rules:
+  - rule: inPath("fzf") && theme == "rose-pine"
+- path: config/fzf/themes/nord.sh
+  target: $HOME/.config/fzf/init/theme.sh
+  rules:
+  - rule: inPath("fzf") && theme == "nord"
+- path: config/fzf/themes/tokyo-night.sh
+  target: $HOME/.config/fzf/init/theme.sh
+  rules:
+  - rule: inPath("fzf") && theme == "tokyo-night"
+
+# starship
+- path: config/starship
+  target: $HOME/.config/starship
+  rules:
+  - rule: inPath("starship")
+
+# zoxide
+- path: config/zoxide
+  target: $HOME/.config/zoxide
+  rules:
+  - rule: inPath("zoxide")
+
 # waybar
 - path: config/waybar
   target: $HOME/.config/waybar
@@ -112,26 +197,14 @@ directories:
   target: $HOME/.config/waybar/themes/current.css
   rules:
   - rule: inPath("waybar") && theme == "catppuccin-mocha"
-- path: config/waybar/themes/cyberpunk.css
-  target: $HOME/.config/waybar/themes/current.css
-  rules:
-  - rule: inPath("waybar") && theme == "cyberpunk"
-- path: config/waybar/themes/graphite-mono.css
-  target: $HOME/.config/waybar/themes/current.css
-  rules:
-  - rule: inPath("waybar") && theme == "graphite-mono"
 - path: config/waybar/themes/rose-pine.css
   target: $HOME/.config/waybar/themes/current.css
   rules:
   - rule: inPath("waybar") && theme == "rose-pine"
-- path: config/waybar/themes/sakura.css
+- path: config/waybar/themes/nord.css
   target: $HOME/.config/waybar/themes/current.css
   rules:
-  - rule: inPath("waybar") && theme == "sakura"
-- path: config/waybar/themes/snow.css
-  target: $HOME/.config/waybar/themes/current.css
-  rules:
-  - rule: inPath("waybar") && theme == "snow"
+  - rule: inPath("waybar") && theme == "nord"
 - path: config/waybar/themes/tokyo-night.css
   target: $HOME/.config/waybar/themes/current.css
   rules:
@@ -181,9 +254,45 @@ directories:
   rules:
   - rule: inPath("albert")
 
-# gtk
+# gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
+- path: /run/current-system/sw/share/themes/Catppuccin-Frappe-Standard-Blue-Dark/gtk-3.0
+  target: $HOME/.config/gtk-3.0
+  rules:
+  - rule: theme == "catppuccin-mocha"
+- path: /run/current-system/sw/share/themes/rose-pine/gtk-3.0
+  target: $HOME/.config/gtk-3.0
+  rules:
+  - rule: theme == "rose-pine"
+- path: /run/current-system/sw/share/themes/Nordic-darker/gtk-3.0
+  target: $HOME/.config/gtk-3.0
+  rules:
+  - rule: theme == "nord"
+- path: /run/current-system/sw/share/themes/Tokyonight-Dark-BL/gtk-3.0
+  target: $HOME/.config/gtk-3.0
+  rules:
+  - rule: theme == "tokyo-night"
+
+# gtk4
+- path: config/gtk-4.0
+  target: $HOME/.config/gtk-4.0
+- path: /run/current-system/sw/share/themes/Catppuccin-Frappe-Standard-Blue-Dark/gtk-4.0
+  target: $HOME/.config/gtk-4.0
+  rules:
+  - rule: theme == "catppuccin-mocha"
+- path: /run/current-system/sw/share/themes/rose-pine/gtk-4.0
+  target: $HOME/.config/gtk-4.0
+  rules:
+  - rule: theme == "rose-pine"
+- path: /run/current-system/sw/share/themes/Nordic-darker/gtk-4.0
+  target: $HOME/.config/gtk-4.0
+  rules:
+  - rule: theme == "nord"
+- path: /run/current-system/sw/share/themes/Tokyonight-Dark-BL/gtk-4.0
+  target: $HOME/.config/gtk-4.0
+  rules:
+  - rule: theme == "tokyo-night"
 
 # qt5
 - path: config/qt5ct
@@ -192,26 +301,14 @@ directories:
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:
   - rule: theme == "catppuccin-mocha"
-- path: config/qt5ct/themes/cyberpunk.conf
-  target: $HOME/.config/qt5ct/themes/current.conf
-  rules:
-  - rule: theme == "cyberpunk"
-- path: config/qt5ct/themes/graphite-mono.conf
-  target: $HOME/.config/qt5ct/themes/current.conf
-  rules:
-  - rule: theme == "graphite-mono"
 - path: config/qt5ct/themes/rose-pine.conf
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:
   - rule: theme == "rose-pine"
-- path: config/qt5ct/themes/sakura.conf
+- path: config/qt5ct/themes/nord.conf
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:
-  - rule: theme == "sakura"
-- path: config/qt5ct/themes/snow.conf
-  target: $HOME/.config/qt5ct/themes/current.conf
-  rules:
-  - rule: theme == "snow"
+  - rule: theme == "nord"
 - path: config/qt5ct/themes/tokyo-night.conf
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:

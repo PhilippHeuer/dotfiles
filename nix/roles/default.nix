@@ -5,6 +5,8 @@
       ./vm.nix
       ./ansible.nix
       ./base.nix
+
+      # cli tools
       ./bat.nix
       ./fzf.nix
       ./sd.nix
@@ -76,6 +78,7 @@
   };
   desktop = {
     imports = [
+      ./gtk.nix # theming
       ./alacritty.nix
       ./rofi.nix
       ./thunar.nix

@@ -39,3 +39,5 @@
 ## License
 
 Released under the [MIT license](./LICENSE).
+
+Some files (themes, color-palettes) included in this repository are released under different licenses. Check [CREDITS.md](./CREDITS.md) for more information.

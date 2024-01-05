@@ -17,7 +17,7 @@ import inquirer
 WALLPAPER_ROOT_DIR = os.path.expanduser("~/.local/share/backgrounds")
 STATE_DIR = os.path.expanduser("~/.local/state")
 STATE_FILE = os.path.join(STATE_DIR, "wallpaper.state")
-ALLOWED_EXTENSIONS = {".jpg", ".png", ".gif", ".pnm", ".tga", ".tiff", ".webp", ".bmp", ".farbfeld"}
+ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".pnm", ".tga", ".tiff", ".webp", ".bmp", ".farbfeld"}
 VALID_THEMES = [
     "catppuccin-mocha",
     "cyberpunk",
@@ -120,6 +120,7 @@ def set_wallpaper_swww(file_path):
         pass
 
     subprocess.run(command, check=True)
+
 
 # set wallpaper by filename
 def set_wallpaper_swaybg(file_path):
