@@ -28,7 +28,6 @@
 
       # editor
       ./neovim.nix
-      ./vscode.nix
       ./fuzzmux.nix
 
       # language toolchains
@@ -85,6 +84,14 @@
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
+      
+    ];
+  };
+  ide = {
+    imports = [
+      ./dbeaver.nix # database client
+      ./vscode.nix # code editor
+      ./idea-community.nix # java ide
     ];
   };
   media = {

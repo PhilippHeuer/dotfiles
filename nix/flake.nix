@@ -34,6 +34,8 @@
     # unstable: github:nixos/nixpkgs/nixos-unstable
     #
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     hardware.url = "github:nixos/nixos-hardware";
 
     # community
@@ -91,6 +93,16 @@
 
       # packages
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+
+      # overlays
+      overlays = {
+        pkg-sets = (
+          final: prev: {
+            unstable = import inputs.nixpkgs-unstable { system = final.system; };
+            master = import inputs.nixpkgs-master { system = final.system; };
+          }
+        );
+      };
 
       # configurations
       nixosConfigurations = import ./configuration {inherit inputs outputs self;};
