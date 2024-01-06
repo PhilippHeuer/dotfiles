@@ -5,20 +5,20 @@ directories:
   target: $HOME/.config/alacritty
   rules:
   - rule: inPath("alacritty")
-- path: config/alacritty/themes/catppuccin-mocha.yml
-  target: $HOME/.config/alacritty/themes/current.yml
+- path: config/alacritty/themes/catppuccin-mocha.toml
+  target: $HOME/.config/alacritty/themes/current.toml
   rules:
   - rule: inPath("alacritty") && theme == "catppuccin-mocha"
-- path: config/alacritty/themes/rose-pine.yml
-  target: $HOME/.config/alacritty/themes/current.yml
+- path: config/alacritty/themes/rose-pine.toml
+  target: $HOME/.config/alacritty/themes/current.toml
   rules:
   - rule: inPath("alacritty") && theme == "rose-pine"
-- path: config/alacritty/themes/nord.yml
-  target: $HOME/.config/alacritty/themes/current.yml
+- path: config/alacritty/themes/nord.toml
+  target: $HOME/.config/alacritty/themes/current.toml
   rules:
   - rule: inPath("alacritty") && theme == "nord"
-- path: config/alacritty/themes/tokyo-night.yml
-  target: $HOME/.config/alacritty/themes/current.yml
+- path: config/alacritty/themes/tokyo-night.toml
+  target: $HOME/.config/alacritty/themes/current.toml
   rules:
   - rule: inPath("alacritty") && theme == "tokyo-night"
 
