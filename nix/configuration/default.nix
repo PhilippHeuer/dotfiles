@@ -15,7 +15,11 @@
   }:
     nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {inherit inputs outputs self username;};
+      specialArgs = {
+        inherit inputs outputs self username;
+        pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+        pkgs-master = inputs.nixpkgs-master.legacyPackages.${system};
+      };
       modules =
         nixpkgs.lib.optionals defaultModules [
           self.nixosModules.default
@@ -39,6 +43,7 @@ in {
       nixosRoles.default
       nixosRoles.desktop
       nixosRoles.media
+      nixosRoles.ide
       # variant
       ./desktop
     ];
@@ -61,6 +66,7 @@ in {
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
+      nixosRoles.ide
       # variant
       ./laptop
     ];
@@ -78,6 +84,7 @@ in {
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
+      nixosRoles.ide
       # variant
       ./wsl
     ];
