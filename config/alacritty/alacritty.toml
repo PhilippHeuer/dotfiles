@@ -1,0 +1,81 @@
+# live reload
+live_config_reload = true
+
+# imports
+import = [
+    "~/.config/alacritty/themes/current.toml"
+]
+
+# settings
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# env
+[env]
+TERM = "alacritty"
+WINT_X11_SCALE_FACTOR = "1.0"
+
+# fonts
+[font]
+size = 11.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "BoldItalic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "MediumItalic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Medium"
+
+# mouse curser
+[selection]
+save_to_clipboard = true
+
+# window
+[window]
+opacity = 0.85
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 0
+y = 0
+
+# mouse bindings
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[[mouse.bindings]]
+action = "Paste"
+mouse = "Right"
+
+# key bindings
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
