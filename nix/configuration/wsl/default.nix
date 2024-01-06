@@ -39,9 +39,6 @@
     unmount-x11 = ''
       # unmount /tmp/.X11-unix if it is mounted
       umount /tmp/.X11-unix 2>/dev/null || true
-
-      # remove wslg x11 mount from systemd.tmpfiles.rules
-      ${pkgs.gnused}/bin/sed -i "\|L /tmp/.X11-unix - - - - /mnt/wslg/.X11-unix|d" /etc/tmpfiles.d/00-nixos.conf
     '';
 
     # remove hardcoded hostname
