@@ -10,6 +10,7 @@
     unzip
     gnupg
     nix-bash-completions
+    lsb-release # lsb_release
     gcc # c compiler
     psmisc # killall
     util-linux # umount

@@ -39,11 +39,16 @@ if [[ $wm_name == "sway" ]]; then
   export QT_AUTO_SCREEN_SCALE_FACTOR=1
   export MOZ_ENABLE_WAYLAND=1
 
-  # wsl - overwrite screen resolution
+  # wsl overrides
   if [ "$(is_wsl)" == "true" ]; then
+    # mod key (Mod1 = Alt)
+    echo "set \$mod Mod1" > ~/.config/sway/settings.d/wsl
+
+    # screen resolution
     RESOLUTION_HEIGHT=$((RESOLUTION_HEIGHT - 40)) # 40px for the windows taskbar
     echo "set \$displaySize \"${RESOLUTION_WIDTH}x${RESOLUTION_HEIGHT}\"" > ~/.config/sway/config.d/displaySize
   else
+    rm -f ~/.config/sway/settings.d/wsl
     rm -f ~/.config/sway/config.d/displaySize
   fi
 
