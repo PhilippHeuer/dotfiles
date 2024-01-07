@@ -94,6 +94,10 @@
             "type": "battery"
         },
         {
+            "type": "custom",
+            "format": "├────────────── \u001b[1mSession\u001b[0m ─────────────────────────────────────────┤"
+        },
+        {
             "key": "  Uptime        ",
             "type": "uptime"
         },
