@@ -25,9 +25,6 @@ export REGISTRY_AUTH_FILE="$HOME/.config/containers/auth.json"
 # editor
 export EDITOR="nvim"
 
-# tmux
-. $HOME/.config/bash/tmux.sh
-
 # source scripts (sorted by name, log duration)
 script_files=$(find -L "$HOME/.config" -maxdepth 3 -type f -path "*/init/*.sh" | sort)
 echo "" > "$HOME/.local/share/bash.log" # clear log

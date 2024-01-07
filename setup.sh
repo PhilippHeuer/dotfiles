@@ -9,6 +9,3 @@ chmod +x "$script_dir"/bin/* "$script_dir"/**/*.sh
 # install dotfiles
 export DOTFILE_THEME="catppuccin-mocha"
 dotfiles install "$script_dir" --mode symlink
-
-# reload
-tmux source $HOME/.config/tmux/tmux.conf

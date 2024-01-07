@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # tmux history per window
-if [[ $TMUX_PANE ]]; then
+if [[ -n "$TMUX_PANE" ]]; then
   sessionName=$(tmux display-message -p "#S")
   windowName=$(tmux display-message -p "#W")
 
