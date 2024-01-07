@@ -13,7 +13,7 @@ buildGoModule rec {
     owner = "PhilippHeuer";
     repo = "dotfiles-cli";
     rev = version;
-    sha256 = "sha256-INUfwjlAQTh49wvQJ+7Mz5VwkULCIuMtVLa5zSGSEdg=";
+    sha256 = "sha256-sOHClDmgJ4BcxuLy0bfQOusimZDL710WEeiQsVBYGvc=";
   };
   vendorHash = "sha256-u74jsASFAPbk7ZnMj57vLWJ2tI1mNQMI3Fc9xiLEE20=";
 
