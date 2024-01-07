@@ -11,3 +11,4 @@ The following files are subject to the license of the respective repository:
 - [config/btop/themes/catppuccin_*](https://github.com/catppuccin/btop)
 - [config/sway/themes/catppuccin-*](https://github.com/catppuccin/i3)
 - [config/lazygit/themes/mocha-blue.yml](https://github.com/catppuccin/lazygit)
+- [config/fzf/init/fzf-bash-search.sh](https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash)

@@ -65,17 +65,9 @@ action = "Paste"
 mouse = "Right"
 
 # key bindings
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control"
+[keyboard]
+bindings = [
+    { mods = "Control|Shift", key = "C", action = "Copy" },
+    { mods = "Control|Shift", key = "V", action = "Paste" },
+    { mods = "Control", key = "V", action = "Paste" },
+]
