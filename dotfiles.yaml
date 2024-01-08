@@ -250,6 +250,12 @@ directories:
   rules:
   - rule: inPath("albert")
 
+# vscode
+- path: config/Code
+  target: $HOME/.config/Code
+  rules:
+  - rule: inPath("code")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
