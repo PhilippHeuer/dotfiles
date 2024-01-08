@@ -27,6 +27,25 @@ case $wm in
 esac
 echo "You selected $wm_name"
 
+# scaling selection
+echo "Which scaling do you want to use?"
+echo "1) 100%"
+echo "2) 150%"
+read -r scaling
+
+case $scaling in
+  1)
+    RESOLUTION_SCALE="100"
+    ;;
+  2)
+    RESOLUTION_SCALE="150"
+    ;;
+  *)
+    echo "Invalid selection. Exiting."
+    exit 1
+    ;;
+esac
+
 # start sway
 if [[ $wm_name == "sway" ]]; then
   # sway environment
@@ -45,7 +64,8 @@ if [[ $wm_name == "sway" ]]; then
     echo "set \$mod Mod1" > ~/.config/sway/settings.d/wsl
 
     # screen resolution
-    RESOLUTION_HEIGHT=$((RESOLUTION_HEIGHT - 40)) # 40px for the windows taskbar
+    TASKBAR_HEIGHT=$((40 * RESOLUTION_SCALE / 100))
+    RESOLUTION_HEIGHT=$((RESOLUTION_HEIGHT - TASKBAR_HEIGHT)) # 40px for the windows taskbar
     echo "set \$displaySize \"${RESOLUTION_WIDTH}x${RESOLUTION_HEIGHT}\"" > ~/.config/sway/config.d/displaySize
   else
     rm -f ~/.config/sway/settings.d/wsl
