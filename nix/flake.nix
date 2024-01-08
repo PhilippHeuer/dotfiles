@@ -94,16 +94,6 @@
       # packages
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
 
-      # overlays
-      overlays = {
-        pkg-sets = (
-          final: prev: {
-            unstable = import inputs.nixpkgs-unstable { system = final.system; };
-            master = import inputs.nixpkgs-master { system = final.system; };
-          }
-        );
-      };
-
       # configurations
       nixosConfigurations = import ./configuration {inherit inputs outputs self;};
     };

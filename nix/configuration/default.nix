@@ -17,8 +17,14 @@
       inherit system;
       specialArgs = {
         inherit inputs outputs self username system;
-        pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
-        pkgs-master = inputs.nixpkgs-master.legacyPackages.${system};
+        pkgs-unstable = import inputs.nixpkgs-unstable {
+          system = system;
+          config.allowUnfree = true;
+        };
+        pkgs-master = import inputs.nixpkgs-master {
+          system = system;
+          config.allowUnfree = true;
+        };
       };
       modules =
         nixpkgs.lib.optionals defaultModules [
