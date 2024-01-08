@@ -16,7 +16,7 @@
     nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
-        inherit inputs outputs self username;
+        inherit inputs outputs self username system;
         pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
         pkgs-master = inputs.nixpkgs-master.legacyPackages.${system};
       };
@@ -39,6 +39,8 @@ in {
       ../nixos/audio.nix
       ../nixos/virtualization.nix
       ../nixos/ssh.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
       # roles
       nixosRoles.default
       nixosRoles.desktop
@@ -61,6 +63,8 @@ in {
       ../nixos/virtualization.nix
       ../nixos/ssh.nix
       ../nixos/wifi.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
       # roles
       nixosRoles.default
       nixosRoles.wm-hyprland
@@ -78,6 +82,8 @@ in {
     extraModules = [
       # nixos
       inputs.nixos-wsl.nixosModules.wsl
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
       # roles
       nixosRoles.default
       nixosRoles.wm-sway
