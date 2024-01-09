@@ -256,6 +256,22 @@ directories:
   rules:
   - rule: inPath("code")
 
+# jetbrains - intellij
+- path: config/JetBrains/IntelliJ
+  target: $HOME/.config/JetBrains/IdeaIC2023.2
+  rules:
+  - rule: inPath("idea-community")
+- path: config/JetBrains/IntelliJ
+  target: $HOME/.config/JetBrains/IntelliJIdea2023.3
+  rules:
+  - rule: inPath("idea-ultimate")
+
+# jetbrains - goland
+- path: config/JetBrains/GoLand
+  target: $HOME/.config/JetBrains/GoLand2023.3
+  rules:
+  - rule: inPath("goland")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
