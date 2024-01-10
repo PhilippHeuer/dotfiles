@@ -17,7 +17,7 @@ Host *
   ControlPersist 15m
 
 # user config
-Include ~/.config/ssh/servers
+Include ~/.ssh/servers
 
 # git over ssh
 

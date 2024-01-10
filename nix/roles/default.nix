@@ -5,6 +5,7 @@
       ./vm.nix
       ./ansible.nix
       ./base.nix
+      ./gpg.nix
 
       # cli tools
       ./bat.nix
