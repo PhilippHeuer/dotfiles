@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-master, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   # install packages

@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-master, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = [
@@ -12,5 +12,4 @@
     # copilot
     /run/current-system/sw/bin/idea-community installPlugins com.github.copilot
   '';
-
 }

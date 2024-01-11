@@ -1,7 +1,7 @@
-{ pkgs, pkgs-unstable, pkgs-master, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = [
-    pkgs-master.alacritty
+    pkgs-unstable.alacritty
   ];
 }
