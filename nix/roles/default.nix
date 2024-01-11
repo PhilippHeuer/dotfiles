@@ -55,6 +55,7 @@
 
       # k8s
       ./kubectl.nix
+      ./openshift.nix
       ./k9s.nix
       ./helm.nix
       ./click.nix
