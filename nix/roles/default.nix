@@ -54,6 +54,7 @@
       ./yubikey.nix
 
       # k8s
+      ./podman.nix
       ./kubectl.nix
       ./openshift.nix
       ./k9s.nix

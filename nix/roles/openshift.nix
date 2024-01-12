@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    openshift # oc
+    pkgs-unstable.openshift # oc
   ];
 }
