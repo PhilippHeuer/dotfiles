@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.kubectl
+    pkgs-unstable.podman
   ];
 }

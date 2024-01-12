@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package = pkgs-unstable.firefox-bin;
     preferences = {
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };

@@ -12,6 +12,10 @@ alias jctl="journalctl -p 3 -xb"
 # use nnn as file manager
 alias l="eza --long --header"
 
+# scripts
+alias backup="~/.local/scripts/backup.sh"
+alias cleanup="~/.local/scripts/cleanup.sh"
+
 # modern apt replacement
 alias apt="sudo nala"
 
