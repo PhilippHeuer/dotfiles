@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/cidverse/reposync/main/configschema/v1.json
+version: 1
+servers:
+  - url: https://github.com
+    type: github
+    auth:
+      username: PhilippHeuer
+      password-file: ~/.config/reposync/github-com.token
+    mirror:
+      dir: /tmp/reposync-test
+      default-action: include
+      clone-method: ssh
+      rules:
+        - rule: group == "docker-gameserver"
+          action: exclude
+        - rule: group == "stachu540"
+          action: exclude
+        - rule: group == "oasdiff"
+          action: exclude

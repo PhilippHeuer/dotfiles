@@ -10,7 +10,7 @@
 
 - `desktop`: `sudo nixos-rebuild switch --flake .#desktop`
 - `laptop`: `sudo nixos-rebuild switch --flake .#laptop`
-- `wsl`: `sudo nixos-rebuild switch --flake .#wsl`
+- `wsl`: `sudo nixos-rebuild switch --flake path:.#wsl`
 
 ## Bootloader
 
@@ -31,9 +31,32 @@
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
-- add `git` to the `environment.systemPackages` list.
-
 Finally, run `sudo nixos-rebuild switch` to apply the changes.
+
+## WSL
+
+### Setup
+
+*Import WSL Distro*
+
+`wsl --import NixOS .\NixOS\ nixos-wsl.tar.gz --version 2`
+
+*Initial Update*
+
+`sudo nix-channel --update`
+`sudo nixos-rebuild switch`
+
+*Edit `configuration.nix` to enable flakes*
+
+`sudo sed -i '/^}$/i \  nix.settings.experimental-features = [ "nix-command" "flakes" ];' /etc/nixos/configuration.nix`
+`sudo nixos-rebuild switch`
+
+### Restore
+
+You can enter older generations using the following command:
+
+- `wsl -d NixOS --system --user root -- /mnt/wslg/distro/bin/nixos-wsl-recovery`
+- `wsl -d NixOS --system --user root -- /mnt/wslg/distro/bin/nixos-wsl-recovery --system /nix/var/nix/profiles/system-42-link`
 
 ## SOPS
 
