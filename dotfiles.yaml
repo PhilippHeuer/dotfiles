@@ -272,6 +272,12 @@ directories:
   rules:
   - rule: inPath("goland")
 
+# reposync
+- path: config/reposync
+  target: $HOME/.config/reposync
+  rules:
+  - rule: inPath("reposync")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0

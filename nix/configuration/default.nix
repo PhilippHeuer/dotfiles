@@ -44,6 +44,7 @@ in {
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
+      ../nixos/qemu.nix
       ../nixos/ssh.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
@@ -67,6 +68,7 @@ in {
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
+      ../nixos/qemu.nix
       ../nixos/ssh.nix
       ../nixos/wifi.nix
       ../nixos/cacerts.nix
@@ -87,9 +89,11 @@ in {
     username = "phx";
     extraModules = [
       # nixos
-      inputs.nixos-wsl.nixosModules.wsl
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/qemu.nix
+      # wsl
+      inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
       nixosRoles.wm-sway

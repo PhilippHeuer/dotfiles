@@ -8,22 +8,41 @@
 # Define the files to backup
 files=(
     # ssh
-    "~/.ssh/known_hosts"
-    "~/.ssh/id_*"
+    "$HOME/.ssh/known_hosts"
+    "$HOME/.ssh/id_"*
 
     # gpg
-    "~/.gnupg"
+    "$HOME/.gnupg"
 
     # plain-text git credentials (fallback, not used)
-    "~/.git-credentials"
+    "$HOME/.git-credentials"
 
     # kubernetes configs
-    "~/.kube"
+    "$HOME/.kube"
 
     # copilot
-    "~/.config/github-copilot/hosts.json"
-    "~/.config/github-copilot/versions.json"
+    "$HOME/.config/github-copilot/hosts.json"
+    "$HOME/.config/github-copilot/versions.json"
+
+    # reposync
+    "$HOME/.config/reposync/"*.token
+
+    # podman
+    "$HOME/.config/containers/auth.json"
+    
+    # wallpaper
+    "$HOME/.local/state/wallpaper.state"
+
+    # zoxide db
+    "$HOME/.local/share/zoxide/db.zo"
 )
+
+# remove missing paths
+for file in "${files[@]}"; do
+    if [ ! -f "$file" ]; then
+        files=("${files[@]/$file}")
+    fi
+done
 
 # backup file
 backup_file=${2:-"backup.tar.gz"}
@@ -31,7 +50,7 @@ backup_file=${2:-"backup.tar.gz"}
 # create or restore
 if [ "$1" == "create" ]; then
     # Create the backup
-    tar -czf $backup_file ${files[@]}
+    tar -czf $backup_file -C $HOME ${files[@]}
     echo "Backup created in $backup_file"
 elif [ "$1" == "restore" ]; then
     # Restore the backup
