@@ -7,8 +7,9 @@ servers:
       username: PhilippHeuer
       password-file: ~/.config/reposync/github-com.token
     mirror:
-      dir: /tmp/reposync-test
+      dir: ~/source
       default-action: include
+      naming-style: slug
       clone-method: ssh
       rules:
         - rule: group == "docker-gameserver"
