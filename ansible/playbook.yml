@@ -184,7 +184,7 @@
       # renovate: datasource=github-releases depName=ajeetdsouza/zoxide
       zoxide: "0.9.2"
       # renovate: datasource=github-releases depName=cidverse/reposync
-      reposync: "0.3.0"
+      reposync: "0.4.1"
       # renovate: datasource=github-releases depName=nodejs/node
       nodejs: "21.6.0"
       # renovate: datasource=github-releases depName=cli/cli
@@ -209,7 +209,7 @@
       dotfilescli: "0.2.5"
       # renovate: datasource=github-releases depName=o2sh/onefetch
       onefetch: "2.19.0"
-      # renovate: datasource=github-releases depName=Horus645/swww
+      # renovate: datasource=github-releases depName=LGFae/swww
       swww: "0.8.2"
       # renovate: datasource=github-releases depName=sentriz/cliphist
       cliphist: "0.4.0"
