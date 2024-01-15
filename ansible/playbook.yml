@@ -210,7 +210,7 @@
       # renovate: datasource=github-releases depName=o2sh/onefetch
       onefetch: "2.19.0"
       # renovate: datasource=github-releases depName=Horus645/swww
-      swww: "0.8.1"
+      swww: "0.8.2"
       # renovate: datasource=github-releases depName=sentriz/cliphist
       cliphist: "0.4.0"
       # renovate: datasource=github-releases depName=getsops/sops
