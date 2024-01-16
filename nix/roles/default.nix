@@ -70,12 +70,14 @@
     imports = [
       ./wm.nix
       ./wm-sway.nix
+      ./nwg-panel.nix
     ];
   };
   wm-hyprland = {
     imports = [
       ./wm.nix
       ./wm-hyprland.nix
+      ./nwg-panel.nix
     ];
   };
   desktop = {

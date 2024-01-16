@@ -16,9 +16,6 @@ alias l="eza --long --header"
 alias backup="~/.local/scripts/backup.sh"
 alias cleanup="~/.local/scripts/cleanup.sh"
 
-# modern apt replacement
-alias apt="sudo nala"
-
 # usb devices
 alias list-usb="cyme -t -v" # tree, verbose
 

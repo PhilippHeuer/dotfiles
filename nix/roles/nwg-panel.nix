@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.neovim
+    pkgs-unstable.nwg-panel
   ];
-
-  environment.variables.EDITOR = "nvim";
 }

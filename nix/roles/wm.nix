@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    wayland
-    xwayland
+  environment.systemPackages = [
+    pkgs.wayland
+    pkgs.xwayland
   ];
 }
