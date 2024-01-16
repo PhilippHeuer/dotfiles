@@ -15,5 +15,8 @@
 
     # nord
     nordic
+
+    # dracula
+    dracula-theme
   ];
 }

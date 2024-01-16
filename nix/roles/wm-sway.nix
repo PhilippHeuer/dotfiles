@@ -24,7 +24,6 @@
     xdg-utils # for opening default programs when clicking links
   
     glib # gsettings
-    dracula-theme # gtk theme
     gnome3.adwaita-icon-theme  # default gnome cursors
     grim # screenshot functionality
     slurp # screenshot functionality
