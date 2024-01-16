@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha",
     "window.menuBarVisibility": "toggle",
     "editor.fontSize": 12,
     "editor.scrollbar.vertical": "hidden",
@@ -15,5 +14,7 @@
     "terminal.explorerKind": "both",
     "terminal.sourceControlRepositoriesKind": "both",
     "telemetry.telemetryLevel": "off",
-    "update.mode": "none"
+    "update.mode": "none",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha"
 }

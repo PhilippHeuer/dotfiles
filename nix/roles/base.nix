@@ -14,6 +14,7 @@
     gcc # c compiler
     psmisc # killall
     util-linux # umount
+    moreutils # sponge, etc
     nix-index # nix-index and nix-locate
     cyme # lsusb replacement
     pciutils # pci devices
