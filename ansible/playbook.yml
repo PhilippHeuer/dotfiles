@@ -188,7 +188,7 @@
       # renovate: datasource=github-releases depName=nodejs/node
       nodejs: "21.6.0"
       # renovate: datasource=github-releases depName=cli/cli
-      gh: "2.42.0"
+      gh: "2.42.1"
       # renovate: datasource=github-releases depName=jesseduffield/lazygit
       lazygit: "0.40.2"
       # renovate: datasource=pip depName=pre-commit
