@@ -11,18 +11,22 @@ return {
           markdown = true,
           javascript = true,
           typescript = true,
-          sh = function ()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
-              return false -- disable for .env files
-            end
-            return true
-          end,
           json = function ()
             fileName = vim.fs.basename(vim.api.nvim_buf_get_name(0))
 
             -- disable for env json files (used by http.nvim)
             if string.match(fileName, "^dev.json$") or string.match(fileName, "^stage.json$") or string.match(fileName, "^prod.json$") then
               return false 
+            end
+
+            return true
+          end,
+          sh = function ()
+            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
+              return false -- disable for .env files
+            end
+            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.token") then
+              return false -- disable for .token files
             end
 
             return true
