@@ -1,20 +1,68 @@
 {
-    "window.menuBarVisibility": "toggle",
-    "editor.fontSize": 12,
-    "editor.scrollbar.vertical": "hidden",
-    "editor.scrollbar.verticalScrollbarSize": 0,
-    "security.workspace.trust.untrustedFiles": "newWindow",
-    "security.workspace.trust.startupPrompt": "never",
-    "security.workspace.trust.enabled": false,
-    "editor.minimap.side": "left",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Maple Mono', 'monospace', monospace",
+    // edit settings.json as file
+    "workbench.settings.editor": "json",
+
+    // telemetry
+    "telemetry.telemetryLevel": "off",
+
+    // update
+    "update.mode": "none",
     "extensions.autoUpdate": false,
+
+    // theme
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+
+    // font
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
+    "scm.inputFontFamily": "'JetBrainsMono Nerd Font'",
+    "chat.editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font'",
+    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font'",
+    "markdown.preview.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontLigatures": true,
+
+    // font size
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+
+    // ui
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "editor.minimap.side": "left",
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.scrollbar.horizontal": "auto",
+    "window.titleBarStyle": "custom",
     "workbench.statusBar.visible": false,
+    "editor.bracketPairColorization.enabled": true,
+
+    // format
+    "editor.tabSize": 2,
+    "editor.linkedEditing": false,
+
+    // terminal
     "terminal.external.linuxExec": "alacritty",
     "terminal.explorerKind": "both",
     "terminal.sourceControlRepositoriesKind": "both",
-    "telemetry.telemetryLevel": "off",
-    "update.mode": "none",
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-mocha"
+
+    // security
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "security.workspace.trust.startupPrompt": "never",
+    "security.workspace.trust.enabled": false,
+
+    // files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/node_modules": true,
+        "**/dist": true,
+    }
 }
