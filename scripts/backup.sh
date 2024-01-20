@@ -33,6 +33,9 @@ files=(
     # wallpaper
     "$HOME/.local/state/wallpaper.state"
 
+    # dbeaver workspaces
+    "$HOME/.local/share/DBeaverData"
+
     # zoxide db
     "$HOME/.local/share/zoxide/db.zo"
 )
