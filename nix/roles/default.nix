@@ -85,7 +85,7 @@
       ./gtk.nix # theming
       ./alacritty.nix
       ./rofi.nix
-      ./thunar.nix
+      ./nemo.nix # file manager
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher

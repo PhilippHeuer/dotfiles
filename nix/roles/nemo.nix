@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    xfce.thunar
+    cinnamon.nemo
   ];
 }
