@@ -22,6 +22,28 @@ directories:
   rules:
   - rule: inPath("alacritty") && theme == "tokyo-night"
 
+# kitty
+- path: config/kitty
+  target: $HOME/.config/kitty
+  rules:
+  - rule: inPath("kitty")
+- path: config/kitty/themes/catppuccin-mocha.conf
+  target: $HOME/.config/kitty/themes/current.conf
+  rules:
+  - rule: inPath("kitty") && theme == "catppuccin-mocha"
+- path: config/kitty/themes/rose-pine.conf
+  target: $HOME/.config/kitty/themes/current.conf
+  rules:
+  - rule: inPath("kitty") && theme == "rose-pine"
+- path: config/kitty/themes/nord.conf
+  target: $HOME/.config/kitty/themes/current.conf
+  rules:
+  - rule: inPath("kitty") && theme == "nord"
+- path: config/kitty/themes/tokyo-night.conf
+  target: $HOME/.config/kitty/themes/current.conf
+  rules:
+  - rule: inPath("kitty") && theme == "tokyo-night"
+
 # ansible
 - path: config/ansible
   target: $HOME/.config/ansible
@@ -187,6 +209,12 @@ directories:
   target: $HOME/.config/zoxide
   rules:
   - rule: inPath("zoxide")
+
+# yazi
+- path: config/yazi
+  target: $HOME/.config/yazi
+  rules:
+  - rule: inPath("yazi")
 
 # waybar
 - path: config/waybar

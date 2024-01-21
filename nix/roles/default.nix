@@ -17,6 +17,7 @@
       ./eza.nix
       ./zoxide.nix
       ./dotfiles.nix
+      ./yazi.nix
 
       # ssh
       ./ssh.nix
@@ -87,7 +88,8 @@
   desktop = {
     imports = [
       ./gtk.nix # theming
-      ./alacritty.nix
+      ./alacritty.nix # terminal
+      ./kitty.nix # terminal
       ./rofi.nix
       ./nemo.nix # file manager
       ./firefox.nix

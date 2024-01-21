@@ -18,5 +18,6 @@
     nix-index # nix-index and nix-locate
     cyme # lsusb replacement
     pciutils # pci devices
+    jq # json parser
   ];
 }
