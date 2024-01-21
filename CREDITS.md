@@ -12,3 +12,7 @@ The following files are subject to the license of the respective repository:
 - [config/sway/themes/catppuccin-*](https://github.com/catppuccin/i3)
 - [config/lazygit/themes/mocha-blue.yml](https://github.com/catppuccin/lazygit)
 - [config/fzf/init/fzf-bash-search.sh](https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash)
+- [config/kitty/themes/catppuccin-mocha.conf](https://github.com/catppuccin/kitty)
+- [config/kitty/themes/tokyo-night.conf](https://github.com/davidmathers/tokyo-night-kitty-theme)
+- [config/kitty/themes/rose-pine.conf](https://github.com/rose-pine/kitty)
+- [config/kitty/themes/nord.conf](https://github.com/connorholyday/nord-kitty)
