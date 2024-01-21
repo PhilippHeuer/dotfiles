@@ -31,23 +31,6 @@
       ./neovim.nix
       ./fuzzmux.nix
 
-      # language toolchains
-      ./java.nix
-      ./nodejs.nix
-      ./python.nix
-      ./golang.nix
-
-      # development tools
-      ./git.nix
-      ./gitdelta.nix
-      ./kondo.nix
-      ./reposync.nix
-      ./gh.nix
-      ./lazygit.nix
-      ./precommit.nix
-      ./ripgrep.nix
-      ./onefetch.nix
-
       # secret management
       ./sops.nix
       ./vault.nix
@@ -64,6 +47,27 @@
       # s3
       ./minioclient.nix
       ./s3fs.nix
+    ];
+  };
+  # development tools
+  development = {
+    imports = [
+      ./git.nix
+      ./gitdelta.nix
+      ./kondo.nix
+      ./reposync.nix
+      ./gh.nix
+      ./lazygit.nix
+      ./precommit.nix
+      ./ripgrep.nix
+      ./onefetch.nix
+      ./just.nix
+
+      # language toolchains
+      ./java.nix
+      ./nodejs.nix
+      ./python.nix
+      ./golang.nix
     ];
   };
   wm-sway = {

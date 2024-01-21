@@ -50,6 +50,7 @@ in {
       ../nixos/proxy.nix
       # roles
       nixosRoles.default
+      nixosRoles.development
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
@@ -75,6 +76,7 @@ in {
       ../nixos/proxy.nix
       # roles
       nixosRoles.default
+      nixosRoles.development
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
@@ -96,8 +98,8 @@ in {
       inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
+      nixosRoles.development
       nixosRoles.wm-sway
-      nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
