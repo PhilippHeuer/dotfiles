@@ -2,3 +2,6 @@
 
 # zoxide
 source <(zoxide init bash)
+
+# cd alias
+alias cd="z"
