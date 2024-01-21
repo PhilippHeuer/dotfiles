@@ -41,4 +41,8 @@
 
   # default shell
   users.defaultUserShell = pkgs.bash;
+
+  # disable default editor
+  programs.nano.enable = false;
+  programs.nano.syntaxHighlight = false;
 }
