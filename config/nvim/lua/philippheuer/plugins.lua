@@ -21,7 +21,7 @@ local plugins = {
   "philippheuer.plugins.copilot", -- github copilot
   "philippheuer.plugins.completion", -- code completion
   -- Theme / UI
-  "philippheuer.theme.catppuccin", 
+  "philippheuer.themes.current", 
 }
 
 -- Load Plugins
