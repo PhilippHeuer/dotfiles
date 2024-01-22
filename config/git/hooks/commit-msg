@@ -4,4 +4,4 @@
 # - hooks are cloned into ~/.cache/pre-commit
 
 # run global pre-commit hooks
-pre-commit run --config ~/.config/precommit/.pre-commit-config.yaml --hook-stage commit-message
+pre-commit run --config ~/.config/precommit/.pre-commit-config.yaml --hook-stage commit-msg --commit-msg-filename "$1"

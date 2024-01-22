@@ -8,16 +8,16 @@
       ./gpg.nix
 
       # cli tools
-      ./bat.nix
-      ./fzf.nix
-      ./sd.nix
-      ./htop.nix
-      ./btop.nix
-      ./fastfetch.nix
-      ./eza.nix
-      ./zoxide.nix
-      ./dotfiles.nix
-      ./yazi.nix
+      ./bat.nix # cat replacement
+      ./fzf.nix # fuzzy finder
+      ./sd.nix # sed alternative
+      ./htop.nix # process monitor
+      ./btop.nix # resource monitor
+      ./fastfetch.nix # system info
+      ./eza.nix # modern ls replacement
+      ./zoxide.nix # modern cd replacement
+      ./dotfiles.nix # dotfiles manager
+      ./yazi.nix # terminal file manager
 
       # ssh
       ./ssh.nix
@@ -53,16 +53,16 @@
   # development tools
   development = {
     imports = [
-      ./git.nix
-      ./gitdelta.nix
-      ./kondo.nix
-      ./reposync.nix
-      ./gh.nix
-      ./lazygit.nix
-      ./precommit.nix
-      ./ripgrep.nix
-      ./onefetch.nix
-      ./just.nix
+      ./git.nix # version control
+      ./gitdelta.nix # git diff
+      ./lazygit.nix # git ui
+      ./precommit.nix # git hooks
+      ./ripgrep.nix # search source code
+      ./onefetch.nix # git summary
+      ./just.nix # make alternative
+      ./kondo.nix # built output cleanup
+      ./reposync.nix # sync git repos
+      ./gh.nix # github cli
 
       # language toolchains
       ./java.nix

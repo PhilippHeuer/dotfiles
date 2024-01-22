@@ -30,7 +30,8 @@ echo "You selected $wm_name"
 # resolution selection
 echo "Which scaling do you want to use?"
 echo "1) 1920x1080"
-echo "2) 3440x1440"
+echo "2) 1920x1200"
+echo "3) 3440x1440"
 read -r resolution
 
 case $resolution in
@@ -39,6 +40,10 @@ case $resolution in
     RESOLUTION_HEIGHT="1080"
     ;;
   2)
+    RESOLUTION_WIDTH="1920"
+    RESOLUTION_HEIGHT="1200"
+    ;;
+  3)
     RESOLUTION_WIDTH="3440"
     RESOLUTION_HEIGHT="1440"
     ;;
