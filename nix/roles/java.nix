@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.temurin-bin-21
+    pkgs-unstable.jdk21
   ];
 }
