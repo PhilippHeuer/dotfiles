@@ -186,7 +186,7 @@
       # renovate: datasource=github-releases depName=cidverse/reposync
       reposync: "0.4.2"
       # renovate: datasource=github-releases depName=nodejs/node
-      nodejs: "21.6.0"
+      nodejs: "21.6.1"
       # renovate: datasource=github-releases depName=cli/cli
       gh: "2.42.1"
       # renovate: datasource=github-releases depName=jesseduffield/lazygit
