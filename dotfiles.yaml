@@ -153,6 +153,22 @@ directories:
   target: $HOME/.config/nvim
   rules:
   - rule: inPath("nvim")
+- path: config/nvim/lua/philippheuer/themes/catppuccin-mocha.lua
+  target: $HOME/.config/nvim/lua/philippheuer/themes/current.lua
+  rules:
+  - rule: inPath("nvim") && theme == "catppuccin-mocha"
+- path: config/nvim/lua/philippheuer/themes/rose-pine.lua
+  target: $HOME/.config/nvim/lua/philippheuer/themes/current.lua
+  rules:
+  - rule: inPath("nvim") && theme == "rose-pine"
+- path: config/nvim/lua/philippheuer/themes/nord.lua
+  target: $HOME/.config/nvim/lua/philippheuer/themes/current.lua
+  rules:
+  - rule: inPath("nvim") && theme == "nord"
+- path: config/nvim/lua/philippheuer/themes/tokyo-night.lua
+  target: $HOME/.config/nvim/lua/philippheuer/themes/current.lua
+  rules:
+  - rule: inPath("nvim") && theme == "tokyo-night"
 
 # precommit
 - path: config/precommit
@@ -357,10 +373,10 @@ directories:
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:
   - rule: theme == "rose-pine"
-- path: config/qt5ct/themes/nord.conf
-  target: $HOME/.config/qt5ct/themes/current.conf
-  rules:
-  - rule: theme == "nord"
+#- path: config/qt5ct/themes/nord.conf
+#  target: $HOME/.config/qt5ct/themes/current.conf
+#  rules:
+#  - rule: theme == "nord"
 - path: config/qt5ct/themes/tokyo-night.conf
   target: $HOME/.config/qt5ct/themes/current.conf
   rules:
