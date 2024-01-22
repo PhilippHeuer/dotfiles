@@ -4,8 +4,8 @@
   defaultBranch = main
 
 [core]
-  editor = nvim
-  pager = delta
+  editor       = nvim
+  pager        = delta
   autocrlf     = input
   eol          = lf
   excludesfile = ~/.config/git/gitignore

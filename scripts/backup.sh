@@ -14,6 +14,9 @@ files=(
     # gpg
     "$HOME/.gnupg"
 
+    # git user config
+    "$HOME/.config/git/user"
+
     # plain-text git credentials (fallback, not used)
     "$HOME/.git-credentials"
 
