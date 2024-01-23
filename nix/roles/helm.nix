@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    helm
+  environment.systemPackages = [
+    pkgs-unstable.kubernetes-helm
   ];
 }

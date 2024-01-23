@@ -49,6 +49,7 @@ in {
   };
 
   environment.variables = {
-    JAVAX_NET_SSL_TRUSTSTORE = javaCaCerts.outPath; # requires a patched version of openjdk (openjdk is already patched, see https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/development/compilers/openjdk/read-truststore-from-env-jdk10.patch)
+    JAVAX_NET_SSL_TRUSTSTORE = javaCaCerts.outPath;
+    JAVA_TOOL_OPTIONS = "-Djavax.net.ssl.trustStore=${javaCaCerts.outPath}";
   };
 }
