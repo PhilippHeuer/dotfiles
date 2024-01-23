@@ -28,8 +28,6 @@ let
 in {
   security = {
     pki = {
-      installCACerts = true;
-
       # append trusted certificate authorities
       certificates = [
         #''
