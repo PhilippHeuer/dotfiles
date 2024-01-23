@@ -48,6 +48,7 @@ in {
       ../nixos/ssh.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/flatpak.nix
       # roles
       nixosRoles.default
       nixosRoles.development
@@ -74,6 +75,7 @@ in {
       ../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/flatpak.nix
       # roles
       nixosRoles.default
       nixosRoles.development
