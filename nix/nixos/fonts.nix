@@ -12,6 +12,7 @@
     packages = with pkgs; [
       fira-code
       jetbrains-mono
+      material-design-icons
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
 

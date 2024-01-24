@@ -12,16 +12,11 @@
       "custom/launcher",
       "sway/workspaces",
       "custom/weather",
-      // "mpd",
   ],
   "modules-center": [
       "clock",
   ],
   "modules-right": [
-      // "mpris",
-      "backlight", // only for laptops
-      "pulseaudio",
-      "network",
       "battery", // only for laptops
       "custom/wallchange",
       "custom/themechange",

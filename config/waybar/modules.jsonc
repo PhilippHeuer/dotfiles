@@ -1,0 +1,251 @@
+{
+    "tray": {
+        "spacing": 10
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 25,
+        "tooltip-format": "{title}"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "scroll-step": 5,
+        "tooltip-format": "Brightness {percent}%"
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻",
+            "urgent": "󱓻"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        }
+    },
+
+    // system resources
+    "memory": {
+        "interval": 5,
+        "format": "   {}% ",
+        "max-length": 10
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "   {}% ",
+        "max-length": 10
+    },
+
+    // clock
+    "clock": {
+        "format": "{:%H:%M %d.%m.%Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+            "months": "<span color='#ffead3'><b>{}</b></span>",
+            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            "today": "<span color='#ff6699'><b>{}</b></span>"
+        }
+        },
+        "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+        },
+        "interval": 15
+    },
+
+    // network
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-disconnected": "Disconnected ⚠ ",
+        "format-icons": [
+            "󰤯 ",
+            "󰤟 ",
+            "󰤢 ",
+            "󰤥 ",
+            "󰤨 "
+        ],
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "on-click": "~/.config/rofi/rofi-wifi-menu.sh &",
+        "format-ethernet": "{ifname}",
+        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "nospacing": 1,
+        "interval": 5
+    },
+
+    // audio
+    "pulseaudio": {
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟 ",
+        "format-icons": {
+            "headphone": " ",
+            "default": [
+                "󰕿 ",
+                "󰖀 ",
+                "󰕾 "
+            ]
+        },
+        "on-click": "pavucontrol",
+        "scroll-step": 1
+    },
+
+    // battery
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "interval": 5,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+
+    // app launcher
+    "custom/launcher": {
+        "format": " 󱄅 ",
+        "tooltip": false,
+        "on-click": "~/.local/scripts/launcher.sh rofi &"
+    },
+
+    // wallpaper
+    "custom/wallchange": {
+        "format": " ",
+        "exec": "echo; echo switch wallpaper",
+        "on-click": "~/.local/bin/wallpaper next",
+        "on-click-right": "~/.local/bin/wallpaper prev",
+        "on-scroll-up": "~/.local/bin/wallpaper next",
+        "on-scroll-down": "~/.local/bin/wallpaper prev",
+        "interval": "once",
+        "tooltip": true,
+    },
+
+    // theme
+    "custom/themechange": {
+        "format": " ",
+        "exec": "echo; echo switch theme",
+        "on-click": "kitty --title select_theme -e ~/.local/bin/theme",
+        "interval": "once",
+        "tooltip": true,
+    },
+
+    // power menu
+    "custom/powermenu": {
+        "format": "⏻ ",
+        "exec": "echo; echo logout",
+        "on-click": "~/.local/scripts/powermenu.sh &",
+        "interval": "once",
+        "tooltip": true,
+    },
+
+    // current weather
+    "custom/weather": {
+        "format": "{}",
+        "interval": 6000,
+        "exec": "~/.local/scripts/weather.sh short",
+        "on-click": "kitty --title weather_report -e ~/.local/scripts/weather.sh full",
+        "signal": 8
+    },
+
+    // media player
+    "mpd": {
+        "format": "{stateIcon} {title}",
+        "format-disconnected": " Disconnected",
+        "format-stopped": " Stopped",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "on-click": "mpc toggle",
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "spotify": "",
+            "default": "🎵"
+        },
+        "dynamic-order": [
+            "title"
+        ],
+        "interval": 5,
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "ignored-players": [
+            "firefox"
+        ]
+    },
+}
