@@ -14,20 +14,20 @@
     "workbench.iconTheme": "catppuccin-mocha",
 
     // font
-    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
-    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
-    "scm.inputFontFamily": "'JetBrainsMono Nerd Font'",
-    "chat.editor.fontFamily": "'JetBrainsMono Nerd Font'",
-    "debug.console.fontFamily": "'JetBrainsMono Nerd Font'",
-    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font'",
-    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font'",
-    "markdown.preview.fontFamily": "'JetBrainsMono Nerd Font'",
-    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "scm.inputFontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "chat.editor.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "debug.console.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "markdown.preview.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
+    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font', 'Material Design Icons'",
     "editor.fontLigatures": true,
 
     // font size
-    "editor.fontSize": 12,
-    "terminal.integrated.fontSize": 12,
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
 
     // ui
     "window.menuBarVisibility": "toggle",

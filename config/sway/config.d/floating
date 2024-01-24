@@ -2,5 +2,9 @@
 for_window [title="^select_theme$"] floating enable
 for_window [title="^select_theme$"] resize set 800 600
 
+# window: weather report
+for_window [title="^weather_report$"] floating enable
+for_window [title="^weather_report$"] resize set 1130 790
+
 # window: albert launcher
 for_window [title="^Albert$"] floating enable

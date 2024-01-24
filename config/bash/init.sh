@@ -38,6 +38,3 @@ done
 
 # aliases
 . $HOME/.config/bash/aliases.sh
-
-# print system info
-[[ -n $TMUX_PANE ]] || fastfetch

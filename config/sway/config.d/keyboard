@@ -4,3 +4,12 @@ input "type:keyboard" {
         xkb_options grp:alt_shift_toggle
 }
 input * xkb_numlock enable
+
+# touchpad
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+    scroll_method edge
+    natural_scroll enabled
+}
