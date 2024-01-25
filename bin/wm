@@ -7,76 +7,85 @@
 # common functions
 source ~/.local/scripts/common.sh
 
-# wm selection
-echo "Which window manager do you want to use?"
-echo "1) Sway"
-echo "2) Hyprland"
-read -r wm
+# detect screen resolution
+source ~/.local/scripts/detect-resolution.sh
 
-case $wm in
-  1)
-    wm_name="sway"
-    ;;
-  2)
-    wm_name="hyprland"
-    ;;
-  *)
-    echo "Invalid selection. Exiting."
-    exit 1
-    ;;
-esac
-echo "You selected $wm_name"
+# wm selection
+if [ -z "$WM_NAME" ]; then
+  echo "Which window manager do you want to use?"
+  echo "1) Sway"
+  echo "2) Hyprland"
+  read -r wm
+
+  case $wm in
+    1)
+      WM_NAME="sway"
+      ;;
+    2)
+      WM_NAME="hyprland"
+      ;;
+    *)
+      echo "Invalid selection. Exiting."
+      exit 1
+      ;;
+  esac
+  echo "You selected $WM_NAME"
+fi
 
 # resolution selection
-echo "Which scaling do you want to use?"
-echo "1) 1920x1080"
-echo "2) 1920x1200"
-echo "3) 3440x1440"
-read -r resolution
+if [ -z "$RESOLUTION_WIDTH" ] || [ -z "$RESOLUTION_HEIGHT" ]; then
+  echo "Which scaling do you want to use?"
+  echo "1) 1920x1080"
+  echo "2) 1920x1200"
+  echo "3) 3440x1440"
+  read -r resolution
 
-case $resolution in
-  1)
-    RESOLUTION_WIDTH="1920"
-    RESOLUTION_HEIGHT="1080"
-    ;;
-  2)
-    RESOLUTION_WIDTH="1920"
-    RESOLUTION_HEIGHT="1200"
-    ;;
-  3)
-    RESOLUTION_WIDTH="3440"
-    RESOLUTION_HEIGHT="1440"
-    ;;
-  *)
-    echo "using default resolution = ${RESOLUTION_WIDTH}x${RESOLUTION_HEIGHT}"
-    ;;
-esac
+  case $resolution in
+    1)
+      RESOLUTION_WIDTH="1920"
+      RESOLUTION_HEIGHT="1080"
+      ;;
+    2)
+      RESOLUTION_WIDTH="1920"
+      RESOLUTION_HEIGHT="1200"
+      ;;
+    3)
+      RESOLUTION_WIDTH="3440"
+      RESOLUTION_HEIGHT="1440"
+      ;;
+    *)
+      echo "using default resolution = ${RESOLUTION_WIDTH}x${RESOLUTION_HEIGHT}"
+      ;;
+  esac
+fi
 
 # scaling selection
-echo "Which scaling do you want to use?"
-echo "1) 100%"
-echo "2) 125%"
-echo "3) 150%"
-read -r scaling
+if [ -z "$RESOLUTION_SCALE" ]; then
+  echo "Which scaling do you want to use?"
+  echo "1) 100%"
+  echo "2) 125%"
+  echo "3) 150%"
+  read -r scaling
 
-case $scaling in
-  1)
-    RESOLUTION_SCALE="100"
-    ;;
-  2)
-    RESOLUTION_SCALE="125"
-    ;;
-  3)
-    RESOLUTION_SCALE="150"
-    ;;
-  *)
-    RESOLUTION_SCALE="100"
-    echo "using default scaling = $RESOLUTION_SCALE"
-    ;;
-esac
+  case $scaling in
+    1)
+      RESOLUTION_SCALE="100"
+      ;;
+    2)
+      RESOLUTION_SCALE="125"
+      ;;
+    3)
+      RESOLUTION_SCALE="150"
+      ;;
+    *)
+      RESOLUTION_SCALE="100"
+      echo "using default scaling = $RESOLUTION_SCALE"
+      ;;
+  esac
+fi
 
 # start sway
-if [[ $wm_name == "sway" ]]; then
+if [[ $WM_NAME == "sway" ]]; then
   # sway environment
   export XDG_CURRENT_DESKTOP=sway
   export XDG_SESSION_TYPE=wayland
@@ -106,7 +115,7 @@ if [[ $wm_name == "sway" ]]; then
 fi
 
 # start hyprland
-if [[ $wm_name == "hyprland" ]]; then
+if [[ $WM_NAME == "hyprland" ]]; then
   #export WLR_RENDERER_ALLOW_SOFTWARE=1
   #exec Hyprland
   echo "Hyprland does not work in WSL yet. Exiting."

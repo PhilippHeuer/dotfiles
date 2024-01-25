@@ -15,6 +15,7 @@
     psmisc # killall
     util-linux # umount
     moreutils # sponge, etc
+    wayland-utils # for wayland-info
     nix-index # nix-index and nix-locate
     cyme # lsusb replacement
     pciutils # pci devices
