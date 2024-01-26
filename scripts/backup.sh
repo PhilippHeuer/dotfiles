@@ -10,6 +10,7 @@ files=(
     # ssh
     "$HOME/.ssh/known_hosts"
     "$HOME/.ssh/id_"*
+    "$HOME/.ssh/servers"
 
     # gpg
     "$HOME/.gnupg"
@@ -38,6 +39,9 @@ files=(
 
     # dbeaver workspaces
     "$HOME/.local/share/DBeaverData"
+
+    # fzf
+    "$HOME/.local/share/fzf/history"
 
     # zoxide db
     "$HOME/.local/share/zoxide/db.zo"
