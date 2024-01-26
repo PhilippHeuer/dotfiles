@@ -4,5 +4,6 @@
     <option name="FONT_SIZE" value="12" />
     <option name="FONT_SIZE_2D" value="12.0" />
     <option name="FONT_FAMILY" value="JetBrainsMono Nerd Font Mono" />
+    <option name="USE_LIGATURES" value="true" />
   </component>
 </application>
