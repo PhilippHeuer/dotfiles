@@ -10,17 +10,22 @@ set $right l
 #
 # Basics:
 #
-# Start a terminal
-bindsym $mod+Return exec $term
 
-# Start your launcher
+# launcher
 bindsym $mod+Space exec $menu
 bindsym $mod+m exec $menu
 
-# Browser
-bindsym $mod+w exec $browser
+# terminal
+bindsym $mod+Return exec $term
 
-# Kill focused window
+# git
+bindsym $mod+g exec $term lazygit
+
+# browser
+bindsym $mod+w exec $browser
+# bind = $mod, N, exec, brave --app=https://claude.ai/chats
+
+# kill focused window
 bindsym $mod+q exec "swaymsg kill"
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -29,9 +34,6 @@ bindsym $mod+q exec "swaymsg kill"
 # Change normal to inverse to use left mouse button for resizing and right
 # mouse button for dragging.
 floating_modifier $mod normal
-
-# Reload the configuration file
-bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'

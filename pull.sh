@@ -42,3 +42,6 @@ curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catpp
 
 # lazygit
 curl -S -s -L "https://raw.githubusercontent.com/catppuccin/lazygit/main/themes-mergable/mocha/blue.yml" -o "config/lazygit/themes/mocha-blue.yml"
+
+# git-delta
+curl -S -s -L "https://raw.githubusercontent.com/Anomalocaridid/delta/main/themes/mocha.gitconfig" -o "config/git/delta-themes/catppuccin-mocha.gitconfig"
