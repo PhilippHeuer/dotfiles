@@ -95,7 +95,6 @@
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
 
       # configurations
-      nixosConfigurations = import ./configuration {inherit inputs outputs self;};
+      nixosConfigurations = import ./configuration { inherit inputs outputs self; };
     };
-
 }
