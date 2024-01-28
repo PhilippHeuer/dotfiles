@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # bat
-export BAT_THEME="Catppuccin-mocha"
+export BAT_THEME="catppuccin-mocha"

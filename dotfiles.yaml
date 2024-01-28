@@ -127,6 +127,22 @@ directories:
   target: $HOME/.config/k9s
   rules:
   - rule: inPath("k9s")
+- path: config/k9s/skins/catppuccin-mocha.yaml
+  target: $HOME/.config/k9s/skins/current.yaml
+  rules:
+  - rule: inPath("k9s") && theme == "catppuccin-mocha"
+- path: config/k9s/skins/rose-pine.yaml
+  target: $HOME/.config/k9s/skins/current.yaml
+  rules:
+  - rule: inPath("k9s") && theme == "rose-pine"
+- path: config/k9s/skins/nord.yaml
+  target: $HOME/.config/k9s/skins/current.yaml
+  rules:
+  - rule: inPath("k9s") && theme == "nord"
+- path: config/k9s/skins/tokyo-night.yaml
+  target: $HOME/.config/k9s/skins/current.yaml
+  rules:
+  - rule: inPath("k9s") && theme == "tokyo-night"
 
 # lazygit
 - path: config/lazygit

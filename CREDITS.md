@@ -16,3 +16,6 @@ The following files are subject to the license of the respective repository:
 - [config/kitty/themes/tokyo-night.conf](https://github.com/davidmathers/tokyo-night-kitty-theme)
 - [config/kitty/themes/rose-pine.conf](https://github.com/rose-pine/kitty)
 - [config/kitty/themes/nord.conf](https://github.com/connorholyday/nord-kitty)
+- [config/k9s/skins/catppuccin-mocha.yaml](https://github.com/catppuccin/k9s)
+- [config/k9s/skins/rose-pine.yaml](https://raw.githubusercontent.com/derailed/k9s/master/skins/rose-pine.yaml)
+- [config/k9s/skins/nord.yaml](https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yaml)

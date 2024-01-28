@@ -1,0 +1,22 @@
+aliases:
+  # deployments
+  dp: deployments
+  ss: statefulsets
+  rs: replicasets
+
+  # config
+  cm: configmaps
+  sec: v1/secrets
+
+  # cronjobs
+  cj: cronjobs
+  jo: jobs
+
+  # roles
+  cr: clusterroles
+  crb: clusterrolebindings
+  ro: roles
+  rb: rolebindings
+
+  # network
+  np: networkpolicies

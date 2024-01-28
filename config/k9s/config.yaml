@@ -1,0 +1,60 @@
+# k9s
+k9s:
+  # refresh
+  liveViewAutoRefresh: false
+  refreshRate: 2
+  maxConnRetry: 5
+
+  # disable update check
+  skipLatestRevCheck: true
+
+  # read only mode
+  readOnly: false
+
+  # exit on ctrl-c
+  noExitOnCtrlC: false
+
+  # ui
+  ui:
+    enableMouse: true
+    headless: false
+    logoless: true
+    crumbsless: false
+    reactive: true
+    noIcons: false
+    skin: current
+
+  # Disable count pods while in node view
+  disablePodCounting: false
+
+  # shell pod
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+    # enable tty
+    tty: true
+
+  # disable image scans
+  imageScans:
+    enable: false
+
+  # logger
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: -1
+    fullScreen: false
+    textWrap: false
+    showTime: false
+
+  # thresholds
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
