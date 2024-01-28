@@ -1,15 +1,14 @@
 { pkgs, pkgs-unstable, ... }:
 
 {
-  environment.systemPackages = [
-    pkgs-unstable.jetbrains.idea-community
-  ];
-
   ###
-  # plugins
-  # url: https://plugins.jetbrains.com/
-  system.userActivationScripts.idea-community-extensions = ''
-    # copilot
-    /run/current-system/sw/bin/idea-community installPlugins com.github.copilot
-  '';
+  # jetbrains ide with plugins
+  # plugins: https://plugins.jetbrains.com/
+  # json: https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/jetbrains/plugins/plugins.json
+  environment.systemPackages = with pkgs-unstable; [
+    (jetbrains.plugins.addPlugins jetbrains.idea-community [
+      "github-copilot" # https://plugins.jetbrains.com/plugin/17718-github-copilot
+    ])
+  ];
+  
 }
