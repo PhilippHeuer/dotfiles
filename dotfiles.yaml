@@ -306,7 +306,7 @@ directories:
 
 # jetbrains - intellij
 - path: config/JetBrains/IntelliJ
-  target: $HOME/.config/JetBrains/IdeaIC2023.2
+  target: $HOME/.config/JetBrains/IdeaIC2023.3
   rules:
   - rule: inPath("idea-community")
 - path: config/JetBrains/IntelliJ
