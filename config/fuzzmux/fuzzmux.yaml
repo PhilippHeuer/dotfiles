@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/PhilippHeuer/fuzzmux/main/configschema/v1.json
+
+# default layouts
+layouts:
+  default:
+    apps:
+      - name: sh
+  ssh:
+    apps:
+      - name: ssh
+        default: true
+        commands:
+          - command: exec ssh ${name}
+      - name: sshfs
+        rules:
+          - inPath("sshfs") && contains(TAGS, "sftp")
+        commands:
+          - command: mkdir -p "~/mnt/ssh/${name}"
+          - command: sshfs -o default_permissions,idmap=user,noatime,follow_symlinks,_netdev,reconnect ${name}:/ ~/mnt/ssh/${name}
+  project:
+    clear-workspace: true
+    apps:
+      - name: java
+        rules:
+          - inPath("idea-community") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin"))
+        commands:
+          - command: idea-community "${startDirectory}"
+        gui: true
+        group: editor
+      - name: vscode
+        rules:
+          - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
+        commands:
+          - command: code ${startDirectory}
+        gui: true
+        group: editor
+      - name: vscodium
+        rules:
+          - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
+        commands:
+          - command: codium "${startDirectory}"
+        gui: true
+        group: editor
+      - name: nvim
+        rules:
+          - inPath("nvim")
+        commands:
+          - command: nvim +'Telescope find_files hidden=false layout_config={height=0.9}'
+        group: editor
+  kubernetes:
+    apps:
+      - name: kubectl
+        default: true
+        commands:
+          - command: export KUBECONFIG="${kubeConfig}"
+          - command: kubectl config set-context --current --namespace="${namespace}"
+      - name: k9s
+        rules:
+          - inPath("k9s")
+        commands:
+          - command: exec k9s --logoless --headless --readonly --kubeconfig "${kubeConfig}" --namespace "${namespace}"
