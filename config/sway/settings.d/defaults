@@ -5,8 +5,7 @@ set $displaySize "1080x720"
 set $mod Mod4
 
 # terminal
-set $term alacritty
-set $term_cwd $term --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"
+set $term ~/.local/scripts/terminal.sh
 set $browser MOZ_ENABLE_WAYLAND=1 firefox -new-window
 
 # application launcher

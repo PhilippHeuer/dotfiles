@@ -9,15 +9,26 @@
   "spacing": 0,
 
   "modules-left": [
+      // workspaces
       "custom/launcher",
       "sway/workspaces",
+
+      // launcher
+      "custom/fuzzy-project",
+      "custom/fuzzy-ssh",
+      "custom/fuzzy-k8s",
+
+      // widgetsw
       "custom/weather",
   ],
   "modules-center": [
       "clock",
   ],
   "modules-right": [
+      // tray
       "battery", // only for laptops
+
+      // power and ui
       "custom/wallchange",
       "custom/themechange",
       "custom/powermenu",

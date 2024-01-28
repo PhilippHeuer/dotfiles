@@ -105,7 +105,10 @@
   #network,
   #mpd,
   #mpris,
-  #custom-weather{
+  #custom-weather,
+  #custom-fuzzy-project,
+  #custom-fuzzy-ssh,
+  #custom-fuzzy-k8s {
     background-color: #040404;
     padding: 0em 2em;
     padding-left: 7.5px;
@@ -117,7 +120,7 @@
     margin-right: 10px;
     font-size: 13px;
   }
-  
+
   #workspaces {
     padding-right: 10px;
     border-radius: 0px 8px 8px 0px;
@@ -196,6 +199,20 @@
     color: #e78284;
   }
 
+  /* fuzzy group */
+  #custom-fuzzy-project, #custom-fuzzy-ssh, #custom-fuzzy-k8s {
+    margin-left: -12px;
+    margin-right: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 0px 8px 8px 0px;
+  }
+  #custom-fuzzy-project {
+    margin-left: 0px;
+    border-radius: 8px 8px 8px 8px;
+  }
+
+  /* menu and ui group */
   #custom-wallchange, #custom-themechange, #custom-powermenu {
     margin-left: -12px;
     margin-right: 5px;
