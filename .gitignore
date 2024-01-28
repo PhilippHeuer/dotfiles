@@ -4,17 +4,20 @@ config/nushell/history.txt
 # ssh
 config/ssh/servers
 
-# docs
-docs
-
 # user config
 config/git/user
+
+# fuzzmux user config
+config/fuzzmux/fuzzmux.user.yaml
 
 # sops
 config/sops/age/keys.txt
 
 # apply to host util scripts
 apply
+
+# docs
+docs
 
 # work in progress files
 wip

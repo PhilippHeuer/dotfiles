@@ -260,6 +260,12 @@ directories:
   rules:
   - rule: inPath("zellij")
 
+# fuzzmux
+- path: config/fuzzmux
+  target: $HOME/.config/fuzzmux
+  rules:
+  - rule: inPath("tmx")
+
 # starship
 - path: config/starship.toml
   target: $HOME/.config/starship.toml
