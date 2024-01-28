@@ -27,18 +27,18 @@ layouts:
           - command: idea-community "${startDirectory}"
         gui: true
         group: editor
-      - name: vscode
-        rules:
-          - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
-        commands:
-          - command: code ${startDirectory}
-        gui: true
-        group: editor
       - name: vscodium
         rules:
           - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
         commands:
           - command: codium "${startDirectory}"
+        gui: true
+        group: editor
+      - name: vscode
+        rules:
+          - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
+        commands:
+          - command: code ${startDirectory}
         gui: true
         group: editor
       - name: nvim

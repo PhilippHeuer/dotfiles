@@ -84,6 +84,9 @@ if [ -z "$RESOLUTION_SCALE" ]; then
   esac
 fi
 
+# cwd to home
+cd ~
+
 # start sway
 if [[ $WM_NAME == "sway" ]]; then
   # sway environment
