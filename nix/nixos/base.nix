@@ -45,4 +45,7 @@
   # disable default editor
   programs.nano.enable = false;
   programs.nano.syntaxHighlight = false;
+
+  # support to run unpatched binaries
+  programs.nix-ld.enable = true;
 }
