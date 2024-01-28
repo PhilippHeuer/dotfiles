@@ -12,8 +12,8 @@
       Type = "simple";
     };
     serviceConfig = {
-      ExecStart = "/usr/bin/tmux start-server || /bin/true";
-      ExecStop = "/usr/bin/tmux kill-server || /bin/true";
+      ExecStart = "/run/current-system/sw/bin/tmux start-server || /bin/true";
+      ExecStop = "/run/current-system/sw/bin/tmux kill-server || /bin/true";
     };
     wantedBy = [ "default.target" ];
   };
