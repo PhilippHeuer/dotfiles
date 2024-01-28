@@ -1,5 +1,9 @@
 # vim: set ft=gitconfig noet:
 
+[include]
+  # theme (git-delta pager)
+  path = ~/.config/git/delta-themes/theme.gitconfig
+
 [init]
   defaultBranch = main
 
@@ -59,6 +63,8 @@
   list-conflicts = diff --name-only --diff-filter=U
   # summary
   summary = !onefetch --no-bots
+  # list config
+  list-config = !git config --list --show-origin
 
 [interactive]
   diffFilter = delta --color-only
@@ -66,6 +72,7 @@
     useBuiltin = false # required for git 2.37.0
 
 [delta]
+  features = current-theme
   navigate = true  # use n and N to move between diff sections
   side-by-side = true # side by side view
   light = false
@@ -142,10 +149,10 @@
 
 # auth with gh cli
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !$HOME/.local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !$HOME/.local/bin/gh auth git-credential
 
 # github: always push using ssh
@@ -166,4 +173,5 @@
 	required = true
 
 [include]
+  # user config
   path = ~/.config/git/user

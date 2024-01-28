@@ -19,3 +19,4 @@ The following files are subject to the license of the respective repository:
 - [config/k9s/skins/catppuccin-mocha.yaml](https://github.com/catppuccin/k9s)
 - [config/k9s/skins/rose-pine.yaml](https://raw.githubusercontent.com/derailed/k9s/master/skins/rose-pine.yaml)
 - [config/k9s/skins/nord.yaml](https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yaml)
+- [config/git/delta-themes/catppuccin-*](https://github.com/Anomalocaridid/delta)

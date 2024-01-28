@@ -1,0 +1,26 @@
+[delta "current-theme"]
+	blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#cdd6f4"
+	file-style = "#cdd6f4"
+	hunk-header-decoration-style = "box ul"
+	hunk-header-file-style = "bold"
+	hunk-header-line-number-style = "bold #a6adc8"
+	hunk-header-style = "file line-number syntax"
+	line-numbers = true
+	line-numbers-left-style = "#6c7086"
+	line-numbers-minus-style = "bold #f38ba8"
+	line-numbers-plus-style = "bold #a6e3a1"
+	line-numbers-right-style = "#6c7086"
+	line-numbers-zero-style = "#6c7086"
+	# 40% red 60% base
+	minus-emph-style = "bold syntax #734b60"
+	# 20% red 80% base
+	minus-style = "syntax #4a3447"
+	# 40% green 60% base
+	plus-emph-style = "bold syntax #546e5c"
+	# 20% green 80% base
+	plus-style = "syntax #394545"
+	# Should match the name of the bat theme
+	syntax-theme = "catppuccin-mocha"

@@ -58,30 +58,6 @@ directories:
 - path: config/bash/.bash_profile
   target: $HOME/.bash_profile
 
-# bat themes
-- path: config/bat/themes
-  target: $HOME/.config/bat/themes
-  rules:
-  - rule: inPath("bat")
-
-# bat theme init scripts
-- path: config/bat/init/catppuccin-mocha.sh
-  target: $HOME/.config/bat/init/theme.sh
-  rules:
-  - rule: inPath("bat") && theme == "catppuccin-mocha"
-- path: config/bat/init/rose-pine.sh
-  target: $HOME/.config/bat/init/theme.sh
-  rules:
-  - rule: inPath("bat") && theme == "rose-pine"
-- path: config/bat/init/nord.sh
-  target: $HOME/.config/bat/init/theme.sh
-  rules:
-  - rule: inPath("bat") && theme == "nord"
-- path: config/bat/init/tokyo-night.sh
-  target: $HOME/.config/bat/init/theme.sh
-  rules:
-  - rule: inPath("bat") && theme == "tokyo-night"
-
 # btop
 - path: config/btop
   target: $HOME/.config/btop
@@ -121,6 +97,48 @@ directories:
   target: $HOME/.config/git
   rules:
   - rule: inPath("git")
+
+# git-delta
+- path: config/git/delta-themes/catppuccin-mocha.gitconfig
+  target: $HOME/.config/git/delta-themes/theme.gitconfig
+  rules:
+  - rule: inPath("git") && theme == "catppuccin-mocha"
+- path: config/git/delta-themes/rose-pine.gitconfig
+  target: $HOME/.config/git/delta-themes/theme.gitconfig
+  rules:
+  - rule: inPath("git") && theme == "rose-pine"
+- path: config/git/delta-themes/nord.gitconfig
+  target: $HOME/.config/git/delta-themes/theme.gitconfig
+  rules:
+  - rule: inPath("git") && theme == "nord"
+- path: config/git/delta-themes/tokyo-night.gitconfig
+  target: $HOME/.config/git/delta-themes/theme.gitconfig
+  rules:
+  - rule: inPath("git") && theme == "tokyo-night"
+
+# bat themes
+- path: config/bat/themes
+  target: $HOME/.config/bat/themes
+  rules:
+  - rule: inPath("bat")
+
+# bat theme init scripts
+- path: config/bat/init/catppuccin-mocha.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "catppuccin-mocha"
+- path: config/bat/init/rose-pine.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "rose-pine"
+- path: config/bat/init/nord.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "nord"
+- path: config/bat/init/tokyo-night.sh
+  target: $HOME/.config/bat/init/theme.sh
+  rules:
+  - rule: inPath("bat") && theme == "tokyo-night"
 
 # k9s
 - path: config/k9s

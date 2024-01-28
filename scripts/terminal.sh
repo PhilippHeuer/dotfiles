@@ -15,12 +15,13 @@ if [ "$WM" = "sway" ]; then
   cwd=$(readlink -e "/proc/$pid/cwd")
 fi
 
+# get first arg or default to bash
+executable=${1:-"bash"}
+
 # start terminal
 cd "$cwd"
 if command -v kitty &> /dev/null; then
-  exec kitty --working-directory "$cwd" bash
+  exec kitty --working-directory "$cwd" $executable
 elif command -v alacritty &> /dev/null; then
-  exec alacritty --working-directory "$cwd" -e bash
-else
-  exec xterm -e bash
+  exec alacritty --working-directory "$cwd" -e $executable
 fi

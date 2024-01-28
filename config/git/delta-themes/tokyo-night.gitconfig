@@ -1,0 +1,3 @@
+[delta "current-theme"]
+	# Should match the name of the bat theme
+	syntax-theme = "tokyonight_night"
