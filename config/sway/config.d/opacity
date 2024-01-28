@@ -1,5 +1,6 @@
 # vscode
 for_window [class="^Code$"] opacity 0.9
+for_window [class="^VSCodium$"] opacity 0.9
 
 # jetbrains
 for_window [class="^jetbrains"] opacity 0.9

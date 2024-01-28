@@ -6,6 +6,7 @@
   # url: https://marketplace.visualstudio.com/vscode
   environment.systemPackages = with pkgs-unstable; [
     (vscode-with-extensions.override {
+      vscode = vscodium;
       vscodeExtensions = [
         vscode-extensions.editorconfig.editorconfig
         # copilot
@@ -23,6 +24,24 @@
             name = "copilot-chat";
             version = "0.12.2024012601";
             sha256 = "sha256-QsXLM2MlmyxG5d0HZem1eAbmPd/GcXZ1MCirZno9NX4=";
+          };
+        })
+        # git
+        (vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "eamodio";
+            name = "gitlens";
+            version = "2024.1.2604";
+            sha256 = "sha256-TkpK1+G2L5uo8BFdR96tWRHOH5iK4X9Ug/lBqHhvIQ8=";
+          };
+        })
+        # ident rainbow
+        (vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "oderwat";
+            name = "indent-rainbow";
+            version = "8.3.1";
+            sha256 = "sha256-dOicya0B2sriTcDSdCyhtp0Mcx5b6TUaFKVb0YU3jUc=";
           };
         })
         # theme
