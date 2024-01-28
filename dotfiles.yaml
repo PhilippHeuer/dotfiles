@@ -299,6 +299,10 @@ directories:
   target: $HOME/.config/Code
   rules:
   - rule: inPath("code")
+- path: config/Code
+  target: $HOME/.config/VSCodium
+  rules:
+  - rule: inPath("codium")
 
 # jetbrains - intellij
 - path: config/JetBrains/IntelliJ
