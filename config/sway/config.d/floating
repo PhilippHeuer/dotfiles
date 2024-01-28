@@ -1,6 +1,10 @@
+# window: generic fzf popups
+for_window [title="^fzf_popup$"] floating enable
+for_window [title="^fzf_popup$"] resize set 1200 900
+
 # window: theme selector
 for_window [title="^select_theme$"] floating enable
-for_window [title="^select_theme$"] resize set 800 600
+for_window [title="^select_theme$"] resize set 1200 900
 
 # window: weather report
 for_window [title="^weather_report$"] floating enable
