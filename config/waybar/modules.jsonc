@@ -192,7 +192,7 @@
     "custom/themechange": {
         "format": " ",
         "exec": "echo; echo switch theme",
-        "on-click": "kitty --title select_theme -e ~/.local/bin/theme",
+        "on-click": "kitty --title fzf_popup_small -e ~/.local/bin/theme",
         "interval": "once",
         "tooltip": true,
     },
