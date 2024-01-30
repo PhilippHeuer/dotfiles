@@ -15,26 +15,26 @@ echo "Detected distribution: $distro_id."
 
 # nixos
 if [ "$distro_id" == "NixOS" ]; then
-    echo "Detected NixOS. Starting cleanup..."
+  echo "Detected NixOS. Starting cleanup..."
 
-    # nixos profiles
-    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 3d
+  # nixos profiles
+  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 3d
 
-    # nixos garbage collection
-    sudo nix-store --gc
+  # nixos garbage collection
+  sudo nix-store --gc
 
-    echo "NixOS cleanup completed."
+  echo "NixOS cleanup completed."
 fi
 
 # wsl
 if [ -n "$WSL_DISTRO_NAME" ]; then
-    echo "Detected WSL. Starting cleanup..."
+  echo "Detected WSL. Starting cleanup..."
 
-    # reclaim disk space
-    sudo sh -c "echo 1 > /proc/sys/vm/compact_memory"
+  # reclaim disk space
+  sudo sh -c "echo 1 > /proc/sys/vm/compact_memory"
 
-    # reclaim ram
-    sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
+  # reclaim ram
+  sudo sh -c "echo 1 > /proc/sys/vm/drop_caches"
 
-    echo "WSL cleanup completed."
+  echo "WSL cleanup completed."
 fi

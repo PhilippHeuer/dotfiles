@@ -84,6 +84,10 @@ if [ -z "$RESOLUTION_SCALE" ]; then
   esac
 fi
 
+# scale
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+
 # cwd to home
 cd ~
 
