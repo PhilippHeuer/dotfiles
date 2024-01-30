@@ -34,14 +34,14 @@ layouts:
         group: editor
       - name: vscodium
         rules:
-          - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
+          - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript") || contains(TAGS, "buildsystem-container"))
         commands:
           - command: codium "${startDirectory}"
         gui: true
         group: editor
       - name: vscode
         rules:
-          - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript"))
+          - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript") || contains(TAGS, "buildsystem-container"))
         commands:
           - command: code ${startDirectory}
         gui: true

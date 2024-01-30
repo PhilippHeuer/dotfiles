@@ -1,0 +1,30 @@
+{
+	"maximized": true,
+	"preferences": {
+		"request": {
+			"sslVerification": true,
+			"customCaCertificate": {
+				"enabled": true,
+				"filePath": "/etc/ssl/certs/ca-certificates.crt"
+			},
+			"timeout": 0,
+			"storeCookies": true,
+			"sendCookies": true
+		},
+		"font": {
+			"codeFont": "JetBrainsMono Nerd Font"
+		},
+		"proxy": {
+			"enabled": false,
+			"protocol": "http",
+			"hostname": "",
+			"port": null,
+			"auth": {
+				"enabled": false,
+				"username": "",
+				"password": ""
+			},
+			"bypassProxy": ""
+		}
+	}
+}

@@ -366,6 +366,12 @@ directories:
   rules:
   - rule: inPath("reposync")
 
+# git
+- path: config/bruno
+  target: $HOME/.config/bruno
+  rules:
+  - rule: inPath("bruno")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
