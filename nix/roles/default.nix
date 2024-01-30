@@ -64,6 +64,9 @@
       ./reposync.nix # sync git repos
       ./gh.nix # github cli
 
+      # http client
+      ./bruno.nix
+
       # language toolchains
       ./java.nix
       ./nodejs.nix
