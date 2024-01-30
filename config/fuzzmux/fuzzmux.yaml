@@ -59,6 +59,7 @@ layouts:
         commands:
           - command: export KUBECONFIG="${kubeConfig}"
           - command: kubectl config set-context --current --namespace="${namespace}"
+          - command: bash
       - name: k9s
         rules:
           - inPath("k9s")
