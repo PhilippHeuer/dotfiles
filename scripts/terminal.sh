@@ -15,13 +15,25 @@ if [ "$WM" = "sway" ]; then
   cwd=$(readlink -e "/proc/$pid/cwd")
 fi
 
-# get first arg or default to bash
+# arguments
+title=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --title)
+      title="$2"
+      shift 2
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
 executable=${1:-"bash"}
 
 # start terminal
 cd "$cwd"
 if command -v kitty &> /dev/null; then
-  exec kitty --working-directory "$cwd" $executable
+  exec kitty --title "$title" --working-directory "$cwd" $@
 elif command -v alacritty &> /dev/null; then
-  exec alacritty --working-directory "$cwd" -e $executable
+  exec alacritty --title "$title" --working-directory "$cwd" -e $@
 fi
