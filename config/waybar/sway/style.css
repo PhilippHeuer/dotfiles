@@ -87,8 +87,6 @@
     background: inherit;
   }
   
-  
-  
   #workspaces,
   #custom-ibus,
   #clock,
@@ -200,16 +198,23 @@
   }
 
   /* fuzzy group */
-  #custom-fuzzy-project, #custom-fuzzy-ssh, #custom-fuzzy-k8s {
-    margin-left: -12px;
-    margin-right: 5px;
-    padding-left: 12px;
-    padding-right: 12px;
-    border-radius: 0px 8px 8px 0px;
-  }
   #custom-fuzzy-project {
+    border-radius: 8px 0 0 8px;
+
+    padding-left: 12px;
+    margin-right: 0px;
+  }
+  #custom-fuzzy-ssh {
+    border-radius: 0 0 0 0;
+
     margin-left: 0px;
-    border-radius: 8px 8px 8px 8px;
+    margin-right: 0px;
+  }
+  #custom-fuzzy-k8s {
+    border-radius: 0 8px 8px 0;
+
+    padding-right: 12px;
+    margin-left: 0px;
   }
 
   /* menu and ui group */
@@ -326,9 +331,3 @@
     background-color: #ecf0f1;
     color: #2d3436;
   }
-  
-  
-  /*My Configs*/
-  #backlight{
-  }
-  
