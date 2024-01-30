@@ -35,6 +35,11 @@
     color: #6c71c4;
     border-radius: 8px 8px 8px 8px;
   }
+
+  #memory {
+    color: #333770;
+    border-radius: 8px 8px 8px 8px;
+  }
   
   #backlight {
     color: #2aa198;
