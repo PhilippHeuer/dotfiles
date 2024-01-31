@@ -178,7 +178,7 @@
       # renovate: datasource=github-releases depName=neovim/neovim
       neovim: "0.9.5"
       # renovate: datasource=github-releases depName=PhilippHeuer/fuzzmux
-      fuzzmux: "0.3.1"
+      fuzzmux: "0.4.0"
       # renovate: datasource=github-releases depName=tbillington/kondo
       kondo: "0.8"
       # renovate: datasource=github-releases depName=ajeetdsouza/zoxide
