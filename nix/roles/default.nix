@@ -49,6 +49,9 @@
       ./minioclient.nix
       ./s3fs.nix
 
+      # documentation and notes
+      ./obsidian.nix
+
       # appimage
       ./appimage.nix
     ];
@@ -101,7 +104,7 @@
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
-      
+
     ];
   };
   ide = {
