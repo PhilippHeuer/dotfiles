@@ -20,6 +20,9 @@
         pkgs-unstable = import inputs.nixpkgs-unstable {
           system = system;
           config.allowUnfree = true;
+          config.permittedInsecurePackages = [
+            "electron-25.9.0" # for obsidian
+          ];
         };
       };
       modules =
