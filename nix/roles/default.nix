@@ -48,6 +48,9 @@
       # s3
       ./minioclient.nix
       ./s3fs.nix
+
+      # appimage
+      ./appimage.nix
     ];
   };
   # development tools

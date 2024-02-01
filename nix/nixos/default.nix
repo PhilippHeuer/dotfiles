@@ -6,6 +6,7 @@
       ./locale.nix
       ./fonts.nix
       ./nixconfig.nix
+      ./telemetry.nix
     ];
   };
 }
