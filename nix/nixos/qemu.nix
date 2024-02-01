@@ -8,7 +8,7 @@
   boot.binfmt.emulatedSystems = [
     "aarch64-linux"
     #"alpha-linux"
-    "armv6l-linux"
+    #"armv6l-linux"
     "armv7l-linux"
     #"powerpc-linux"
     #"powerpc64-linux"
