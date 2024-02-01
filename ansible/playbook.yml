@@ -166,7 +166,7 @@
       # renovate: datasource=github-releases depName=fastfetch-cli/fastfetch
       fastfetch: "2.7.1"
       # renovate: datasource=github-releases depName=eza-community/eza
-      eza: "0.17.3"
+      eza: "0.18.0"
       # renovate: datasource=github-releases depName=dandavison/delta
       gitdelta: "0.16.5"
       # renovate: datasource=github-releases depName=zellij-org/zellij
