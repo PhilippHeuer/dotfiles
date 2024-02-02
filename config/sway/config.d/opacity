@@ -5,5 +5,8 @@ for_window [class="^VSCodium$"] opacity 0.9
 # jetbrains
 for_window [class="^jetbrains"] opacity 0.9
 
+# obsidian
+for_window [class="^obsidian"] opacity 0.9
+
 # dbeaver
 for_window [app_id="^DBeaver$"] opacity 0.9
