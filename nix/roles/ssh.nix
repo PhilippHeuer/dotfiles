@@ -4,7 +4,7 @@
   # ssh agent
   programs.ssh = {
     startAgent = true;
-    agentTimeout = "4h";
+    agentTimeout = "12h";
   };
 
   # gpg agent (supports SSH Keys and GPG Keys)
