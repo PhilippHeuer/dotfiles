@@ -44,6 +44,33 @@
             sha256 = "sha256-dOicya0B2sriTcDSdCyhtp0Mcx5b6TUaFKVb0YU3jUc=";
           };
         })
+        # todo highlight
+        (vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "wayou";
+            name = "vscode-todo-highlight";
+            version = "1.0.5";
+            sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
+          };
+        })
+        # markdown notes
+        (vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "kortina";
+            name = "vscode-markdown-notes";
+            version = "0.0.27";
+            sha256 = "sha256-KiEHxySFXHd+lGh9RPAxsevJXIvm01AXhfNifl8FEvc=";
+          };
+        })
+        # lsp
+        (vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "golang";
+            name = "Go";
+            version = "0.40.3";
+            sha256 = "sha256-FWC9ALnp5ZsUqHFOPS5CcKsqf5O6rpr4oMfenvZlcZY=";
+          };
+        })
         # theme
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
