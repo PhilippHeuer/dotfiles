@@ -15,6 +15,7 @@
   excludesfile = ~/.config/git/gitignore
   preloadindex = true
   fscache      = true
+  #fsmonitor    = true # file-system watcher
   hooksPath    = ~/.config/git/hooks
 
 [commit]
@@ -32,6 +33,7 @@
 
 [fetch]
   prune = true # remove remote branches that no longer exist on the server
+  writeCommitGraph = true # incrementally update the commit graph
 
 [alias]
   s = status --short --branch
@@ -45,6 +47,8 @@
   sl = stash list
   sp = stash pop
   ss = stash save
+  # smart blame (copy/move detection)
+  bl = blame -w -C -C -C
   # add executable file
   addx = !sh -c 'git add $0; git update-index --chmod=+x $0'
   # history
@@ -104,6 +108,12 @@
 
 [log]
 	mailmap = true
+
+[rerere]
+  enabled = true # enable rerere (reuse recorded conflict resolutions)
+
+[branch]
+  sort = -committerdate # sort branches by committer date
 
 [submodule]
 	# update submodules recursively when pulling changes
