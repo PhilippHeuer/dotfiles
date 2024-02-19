@@ -11,4 +11,9 @@
       dates = "weekly";
     };
   };
+
+  environment.systemPackages = with pkgs-unstable; [
+    rootlesskit
+    buildkit
+  ];
 }
