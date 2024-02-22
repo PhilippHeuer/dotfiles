@@ -45,6 +45,9 @@
       ./helm.nix
       ./click.nix
 
+      # message brokers
+      ./kafkactl.nix
+
       # s3
       ./minioclient.nix
       ./s3fs.nix
