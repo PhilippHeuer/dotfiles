@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    go
+  environment.systemPackages = [
+    pkgs-unstable.go
   ];
 }
