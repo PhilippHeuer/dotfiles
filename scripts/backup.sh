@@ -48,6 +48,10 @@ files=(
 
   # zoxide db
   "$HOME/.local/share/zoxide/db.zo"
+
+  # atuin
+  "$HOME/.local/share/atuin/history.db"
+  "$HOME/.local/share/atuin/key"
 )
 
 # remove missing paths

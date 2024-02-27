@@ -25,8 +25,11 @@ export REGISTRY_AUTH_FILE="$HOME/.config/containers/auth.json"
 # editor
 export EDITOR="nvim"
 
+# ble.sh
+source "$(blesh-share)"/ble.sh --attach=none # does not work currently
+
 # source scripts (sorted by name, log duration)
-script_files=$(find -L "$HOME/.config" -maxdepth 3 -type f -path "*/init/*.sh" | sort)
+script_files=$(find -L "$HOME/.config" -maxdepth 3 -type f -path "*/init/*.sh" | sort -t/ -k6 --version-sort)
 echo "" > "$HOME/.local/share/bash.log" # clear log
 for script in $script_files; do
   start_time=$(date +%s%N)
@@ -38,3 +41,6 @@ done
 
 # aliases
 . $HOME/.config/bash/aliases.sh
+
+# ble.sh
+[[ ${BLE_VERSION-} ]] && ble-attach
