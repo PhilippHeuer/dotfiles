@@ -58,6 +58,12 @@ directories:
 - path: config/bash/.bash_profile
   target: $HOME/.bash_profile
 
+# atuin
+- path: config/atuin
+  target: $HOME/.config/atuin
+  rules:
+  - rule: inPath("atuin")
+
 # btop
 - path: config/btop
   target: $HOME/.config/btop

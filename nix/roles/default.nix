@@ -6,6 +6,7 @@
       ./ansible.nix
       ./base.nix
       ./gpg.nix
+      ./atuin.nix # replacement for the shell history
 
       # cli tools
       ./bat.nix # cat replacement
