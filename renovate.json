@@ -6,5 +6,8 @@
   ],
   "baseBranches": [
     "main"
+  ],
+  "ignorePaths": [
+    "ansible/playbook.yml"
   ]
 }
