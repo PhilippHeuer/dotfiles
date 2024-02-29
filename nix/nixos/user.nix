@@ -48,4 +48,6 @@ in {
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIKOf6dQuq5reydB8gcuHIGWY3TP1MlSCyL0JELuvu9gwAAAAC3NzaDpwcmltYXJ5 phx-sk2"
     ];
   };
+
+  security.sudo.extraRules = [ sudoRule ];
 }

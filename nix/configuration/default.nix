@@ -87,6 +87,28 @@ in {
     ];
   };
 
+  # vault
+  vault = mkConfiguration {
+    username = "phx";
+    extraModules = [
+      # nixos
+      ../nixos/bootloader.nix
+      ../nixos/kernel.nix
+      ../nixos/user.nix
+      ../nixos/audio.nix
+      ../nixos/qemu.nix
+      ../nixos/ssh.nix
+      ../nixos/wifi.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
+      # roles
+      nixosRoles.default
+      nixosRoles.development
+      # variant
+      ./vault
+    ];
+  };
+
   # wsl
   wsl = mkConfiguration {
     username = "phx";
