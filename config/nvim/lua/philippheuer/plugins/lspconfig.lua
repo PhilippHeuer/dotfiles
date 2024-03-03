@@ -123,11 +123,6 @@ return {
             })
           end
 
-          -- Create a command `:Format` local to the LSP buffer
-          vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
-            vim.lsp.buf.format()
-          end, { desc = "Format current buffer with LSP" })
-
           -- Restart LSP
           map('<leader>rs', ":LspRestart<CR>", '[R]e[s]art LSP')
         end,

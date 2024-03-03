@@ -1,38 +1,38 @@
 return {
-  "stevearc/conform.nvim",
-  tag = "v4.0.0",
+  'stevearc/conform.nvim',
+  tag = 'v5.3.0',
   event = {
-    "BufReadPre",
-    "BufNewFile"
+    'BufReadPre',
+    'BufNewFile'
   },
   config = function()
-    local conform = require("conform")
+    local conform = require('conform')
 
     conform.setup({
       formatters_by_ft = {
         -- lua
-        lua = { "stylua" },
+        lua = { 'stylua' },
         -- python
-        python = { "isort", "black" },
+        python = { 'isort', 'black' },
         -- javascript
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
-        svelte = { "prettier" },
-        html = { "prettier" },
-        css = { "prettier" },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        svelte = { 'prettier' },
+        html = { 'prettier' },
+        css = { 'prettier' },
         -- golang
-        go = { "gofmt", "goimports" },
+        go = { 'gofmt', 'goimports' },
         -- serialization formats
-        json = { "prettier" },
-        yaml = { "prettier" },
+        json = { 'prettier' },
+        yaml = { 'prettier' },
         -- markdown
-        markdown = { "prettier" },
+        markdown = { 'prettier' },
         -- graphql
-        graphql = { "prettier" },
+        graphql = { 'prettier' },
         -- trim whitespaces for all non specified files
-        ["_"] = { "trim_whitespace" },
+        ['_'] = { 'trim_whitespace' },
       },
       format_on_save = {
         lsp_fallback = true,
@@ -42,14 +42,14 @@ return {
     })
   end,
   keys = {
-    { "<leader>f", function()
-      local conform = require("conform")
+    { '<leader>f', function()
+      local conform = require('conform')
 
       conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
       })
-    end, mode = {"n"}, desc = "format current file or range (in visual mode)" },
+    end, mode = {'n'}, desc = 'format current file or range (in visual mode)' },
   },
 }
