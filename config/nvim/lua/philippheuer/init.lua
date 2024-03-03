@@ -7,7 +7,6 @@ require("philippheuer.packagemanager")
 
 -- Plugins / LSP
 require("philippheuer.plugins")
-require("philippheuer.lsp")
 
 -- Features
 require("philippheuer.features.highlightyank")

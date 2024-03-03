@@ -1,6 +1,7 @@
 -- Configure Plugins
 local plugins = {
   -- Core
+  "philippheuer.plugins.sleuth",
   "philippheuer.plugins.lspconfig",
   "philippheuer.plugins.editorconfig",
   "philippheuer.plugins.tmux",
