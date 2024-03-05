@@ -9,3 +9,4 @@ dotfiles install "$script_dir" --mode symlink
 
 # rebuild bat cache
 # bat cache --build
+# cd ~/.config/bat && silicon --build-cache
