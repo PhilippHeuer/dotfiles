@@ -20,6 +20,7 @@ local plugins = {
   'philippheuer.plugins.http', -- http client
   'philippheuer.plugins.copilot', -- github copilot
   'philippheuer.plugins.completion', -- code completion
+  'philippheuer.plugins.silicon', -- code screenshots (requirs local installation of silicon)
   -- Theme / UI
   'philippheuer.themes.current', 
 }
