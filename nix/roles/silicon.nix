@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    silicon
+  environment.systemPackages = [
+    pkgs-unstable.silicon
   ];
 }

@@ -13,6 +13,7 @@
       fira-code
       jetbrains-mono
       material-design-icons
+      noto-fonts-color-emoji
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
 
