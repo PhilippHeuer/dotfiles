@@ -1,0 +1,27 @@
+{ pkgs, pkgs-unstable, ... }:
+
+{
+  # systemd container service
+  virtualisation.oci-containers.containers = {
+    pihole = {
+      image = "docker.io/pihole/pihole:2024.02.2";
+      autoStart = true;
+      ports = [
+        "53:53/tcp"
+        "53:53/udp"
+        "67:67/udp"
+        "9010:80/tcp"
+        ];
+      volumes = [
+        "/var/lib/pihole/config:/etc/pihole"
+        "/var/lib/pihole/dnsmasq:/etc/dnsmasq.d"
+      ];
+      environment = {
+        TZ = "Europe/Berlin";
+        VIRTUAL_HOST = "0.0.0.0:9010";
+        #WEBPASSWORD = "";
+      };
+      extraOptions = [ "--dns=1.1.1.1" ];
+    };
+  };
+}

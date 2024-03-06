@@ -7,6 +7,7 @@
       ./base.nix
       ./gpg.nix
       ./atuin.nix # replacement for the shell history
+      ./git.nix # version control
 
       # cli tools
       ./bat.nix # cat replacement
@@ -25,7 +26,7 @@
 
       # terminal
       ./tmux.nix
-      ./zellij.nix
+      # ./zellij.nix
       ./nushell.nix
       ./starship.nix
 
@@ -37,24 +38,6 @@
       ./sops.nix
       ./vault.nix
       ./yubikey.nix
-
-      # k8s
-      ./podman.nix
-      ./kubectl.nix
-      ./openshift.nix
-      ./k9s.nix
-      ./helm.nix
-      ./click.nix
-
-      # message brokers
-      ./kafkactl.nix
-
-      # s3
-      ./minioclient.nix
-      ./s3fs.nix
-
-      # documentation and notes
-      ./obsidian.nix
 
       # appimage
       ./appimage.nix
@@ -82,8 +65,36 @@
       ./nodejs.nix
       ./python.nix
       ./golang.nix
+
+      # documentation and notes
+      ./obsidian.nix
     ];
   };
+  # container runtime
+  container-runtime = {
+    imports = [
+      ./podman.nix
+    ];
+  };
+  # administration tools
+  administration-tools = {
+    imports = [
+      # k8s
+      ./kubectl.nix
+      ./openshift.nix
+      ./k9s.nix
+      ./helm.nix
+      ./click.nix
+
+      # message brokers
+      ./kafkactl.nix
+
+      # s3
+      ./minioclient.nix
+      ./s3fs.nix
+    ];
+  };
+  # desktop environment
   wm-sway = {
     imports = [
       ./wm.nix
@@ -108,7 +119,6 @@
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
-
     ];
   };
   ide = {
@@ -123,6 +133,20 @@
       ./mpv.nix # video player
       ./mpvpaper.nix # video wallpaper
       ./sxiv.nix # image viewer
+    ];
+  };
+  # media server
+  homeautomation = {
+    imports = [
+      ./homeassistant.nix
+      ./pihole.nix
+    ];
+  };
+  # media server
+  mediaserver = {
+    imports = [
+      ./plex.nix
+      ./komga.nix
     ];
   };
 }

@@ -104,6 +104,9 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.development
+      nixosRoles.container-runtime
+      nixosRoles.mediaserver
+      nixosRoles.homeautomation
       # variant
       ./vault
     ];
@@ -122,6 +125,8 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.development
+      nixosRoles.container-runtime
+      nixosRoles.administration-tools
       nixosRoles.wm-sway
       nixosRoles.desktop
       nixosRoles.media
