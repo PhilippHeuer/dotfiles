@@ -3,13 +3,8 @@ return {
   lazy = true,
 	cmd = 'Silicon',
   init = function()
-    local wk = require('which-key')
-    wk.register({
-      ['<leader>sc'] = { ':Silicon<cr>', 'Silicon: Capture' },
-    }, {mode = { 'n', 'i' }})
-    wk.register({
-      ['<leader>sc'] = { ':\'<,\'>Silicon<cr>', 'Silicon: Capture' },
-    }, {mode = 'v'})
+    vim.keymap.set({ 'n', 'i' }, '<leader>sc', ':Silicon<cr>', { desc = '[S]creen[S]hot (Silicon)' })
+    vim.keymap.set('v', '<leader>sc', ':\'<,\'>Silicon<cr>', { desc = '[S]creen[S]hot (Silicon)' })
   end,
   config = function()
 		require('silicon').setup({
@@ -21,7 +16,10 @@ return {
       -- no_window_controls = true,
       window_title = function()
         return vim.fn.expand('%:t')
-      end
+      end,
+      output = function()
+        return os.getenv('HOME') .. '/screenshots/' .. os.date('!%Y-%m-%dT%H-%M-%S') .. '.png'
+      end,
 		})
 	end
 }
