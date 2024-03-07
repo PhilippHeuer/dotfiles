@@ -107,6 +107,8 @@ in {
       nixosRoles.container-runtime
       nixosRoles.mediaserver
       nixosRoles.homeautomation
+      nixosRoles.driveencryption
+      nixosRoles.drivemonitoring
       # variant
       ./vault
     ];

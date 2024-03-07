@@ -7,4 +7,5 @@
   dotfiles = pkgs.callPackage ./apps/dotfiles.nix { };
   reposync = pkgs.callPackage ./apps/reposync.nix { };
   fuzzmux = pkgs.callPackage ./apps/fuzzmux.nix { };
+  driveguard = pkgs.callPackage ./apps/driveguard.nix { };
 }
