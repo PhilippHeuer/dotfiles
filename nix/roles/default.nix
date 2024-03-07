@@ -149,4 +149,16 @@
       ./komga.nix
     ];
   };
+  # drive encryption
+  driveencryption = {
+    imports = [
+      ./veracrypt.nix
+    ];
+  };
+  # drive monitoring (private, experimental code)
+  drivemonitoring = {
+    imports = [
+      ./driveguard.nix
+    ];
+  };
 }

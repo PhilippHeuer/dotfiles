@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    vault
+  environment.systemPackages = [
+    pkgs.vault
   ];
 }
