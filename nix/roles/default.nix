@@ -23,6 +23,7 @@
 
       # ssh
       ./ssh.nix
+      ./sshfs.nix
 
       # terminal
       ./tmux.nix
