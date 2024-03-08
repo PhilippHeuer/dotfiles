@@ -109,7 +109,7 @@ in {
       nixosRoles.homeautomation
       nixosRoles.driveencryption
       nixosRoles.drivemonitoring
-      ../roles/samba.nix
+      ../roles/nas-samba.nix
       # variant
       ./vault
     ];
