@@ -14,16 +14,16 @@
           mktplcRef = {
             publisher = "github";
             name = "copilot";
-            version = "1.155.677";
-            sha256 = "sha256-28exhio6twVrtRgo4AKiYYr+dLHJG0zpkMhE1TXlE5Q=";
+            version = "1.172.758";
+            sha256 = "sha256-sK3IiA4mQ6Hse+UpZ81Zb5iBSREzTrs7ypsfGbJiXm4=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
             publisher = "github";
             name = "copilot-chat";
-            version = "0.12.2024012601";
-            sha256 = "sha256-QsXLM2MlmyxG5d0HZem1eAbmPd/GcXZ1MCirZno9NX4=";
+            version = "0.14.2024030801";
+            sha256 = "sha256-v9RS+pEEQzq2t0EY/gVTTfIwRlGmIuIq2qCockDpsn8=";
           };
         })
         # git
@@ -31,8 +31,8 @@
           mktplcRef = {
             publisher = "eamodio";
             name = "gitlens";
-            version = "2024.1.2604";
-            sha256 = "sha256-TkpK1+G2L5uo8BFdR96tWRHOH5iK4X9Ug/lBqHhvIQ8=";
+            version = "2024.3.704";
+            sha256 = "sha256-ax7Qng3o8wKj+cPmA/bz0eNw4uSO0ckTGovvs79E9xE=";
           };
         })
         # ident rainbow
@@ -67,8 +67,8 @@
           mktplcRef = {
             publisher = "golang";
             name = "Go";
-            version = "0.40.3";
-            sha256 = "sha256-FWC9ALnp5ZsUqHFOPS5CcKsqf5O6rpr4oMfenvZlcZY=";
+            version = "0.41.1";
+            sha256 = "sha256-tSt0IqRuE3nJgMYvdYUz5QDtzOsKKQqyW2KD1FEhkEQ=";
           };
         })
         # theme
@@ -76,16 +76,16 @@
           mktplcRef = {
             publisher = "Catppuccin";
             name = "catppuccin-vsc";
-            version = "3.11.0";
-            sha256 = "sha256-jUSYheKalC4mBlSr2iEXb4d/p76IbtgQqKvftG/of4k=";
+            version = "3.11.2";
+            sha256 = "sha256-riHhw7PnSVC0zE4VU30IHS4MxAGvDLqOb1eTtnairBM=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
             publisher = "Catppuccin";
             name = "catppuccin-vsc-icons";
-            version = "1.5.0";
-            sha256 = "sha256-VQD/pf96xa99IRTVrpCfZuY/ryL+ueMfmI5kQ6k119k=";
+            version = "1.9.1";
+            sha256 = "sha256-Ge6x3ORa8wtKcSCsRhOBPpseCsDhS3pRTY2aVAHCVhE=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
