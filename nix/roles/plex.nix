@@ -5,6 +5,7 @@
   services.plex = {
     enable = true;
     openFirewall = true;
+    user = "root"; # TODO: remove after permission issues are resolved
     extraPlugins = [
       (builtins.path {
         name = "Hama.bundle";
@@ -24,7 +25,7 @@
         sha256 = "sha256-RpZh69MaP+YnDJOTaERrbsL5o8Yy7OLZvYz+ejHOvcI=";
       })
     ];
-    package = pkgs.plex;
+    package = pkgs-unstable.plex;
     dataDir = "/var/lib/plex";
   };
 }

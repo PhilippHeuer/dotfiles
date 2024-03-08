@@ -10,6 +10,7 @@
       volumes = [
         "/var/lib/komga/config:/config"
         "/var/lib/komga/data:/data"
+        "/mnt:/mnt"
       ];
     };
   };
