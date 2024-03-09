@@ -46,10 +46,15 @@ Finally, run `sudo nixos-rebuild switch` to apply the changes.
 `sudo nix-channel --update`
 `sudo nixos-rebuild switch`
 
-*Edit `configuration.nix` to enable flakes*
+*Enable Experimental Features*
+
+via env:
+
+``export NIX_CONFIG="experimental-features = nix-command flakes"``
+
+via `configuration.nix`:
 
 `sudo sed -i '/^}$/i \  nix.settings.experimental-features = [ "nix-command" "flakes" ];' /etc/nixos/configuration.nix`
-`sudo nixos-rebuild switch`
 
 ### Restore
 

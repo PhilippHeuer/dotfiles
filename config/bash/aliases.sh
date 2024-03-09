@@ -18,6 +18,7 @@ alias ll="eza --icons -T -L 2 -x"
 alias backup="~/.local/scripts/backup.sh"
 alias cleanup="~/.local/scripts/cleanup.sh"
 alias reload="~/.local/scripts/reload.sh"
+alias mntssh="~/.local/scripts/mntssh.sh"
 
 # editor
 alias v="nvim"
