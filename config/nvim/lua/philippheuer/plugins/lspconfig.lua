@@ -4,7 +4,7 @@ return {
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile', 'BufEnter' },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
       'williamboman/mason.nvim',
@@ -19,6 +19,9 @@ return {
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+
+      -- required for helmls
+      { 'towolf/vim-helm', ft = 'helm' },
     },
     config = function()
       -- Brief Aside: **What is LSP?**
@@ -153,9 +156,9 @@ return {
         bashls = require("philippheuer.lsp.bashls"), -- bash
         ansiblels = require("philippheuer.lsp.ansiblels"), -- ansible
         dockerls = require("philippheuer.lsp.dockerls"), -- docker
-        bashls = require("philippheuer.lsp.bashls"), -- bash
         yamlls = require("philippheuer.lsp.yamlls"), -- yaml
         jsonls = require("philippheuer.lsp.jsonls"), -- json
+        helm_ls = require("philippheuer.lsp.helmls"), -- helmls
       }
 
       -- Ensure the servers and tools above are installed
@@ -170,6 +173,19 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        -- lsp
+        'gopls',
+        'jdtls',
+        'kotlin_language_server',
+        'gradle_ls',
+        'lua_ls',
+        'bashls',
+        'ansiblels',
+        'dockerls',
+        'yamlls',
+        'jsonls',
+        'helm_ls',
+
         -- formatters
         'stylua', -- format lua code
         'prettier',
