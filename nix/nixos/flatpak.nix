@@ -6,6 +6,8 @@
 
   # add the flathub repository
   system.activationScripts.addFlatHubToFlatpak = lib.mkForce ''
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    if command -v flatpak > /dev/null; then
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    fi
   '';
 }

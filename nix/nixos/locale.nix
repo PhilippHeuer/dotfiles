@@ -2,33 +2,34 @@
 #
 { lib, ... }:
 
-{
+let
+  ENGLISH = "en_US.UTF-8";
+  GERMAN = "de_DE.UTF-8";
+in {
   # time zone
   time.timeZone = lib.mkDefault "Europe/Berlin";
 
   # language
   i18n = {
     # system language
-    defaultLocale = lib.mkDefault "en_US.UTF-8";
+    defaultLocale = ENGLISH;
 
     # locale settings
     extraLocaleSettings = {
-      LC_ADDRESS = lib.mkDefault "de_DE.UTF-8";
-      LC_IDENTIFICATION = lib.mkDefault "de_DE.UTF-8";
-      LC_MEASUREMENT = lib.mkDefault "de_DE.UTF-8";
-      LC_MONETARY = lib.mkDefault "de_DE.UTF-8";
-      LC_NAME = lib.mkDefault "de_DE.UTF-8";
-      #LC_NUMERIC = lib.mkDefault "de_DE.UTF-8";
-      LC_PAPER = lib.mkDefault "de_DE.UTF-8";
-      LC_TELEPHONE = lib.mkDefault "de_DE.UTF-8";
-      #LC_TIME = lib.mkDefault "de_DE.UTF-8";
+      LANG = ENGLISH;
+      LC_ADDRESS = GERMAN;
+      LC_IDENTIFICATION = GERMAN;
+      LC_MEASUREMENT = GERMAN;
+      LC_MONETARY = GERMAN;
+      LC_NAME = GERMAN;
+      LC_PAPER = GERMAN;
+      LC_TELEPHONE = GERMAN;
     };
 
     # supported locales
-    supportedLocales = lib.mkDefault [
-      "C.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-      "de_DE.UTF-8/UTF-8"
+    supportedLocales = [
+      "${ENGLISH}/UTF-8"
+      "${GERMAN}/UTF-8"
     ];
   };
 
