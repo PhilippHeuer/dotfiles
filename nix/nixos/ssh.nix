@@ -5,11 +5,16 @@
     # enable sshd server
     enable = true;
 
-    # require public key authentication for better security
-    settings.PasswordAuthentication = false;
-    settings.KbdInteractiveAuthentication = false;
+    settings = {
+      # require public key authentication for better security
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
 
-    # disable root login
-    settings.PermitRootLogin = "no";
+      # disable root login
+      PermitRootLogin = "no";
+
+      # limit the number of authentication attempts
+      MaxAuthTries = 10;
+    };
   };
 }

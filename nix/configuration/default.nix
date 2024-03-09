@@ -40,6 +40,7 @@ in {
       # nixos
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
+      ../nixos/security.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
@@ -66,6 +67,7 @@ in {
       # nixos
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
+      ../nixos/security.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
@@ -94,6 +96,7 @@ in {
       # nixos
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
+      ../nixos/security.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/qemu.nix
