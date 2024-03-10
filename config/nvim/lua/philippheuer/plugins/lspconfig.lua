@@ -3,12 +3,16 @@ return {
   --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
-    'neovim/nvim-lspconfig',
+    --'neovim/nvim-lspconfig',
+    'PhilippHeuer/nvim-lspconfig',
+    branch = 'feat/add-vacuum',
+
     event = { 'BufReadPre', 'BufNewFile', 'BufEnter' },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
       'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
+      -- 'williamboman/mason-lspconfig.nvim',
+      { 'PhilippHeuer/mason-lspconfig.nvim', branch = 'feat/add-vacuum-mapping' },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- json and yaml schema store
@@ -159,6 +163,7 @@ return {
         yamlls = require("philippheuer.lsp.yamlls"), -- yaml
         jsonls = require("philippheuer.lsp.jsonls"), -- json
         helm_ls = require("philippheuer.lsp.helmls"), -- helmls
+        vacuum = require("philippheuer.lsp.vacuum"), -- openapi spec
       }
 
       -- Ensure the servers and tools above are installed
@@ -185,6 +190,7 @@ return {
         'yamlls',
         'jsonls',
         'helm_ls',
+        'vacuum',
 
         -- formatters
         'stylua', -- format lua code

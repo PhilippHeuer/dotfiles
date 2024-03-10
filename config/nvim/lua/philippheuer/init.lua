@@ -5,6 +5,9 @@ require('philippheuer.remap')
 -- Package Manager
 require('philippheuer.packagemanager')
 
+-- File Types
+require('philippheuer.filetypes')
+
 -- Plugins / LSP
 require('philippheuer.plugins')
 
