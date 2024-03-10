@@ -3,7 +3,7 @@ return {
   lazy = true,
 	cmd = 'Silicon',
   init = function()
-    vim.keymap.set({ 'n', 'i' }, '<leader>sc', ':Silicon<cr>', { desc = '[S]creen[S]hot (Silicon)' })
+    vim.keymap.set('n', '<leader>sc', ':Silicon<cr>', { desc = '[S]creen[S]hot (Silicon)' })
     vim.keymap.set('v', '<leader>sc', ':\'<,\'>Silicon<cr>', { desc = '[S]creen[S]hot (Silicon)' })
   end,
   config = function()

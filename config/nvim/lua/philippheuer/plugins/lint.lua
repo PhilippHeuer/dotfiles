@@ -12,6 +12,8 @@ return {
       python = { 'pylint' },
       -- golang
       go = { 'golangcilint' },
+      -- shell
+      sh = { 'shellcheck' },
     }
 
     local lint_autogroup = vim.api.nvim_create_augroup('lint', { clear=true })
