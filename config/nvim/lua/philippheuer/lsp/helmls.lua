@@ -1,23 +1,23 @@
 return {
   filetypes = {
-    "helm"
+    'helm'
   },
   settings = {
     ['helm-ls'] = {
-      logLevel = "info",
+      logLevel = 'info',
       valuesFiles = {
-        mainValuesFile = "values.yaml",
-        lintOverlayValuesFile = "values.lint.yaml",
-        additionalValuesFilesGlobPattern = "values*.yaml"
+        mainValuesFile = 'values.yaml',
+        lintOverlayValuesFile = 'values.lint.yaml',
+        additionalValuesFilesGlobPattern = 'values*.yaml'
       },
       yamlls = {
         enabled = true,
         diagnosticsLimit = 50,
         showDiagnosticsDirectly = false,
-        path = "yaml-language-server",
+        path = 'yaml-language-server',
         config = { -- https://github.com/redhat-developer/yaml-language-server#language-server-settings
           schemas = {
-            kubernetes = "templates/**",
+            kubernetes = 'templates/**',
           },
           completion = true,
           hover = true,

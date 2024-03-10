@@ -196,6 +196,7 @@ return {
         -- linters
         'golangci-lint',
         'pylint',
+        'shellcheck',
       })
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,

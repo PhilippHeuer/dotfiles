@@ -1,14 +1,14 @@
 -- Settings and Mappings
-require("philippheuer.settings")
-require("philippheuer.remap")
+require('philippheuer.settings')
+require('philippheuer.remap')
 
 -- Package Manager
-require("philippheuer.packagemanager")
+require('philippheuer.packagemanager')
 
 -- Plugins / LSP
-require("philippheuer.plugins")
+require('philippheuer.plugins')
 
 -- Features
-require("philippheuer.features.highlightyank")
-require("philippheuer.features.formatonsave")
-require("philippheuer.features.edittext")
+require('philippheuer.features.highlightyank')
+require('philippheuer.features.formatonsave')
+require('philippheuer.features.edittext')
