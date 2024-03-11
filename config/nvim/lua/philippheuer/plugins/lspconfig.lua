@@ -3,10 +3,7 @@ return {
   --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
-    --'neovim/nvim-lspconfig',
-    'PhilippHeuer/nvim-lspconfig',
-    branch = 'feat/add-vacuum',
-
+    'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile', 'BufEnter' },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
@@ -157,6 +154,8 @@ return {
         kotlin_language_server = require("philippheuer.lsp.kotlinls"), -- kotlin
         gradle_ls = require("philippheuer.lsp.gradlels"), -- gradle
         lua_ls = require("philippheuer.lsp.luals"), -- lua
+        rust_analyzer = require("philippheuer.lsp.rustls"), -- rust
+        zls = require("philippheuer.lsp.zls"), -- zig
         bashls = require("philippheuer.lsp.bashls"), -- bash
         ansiblels = require("philippheuer.lsp.ansiblels"), -- ansible
         dockerls = require("philippheuer.lsp.dockerls"), -- docker
@@ -178,20 +177,6 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        -- lsp
-        'gopls',
-        'jdtls',
-        'kotlin_language_server',
-        'gradle_ls',
-        'lua_ls',
-        'bashls',
-        'ansiblels',
-        'dockerls',
-        'yamlls',
-        'jsonls',
-        'helm_ls',
-        'vacuum',
-
         -- formatters
         'stylua', -- format lua code
         'prettier',
