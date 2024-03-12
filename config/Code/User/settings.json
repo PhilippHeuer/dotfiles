@@ -88,5 +88,8 @@
         "python",
         "yaml",
         "json"
-    ]
+    ],
+
+    // git
+    "git.path": "/run/current-system/sw/bin/git"
 }
