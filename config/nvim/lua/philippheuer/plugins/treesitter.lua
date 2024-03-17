@@ -11,8 +11,33 @@ return {
       vim.defer_fn(function()
         require('nvim-treesitter.configs').setup {
           -- see https://github.com/nvim-treesitter/nvim-treesitter#supported-languages for a full list of supported languages
-          ensure_installed = { 'c', 'cpp', 'bash', 'go', 'lua', 'python', 'java', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'json', 'yaml', 'http' },
-        
+          ensure_installed = {
+            -- languages
+            'c',
+            'cpp',
+            'go',
+            'lua',
+            'python',
+            'java',
+            'rust',
+            'tsx',
+            'javascript',
+            'typescript',
+            'zig',
+            -- scripting
+            'bash',
+            -- files
+            'json',
+            'yaml',
+            -- documentation
+            'norg', -- requires gcc
+            -- http
+            'http',
+            -- vim
+            'vimdoc',
+            'vim'
+          },
+
           -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
           auto_install = false,
         

@@ -20,5 +20,6 @@
     cyme # lsusb replacement
     pciutils # pci devices
     jq # json parser
+    libgcc # gcc compiler
   ];
 }
