@@ -31,9 +31,7 @@
       ./nushell.nix
       ./starship.nix
 
-      # editor
-      ./neovim.nix
-      ./fuzzmux.nix
+      
 
       # secret management
       ./sops.nix
@@ -58,17 +56,20 @@
       ./reposync.nix # sync git repos
       ./gh.nix # github cli
 
+      # editor
+      ./neovim.nix
+      ./fuzzmux.nix
+
       # http client
       ./bruno.nix
-
-      # language toolchains
+    ];
+  };
+  language-toolchains = {
+    imports = [
       ./java.nix
       ./nodejs.nix
       ./python.nix
       ./golang.nix
-
-      # documentation and notes
-      ./obsidian.nix
     ];
   };
   # container runtime
