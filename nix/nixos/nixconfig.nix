@@ -14,9 +14,6 @@
         "flakes"
         "repl-flake"
       ];
-      
-      # system features
-      # system-features = [ "kvm" "big-parallel" "nixos-test" ];
 
       # Disable global flake registry
       flake-registry = ""; 

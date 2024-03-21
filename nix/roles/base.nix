@@ -9,17 +9,18 @@
     curl
     unzip
     gnupg
-    nix-bash-completions
     lsb-release # lsb_release
     gcc # c compiler
     psmisc # killall
     util-linux # umount
     moreutils # sponge, etc
     wayland-utils # for wayland-info
-    nix-index # nix-index and nix-locate
     cyme # lsusb replacement
     pciutils # pci devices
     jq # json parser
     libgcc # gcc compiler
+
+    nix-bash-completions # nix bash completions
+    nix-index # nix-index and nix-locate
   ];
 }

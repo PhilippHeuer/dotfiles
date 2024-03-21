@@ -247,6 +247,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-philippheuer": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1711061829,
+        "narHash": "sha256-0a0JCn3g2gtiTGkQ8TrfLXqR5BOALAAj/hZ78FMWSHg=",
+        "owner": "philippheuer",
+        "repo": "nixpkgs",
+        "rev": "adcec6a29007bc5d570f2d4da67872b860388d3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "philippheuer",
+        "ref": "main",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1710628718,
@@ -287,6 +308,7 @@
         "impermanence": "impermanence",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-philippheuer": "nixpkgs-philippheuer",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops": "sops"
       }
