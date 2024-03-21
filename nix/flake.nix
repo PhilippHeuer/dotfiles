@@ -38,6 +38,12 @@
     #nixpkgs-master.url = "github:nixos/nixpkgs/master";
     hardware.url = "github:nixos/nixos-hardware";
 
+    # alternative registries
+    nixpkgs-philippheuer = {
+      url = "github:philippheuer/nixpkgs/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # community
     impermanence.url = "github:nix-community/impermanence";
 
@@ -90,9 +96,6 @@
 
       # global nixos modules
       nixosModules = import ./nixos;
-
-      # packages
-      packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
 
       # configurations
       nixosConfigurations = import ./configuration { inherit inputs outputs self; };

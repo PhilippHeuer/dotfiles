@@ -1,7 +1,7 @@
-{ self, pkgs, ... }:
+{ self, inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-    self.packages.${pkgs.system}.driveguard
+    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.driveguard
   ];
 }

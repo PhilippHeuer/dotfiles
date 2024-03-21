@@ -8,12 +8,11 @@
   # utility function to create a configuration
   mkConfiguration = {
     username,
-    nixpkgs ? inputs.nixpkgs,
     system ? "x86_64-linux",
     defaultModules ? true,
     extraModules ? [],
   }:
-    nixpkgs.lib.nixosSystem {
+    inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
         inherit inputs outputs self username system;
@@ -26,7 +25,7 @@
         };
       };
       modules =
-        nixpkgs.lib.optionals defaultModules [
+        inputs.nixpkgs.lib.optionals defaultModules [
           self.nixosModules.default
         ]
         ++ extraModules;

@@ -1,7 +1,7 @@
-{ self, pkgs, ... }:
+{ self, inputs, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    self.packages.${pkgs.system}.fuzzmux
+  environment.systemPackages = [
+    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.fuzzmux
   ];
 }
