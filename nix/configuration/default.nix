@@ -51,6 +51,7 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.development
+      nixosRoles.language-toolchains
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
@@ -79,6 +80,7 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.development
+      nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
@@ -130,6 +132,7 @@ in {
       # roles
       nixosRoles.default
       nixosRoles.development
+      nixosRoles.language-toolchains
       nixosRoles.container-runtime
       nixosRoles.administration-tools
       nixosRoles.wm-sway
