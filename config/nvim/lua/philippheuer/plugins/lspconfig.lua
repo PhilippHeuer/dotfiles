@@ -8,8 +8,7 @@ return {
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for neovim
       'williamboman/mason.nvim',
-      -- 'williamboman/mason-lspconfig.nvim',
-      { 'PhilippHeuer/mason-lspconfig.nvim', branch = 'feat/add-vacuum-mapping' },
+      'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- json and yaml schema store
