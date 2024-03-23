@@ -13,7 +13,7 @@
       #hosts deny = 0.0.0.0/0
       # perf
       use sendfile = yes
-      socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=65536 SO_SNDBUF=65536
+      socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
     '';
     shares = {
       main = {
