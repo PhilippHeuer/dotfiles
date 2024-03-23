@@ -30,6 +30,7 @@
 
 [rebase]
   autoStash = true # stash changes before rebasing
+  updateRefs = true # update references on rebased commits
 
 [fetch]
   prune = true # remove remote branches that no longer exist on the server
