@@ -22,4 +22,4 @@ fi
 # mount sshfs
 echo "Mounting SSHFS for $HOSTALIAS (~/sshfs/$HOSTALIAS)"
 mkdir -p ~/sshfs/$HOSTALIAS
-sshfs -o allow_other,default_permissions,uid=1000,gid=100 $HOSTALIAS:/ ~/sshfs/$HOSTALIAS
+sshfs -o allow_other,default_permissions,reconnect,max_read=65536,max_write=65536,uid=1000,gid=100 $HOSTALIAS:/ ~/sshfs/$HOSTALIAS

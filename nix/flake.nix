@@ -18,10 +18,6 @@
 #          ▟███▛  ▜███▙       ▜███▙
 #          ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘
 #
-# » Implemented machines:
-#    • desktop → Desktop machine.
-#    • wsl     → WSL on the daily driver.
-#
 {
   description = "NixOS System Configuration";
 
@@ -61,6 +57,7 @@
     sops = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
     # wsl
