@@ -1,11 +1,13 @@
 { pkgs, pkgs-unstable, ... }:
 
-{
+let
+  # renovate: datasource=docker depName=ghcr.io/gotson/komga
+  version = "1.10.4";
+in {
   # systemd container
   virtualisation.oci-containers.containers = {
     komga = {
-      # renovate: datasource=docker depName=ghcr.io/gotson/komga
-      image = "ghcr.io/gotson/komga:1.10.4";
+      image = "ghcr.io/gotson/komga:" + version;
       autoStart = true;
       ports = [ "25600:25600/tcp" ];
       volumes = [

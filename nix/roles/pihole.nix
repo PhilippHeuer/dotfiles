@@ -1,11 +1,14 @@
 { pkgs, pkgs-unstable, ... }:
 
-{
+let
+  # renovate: datasource=docker depName=docker.io/pihole/pihole
+  version = "2024.03.2";
+in {
   # systemd container service
   virtualisation.oci-containers.containers = {
     pihole = {
-      # renovate: datasource=docker depName=docker.io/pihole/pihole
-      image = "docker.io/pihole/pihole:2024.03.2";
+      
+      image = "docker.io/pihole/pihole:" + version;
       autoStart = true;
       ports = [
         "53:53/tcp"
