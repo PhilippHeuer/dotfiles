@@ -4,7 +4,8 @@
   # systemd container
   virtualisation.oci-containers.containers = {
     komga = {
-      image = "ghcr.io/gotson/komga:1.10.3";
+      # renovate: datasource=docker depName=ghcr.io/gotson/komga
+      image = "ghcr.io/gotson/komga:1.10.4";
       autoStart = true;
       ports = [ "25600:25600/tcp" ];
       volumes = [

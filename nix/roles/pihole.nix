@@ -4,7 +4,8 @@
   # systemd container service
   virtualisation.oci-containers.containers = {
     pihole = {
-      image = "docker.io/pihole/pihole:2024.02.2";
+      # renovate: datasource=docker depName=docker.io/pihole/pihole
+      image = "docker.io/pihole/pihole:2024.03.2";
       autoStart = true;
       ports = [
         "53:53/tcp"
