@@ -352,17 +352,17 @@ directories:
 
 # jetbrains - intellij
 - path: config/JetBrains/IntelliJ
-  target: $HOME/.config/JetBrains/IdeaIC2023.3
+  target: $HOME/.config/JetBrains/IdeaIC2024.1
   rules:
   - rule: inPath("idea-community")
 - path: config/JetBrains/IntelliJ
-  target: $HOME/.config/JetBrains/IntelliJIdea2023.3
+  target: $HOME/.config/JetBrains/IntelliJIdea2024.1
   rules:
   - rule: inPath("idea-ultimate")
 
 # jetbrains - goland
 - path: config/JetBrains/GoLand
-  target: $HOME/.config/JetBrains/GoLand2023.3
+  target: $HOME/.config/JetBrains/GoLand2024.1
   rules:
   - rule: inPath("goland")
 
