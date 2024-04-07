@@ -14,16 +14,16 @@
           mktplcRef = {
             publisher = "github";
             name = "copilot";
-            version = "1.172.758";
-            sha256 = "sha256-sK3IiA4mQ6Hse+UpZ81Zb5iBSREzTrs7ypsfGbJiXm4=";
+            version = "1.178.807";
+            sha256 = "sha256-lpXOH4bfAakVLBOghutQRRpHz7nSeouOnnpUxC3TA8E=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
             publisher = "github";
             name = "copilot-chat";
-            version = "0.14.2024030801";
-            sha256 = "sha256-v9RS+pEEQzq2t0EY/gVTTfIwRlGmIuIq2qCockDpsn8=";
+            version = "0.15.2024040501";
+            sha256 = "sha256-QmGNOjZZA9qJU0GqE1k+6TmTpflk4QeSwEte2JE2bnw=";
           };
         })
         # git
@@ -31,8 +31,8 @@
           mktplcRef = {
             publisher = "eamodio";
             name = "gitlens";
-            version = "2024.3.704";
-            sha256 = "sha256-ax7Qng3o8wKj+cPmA/bz0eNw4uSO0ckTGovvs79E9xE=";
+            version = "2024.4.405";
+            sha256 = "sha256-q9jD+ghBe7upITHOKm8LeFPkjde4+MB32EnLXYHGzVY=";
           };
         })
         # ident rainbow
@@ -53,22 +53,13 @@
             sha256 = "sha256-CQVtMdt/fZcNIbH/KybJixnLqCsz5iF1U0k+GfL65Ok=";
           };
         })
-        # markdown notes
-        (vscode-utils.buildVscodeMarketplaceExtension {
-          mktplcRef = {
-            publisher = "kortina";
-            name = "vscode-markdown-notes";
-            version = "0.0.27";
-            sha256 = "sha256-KiEHxySFXHd+lGh9RPAxsevJXIvm01AXhfNifl8FEvc=";
-          };
-        })
         # lsp
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
             publisher = "golang";
             name = "Go";
-            version = "0.41.1";
-            sha256 = "sha256-tSt0IqRuE3nJgMYvdYUz5QDtzOsKKQqyW2KD1FEhkEQ=";
+            version = "0.41.2";
+            sha256 = "sha256-eD/9UBYxf8kmqxuzY+hgAT0bqSiYw/BbDv2gyB63zY0=";
           };
         })
         # theme
@@ -76,16 +67,16 @@
           mktplcRef = {
             publisher = "Catppuccin";
             name = "catppuccin-vsc";
-            version = "3.11.2";
-            sha256 = "sha256-riHhw7PnSVC0zE4VU30IHS4MxAGvDLqOb1eTtnairBM=";
+            version = "3.13.0";
+            sha256 = "sha256-z6sQhC0V6j2ws9AyQE6eaTehj+2PpDjDOplB99aTPY8=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
           mktplcRef = {
             publisher = "Catppuccin";
             name = "catppuccin-vsc-icons";
-            version = "1.9.1";
-            sha256 = "sha256-Ge6x3ORa8wtKcSCsRhOBPpseCsDhS3pRTY2aVAHCVhE=";
+            version = "1.10.0";
+            sha256 = "sha256-6klrnMHAIr+loz7jf7l5EZPLBhgkJODFHL9fzl1MqFI=";
           };
         })
         (vscode-utils.buildVscodeMarketplaceExtension {
