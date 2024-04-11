@@ -102,7 +102,7 @@ in {
       ../nixos/audio.nix
       ../nixos/qemu.nix
       ../nixos/ssh.nix
-      ../nixos/wifi.nix
+      #../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       # roles
