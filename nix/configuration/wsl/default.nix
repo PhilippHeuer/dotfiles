@@ -29,16 +29,12 @@
     wslConf.network.hostname = "nixos";
   };
 
-  # disable wslg x11 mount
-  systemd.tmpfiles.settings = {
-    "10-wslg-x11" = lib.mkForce {};
-  };
-
   system.activationScripts = {
-    # unmount wslg X11 (wsl automatically mounts /tmp/.X11-unix)
+    # remove x11 mount
     unmount-x11 = ''
       # unmount /tmp/.X11-unix if it is mounted
       umount /tmp/.X11-unix 2>/dev/null || true
+      umount /tmp/.X11-unix/X0 2>/dev/null || true
     '';
 
     # remove hardcoded hostname
