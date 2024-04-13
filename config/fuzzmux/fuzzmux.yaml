@@ -27,7 +27,14 @@ layouts:
     apps:
       - name: java
         rules:
-          - inPath("idea-community") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin"))
+          - inPath("idea-ultimate") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin") || contains(TAGS, "buildsystem-gradle"))
+        commands:
+          - command: idea-ultimate "${startDirectory}"
+        gui: true
+        group: editor
+      - name: java
+        rules:
+          - inPath("idea-community") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin") || contains(TAGS, "buildsystem-gradle"))
         commands:
           - command: idea-community "${startDirectory}"
         gui: true
