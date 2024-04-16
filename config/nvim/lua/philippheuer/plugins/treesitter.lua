@@ -24,6 +24,7 @@ return {
             'javascript',
             'typescript',
             'zig',
+            'nix',
             -- scripting
             'bash',
             -- files
