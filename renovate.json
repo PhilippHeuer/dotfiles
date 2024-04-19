@@ -7,6 +7,18 @@
   "baseBranches": [
     "main"
   ],
+  "timezone": "Europe/Berlin",
+  "nix": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": [
+      "before 5am every weekday",
+      "after 10pm every weekday"
+    ]
+  },
   "ignorePaths": [
     "ansible/playbook.yml"
   ]
