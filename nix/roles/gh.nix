@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = [
-    pkgs.gh
+    pkgs-unstable.gh
   ];
 }
