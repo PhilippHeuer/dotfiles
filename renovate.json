@@ -13,11 +13,7 @@
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true,
-    "schedule": [
-      "before 5am every weekday",
-      "after 10pm every weekday"
-    ]
+    "automerge": true
   },
   "ignorePaths": [
     "ansible/playbook.yml"
