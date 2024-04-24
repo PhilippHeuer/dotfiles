@@ -21,7 +21,7 @@
       (pkgs.fetchFromGitHub {
         owner = "ZeroQI";
         repo = "Absolute-Series-Scanner";
-        rev = "22efb3dd849b17685c0fc80c60af7e515fa0d168";
+        rev = "c5e3db9bdbcf373667afd5177834907a0d136313";
         sha256 = "sha256-RpZh69MaP+YnDJOTaERrbsL5o8Yy7OLZvYz+ejHOvcI=";
       })
     ];
