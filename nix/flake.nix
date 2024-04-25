@@ -37,7 +37,7 @@
     # alternative registries
     nixpkgs-philippheuer = {
       url = "github:philippheuer/nixpkgs/main";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # community
