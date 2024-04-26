@@ -31,8 +31,6 @@
       ./nushell.nix
       ./starship.nix
 
-      
-
       # secret management
       ./sops.nix
       ./vault.nix
@@ -59,9 +57,6 @@
       # editor
       ./neovim.nix
       ./fuzzmux.nix
-
-      # http client
-      ./bruno.nix
     ];
   };
   language-toolchains = {
@@ -128,6 +123,7 @@
       ./dbeaver.nix # database client
       ./vscode.nix # code editor
       ./idea-community.nix # java ide
+      ./bruno.nix # http client
     ];
   };
   media = {
