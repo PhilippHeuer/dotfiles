@@ -13,14 +13,12 @@
     blueman # GTK-based Bluetooth Manager
     networkmanagerapplet # NetworkManager Control Applet
     dunst # lightweight and customizable notification daemon
-    wl-clipboard # clipboard manager
     brightnessctl # control screen brightness
     pamixer # control audio volume from the command line
     swww # wayland wallpaper daemon
     swaybg # set background image
     wlogout # logout menu
     swaylock-effects # needed for logout menu (swaylock with screenshot + blur)
-    cliphist # clipboard history
     xdg-utils # for opening default programs when clicking links
   
     glib # gsettings
