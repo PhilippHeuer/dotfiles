@@ -100,7 +100,6 @@ in {
       ../nixos/security.nix
       ../nixos/user.nix
       ../nixos/audio.nix
-      ../nixos/qemu.nix
       ../nixos/ssh.nix
       #../nixos/wifi.nix
       ../nixos/cacerts.nix
@@ -126,7 +125,6 @@ in {
       # nixos
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
-      ../nixos/qemu.nix
       # wsl
       inputs.nixos-wsl.nixosModules.wsl
       # roles

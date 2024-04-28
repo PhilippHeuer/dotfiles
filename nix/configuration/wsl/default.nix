@@ -16,7 +16,7 @@
 
     # windows interop
     interop = {
-      register = false;
+      register = true;
       includePath = false;
     };
 
