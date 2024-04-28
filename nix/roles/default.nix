@@ -33,7 +33,6 @@
 
       # secret management
       ./sops.nix
-      ./vault.nix
       ./yubikey.nix
 
       # appimage
@@ -89,6 +88,9 @@
       # s3
       ./minioclient.nix
       ./s3fs.nix
+
+      # vault
+      ./vault.nix
     ];
   };
   # desktop environment
@@ -96,6 +98,7 @@
     imports = [
       ./wm.nix
       ./wm-sway.nix
+      ./cliphist.nix
       ./nwg-panel.nix
     ];
   };
@@ -103,6 +106,7 @@
     imports = [
       ./wm.nix
       ./wm-hyprland.nix
+      ./cliphist.nix
       ./nwg-panel.nix
     ];
   };
