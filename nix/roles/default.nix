@@ -98,7 +98,7 @@
     imports = [
       ./wm.nix
       ./wm-sway.nix
-      ./cliphist.nix
+      ./clipboard.nix
       ./nwg-panel.nix
     ];
   };
@@ -106,7 +106,7 @@
     imports = [
       ./wm.nix
       ./wm-hyprland.nix
-      ./cliphist.nix
+      ./clipboard.nix
       ./nwg-panel.nix
     ];
   };
