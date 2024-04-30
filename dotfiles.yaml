@@ -306,6 +306,12 @@ directories:
   rules:
   - rule: inPath("tmx")
 
+# ripgrep
+- path: config/ripgrep
+  target: $HOME/.config/ripgrep
+  rules:
+  - rule: inPath("rg")
+
 # starship
 - path: config/starship.toml
   target: $HOME/.config/starship.toml
