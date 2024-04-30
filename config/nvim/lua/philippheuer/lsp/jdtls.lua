@@ -5,8 +5,8 @@ return {
     configuration = {
       runtimes = {
         {
-          name = "JavaSE-17",
-          path = "/usr/lib/jvm/java-17-openjdk-amd64/",
+          name = "JavaSE-21",
+          path = "/run/current-system/sw",
           default = true,
         },
       },

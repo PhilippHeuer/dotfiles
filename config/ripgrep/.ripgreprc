@@ -1,0 +1,23 @@
+# search hidden files and directories
+--hidden
+
+# follow symbolic links
+--follow
+
+# exclude directories
+--glob=!{.git,.svn,node_modules,tealdeer,Trash,vendor}
+
+# exclude file types
+--glob=!*.{lock}
+
+# exclude files
+--glob=!{package-lock.json}
+
+# do not print lines longer than this limit.
+--max-columns=10000
+
+# searches case insensitively
+--smart-case
+
+# sort by file path
+--sort=path
