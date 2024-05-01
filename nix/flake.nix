@@ -34,10 +34,22 @@
     #nixpkgs-master.url = "github:nixos/nixpkgs/master";
     hardware.url = "github:nixos/nixos-hardware";
 
+    # utils
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+
     # alternative registries
     nixpkgs-philippheuer = {
       url = "github:philippheuer/nixpkgs/main";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # vscode marketplace
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     # community
