@@ -31,7 +31,7 @@
     #
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    #nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    nixpkgs-master.url = "github:PhilippHeuer/nixos-nixpkgs/fix/jetbrains-bundle"; # github:nixos/nixpkgs/master
     hardware.url = "github:nixos/nixos-hardware";
 
     # utils
@@ -42,6 +42,12 @@
     # alternative registries
     nixpkgs-philippheuer = {
       url = "github:philippheuer/nixpkgs/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # jetbrains plugins
+    nix-jetbrains-plugins = {
+      url = "github:PhilippHeuer/nix-jetbrains-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
