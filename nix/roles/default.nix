@@ -64,6 +64,7 @@
       ./nodejs.nix
       ./python.nix
       ./golang.nix
+      ./zig.nix
     ];
   };
   # container runtime
