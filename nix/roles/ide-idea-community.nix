@@ -12,7 +12,7 @@ let
     "164" # ideavim
     "9792" # key-promoter-x
 
-    # languages
+    # extensions
     "8607" # nixidea
 
     # themes
