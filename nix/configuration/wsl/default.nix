@@ -41,6 +41,11 @@
     wslconf-hostname-fix = ''
       ${pkgs.gnused}/bin/sed -i "\|hostname=nixos|d" /etc/wsl.conf
     '';
+
+    # start systemd user service for wsl user (sometimes it doesn't start automatically)
+    start-systemd-user = ''
+      ${pkgs.systemd}/bin/systemctl start user@1000.service
+    '';
   };
 
   # secrets
