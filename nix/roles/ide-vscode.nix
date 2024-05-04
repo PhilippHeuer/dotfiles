@@ -13,9 +13,12 @@ in {
         # general
         extensions.vscode-marketplace.editorconfig.editorconfig
 
-        # copilot
+        # ai
         extensions.vscode-marketplace.github.copilot
         extensions.vscode-marketplace.github.copilot-chat
+
+        # hotkeys
+        extensions.vscode-marketplace.vscodevim.vim
 
         # git
         extensions.vscode-marketplace.eamodio.gitlens
