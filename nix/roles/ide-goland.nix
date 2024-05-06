@@ -2,12 +2,6 @@
 
 let
   pluginList = [
-    # ai
-    "17718" # github copilot
-
-    # sast
-    "7973" # sonarlint
-
     # hotkeys
     "164" # ideavim
     "9792" # key-promoter-x
@@ -19,8 +13,8 @@ let
     "18141" # rose-pine
     "10321" # nord
 
-    # ui
-    "10080" # rainbow-brackets
+    # auto completion
+    "17718" # github copilot
 
     # fun
     "8575" # nyan-progress-bar
