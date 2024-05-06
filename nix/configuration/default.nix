@@ -48,11 +48,12 @@ in {
       ../nixos/ssh.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
-      ../nixos/flatpak.nix
+      #../nixos/flatpak.nix
       # roles
       nixosRoles.default
       nixosRoles.development
       nixosRoles.language-toolchains
+      nixosRoles.wm-hyprland
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
