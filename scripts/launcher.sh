@@ -5,9 +5,16 @@ source ~/.local/scripts/common.sh
 
 WM=$(detect_wm)
 case "$WM" in
+    i3)
+        pid=$(xdotool getwindowfocus getwindowpid)
+        cwd=$(readlink -e "/proc/$pid/cwd")
+        ;;
     sway)
         pid=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true) | .pid')
         cwd=$(readlink -e "/proc/$pid/cwd")
+        ;;
+    hyprland)
+        cwd=$(pwd) # TODO: implement
         ;;
     *)
         echo "Error: window manager ($WM) not supported. Exiting."
