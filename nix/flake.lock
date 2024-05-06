@@ -137,6 +137,31 @@
         "type": "github"
       }
     },
+    "hyprland-plugins": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ],
+        "systems": [
+          "hyprland-plugins",
+          "hyprland",
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714916173,
+        "narHash": "sha256-XP9v42PdSBkP/JlllfZR/0FDD1PMAVqw+LhOi79g0MA=",
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
+        "rev": "d716d1221348b5bef9d13161876caa91a3e33705",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
+        "type": "github"
+      }
+    },
     "hyprland-protocols": {
       "inputs": {
         "nixpkgs": [
@@ -258,11 +283,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1715022613,
-        "narHash": "sha256-xOO+in+DHi0jOxz9t8buM12edsP3dnK+R76qaTW0Xq8=",
+        "lastModified": 1715023791,
+        "narHash": "sha256-lSGi86d6m3GjQyvG2k6SJIoWxW7ChUoeIOocnFZ5c7Y=",
         "owner": "PhilippHeuer",
         "repo": "nix-jetbrains-plugins",
-        "rev": "0a353ec76408f0eb7fd88533dc6e393055dc12f0",
+        "rev": "4adac5bb8786f28c832f17a92a32717990e63f8f",
         "type": "github"
       },
       "original": {
@@ -423,6 +448,7 @@
         "flake-utils": "flake-utils",
         "hardware": "hardware",
         "hyprland": "hyprland",
+        "hyprland-plugins": "hyprland-plugins",
         "hyprwm-contrib": "hyprwm-contrib",
         "impermanence": "impermanence",
         "nix-jetbrains-plugins": "nix-jetbrains-plugins",
