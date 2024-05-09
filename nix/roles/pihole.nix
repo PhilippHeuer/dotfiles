@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=docker.io/pihole/pihole
-  version = "2024.03.2";
+  version = "2024.05.0";
 in {
   # systemd container service
   virtualisation.oci-containers.containers = {
