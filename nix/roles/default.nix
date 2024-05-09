@@ -125,11 +125,11 @@
   };
   ide = {
     imports = [
-      ./dbeaver.nix # database client
       ./ide-vscode.nix # code editor
       # ./ide-idea-community.nix # java ide
       ./ide-idea-ultimate.nix # java ide
       ./ide-goland.nix # java ide
+      ./dbeaver.nix # database client
       ./bruno.nix # http client
     ];
   };
@@ -160,10 +160,10 @@
       ./veracrypt.nix
     ];
   };
-  # drive monitoring (private, experimental code)
+  # drive monitoring
   drivemonitoring = {
     imports = [
-      ./driveguard.nix
+      ./driveguard.nix # private, experimental code
     ];
   };
 }
