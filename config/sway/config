@@ -25,7 +25,7 @@ exec_always dunst # start notification demon
 exec_always pkill wl-paste clipboard-sync
 exec_always sleep 1 && wl-paste --type text --watch cliphist store # clipboard store text data
 exec_always sleep 1 && wl-paste --type image --watch cliphist store # clipboard store image data
-exec_always sleep 1 && clipboard-sync # sync clipboards (also shares clipboard with windows host in WSL)
+exec_always sleep 10 && clipboard-sync # sync clipboards (also shares clipboard with windows host in WSL)
 
 # ui
 exec_always ~/.local/scripts/swww.sh # start wallpaper daemon
