@@ -52,6 +52,7 @@
       ./kondo.nix # built output cleanup
       ./reposync.nix # sync git repos
       ./gh.nix # github cli
+      ./dyff.nix # yaml diff
 
       # editor
       ./neovim.nix
