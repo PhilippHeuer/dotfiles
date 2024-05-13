@@ -84,6 +84,9 @@
       ./helm.nix
       ./click.nix
 
+      # database
+      ./usql.nix # universal sql client
+
       # message brokers
       ./kafkactl.nix
 
