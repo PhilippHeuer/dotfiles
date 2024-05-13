@@ -283,11 +283,11 @@
         "nixpkgs-unstable": "nixpkgs-unstable"
       },
       "locked": {
-        "lastModified": 1715533955,
-        "narHash": "sha256-z5ZTZfLhRS5vztQrQG5tJAbVcV1OfUpQMeI/RPwBGR4=",
+        "lastModified": 1715571252,
+        "narHash": "sha256-a/qMFMP0cyur+jUO29vC7JE1VnSRoS0uyND5GLbEah4=",
         "owner": "PhilippHeuer",
         "repo": "nix-jetbrains-plugins",
-        "rev": "b9902ca83708a6d7832cdb6a4815802d7a80574a",
+        "rev": "f4cde7b27cc040e392fadf710389f2f64a20dc1c",
         "type": "github"
       },
       "original": {
@@ -307,11 +307,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715477250,
-        "narHash": "sha256-I/jZFo3su5HF8RCBfTgIYDD7IgFl7Z2R4vln1U6wC9o=",
+        "lastModified": 1715563416,
+        "narHash": "sha256-2ZnwDietf6Wxm/JyOKi6GK6QJ/yONzyJbDK94OwUHqY=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "9aebc4df593d61656ce8fb708ad839db2efaab31",
+        "rev": "4a87625cadea9f97e3d8bdad34db71ff4416b2c2",
         "type": "github"
       },
       "original": {
