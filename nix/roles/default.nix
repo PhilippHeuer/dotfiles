@@ -53,6 +53,7 @@
       ./reposync.nix # sync git repos
       ./gh.nix # github cli
       ./dyff.nix # yaml diff
+      ./openapi.nix # openapi linter, changes, ...
 
       # editor
       ./neovim.nix
