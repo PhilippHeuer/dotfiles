@@ -125,6 +125,7 @@
       ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
+      ./keepassxc.nix # password manager
     ];
   };
   ide = {

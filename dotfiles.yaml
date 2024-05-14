@@ -384,24 +384,11 @@ directories:
   rules:
   - rule: inPath("bruno")
 
-# obsidian vault config (symlink the .obsidian dir in your vault to this path)
-# ln -s /path/to/your/vault/.obsidian $HOME/.config/obsidian-vault
-- path: config/obsidian-vault
-  target: $HOME/.config/obsidian-vault
+# keepassxc
+- path: config/keepassxc
+  target: $HOME/.config/keepassxc
   rules:
-  - rule: inPath("obsidian")
-- path: config/obsidian-vault/themes/Catppuccin
-  target: $HOME/.config/obsidian-vault/themes/current
-  rules:
-  - rule: inPath("obsidian") && theme == "catppuccin-mocha"
-- path: config/obsidian-vault/themes/Obsidian Nord
-  target: $HOME/.config/obsidian-vault/themes/current
-  rules:
-  - rule: inPath("obsidian") && theme == "nord"
-- path: config/obsidian-vault/themes/Tokyo Night
-  target: $HOME/.config/obsidian-vault/themes/current
-  rules:
-  - rule: inPath("obsidian") && theme == "tokyo-night"
+  - rule: inPath("keepassxc")
 
 # gtk3
 - path: config/gtk-3.0
