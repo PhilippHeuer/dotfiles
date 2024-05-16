@@ -17,7 +17,8 @@ local plugins = {
   'philippheuer.plugins.telescope', -- fuzzy finding (files, lsp, etc)
   'philippheuer.plugins.treesitter', -- syntax highlighting
   'philippheuer.plugins.harpoon', -- bookmark files
-  'philippheuer.plugins.http', -- http client
+  'philippheuer.plugins.oil', -- file explorer
+  -- 'philippheuer.plugins.http', -- http client
   'philippheuer.plugins.copilot', -- github copilot
   'philippheuer.plugins.completion', -- code completion
   'philippheuer.plugins.silicon', -- code screenshots (requirs local installation of silicon)
