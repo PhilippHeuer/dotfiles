@@ -72,3 +72,13 @@ layouts:
           - inPath("k9s")
         commands:
           - command: exec k9s --logoless --headless --readonly --kubeconfig "${kubeConfig}" --namespace "${namespace}"
+  vault:
+    apps:
+      - name: vault
+        default: true
+        rules:
+          - inPath("vault")
+        commands:
+          - command: export VAULT_ADDR="https://${name}"
+          - command: export VAULT_TOKEN="${token}"
+          - command: bash
