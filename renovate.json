@@ -11,11 +11,6 @@
   "nix": {
     "enabled": true
   },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": ["at any time"]
-  },
   "ignorePaths": [
     "ansible/playbook.yml"
   ]
