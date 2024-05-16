@@ -2,9 +2,10 @@
 
 let
   pluginList = [
-    # hotkeys
+    # productivity
     "164" # ideavim
     "9792" # key-promoter-x
+    #"23451" # fuzzy file finder
 
     # themes
     "18682" # catppuccin-theme
