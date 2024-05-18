@@ -160,6 +160,7 @@ return {
         dockerls = require("philippheuer.lsp.dockerls"), -- docker
         yamlls = require("philippheuer.lsp.yamlls"), -- yaml
         jsonls = require("philippheuer.lsp.jsonls"), -- json
+        taplo = require("philippheuer.lsp.taplo"), -- toml lsp
         helm_ls = require("philippheuer.lsp.helmls"), -- helmls
         vacuum = require("philippheuer.lsp.vacuum"), -- openapi spec
       }
