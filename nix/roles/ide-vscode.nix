@@ -30,7 +30,12 @@ in {
         extensions.vscode-marketplace.wayou.vscode-todo-highlight
 
         # lsp
-        extensions.vscode-marketplace.golang.go
+        extensions.vscode-marketplace.ms-python.python # python
+        extensions.vscode-marketplace.golang.go # go
+        extensions.vscode-marketplace.ziglang.vscode-zig # zig
+        extensions.vscode-marketplace.jnoortheen.nix-ide # nix
+        extensions.vscode-marketplace.tamasfe.even-better-toml # toml
+        extensions.vscode-marketplace.redhat.vscode-yaml # yaml
 
         # theme
         extensions.vscode-marketplace.catppuccin.catppuccin-vsc
