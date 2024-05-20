@@ -117,6 +117,11 @@ if [[ $WM_NAME == "sway" ]]; then
     rm -f ~/.config/sway/config.d/displaySize
   fi
 
+  # remove old x11 socket from xwayland
+  if [ -e /tmp/.X11-unix/X0 ]; then
+    sudo rm /tmp/.X11-unix/X0
+  fi
+
   # start sway
   exec dbus-run-session sway -d
 fi

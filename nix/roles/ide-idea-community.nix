@@ -23,9 +23,6 @@ let
 
     # auto completion
     "17718" # github copilot
-
-    # fun
-    "8575" # nyan-progress-bar
   ];
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-master).addPlugins;
