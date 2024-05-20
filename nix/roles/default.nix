@@ -55,6 +55,7 @@
       ./dyff.nix # yaml diff
       ./tokei.nix # code statistics
       ./openapi.nix # openapi linter, changes, ...
+      ./primecodegen.nix # code generator
 
       # editor
       ./neovim.nix
