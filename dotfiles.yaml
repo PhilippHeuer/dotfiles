@@ -1,5 +1,18 @@
 # directories
 directories:
+# shell - bash
+- path: config/bash
+  target: $HOME/.config/bash
+- path: config/bash/.bashrc
+  target: $HOME/.bashrc
+- path: config/bash/.bash_profile
+  target: $HOME/.bash_profile
+# shell - zsh
+- path: config/zsh/.zshrc
+  target: $HOME/.zshrc
+  rules:
+  - rule: inPath("zsh")
+
 # alacritty
 - path: config/alacritty
   target: $HOME/.config/alacritty
@@ -49,14 +62,6 @@ directories:
   target: $HOME/.config/ansible
   rules:
   - rule: inPath("ansible")
-
-# bash
-- path: config/bash
-  target: $HOME/.config/bash
-- path: config/bash/.bashrc
-  target: $HOME/.bashrc
-- path: config/bash/.bash_profile
-  target: $HOME/.bash_profile
 
 # atuin
 - path: config/atuin

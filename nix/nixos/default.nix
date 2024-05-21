@@ -8,6 +8,7 @@
       ./fonts.nix
       ./nixconfig.nix
       ./telemetry.nix
+      ./shell.nix
     ];
   };
 }
