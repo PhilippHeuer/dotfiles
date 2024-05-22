@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.dbeaver
+    pkgs-unstable.dbeaver-bin
   ];
 }
