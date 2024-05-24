@@ -156,6 +156,10 @@ return {
         rust_analyzer = require("philippheuer.lsp.rustls"), -- rust
         zls = require("philippheuer.lsp.zls"), -- zig
         bashls = require("philippheuer.lsp.bashls"), -- bash
+
+        html = require("philippheuer.lsp.html"), -- html
+        cssls = require("philippheuer.lsp.cssls"), -- css
+
         ansiblels = require("philippheuer.lsp.ansiblels"), -- ansible
         dockerls = require("philippheuer.lsp.dockerls"), -- docker
         yamlls = require("philippheuer.lsp.yamlls"), -- yaml
@@ -163,6 +167,7 @@ return {
         taplo = require("philippheuer.lsp.taplo"), -- toml lsp
         helm_ls = require("philippheuer.lsp.helmls"), -- helmls
         vacuum = require("philippheuer.lsp.vacuum"), -- openapi spec
+        terraformls = require("philippheuer.lsp.terraformls"), -- terraform
       }
 
       -- Ensure the servers and tools above are installed
