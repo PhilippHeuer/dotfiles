@@ -106,7 +106,7 @@ return {
       vim.keymap.set('n', '<space>fb', ':Telescope file_browser path=%:p:h<CR>', { noremap = true })
 
       -- search in files tracked by git
-      vim.keymap.set("n", "<leader>sgf", function()
+      vim.keymap.set("n", "<leader>sv", function()
         local cmd = {
           "sort",
           "-u",
@@ -120,7 +120,7 @@ return {
         else
           require("telescope.builtin").git_files()
         end
-      end, { desc = "[S]earch [G]it [F]iles" })
+      end, { desc = "[S]earch Git Files" })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function() 
