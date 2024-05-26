@@ -13,8 +13,10 @@
   };
   virtualisation.oci-containers.backend = "podman";
 
-  environment.systemPackages = with pkgs-unstable; [
-    rootlesskit
-    buildkit
+  environment.systemPackages = [
+    pkgs.rootlesskit
+    pkgs-unstable.buildkit
+    pkgs-unstable.dive # inspect image layers
+    pkgs-unstable.skopeo # various operations on container images and image repositories
   ];
 }
