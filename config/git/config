@@ -65,7 +65,7 @@
   shallow-clone = clone --filter=blob:none
   # unstage everything
   unstage = reset HEAD --
-  # discord everything
+  # discard everything
   discard = checkout --
   # list conflicts
   list-conflicts = diff --name-only --diff-filter=U
