@@ -5,7 +5,7 @@ let
     # productivity
     "164" # ideavim
     "9792" # key-promoter-x
-    #"23451" # fuzzy file finder
+    "23451" # fuzzy file finder
 
     # themes
     "18682" # catppuccin-theme
@@ -22,7 +22,7 @@ let
   ];
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-master).addPlugins;
-  goland = addPlugins pkgs-master.jetbrains.goland pluginList;
+  goland = addPlugins pkgs-unstable.jetbrains.goland pluginList;
 in {
   environment.systemPackages = [
     goland
