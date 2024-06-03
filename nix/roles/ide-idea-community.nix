@@ -5,7 +5,7 @@ let
     # productivity
     "164" # ideavim
     "9792" # key-promoter-x
-    #"23451" # fuzzy file finder
+    "23451" # fuzzy file finder
 
     # extensions
     "6317" # lombok
@@ -26,7 +26,7 @@ let
   ];
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-master).addPlugins;
-  idea-community = addPlugins pkgs-master.jetbrains.idea-community-bin pluginList;
+  idea-community = addPlugins pkgs-unstable.jetbrains.idea-community-bin pluginList;
 in {
   environment.systemPackages = [
     idea-community

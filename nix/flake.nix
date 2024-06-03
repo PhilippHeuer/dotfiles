@@ -31,7 +31,7 @@
     #
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:PhilippHeuer/nixos-nixpkgs/fix/jetbrains-bundle"; # github:nixos/nixpkgs/master
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     hardware.url = "github:nixos/nixos-hardware";
 
     # utils
