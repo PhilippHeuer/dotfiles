@@ -18,3 +18,5 @@ servers:
           action: exclude
         - rule: group == "oasdiff"
           action: exclude
+        - rule: group == "PhilippHeuer" && name == "nixos-nixpkgs"
+          action: exclude
