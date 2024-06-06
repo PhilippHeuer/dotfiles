@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-master, inputs, ... }:
+{ pkgs, pkgs-unstable, inputs, ... }:
 
 let
   pluginList = [
@@ -21,7 +21,7 @@ let
     "8575" # nyan-progress-bar
   ];
 
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-master).addPlugins;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   goland = addPlugins pkgs-unstable.jetbrains.goland pluginList;
 in {
   environment.systemPackages = [
