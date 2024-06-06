@@ -20,10 +20,6 @@
           system = system;
           config.allowUnfree = true;
         };
-        pkgs-master = import inputs.nixpkgs-master {
-          system = system;
-          config.allowUnfree = true;
-        };
       };
       modules =
         inputs.nixpkgs.lib.optionals defaultModules [

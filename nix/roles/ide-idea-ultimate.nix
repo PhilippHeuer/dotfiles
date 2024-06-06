@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, pkgs-master, inputs, ... }:
+{ pkgs, pkgs-unstable, inputs, ... }:
 
 let
   pluginList = [
@@ -25,7 +25,7 @@ let
     "17718" # github copilot
   ];
 
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-master).addPlugins;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   idea-ultimate = addPlugins pkgs-unstable.jetbrains.idea-ultimate pluginList;
 in {
   environment.systemPackages = [
