@@ -1,0 +1,8 @@
+<application>
+  <component name="UISettings">
+    <option name="CONSOLE_CYCLE_BUFFER_SIZE_KB" value="8192" />
+    <option name="MAX_LOOKUP_WIDTH2" value="639" />
+    <option name="OVERRIDE_CONSOLE_CYCLE_BUFFER_SIZE" value="true" />
+    <option name="UI_DENSITY" value="COMPACT" />
+  </component>
+</application>
