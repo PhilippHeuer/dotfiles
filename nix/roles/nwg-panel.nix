@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.nwg-panel
+    pkgs.nwg-panel
   ];
 }
