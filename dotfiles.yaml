@@ -456,11 +456,11 @@ directories:
   - rule: theme == "tokyo-night"
 
 # binaries
-- path: bin
+- path: local/bin
   target: $HOME/.local/bin
 
 # scripts
-- path: scripts
+- path: local/scripts
   target: $HOME/.local/scripts
 
 # ssh
