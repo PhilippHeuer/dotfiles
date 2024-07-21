@@ -135,6 +135,7 @@ in {
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
+      nixosRoles.genealogy
       # variant
       ./wsl
     ];

@@ -148,7 +148,7 @@
       ./sxiv.nix # image viewer
     ];
   };
-  # media server
+  # home network
   homeautomation = {
     imports = [
       ./homeassistant.nix
@@ -160,6 +160,12 @@
     imports = [
       ./plex.nix
       ./komga.nix
+    ];
+  };
+  # genealogy
+  genealogy = {
+    imports = [
+      ./gramps.nix
     ];
   };
   # drive encryption
