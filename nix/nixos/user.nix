@@ -27,6 +27,7 @@ in {
 
   users.users.${username} = {
     isNormalUser = true;
+    description = "philipp";
     hashedPasswordFile = config.sops.secrets."user/${username}/password".path;
     extraGroups =
       [

@@ -33,6 +33,15 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 Finally, run `sudo nixos-rebuild switch` to apply the changes.
 
+## Server
+
+### Setup / Workstation
+
+- `nix-shell -p curl`
+- `sudo curl -o /etc/nixos/configuration.nix https://raw.githubusercontent.com/philippheuer/dotfiles/main/nix/initial-configuration.nix`
+- `sudo nixos-generate-config`
+- `sudo nixos-rebuild switch`
+
 ## WSL
 
 ### Setup

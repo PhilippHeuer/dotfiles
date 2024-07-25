@@ -22,8 +22,10 @@ in {
       LC_MEASUREMENT = GERMAN;
       LC_MONETARY = GERMAN;
       LC_NAME = GERMAN;
+      LC_NUMERIC = GERMAN;
       LC_PAPER = GERMAN;
       LC_TELEPHONE = GERMAN;
+      LC_TIME = GERMAN;
     };
 
     # supported locales
@@ -33,6 +35,12 @@ in {
     ];
   };
 
+  # x11 keymap
+  services.xserver = {
+    layout = "de";
+    xkbVariant = "nodeadkeys";
+  };
+
   # console keymap
-  console.keyMap = "de";
+  console.keyMap = "de-latin1-nodeadkeys";
 }

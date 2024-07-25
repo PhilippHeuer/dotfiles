@@ -5,13 +5,23 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../shared/nvidia.nix
   ];
 
   # bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.systemd-boot.enable = false;
+  boot.loader.systemd-boot.enable = true;
+
+  # bootloader
+  #boot.loader.grub = {
+  #  enable = true;
+  #  device = "/dev/sda";
+  #  useOSProber = true;
+  #  efiSupport = true;
+  #};
+  #boot.loader.systemd-boot = {
+  #  enable = false;
+  #};
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # shell
   users.defaultUserShell = pkgs.bash;
@@ -26,13 +36,15 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "de";
-    xkbVariant = "";
+    xkb = {
+      layout = "de";
+      variant = "nodeadkeys";
+    };
   };
 
   # Enable CUPS to print documents.
