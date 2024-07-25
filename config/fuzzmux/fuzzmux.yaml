@@ -15,13 +15,13 @@ layouts:
       - name: ssh
         default: true
         commands:
-          - command: exec ssh ${name}
+          - command: exec ssh "{{name}}"
       - name: sshfs
         rules:
           - inPath("sshfs") && contains(TAGS, "sftp")
         commands:
-          - command: mkdir -p "~/mnt/ssh/${name}"
-          - command: sshfs -o default_permissions,idmap=user,noatime,follow_symlinks,_netdev,reconnect ${name}:/ ~/mnt/ssh/${name}
+          - command: mkdir -p "~/mnt/ssh/{{name}}"
+          - command: sshfs -o "default_permissions,idmap=user,noatime,follow_symlinks,_netdev,reconnect" {{name}}:/ ~/mnt/ssh/{{name}}
   project:
     clear-workspace: true
     apps:
@@ -29,28 +29,28 @@ layouts:
         rules:
           - inPath("idea-ultimate") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin") || contains(TAGS, "buildsystem-gradle"))
         commands:
-          - command: idea-ultimate "${startDirectory}"
+          - command: idea-ultimate {{startDirectory}}
         gui: true
         group: editor
       - name: java
         rules:
           - inPath("idea-community") && (contains(TAGS, "language-java") || contains(TAGS, "language-kotlin") || contains(TAGS, "buildsystem-gradle"))
         commands:
-          - command: idea-community "${startDirectory}"
+          - command: idea-community {{startDirectory}}
         gui: true
         group: editor
       - name: vscodium
         rules:
           - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript") || contains(TAGS, "buildsystem-container"))
         commands:
-          - command: codium "${startDirectory}"
+          - command: codium {{startDirectory}}
         gui: true
         group: editor
       - name: vscode
         rules:
           - inPath("code") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript") || contains(TAGS, "buildsystem-container"))
         commands:
-          - command: code ${startDirectory}
+          - command: code {{startDirectory}}
         gui: true
         group: editor
       - name: nvim
@@ -64,14 +64,14 @@ layouts:
       - name: kubectl
         default: true
         commands:
-          - command: export KUBECONFIG="${kubeConfig}"
-          - command: kubectl config set-context --current --namespace="${namespace}"
+          - command: export KUBECONFIG="{{kubeConfig}}"
+          - command: kubectl config set-context --current --namespace="{{namespace}}"
           - command: exec bash
       - name: k9s
         rules:
           - inPath("k9s")
         commands:
-          - command: exec k9s --logoless --headless --readonly --kubeconfig "${kubeConfig}" --namespace "${namespace}"
+          - command: exec k9s --logoless --headless --readonly --kubeconfig "{{kubeConfig}}" --namespace "{{namespace}}"
   vault:
     apps:
       - name: vault
@@ -79,6 +79,6 @@ layouts:
         rules:
           - inPath("vault")
         commands:
-          - command: export VAULT_ADDR="https://${name}"
-          - command: export VAULT_TOKEN="${token}"
+          - command: export VAULT_ADDR="https://{{name}}"
+          - command: export VAULT_TOKEN="{{token}}"
           - command: exec bash
