@@ -29,6 +29,10 @@ apply-desktop:
 	rsync -a ~/.local/share/backgrounds/* desktop:~/.local/share/backgrounds
 	ssh -t desktop "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#desktop"
 
+clean-desktop:
+	ssh -t desktop "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 30d"
+	ssh -t desktop "sudo nix-store --gc"
+
 # vault
 apply-vault:
 	rsync -a $(pwd)/* vault:~/dotfiles
