@@ -175,6 +175,18 @@
       ./slack.nix
     ];
   };
+  # vpn
+  vpn = {
+    imports = [
+      ./protonvpn.nix
+    ];
+  };
+  # games
+  games = {
+    imports = [
+      ./steam.nix
+    ];
+  };
   # drive encryption
   driveencryption = {
     imports = [
