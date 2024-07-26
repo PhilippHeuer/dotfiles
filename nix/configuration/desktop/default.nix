@@ -6,6 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ../shared/graphics.nix
+    #../shared/nvidia.nix
   ];
 
   # bootloader

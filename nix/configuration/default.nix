@@ -137,6 +137,8 @@ in {
       nixosRoles.ide
       nixosRoles.communication
       nixosRoles.genealogy
+      nixosRoles.games
+      nixosRoles.vpn
       # variant
       ./wsl
     ];
