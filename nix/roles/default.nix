@@ -168,6 +168,13 @@
       ./gramps.nix
     ];
   };
+  # communication
+  communication = {
+    imports = [
+      ./discord.nix
+      ./slack.nix
+    ];
+  };
   # drive encryption
   driveencryption = {
     imports = [

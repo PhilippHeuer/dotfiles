@@ -37,8 +37,10 @@ in {
 
   # x11 keymap
   services.xserver = {
-    layout = "de";
-    xkbVariant = "nodeadkeys";
+    xkb = {
+      layout = "de";
+      variant = "nodeadkeys";
+    };
   };
 
   # console keymap
