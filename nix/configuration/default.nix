@@ -53,6 +53,10 @@ in {
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
+      nixosRoles.communication
+      nixosRoles.genealogy
+      nixosRoles.games
+      nixosRoles.vpn
       # variant
       ./desktop
     ];
@@ -135,10 +139,7 @@ in {
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
-      nixosRoles.communication
       nixosRoles.genealogy
-      nixosRoles.games
-      nixosRoles.vpn
       # variant
       ./wsl
     ];
