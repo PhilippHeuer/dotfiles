@@ -14,6 +14,10 @@ if [ "$WM" = "sway" ]; then
   pid=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true) | .pid')
   cwd=$(readlink -e "/proc/$pid/cwd")
 fi
+if [ "$WM" = "i3" ]; then
+  pid=$(i3-msg -t get_tree | jq '.. | select(.focused==true) | .pid')
+  cwd=$(readlink -e "/proc/$pid/cwd")
+fi
 
 # arguments
 title=""

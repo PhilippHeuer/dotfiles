@@ -22,7 +22,14 @@
   # enable in-memory compression and swap by zram kernel module
   zramSwap.enable = lib.mkDefault true;
 
-  # enable redistributable firmware
-  hardware.enableRedistributableFirmware = true;
-  # hardware.enableAllFirmware = true;
+  # enable firmware
+  # hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
+
+  # update AMD microcode
+  hardware.cpu.amd.updateMicrocode = true;
+
+  environment.systemPackages = with pkgs; [
+    policycoreutils # SELinux
+  ];
 }
