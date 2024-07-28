@@ -1,32 +1,39 @@
 {
-  "layer": "top",
-  "position": "top",
-  "margin-top": 2,
-  "margin-left": 10,
-  "margin-right": 10,
-  "margin-bottom": 3,
-  "height": 20,
-  "spacing": 0,
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 3,
+    "height": 20,
+    "spacing": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
 
-  "modules-left": [
-      "custom/launcher",
-      "hyprland/workspaces",
-      "custom/weather",
-  ],
-  "modules-center": [
-      "clock",
-  ],
-  "modules-right": [
-      "backlight", // only for laptops
-      "pulseaudio",
-      "network",
-      "battery", // only for laptops
-      "custom/wallchange",
-      "custom/themechange",
-      "custom/powermenu",
-  ],
+        // launcher
+        "custom/fuzzy-project",
+        "custom/fuzzy-ssh",
+        "custom/fuzzy-k8s",
 
-  "include": [
-      "~/.config/waybar/modules.jsonc",
-  ],
+        // widgets
+        "custom/weather",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        // tray
+        "tray", // app tray icons
+        "backlight", // only for laptops
+        "pulseaudio",
+        "network",
+        "battery", // only for laptops
+        "custom/wallchange",
+        "custom/themechange",
+        "custom/powermenu",
+    ],
+    "include": [
+        "~/.config/waybar/modules.jsonc",
+    ],
 }

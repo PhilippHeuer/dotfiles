@@ -1,34 +1,33 @@
 {
-  "layer": "top",
-  "position": "top",
-  "margin-top": 2,
-  "margin-left": 10,
-  "margin-right": 10,
-  "margin-bottom": 3,
-  "height": 20,
-  "spacing": 0,
-
-  "modules-left": [
-      "custom/launcher",
-      "sway/workspaces",
-      "custom/weather",
-      // "mpd",
-  ],
-  "modules-center": [
-      "clock",
-  ],
-  "modules-right": [
-      // "mpris",
-      "backlight", // only for laptops
-      "pulseaudio",
-      "network",
-      "battery", // only for laptops
-      "custom/wallchange",
-      "custom/themechange",
-      "custom/powermenu",
-  ],
-
-  "include": [
-      "~/.config/waybar/modules.jsonc",
-  ],
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 3,
+    "height": 20,
+    "spacing": 0,
+    "modules-left": [
+        "custom/launcher",
+        "sway/workspaces",
+        "custom/weather",
+        // "mpd",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        // tray
+        // "mpris",
+        "backlight", // only for laptops
+        "pulseaudio",
+        "network",
+        "battery", // only for laptops
+        "custom/wallchange",
+        "custom/themechange",
+        "custom/powermenu",
+    ],
+    "include": [
+        "~/.config/waybar/modules.jsonc",
+    ],
 }
