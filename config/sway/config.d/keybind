@@ -32,6 +32,9 @@ bindsym F5 exec $term --title fzf_popup tmx static --show-tags vault
 bindsym $mod+w exec $browser
 # bind = $mod, N, exec, brave --app=https://claude.ai/chats
 
+# file explorer
+bindsym $mod+e exec dolphin
+
 # kill focused window
 bindsym $mod+q exec "swaymsg kill"
 
