@@ -5,8 +5,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../shared/graphics.nix
-    ../shared/nvidia.nix
+    ../shared/gpu-default.nix
+    ../shared/gpu-nvidia.nix
   ];
 
   # bootloader
