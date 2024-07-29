@@ -352,11 +352,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722136972,
-        "narHash": "sha256-zyZI8ulKQSQcRqm2TZekDUPOu7cPNdTEdtwushaZJEo=",
+        "lastModified": 1722223425,
+        "narHash": "sha256-+IuDJSVh94OLT0Ly7YDRLCYgDENtu5ymCrWqoPKq/Gg=",
         "owner": "PhilippHeuer",
         "repo": "nix-jetbrains-plugins",
-        "rev": "c11f9e226147ac3ed3fcc7f4c0f6463faac58b8b",
+        "rev": "b62fd2f7b4df7d538ed24e9450dcde89e0a6103a",
         "type": "github"
       },
       "original": {
@@ -376,11 +376,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1722130475,
-        "narHash": "sha256-VT2GvIRL8+nNSQ/XS9N6m42VDBiNDy7Luz3wMHoPLBk=",
+        "lastModified": 1722216590,
+        "narHash": "sha256-O55w/XIIwheC9m1xGeQ28fajcJQh7x/EtfvL9p+B/ak=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "25a36236f5051034e2085fb3414493c921bb1994",
+        "rev": "84c2c64bef5f00bfcab73780801f1b270a1c5869",
         "type": "github"
       },
       "original": {
@@ -391,11 +391,11 @@
     },
     "nixos-master": {
       "locked": {
-        "lastModified": 1722135865,
-        "narHash": "sha256-PZOg7SaC3Ep8puawzsmN4kP+Lxv4EDqUP41prbULXXw=",
+        "lastModified": 1722222840,
+        "narHash": "sha256-VYsWUH+6LhsunkVW5e0MKKmnyE/Sb/H+ZzcNfUPmjlI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "591c4d9c8b3b16170eac11ef58ef0403e8d88c8c",
+        "rev": "cc6bdf03ef73ccfd5ce7f88679542ce0a5464f8d",
         "type": "github"
       },
       "original": {

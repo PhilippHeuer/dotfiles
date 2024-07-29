@@ -395,6 +395,12 @@ directories:
   rules:
   - rule: inPath("keepassxc")
 
+# htop
+- path: config/htop
+  target: $HOME/.config/htop
+  rules:
+  - rule: inPath("htop")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
