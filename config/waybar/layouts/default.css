@@ -1,0 +1,164 @@
+@import "../themes/current.css";
+
+/* Global */
+* {
+  font-family: "JetBrainsMono Nerd Font", "Material Design Icons";
+  font-size: 13px;
+  font-weight: bolder;
+  min-height: 15px;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+/* Workspaces */
+#workspaces button {
+  border: none;
+  color: @text;
+  font-weight: bolder;
+  padding: 3px;
+  margin-left: 5px;
+  background: transparent;
+  box-shadow: none;
+}
+
+#workspaces button.focused {
+  color: @blue;
+  animation: button_activate .2s ease-in-out;
+}
+#workspaces button.active {
+  color: @blue;
+  animation: button_activate .2s ease-in-out;
+}
+
+#workspaces button.urgent {
+  color: @red;
+  background: radial-gradient(circle, rgba(25, 79, 255, 0.3) 20%, rgba(132, 129, 156, 0) 30%);
+}
+
+#workspaces button.persistent {
+  color: #a9ac88;
+}
+
+#workspaces button.active:hover,
+#workspaces button.urgent:hover {
+  background: inherit;
+}
+
+@keyframes button_activate {
+  from {
+    opacity: .3
+  }
+
+  to {
+    opacity: 1.;
+  }
+}
+
+/* Components */
+#workspaces,
+#network,
+#backlight,
+#wireplumber,
+#clock,
+#cpu,
+#memory,
+#disk,
+#tray,
+#temperature,
+#custom-nvidia,
+#battery,
+#idle_inhibitor,
+#custom-lizzy,
+#bluetooth,
+#pulseaudio,
+#custom-launcher,
+#custom-wallchange,
+#custom-themechange,
+#custom-powermenu,
+#custom-weather,
+#custom-power,
+#custom-notifications,
+#custom-fuzzy-project,
+#custom-fuzzy-ssh,
+#custom-fuzzy-k8s {
+  background-color: @surface0;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 4px;
+  margin-bottom: 3px;
+  margin-right: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#backlight, #battery {
+  border-radius: 0;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+
+/* Component Groups */
+#workspace-group,
+#fuzzy-group,
+#resource-group,
+#control-group {
+  background-color: @surface0;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 4px;
+  margin-bottom: 3px;
+  margin-right: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#workspace-group,
+#fuzzy-group,
+#control-group {
+  font-size: 17px;
+}
+
+#clock {
+  color: @blue;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#custom-launcher {
+  color: #1793d1;
+}
+
+#custom-powermenu {
+  color: @red;
+}
+
+#pulseaudio {
+  color: @maroon;
+}
+
+#custom-music {
+  color: @mauve;
+}

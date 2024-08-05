@@ -20,10 +20,10 @@ start_waybar() {
     echo "Starting waybar for $CASE"
     case "$CASE" in
         sway)
-            waybar -c ~/.config/waybar/sway/config.jsonc -s ~/.config/waybar/sway/style.css &
+            waybar -c ~/.config/waybar/layouts/default.jsonc -s ~/.config/waybar/layouts/default.css &
             ;;
         sway-wsl)
-            waybar -c ~/.config/waybar/sway/config-wsl.jsonc -s ~/.config/waybar/sway/style.css &
+            waybar -c ~/.config/waybar/layouts/default.jsonc -s ~/.config/waybar/layouts/default.css &
             ;;
         hyprland)
             waybar -c ~/.config/waybar/hyprland/config.jsonc -s ~/.config/waybar/hyprland/style.css &
