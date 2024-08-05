@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 3,
+    "height": 15,
+    "width": "100%",
+    "spacing": 0,
+    "modules-left": [
+        // workspaces
+        "group/workspace-group",
+
+        // launcher
+        "group/fuzzy-group"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        // resource utilization
+        "group/resource-group",
+
+        // network, bluetooth, audio
+        "network",
+        //"bluetooth",
+        "pulseaudio",
+
+        // power and ui
+        "group/control-group"
+        
+    ],
+    "group/workspace-group": {
+        "orientation": "inherit",
+		"modules": [
+			"custom/launcher",
+            "sway/workspaces",
+            "hyprland/workspaces"
+		]
+	},
+    "group/fuzzy-group": {
+        "orientation": "inherit",
+		"modules": [
+			"custom/fuzzy-project",
+            "custom/fuzzy-ssh",
+            "custom/fuzzy-k8s"
+		]
+	},
+    "group/resource-group": {
+        "orientation": "inherit",
+		"modules": [
+			"battery",
+            "cpu",
+            "memory",
+            "temprature"
+		]
+	},
+    "group/control-group": {
+        "orientation": "inherit",
+		"modules": [
+			"custom/wallchange",
+            "custom/themechange",
+            "custom/notifications",
+            "custom/separator#line",
+            "custom/powermenu"
+		]
+	},
+    "include": [
+        "~/.config/waybar/modules.jsonc"
+    ]
+}

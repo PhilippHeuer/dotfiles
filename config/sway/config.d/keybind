@@ -11,6 +11,9 @@ set $right l
 # Basics:
 #
 
+# reload
+bindsym $mod+Shift+r reload; exec ~/.local/scripts/waybar/waybar.sh
+
 # launcher
 bindsym $mod+Space exec $menu
 bindsym $mod+m exec $menu

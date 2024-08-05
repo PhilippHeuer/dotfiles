@@ -7,18 +7,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    waybar
-    blueman # GTK-based Bluetooth Manager
-    networkmanagerapplet # NetworkManager Control Applet
-    dunst # lightweight and customizable notification daemon
-    brightnessctl # control screen brightness
-    pamixer # control audio volume from the command line
-    swww # wayland wallpaper daemon
-    wlogout # logout menu
-    swaylock-effects # needed for logout menu (swaylock with screenshot + blur)
-    gettext # needed by hyprland scripts
-    jq # needed by hyprland scripts
-    xdg-utils # for opening default programs when clicking links
+    # hyprland packages
+    hyprcursor
+    hyprlock
+    hypridle
+    hyprpaper # blazing fast wayland wallpaper utility
   ];
 
   # desktop ipc

@@ -106,6 +106,7 @@
     imports = [
       ./wm.nix
       ./wm-sway.nix
+      ./wm-waybar.nix
       ./clipboard.nix
       ./nwg-panel.nix
     ];
@@ -114,6 +115,7 @@
     imports = [
       ./wm.nix
       ./wm-hyprland.nix
+      ./wm-waybar.nix
       ./clipboard.nix
       ./nwg-panel.nix
     ];
