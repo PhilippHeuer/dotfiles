@@ -163,6 +163,19 @@
         "scroll-step": 1
     },
 
+    // bluetooth
+    "bluetooth": {
+        "format": "{icon} {device}",
+        "format-connected": "{icon} {device}",
+        "format-disconnected": "{icon} Disconnected",
+        "format-icons": {
+            "connected": "󰂰 ",
+            "disconnected": "󰂱 "
+        },
+        "tooltip": true,
+        "interval": 10
+    },
+
     // battery
     "battery": {
         "format": "{icon} {capacity}%",
@@ -216,7 +229,7 @@
         "on-scroll-up": "~/.local/bin/wallpaper next",
         "on-scroll-down": "~/.local/bin/wallpaper prev",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
 
     // theme
@@ -225,7 +238,7 @@
         "exec": "echo; echo switch theme",
         "on-click": "kitty --title fzf_popup_small -e ~/.local/bin/theme",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
 
     // power menu
@@ -234,7 +247,7 @@
         "exec": "echo; echo logout",
         "on-click": "~/.local/scripts/powermenu.sh &",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
 
     // notifications
@@ -257,7 +270,7 @@
         "exec": "swaync-client -swb",
         "on-click": "sleep 0.1 && swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "escape": true,
+        "escape": true
     },
 
     // current weather
@@ -275,21 +288,21 @@
         "exec": "echo; echo project",
         "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx project",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
     "custom/fuzzy-ssh": {
         "format": "󰣀 ",
         "exec": "echo; echo ssh",
         "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx ssh",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
     "custom/fuzzy-k8s": {
         "format": "󱃾 ",
         "exec": "echo; echo k8s",
         "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx kubernetes",
         "interval": "once",
-        "tooltip": true,
+        "tooltip": true
     },
 
     // media player

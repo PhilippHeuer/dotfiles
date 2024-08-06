@@ -23,9 +23,7 @@
         "group/resource-group",
 
         // network, bluetooth, audio
-        "network",
-        //"bluetooth",
-        "pulseaudio",
+        "group/hwcomp-group",
 
         // power and ui
         "group/control-group"
@@ -54,6 +52,14 @@
             "cpu",
             "memory",
             "temprature"
+		]
+	},
+    "group/hwcomp-group": {
+        "orientation": "inherit",
+		"modules": [
+			"network",
+            "bluetooth",
+            "pulseaudio"
 		]
 	},
     "group/control-group": {
