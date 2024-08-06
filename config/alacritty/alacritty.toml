@@ -17,6 +17,13 @@ multiplier = 3
 TERM = "alacritty"
 WINT_X11_SCALE_FACTOR = "1.0"
 
+# cursor
+[cursor]
+  blink_interval = 5
+  style = 'Beam'
+  thickness = 0.2
+  unfocused_hollow = true
+
 # fonts
 [font]
 size = 11.0
@@ -58,7 +65,7 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
-x = 0
+x = 15
 y = 0
 
 # mouse bindings
