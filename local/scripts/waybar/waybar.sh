@@ -26,10 +26,7 @@ start_waybar() {
             waybar -c ~/.config/waybar/layouts/default.jsonc -s ~/.config/waybar/layouts/default.css &
             ;;
         hyprland)
-            waybar -c ~/.config/waybar/hyprland/config.jsonc -s ~/.config/waybar/hyprland/style.css &
-            ;;
-        hyprland-wsl)
-            waybar -c ~/.config/waybar/hyprland/config-wsl.jsonc -s ~/.config/waybar/hyprland/style.css &
+            waybar -c ~/.config/waybar/layouts/default.jsonc -s ~/.config/waybar/layouts/default.css &
             ;;
     esac
     echo $! > "$PIDFILE"

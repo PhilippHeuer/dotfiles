@@ -282,10 +282,6 @@ directories:
   target: $HOME/.config/albert
   rules:
   - rule: inPath("albert")
-- path: config/albert/albert.conf
-  target: $HOME/.config/albert.conf
-  rules:
-  - rule: inPath("albert")
 
 # vscode
 - path: config/Code

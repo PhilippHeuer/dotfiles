@@ -108,7 +108,6 @@
       ./wm-sway.nix
       ./wm-waybar.nix
       ./clipboard.nix
-      ./nwg-panel.nix
     ];
   };
   wm-hyprland = {
@@ -117,7 +116,6 @@
       ./wm-hyprland.nix
       ./wm-waybar.nix
       ./clipboard.nix
-      ./nwg-panel.nix
     ];
   };
   desktop = {
@@ -140,6 +138,7 @@
       # ./ide-idea-community.nix # java ide
       ./ide-idea-ultimate.nix # java ide
       ./ide-goland.nix # java ide
+      ./ide-zed.nix # zed editor
       ./dbeaver.nix # database client
       ./bruno.nix # http client
     ];

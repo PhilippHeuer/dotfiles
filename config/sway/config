@@ -29,7 +29,7 @@ exec_always sleep 5 && systemctl --user restart clipboard-sync.service # sync cl
 
 # ui
 exec_always ~/.local/scripts/swww.sh # start wallpaper daemon
-exec_always sleep 1 && ~/.local/scripts/waybar/waybar.sh # launch the system panel
+exec_always sleep 1 && ~/.local/scripts/waybar/waybar.sh loop # launch the system panel
 
 ###
 # user config
