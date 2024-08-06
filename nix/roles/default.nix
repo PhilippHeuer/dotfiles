@@ -123,11 +123,12 @@
   desktop = {
     imports = [
       ./gtk.nix # theming
+      ./firefox.nix # web browser
+      ./librewolf.nix # web browser
       ./alacritty.nix # terminal
       ./kitty.nix # terminal
       ./rofi.nix
       ./nemo.nix # file manager
-      ./firefox.nix
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
       ./keepassxc.nix # password manager
@@ -162,19 +163,6 @@
     imports = [
       ./plex.nix
       ./komga.nix
-    ];
-  };
-  # genealogy
-  genealogy = {
-    imports = [
-      ./gramps.nix
-    ];
-  };
-  # communication
-  communication = {
-    imports = [
-      ./discord.nix
-      ./slack.nix
     ];
   };
   # vpn
