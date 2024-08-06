@@ -109,6 +109,7 @@
 #workspace-group,
 #fuzzy-group,
 #resource-group,
+#hwcomp-group,
 #control-group {
   background-color: @surface0;
   padding-left: 7.5px;
