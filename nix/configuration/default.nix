@@ -53,8 +53,6 @@ in {
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
-      nixosRoles.communication
-      nixosRoles.genealogy
       nixosRoles.games
       nixosRoles.vpn
       # variant
@@ -139,7 +137,18 @@ in {
       nixosRoles.desktop
       nixosRoles.media
       nixosRoles.ide
-      nixosRoles.genealogy
+      # communication
+      ../roles/discord.nix
+      ../roles/slack.nix
+      ../roles/chatterino.nix
+      # creative
+      ../roles/krita.nix # painting
+      # streaming
+      ../roles/obsstudio.nix # recording
+      # download
+      ../roles/qbittorrent.nix
+      # misc
+      ../roles/gramps.nix # genealogy / family tree
       # variant
       ./wsl
     ];
