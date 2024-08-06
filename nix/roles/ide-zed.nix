@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.nwg-panel
+    pkgs-unstable.zed-editor
   ];
 }
