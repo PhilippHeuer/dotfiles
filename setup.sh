@@ -4,10 +4,10 @@
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # fix permissions
-chmod +x "$script_dir"/local/scripts/*
+find "$script_dir/local/bin" -type f -exec chmod +x {} \;
+find "$script_dir/local/scripts" -type f -exec chmod +x {} \;
 
 # install dotfiles
-export DOTFILE_THEME="catppuccin-mocha"
 dotfiles install "$script_dir" --mode symlink
 
 # rebuild bat cache
