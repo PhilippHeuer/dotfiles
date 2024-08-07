@@ -9,6 +9,12 @@ config/fuzzmux/fuzzmux.user.yaml
 # sops
 config/sops/age/keys.txt
 
+# backgrounds
+local/share/backgrounds/**/*.jpg
+local/share/backgrounds/**/*.jpeg
+local/share/backgrounds/**/*.png
+local/share/backgrounds/**/*.gif
+
 # files with local secrets
 nix/nixos/pullsecrets.nix
 

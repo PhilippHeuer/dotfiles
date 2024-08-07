@@ -374,6 +374,10 @@ directories:
 - path: local/scripts
   target: $HOME/.local/scripts
 
+# backgrounds
+- path: local/share/backgrounds
+  target: $HOME/.local/share/backgrounds
+
 # ssh
 - path: config/ssh
   target: $HOME/.ssh
