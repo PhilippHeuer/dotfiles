@@ -45,9 +45,16 @@ start_waybar
 if [ "$1" = "loop" ]; then
     while true; do
         sleep 5
+
+        # cancel, if no window manager is running
+        if ! pgrep sway > /dev/null && ! pgrep hyprland > /dev/null; then
+          break
+        fi
+
+        # start waybar if it has crashed
         if ! ps -p $(cat "$PIDFILE") &> /dev/null; then
-            echo "Waybar has crashed. Restarting..."
-            start_waybar
+          echo "Waybar has crashed. Restarting..."
+          start_waybar
         fi
     done
 fi
