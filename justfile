@@ -16,7 +16,6 @@ clean-wsl:
 # laptop
 apply-laptop:
 	rsync -a $(pwd)/* laptop:~/dotfiles
-	rsync -a ~/.local/share/backgrounds/* laptop:~/.local/share/backgrounds
 	ssh -t laptop "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#laptop"
 
 clean-laptop:
@@ -26,7 +25,6 @@ clean-laptop:
 # desktop
 apply-desktop:
 	rsync -a $(pwd)/* desktop:~/dotfiles
-	rsync -a ~/.local/share/backgrounds/* desktop:~/.local/share/backgrounds
 	ssh -t desktop "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#desktop"
 
 clean-desktop:
