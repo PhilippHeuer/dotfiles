@@ -13,5 +13,9 @@
     <mask>*.jsp</mask>
     <mask>*.properties</mask>
     <mask>*.java</mask>
+    <mask>*.js</mask>
+    <mask>*.js,!*test.js,!*test.internal.js</mask>
+    <mask>*.toml</mask>
+    <mask>*.toml,!*.lock</mask>
   </component>
 </application>

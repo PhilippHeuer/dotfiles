@@ -1,0 +1,15 @@
+<application>
+  <component name="ExternalDiffSettings">
+    <option name="MIGRATE_OLD_SETTINGS" value="true" />
+  </component>
+  <component name="TextDiffSettings">
+    <option name="PLACES_MAP">
+      <entry key="Default">
+        <PlaceSettings>
+          <option name="EXPAND_BY_DEFAULT" value="false" />
+          <option name="IGNORE_POLICY" value="TRIM_WHITESPACES" />
+        </PlaceSettings>
+      </entry>
+    </option>
+  </component>
+</application>

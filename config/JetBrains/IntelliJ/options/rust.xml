@@ -1,0 +1,5 @@
+<application>
+  <component name="RsCodeInsightSettings">
+    <option name="addCratesDependenciesOnPaste" value="NEVER" />
+  </component>
+</application>
