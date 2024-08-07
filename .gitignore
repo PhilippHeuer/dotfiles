@@ -22,8 +22,5 @@ nix/nixos/pullsecrets.nix
 wip
 .wip
 
-# apply to host util scripts
-apply
-
 # docs
 docs
