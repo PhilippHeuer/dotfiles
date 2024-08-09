@@ -10,7 +10,6 @@
   # packages
   environment.systemPackages = with pkgs; [
     glib # gsettings
-    gnome3.adwaita-icon-theme  # default gnome cursors
     grim # screenshot functionality
     slurp # screenshot functionality
     wdisplays # tool to configure displays

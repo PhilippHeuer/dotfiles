@@ -55,6 +55,19 @@ in {
       nixosRoles.ide
       nixosRoles.games
       nixosRoles.vpn
+      # communication
+      ../roles/discord.nix
+      ../roles/slack.nix
+      # creative
+      ../roles/krita.nix # painting
+      # streaming
+      ../roles/obsstudio.nix # recording
+      ../roles/streamlink.nix # extract streams from various websites
+      ../roles/chatterino.nix
+      # download
+      ../roles/qbittorrent.nix
+      # misc
+      ../roles/gramps.nix # genealogy / family tree
       # variant
       ./desktop
     ];
@@ -140,11 +153,12 @@ in {
       # communication
       ../roles/discord.nix
       ../roles/slack.nix
-      ../roles/chatterino.nix
       # creative
       ../roles/krita.nix # painting
       # streaming
       ../roles/obsstudio.nix # recording
+      ../roles/streamlink.nix # extract streams from various websites
+      ../roles/chatterino.nix
       # download
       ../roles/qbittorrent.nix
       # misc

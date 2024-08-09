@@ -1,6 +1,29 @@
 # themes
 themes:
 - name: catppuccin-mocha
+  commands:
+  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  - command: gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-pink-standard
+  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+- name: rose-pine
+  commands:
+  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  - command: gsettings set org.gnome.desktop.interface gtk-theme rose-pine
+  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Light
+  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+- name: nord
+  commands:
+  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  - command: gsettings set org.gnome.desktop.interface gtk-theme Nordic
+  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+- name: tokyo-night
+  commands:
+  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+  - command: gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-BL
+  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
 
 # directories
 directories:
@@ -336,24 +359,10 @@ directories:
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
-  #theme_files:
-  #- target: $HOME/.config/gtk-3.0
-  #  sources:
-  #    catppuccin-mocha: /run/current-system/sw/share/themes/catppuccin-frappe-blue-standard/gtk-3.0
-  #    rose-pine: /run/current-system/sw/share/themes/rose-pine/gtk-3.0
-  #    nord: /run/current-system/sw/share/themes/Nordic-darker/gtk-3.0
-  #    tokyo-night: /run/current-system/sw/share/themes/Tokyonight-Dark-BL/gtk-3.0
 
 # gtk4
 - path: config/gtk-4.0
   target: $HOME/.config/gtk-4.0
-  #theme_files:
-  #- target: $HOME/.config/gtk-4.0
-  #  sources:
-  #    catppuccin-mocha: /run/current-system/sw/share/themes/catppuccin-frappe-blue-standard/gtk-4.0
-  #    rose-pine: /run/current-system/sw/share/themes/rose-pine/gtk-4.0
-  #    nord: /run/current-system/sw/share/themes/Nordic-darker/gtk-4.0
-  #    tokyo-night: /run/current-system/sw/share/themes/Tokyonight-Dark-BL/gtk-4.0
 
 # qt5
 - path: config/qt5ct

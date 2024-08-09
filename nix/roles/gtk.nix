@@ -1,22 +1,38 @@
 { lib, pkgs, config, ... }:
 
-{
+let
+  catppuccin-mocha = pkgs.catppuccin-gtk.override {
+    accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
+    size = "standard";
+    variant = "mocha";
+  };
+in {
   # gtk themes
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
+    # gnome
+    pkgs.gnome3.adwaita-icon-theme
+    
     # catppuccin
-    catppuccin-gtk
-    catppuccin-cursors
-
+    catppuccin-mocha
+    pkgs.catppuccin-cursors
+ 
     # tokyonight
-    tokyo-night-gtk
+    pkgs.tokyo-night-gtk
 
     # rosepine
-    rose-pine-gtk-theme
+    pkgs.rose-pine-gtk-theme
+    pkgs.rose-pine-cursor
 
     # nord
-    nordic
+    pkgs.nordic
 
     # dracula
-    dracula-theme
+    pkgs.dracula-theme
+
+    # bibata cursors
+    pkgs.bibata-cursors
+
+    # papirus icon theme
+    pkgs.papirus-icon-theme
   ];
 }
