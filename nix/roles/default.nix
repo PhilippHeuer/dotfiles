@@ -121,8 +121,8 @@
   desktop = {
     imports = [
       ./gtk.nix # theming
-      ./firefox.nix # web browser
-      ./librewolf.nix # web browser
+      ./browser-firefox.nix # web browser
+      ./browser-librewolf.nix # web browser
       ./alacritty.nix # terminal
       ./kitty.nix # terminal
       ./rofi.nix
