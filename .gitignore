@@ -14,6 +14,7 @@ local/share/backgrounds/**/*.jpg
 local/share/backgrounds/**/*.jpeg
 local/share/backgrounds/**/*.png
 local/share/backgrounds/**/*.gif
+local/share/backgrounds/**/*.webp
 
 # files with local secrets
 nix/nixos/pullsecrets.nix

@@ -12,6 +12,7 @@
     hyprlock
     hypridle
     hyprpaper # blazing fast wayland wallpaper utility
+    waypaper # wallpaper manager
   ];
 
   # desktop ipc
