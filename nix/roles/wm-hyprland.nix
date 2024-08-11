@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.hyprland = {
@@ -12,7 +12,8 @@
     hyprlock
     hypridle
     hyprpaper # blazing fast wayland wallpaper utility
-    waypaper # wallpaper manager
+    # waypaper # wallpaper manager
+    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.waypaper # wallpaper manager
   ];
 
   # desktop ipc

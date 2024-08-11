@@ -356,6 +356,12 @@ directories:
   rules:
   - rule: inPath("htop")
 
+# waypaper
+- path: config/waypaper
+  target: $HOME/.config/waypaper
+  rules:
+  - rule: inPath("waypaper")
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0

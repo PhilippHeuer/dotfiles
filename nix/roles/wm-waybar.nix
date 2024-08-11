@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # packages
@@ -13,7 +13,8 @@
     pamixer # control audio volume from the command line
     swww # wayland wallpaper daemon
     swaybg # set background image
-    waypaper # wallpaper manager
+    # waypaper # wallpaper manager
+    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.waypaper # wallpaper manager
     wlogout # logout menu
     swaylock-effects # needed for logout menu (swaylock with screenshot + blur)
     xdg-utils # for opening default programs when clicking links
