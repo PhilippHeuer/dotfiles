@@ -224,8 +224,8 @@
     "custom/wallchange": {
         "format": " ",
         "exec": "echo; echo switch wallpaper",
-        "on-click": "waypaper",
-        "on-click-right": "waypaper --random",
+        "on-click": "~/.local/scripts/waypaper.sh gui",
+        "on-click-right": "~/.local/scripts/waypaper.sh random",
         //"on-scroll-up": "waypaper --next",
         //"on-scroll-down": "waypaper --prev",
         "interval": "once",

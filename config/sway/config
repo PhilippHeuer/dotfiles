@@ -28,7 +28,7 @@ exec_always sleep 1 && wl-paste --type image --watch cliphist store # clipboard 
 exec_always sleep 5 && systemctl --user restart clipboard-sync.service # sync clipboards (also shares clipboard with windows host in WSL)
 
 # ui
-exec_always waypaper --restore # start wallpaper daemon
+exec_always ~/.local/scripts/waypaper.sh restore # start wallpaper daemon
 exec_always sleep 1 && ~/.local/scripts/waybar/waybar.sh loop # launch the system panel
 
 ###
