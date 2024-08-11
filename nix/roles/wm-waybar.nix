@@ -12,7 +12,6 @@
     brightnessctl # control screen brightness
     pamixer # control audio volume from the command line
     swww # wayland wallpaper daemon
-    swaybg # set background image
     # waypaper # wallpaper manager
     inputs.nixpkgs-philippheuer.packages.${pkgs.system}.waypaper # wallpaper manager
     wlogout # logout menu
