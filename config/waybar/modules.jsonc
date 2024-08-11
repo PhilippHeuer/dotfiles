@@ -224,10 +224,10 @@
     "custom/wallchange": {
         "format": " ",
         "exec": "echo; echo switch wallpaper",
-        "on-click": "~/.local/bin/wallpaper next",
-        "on-click-right": "~/.local/bin/wallpaper prev",
-        "on-scroll-up": "~/.local/bin/wallpaper next",
-        "on-scroll-down": "~/.local/bin/wallpaper prev",
+        "on-click": "waypaper",
+        "on-click-right": "waypaper --random",
+        //"on-scroll-up": "waypaper --next",
+        //"on-scroll-down": "waypaper --prev",
         "interval": "once",
         "tooltip": true
     },
