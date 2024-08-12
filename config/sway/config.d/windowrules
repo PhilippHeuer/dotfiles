@@ -1,6 +1,16 @@
 ###
 # window rules
 
+# terminals
+for_window [app_id="^alacritty$"] opacity 0.8
+for_window [app_id="^foot$"] opacity 0.8
+for_window [app_id="^kitty$"] opacity 0.8
+
+# browsers
+for_window [class="^firefox$"] opacity 0.8
+for_window [class="^librewolf$"] opacity 0.8
+for_window [class="^Brave-browser$"] opacity 0.8
+
 # vscode
 for_window [class="^Code$"] opacity 0.9
 for_window [class="^VSCodium$"] opacity 0.9
@@ -13,11 +23,6 @@ for_window [class="^obsidian"] opacity 0.9
 
 # dbeaver
 for_window [app_id="^DBeaver$"] opacity 0.9
-
-# terminals
-for_window [app_id="^alacritty$"] opacity 0.9
-for_window [app_id="^foot$"] opacity 0.9
-for_window [app_id="^kitty$"] opacity 0.9
 
 ###
 # floating windows
