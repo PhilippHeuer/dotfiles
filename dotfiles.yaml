@@ -57,6 +57,19 @@ directories:
       nord: themes/nord.toml
       tokyo-night: themes/tokyo-night.toml
 
+# foot
+- path: config/foot
+  target: $HOME/.config/foot
+  rules:
+  - rule: inPath("foot")
+  theme_files:
+  - target: $HOME/.config/foot/themes/current.ini
+    sources:
+      catppuccin-mocha: themes/catppuccin-mocha.ini
+      rose-pine: themes/rose-pine.ini
+      nord: themes/nord.ini
+      tokyo-night: themes/tokyo-night.ini
+
 # kitty
 - path: config/kitty
   target: $HOME/.config/kitty

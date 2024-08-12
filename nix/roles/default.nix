@@ -119,13 +119,18 @@
       ./clipboard.nix
     ];
   };
+  terminal = {
+    imports = [
+      ./terminal-alacritty.nix
+      ./terminal-foot.nix
+      ./terminal-kitty.nix
+    ];
+  };
   desktop = {
     imports = [
       ./gtk.nix # theming
       ./browser-firefox.nix # web browser
       ./browser-librewolf.nix # web browser
-      ./alacritty.nix # terminal
-      ./kitty.nix # terminal
       ./rofi.nix
       ./nemo.nix # file manager
       ./silicon.nix # create beautiful images of source code

@@ -8,57 +8,70 @@
 # Define the files to backup
 files=(
   # ssh
-  "$HOME/.ssh/known_hosts"
-  "$HOME/.ssh/id_"*
-  "$HOME/.ssh/servers"
+  ".ssh/known_hosts"
+  ".ssh/id_"*
+  ".ssh/servers"
 
   # gpg
-  "$HOME/.gnupg"
+  ".gnupg"
 
   # git user config
-  "$HOME/.config/git/user"
+  ".config/git/user"
 
   # plain-text git credentials (fallback, not used)
-  "$HOME/.git-credentials"
+  ".git-credentials"
 
   # kubernetes configs
-  "$HOME/.kube"
+  ".kube"
 
   # gradle properties
-  "$HOME/.gradle/gradle.properties"
+  ".gradle/gradle.properties"
 
   # copilot
-  "$HOME/.config/github-copilot/hosts.json"
-  "$HOME/.config/github-copilot/versions.json"
+  ".config/github-copilot/hosts.json"
+  ".config/github-copilot/versions.json"
 
   # reposync
-  "$HOME/.config/reposync/"*.token
+  ".config/reposync/"*.token
 
   # podman
-  "$HOME/.config/containers/auth.json"
+  ".config/containers/auth.json"
   
   # wallpaper
-  "$HOME/.local/state/wallpaper.state"
-
-  # dbeaver workspaces
-  "$HOME/.local/share/DBeaverData"
+  ".local/state/waypaper"
 
   # fzf
-  "$HOME/.local/share/fzf/history"
+  ".local/share/fzf/history"
 
   # zoxide db
-  "$HOME/.local/share/zoxide/db.zo"
+  #".local/share/zoxide/db.zo"
 
   # atuin
-  "$HOME/.local/share/atuin/history.db"
-  "$HOME/.local/share/atuin/key"
+  #".local/share/atuin/history.db"
+  #".local/share/atuin/key"
+
+  # dbeaver workspaces
+  ".local/share/DBeaverData"
+
+  # chatterino
+  ".local/share/chatterino"
+
+  # slack
+  ".config/Slack"
+
+  # gramps
+  ".config/gramps"
 )
 
-# remove missing paths
+filtered_files=()
 for file in "${files[@]}"; do
-  if [ ! -f "$file" ]; then
-    files=("${files[@]/$file}")
-  fi
+  expanded_files=( $file )
+  
+  for f in "${expanded_files[@]}"; do
+    if [ -e "$f" ]; then
+      filtered_files+=("$f")
+    fi
+  done
 done
 
 # backup file
@@ -66,13 +79,18 @@ backup_file=${2:-"backup.tar.gz"}
 
 # create or restore
 if [ "$1" == "create" ]; then
+  echo "Backing up the following files:"
+  for file in "${filtered_files[@]}"; do
+    echo "  $file"
+  done
+
   # Create the backup
-  tar -czf $backup_file -C $HOME ${files[@]}
+  tar -czf $backup_file -C $HOME ${filtered_files[@]}
   echo "Backup created in $backup_file"
 elif [ "$1" == "restore" ]; then
   # Restore the backup
   if [ -f $backup_file ]; then
-    tar -xzf $backup_file -C ~/
+    tar -xvzf $backup_file -C $HOME
     echo "Backup restored from $backup_file"
   else
     echo "Backup file $backup_file does not exist"

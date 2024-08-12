@@ -1,7 +1,12 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    git
+  environment.systemPackages = [
+    pkgs.git
   ];
+
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 }
