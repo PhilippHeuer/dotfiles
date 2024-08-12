@@ -18,6 +18,10 @@ if [ "$WM" = "i3" ]; then
   pid=$(i3-msg -t get_tree | jq '.. | select(.focused==true) | .pid')
   cwd=$(readlink -e "/proc/$pid/cwd")
 fi
+if [ "$WM" = "hyprland" ]; then
+  pid=$(hyprctl activewindow | awk '/pid:/ {print $2}')
+  cwd=$(readlink -e "/proc/$pid/cwd")
+fi
 
 # arguments
 title=""

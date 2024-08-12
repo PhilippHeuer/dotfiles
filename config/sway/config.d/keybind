@@ -27,9 +27,7 @@ bindsym $mod+g exec $term --title "lazygit" lazygit
 # launcher
 bindsym F1 exec $term --title fzf_popup tmx project
 bindsym F2 exec $term --title fzf_popup tmx ssh
-bindsym F3 exec $term --title fzf_popup tmx kubernetes
-bindsym F4 exec $term --title fzf_popup tmx static --show-tags db
-bindsym F5 exec $term --title fzf_popup tmx static --show-tags vault
+bindsym F3 exec $term --title fzf_popup tmx menu
 
 # browser
 bindsym $mod+w exec $browser
