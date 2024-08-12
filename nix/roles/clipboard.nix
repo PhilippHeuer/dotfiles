@@ -18,7 +18,7 @@
       Type = "simple";
     };
     serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/clipboard-sync";
+      ExecStart = "/run/current-system/sw/bin/clipboard-sync --log-level=debug";
       Restart = "always";
       RestartSec = "5";
     };

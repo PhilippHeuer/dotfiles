@@ -68,6 +68,7 @@
       ./nodejs.nix
       ./python.nix
       ./golang.nix
+      ./rust.nix
       ./zig.nix
     ];
   };
