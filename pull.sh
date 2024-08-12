@@ -65,3 +65,12 @@ curl -S -s -L "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.
 sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background "default"/' "config/k9s/skins/tokyo-night.yaml"
 sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background "default"/' "config/k9s/skins/rose-pine.yaml"
 sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background "default"/' "config/k9s/skins/nord.yaml"
+
+# qbittorrent
+curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/mocha.qbtheme" -o "config/qbittorrent/themes/catppuccin-mocha.qbtheme"
+curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/macchiato.qbtheme" -o "config/qbittorrent/themes/catppuccin-macchiato.qbtheme"
+curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/latte.qbtheme" -o "config/qbittorrent/themes/catppuccin-latte.qbtheme"
+curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/frappe.qbtheme" -o "config/qbittorrent/themes/catppuccin-frappe.qbtheme"
+curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/main.qbtheme" -o "config/qbittorrent/themes/rose-pine.qbtheme"
+curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/moon.qbtheme" -o "config/qbittorrent/themes/rose-pine-moon.qbtheme"
+curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/dawn.qbtheme" -o "config/qbittorrent/themes/rose-pine-dawn.qbtheme"

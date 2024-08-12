@@ -56,6 +56,11 @@ files=(
   # chatterino
   ".local/share/chatterino"
 
+  # qbittorrent
+  ".config/qBittorrent/categories.json"
+  ".config/qBittorrent/watched_folders.json"
+  ".local/share/qBittorrent"
+
   # slack
   ".config/Slack"
 
