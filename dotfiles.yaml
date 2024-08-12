@@ -379,6 +379,17 @@ directories:
   rules:
   - rule: inPath("waypaper")
 
+# qbittorrent
+- path: config/qBittorrent
+  target: $HOME/.config/qBittorrent
+  rules:
+  - rule: inPath("qbittorrent")
+  theme_files:
+  - target: $HOME/.config/qBittorrent/themes/current.qbtheme
+    sources:
+      catppuccin-mocha: themes/catppuccin-mocha.qbtheme
+      rose-pine: themes/rose-pine.qbtheme
+
 # gtk3
 - path: config/gtk-3.0
   target: $HOME/.config/gtk-3.0
