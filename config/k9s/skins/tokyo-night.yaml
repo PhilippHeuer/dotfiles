@@ -1,7 +1,3 @@
-# -----------------------------------------------------------------------------
-# Tokyo Night skin
-# -----------------------------------------------------------------------------
-
 foreground: &foreground "#c0caf5"
 background: &background "default"
 current_line: &current_line "#8c6c3e"
@@ -122,3 +118,4 @@ k9s:
       indicator:
         fgColor: *red
         bgColor: *selection
+

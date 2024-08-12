@@ -47,6 +47,7 @@ in {
       #../nixos/flatpak.nix
       # roles
       nixosRoles.default
+      nixosRoles.terminal
       nixosRoles.development
       nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
@@ -92,6 +93,7 @@ in {
       ../nixos/flatpak.nix
       # roles
       nixosRoles.default
+      nixosRoles.terminal
       nixosRoles.development
       nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
@@ -119,6 +121,7 @@ in {
       ../nixos/proxy.nix
       # roles
       nixosRoles.default
+      nixosRoles.terminal
       nixosRoles.development
       nixosRoles.container-runtime
       nixosRoles.mediaserver
@@ -142,6 +145,7 @@ in {
       inputs.nixos-wsl.nixosModules.wsl
       # roles
       nixosRoles.default
+      nixosRoles.terminal
       nixosRoles.development
       nixosRoles.language-toolchains
       nixosRoles.container-runtime
