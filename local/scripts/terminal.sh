@@ -23,6 +23,11 @@ if [ "$WM" = "hyprland" ]; then
   cwd=$(readlink -e "/proc/$pid/cwd")
 fi
 
+# fallback to home directory, if cwd is not a valid directory
+if [ ! -d "$cwd" ]; then
+  cwd=${HOME}
+fi
+
 # arguments
 title=""
 while [[ $# -gt 0 ]]; do
@@ -41,7 +46,7 @@ executable=${1:-"bash"}
 # start terminal
 cd "$cwd"
 if command -v foot &> /dev/null; then
-  exec foot --title "${title:-foot}" --working-directory "$cwd" $@
+  exec foot --title="${title:-foot}" --working-directory="$cwd" $@
 elif command -v kitty &> /dev/null; then
   exec kitty --title "${title:-kitty}" --working-directory "$cwd" $@
 elif command -v alacritty &> /dev/null; then
