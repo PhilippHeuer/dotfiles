@@ -48,6 +48,7 @@ in {
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
+      ../nixos/gamemode.nix
       # roles
       nixosRoles.default
       nixosRoles.terminal
@@ -97,6 +98,7 @@ in {
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
+      ../nixos/gamemode.nix
       # roles
       nixosRoles.default
       nixosRoles.terminal
