@@ -6,14 +6,14 @@
     xwayland.enable = true;
   };
 
+  # sddm default
+  services.displayManager.defaultSession = "hyprland";
+
   environment.systemPackages = with pkgs; [
     # hyprland packages
     hyprcursor
     hyprlock
     hypridle
-    hyprpaper # blazing fast wayland wallpaper utility
-    # waypaper # wallpaper manager
-    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.waypaper # wallpaper manager
   ];
 
   # desktop ipc
