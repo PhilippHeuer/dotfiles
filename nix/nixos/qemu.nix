@@ -6,6 +6,7 @@
   ];
 
   boot.binfmt.emulatedSystems = [
+    "wasm32-wasi"
     "aarch64-linux"
     #"alpha-linux"
     #"armv6l-linux"

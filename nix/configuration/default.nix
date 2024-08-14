@@ -37,6 +37,7 @@ in {
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/security.nix
+      ../nixos/tpm.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
@@ -84,6 +85,7 @@ in {
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/security.nix
+      ../nixos/tpm.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix

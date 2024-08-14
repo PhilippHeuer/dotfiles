@@ -145,8 +145,7 @@
     # Incomplete protection again TIME-WAIT assassination
     "net.ipv4.tcp_rfc1337" = 1;
 
-    # Disable TCP SACK. SACK is commonly exploited and unnecessary for many
-    # circumstances so it should be disabled if you don't require it
+    # Disable TCP SACK. SACK is commonly exploited and unnecessary for many circumstances
     "net.ipv4.tcp_sack" = "0";
     "net.ipv4.tcp_dsack" = "0";
 
