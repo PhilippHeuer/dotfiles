@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.silicon
+    pkgs.silicon
   ];
 }
