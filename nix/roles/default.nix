@@ -128,6 +128,7 @@
   };
   desktop = {
     imports = [
+      ./wallpapers.nix # wallpapers
       ./gtk.nix # theming
       ./browser-firefox.nix # web browser
       ./browser-librewolf.nix # web browser
