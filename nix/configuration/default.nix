@@ -147,6 +147,7 @@ in {
     username = "phx";
     extraModules = [
       # nixos
+      ../nixos/user.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       # wsl

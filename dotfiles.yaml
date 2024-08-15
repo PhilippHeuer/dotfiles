@@ -216,6 +216,12 @@ directories:
   rules:
   - rule: inPath("sway")
 
+# swaylock
+- path: config/swaylock
+  target: $HOME/.config/swaylock
+  rules:
+  - rule: inPath("swaylock")
+
 # tmux
 - path: config/tmux
   target: $HOME/.config/tmux

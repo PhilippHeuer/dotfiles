@@ -12,7 +12,7 @@
     glib # gsettings
     grim # screenshot functionality
     slurp # screenshot functionality
-    wdisplays # tool to configure displays
+    wdisplays # tool to configure displays 
   ];
 
   # desktop ipc
@@ -44,10 +44,5 @@
         TimeoutStopSec = 10;
       };
     };
-  };
-
-  # swaylock needs setuid to lock the screen
-  security.pam.services.swaylock = {
-    fprintAuth = false;
   };
 }
