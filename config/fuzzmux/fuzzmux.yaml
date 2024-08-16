@@ -39,6 +39,13 @@ layouts:
           - command: idea-community {{startDirectory}}
         gui: true
         group: editor
+      - name: golang
+        rules:
+          - inPath("goland") && contains(TAGS, "language-go")
+        commands:
+          - command: goland {{startDirectory}}
+        gui: true
+        group: editor
       - name: vscodium
         rules:
           - inPath("codium") && (contains(TAGS, "language-javascript") || contains(TAGS, "language-typescript") || contains(TAGS, "buildsystem-container"))
