@@ -43,6 +43,9 @@ files=(
   # fzf
   ".local/share/fzf/history"
 
+  # gsettings
+  ".config/dconf/user"
+
   # zoxide db
   #".local/share/zoxide/db.zo"
 
