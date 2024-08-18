@@ -1,12 +1,11 @@
 return {
   {
+    -- renovate: datasource=github-releases depName=nvim-neorg/neorg
     'nvim-neorg/neorg',
-    --build = ':Neorg sync-parsers',
     lazy = true, -- enable lazy load
     ft = 'norg', -- lazy load on file type
     cmd = 'Neorg', -- lazy load on command
-    version = 'v7.0.0',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    version = 'v9.1.1',
     config = function()
       require('neorg').setup {
         load = {

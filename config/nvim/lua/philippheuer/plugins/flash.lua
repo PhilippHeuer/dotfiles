@@ -1,7 +1,8 @@
 return {
   {
+    -- renovate: datasource=github-releases depName=folke/flash.nvim
     'folke/flash.nvim',
-    tag = 'v1.18.2',
+    tag = 'v2.1.0',
     event = 'VeryLazy',
     ---@type Flash.Config
     opts = {},
