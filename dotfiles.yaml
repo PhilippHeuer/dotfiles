@@ -1,33 +1,53 @@
 # themes
 themes:
 - name: catppuccin-mocha
+  properties:
+    Font: "JetBrainsMono Nerd Font Mono"
+    FontSize: "10"
+    GTKTheme: "catppuccin-mocha-pink-standard"
+    IconTheme: "Papirus-Dark"
+    CursorTheme: "Bibata-Modern-Ice"
   commands:
-  - command: ~/.local/scripts/waypaper.sh restore
-  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-  - command: gsettings set org.gnome.desktop.interface gtk-theme catppuccin-mocha-pink-standard
-  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+  - command: ~/.local/scripts/actions/wallpaper.sh restore
+    on_change: true
+  - command: ~/.local/scripts/actions/gtktheme.sh
+    on_change: true
 - name: rose-pine
+  properties:
+    Font: "JetBrainsMono Nerd Font Mono"
+    FontSize: "10"
+    GTKTheme: "rose-pine"
+    IconTheme: "Papirus-Light"
+    CursorTheme: "Bibata-Modern-Ice"
   commands:
-  - command: ~/.local/scripts/waypaper.sh restore
-  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-  - command: gsettings set org.gnome.desktop.interface gtk-theme rose-pine
-  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Light
-  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+  - command: ~/.local/scripts/actions/wallpaper.sh restore
+    on_change: true
+  - command: ~/.local/scripts/actions/gtktheme.sh
+    on_change: true
 - name: nord
+  properties:
+    Font: "JetBrainsMono Nerd Font Mono"
+    FontSize: "10"
+    GTKTheme: "Nordic"
+    IconTheme: "Papirus-Dark"
+    CursorTheme: "Bibata-Modern-Ice"
   commands:
-  - command: ~/.local/scripts/waypaper.sh restore
-  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-  - command: gsettings set org.gnome.desktop.interface gtk-theme Nordic
-  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+  - command: ~/.local/scripts/actions/wallpaper.sh restore
+    on_change: true
+  - command: ~/.local/scripts/actions/gtktheme.sh
+    on_change: true
 - name: tokyo-night
+  properties:
+    Font: "JetBrainsMono Nerd Font Mono"
+    FontSize: "10"
+    GTKTheme: "Tokyonight-Storm-BL"
+    IconTheme: "Papirus-Dark"
+    CursorTheme: "Bibata-Modern-Ice"
   commands:
-  - command: ~/.local/scripts/waypaper.sh restore
-  - command: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-  - command: gsettings set org.gnome.desktop.interface gtk-theme Tokyonight-Storm-BL
-  - command: gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-  - command: gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice
+  - command: ~/.local/scripts/actions/wallpaper.sh restore
+    on_change: true
+  - command: ~/.local/scripts/actions/gtktheme.sh
+    on_change: true
 
 # directories
 directories:
@@ -49,6 +69,8 @@ directories:
   target: $HOME/.config/alacritty
   rules:
   - rule: inPath("alacritty")
+  template_files:
+   - config/alacritty/alacritty.toml
   theme_files:
   - target: $HOME/.config/alacritty/themes/current.toml
     sources:
@@ -422,6 +444,8 @@ directories:
 # scripts
 - path: local/scripts
   target: $HOME/.local/scripts
+  template_files:
+  - local/scripts/actions/gtktheme.sh
 
 # backgrounds
 - path: local/share/backgrounds
