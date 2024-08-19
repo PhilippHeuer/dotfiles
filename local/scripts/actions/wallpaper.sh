@@ -1,23 +1,25 @@
 #!/usr/bin/env bash
 
 # current theme
-THEME=$(cat ~/.local/state/dotfiles/current-theme)
+THEME=$(dotfiles query theme)
 
 # show gui
 show_gui() {
-    waypaper --folder ~/.local/share/backgrounds/${THEME} --state-file ~/.local/state/waypaper/${THEME}.ini
+    nohup waypaper --folder $(dotfiles query wallpaperdir) --state-file ~/.local/state/waypaper/${THEME}.ini &
 }
 
 # set random wallpaper
 set_random() {
-    waypaper --folder ~/.local/share/backgrounds/${THEME} --state-file ~/.local/state/waypaper/${THEME}.ini --random
+    nohup waypaper --folder $(dotfiles query wallpaperdir) --state-file ~/.local/state/waypaper/${THEME}.ini --random &
 }
 
 # restore last wallpaper
 restore() {
     if [ -f ~/.local/state/waypaper/${THEME}.ini ]; then
-        waypaper --folder ~/.local/share/backgrounds/${THEME} --state-file ~/.local/state/waypaper/${THEME}.ini --restore
+        echo "Restoring waypaper state from ~/.local/state/waypaper/${THEME}.ini"
+        nohup waypaper --folder $(dotfiles query wallpaperdir) --state-file ~/.local/state/waypaper/${THEME}.ini --restore &
     else
+        echo "No waypaper state found, setting random wallpaper"
         set_random
     fi
 }
