@@ -224,8 +224,8 @@
     "custom/wallchange": {
         "format": " ",
         "exec": "echo; echo switch wallpaper",
-        "on-click": "~/.local/scripts/waypaper.sh gui",
-        "on-click-right": "~/.local/scripts/waypaper.sh random",
+        "on-click": "~/.local/scripts/actions/wallpaper.sh gui",
+        "on-click-right": "~/.local/scripts/actions/wallpaper.sh random",
         //"on-scroll-up": "waypaper --next",
         //"on-scroll-down": "waypaper --prev",
         "interval": "once",
@@ -236,7 +236,7 @@
     "custom/themechange": {
         "format": " ",
         "exec": "echo; echo switch theme",
-        "on-click": "kitty --title fzf_popup_small -e ~/.local/bin/theme",
+        "on-click": "kitty --title fzf_popup_small -e ~/.local/scripts/actions/theme.sh select",
         "interval": "once",
         "tooltip": true
     },

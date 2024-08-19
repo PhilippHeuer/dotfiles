@@ -1,53 +1,47 @@
 # themes
 themes:
 - name: catppuccin-mocha
-  properties:
-    Font: "JetBrainsMono Nerd Font Mono"
-    FontSize: "10"
-    GTKTheme: "catppuccin-mocha-pink-standard"
-    IconTheme: "Papirus-Dark"
-    CursorTheme: "Bibata-Modern-Ice"
-  commands:
-  - command: ~/.local/scripts/actions/wallpaper.sh restore
-    on_change: true
-  - command: ~/.local/scripts/actions/gtktheme.sh
-    on_change: true
+  colorScheme: catppuccino-mocha
+  wallpaperDir: ~/.local/share/backgrounds/catppuccin-mocha
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: catppuccin-mocha-pink-standard
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
 - name: rose-pine
-  properties:
-    Font: "JetBrainsMono Nerd Font Mono"
-    FontSize: "10"
-    GTKTheme: "rose-pine"
-    IconTheme: "Papirus-Light"
-    CursorTheme: "Bibata-Modern-Ice"
-  commands:
-  - command: ~/.local/scripts/actions/wallpaper.sh restore
-    on_change: true
-  - command: ~/.local/scripts/actions/gtktheme.sh
-    on_change: true
+  colorScheme: rose-pine
+  wallpaperDir: ~/.local/share/backgrounds/rose-pine
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: rose-pine
+  iconTheme: Papirus-Light
+  cursorTheme: Bibata-Modern-Ice
+
 - name: nord
-  properties:
-    Font: "JetBrainsMono Nerd Font Mono"
-    FontSize: "10"
-    GTKTheme: "Nordic"
-    IconTheme: "Papirus-Dark"
-    CursorTheme: "Bibata-Modern-Ice"
-  commands:
-  - command: ~/.local/scripts/actions/wallpaper.sh restore
-    on_change: true
-  - command: ~/.local/scripts/actions/gtktheme.sh
-    on_change: true
+  colorScheme: nord
+  wallpaperDir: ~/.local/share/backgrounds/nord
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: Nordic
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
 - name: tokyo-night
-  properties:
-    Font: "JetBrainsMono Nerd Font Mono"
-    FontSize: "10"
-    GTKTheme: "Tokyonight-Storm-BL"
-    IconTheme: "Papirus-Dark"
-    CursorTheme: "Bibata-Modern-Ice"
-  commands:
-  - command: ~/.local/scripts/actions/wallpaper.sh restore
-    on_change: true
+  colorScheme: tokyo-night
+  wallpaperDir: ~/.local/share/backgrounds/tokyo-night
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: Tokyonight-Storm-BL
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+# activation commands
+activationCommands:
   - command: ~/.local/scripts/actions/gtktheme.sh
-    on_change: true
+    onChange: true
+  - command: ~/.local/scripts/actions/wallpaper.sh restore
+    onChange: true
 
 # directories
 directories:
@@ -69,9 +63,9 @@ directories:
   target: $HOME/.config/alacritty
   rules:
   - rule: inPath("alacritty")
-  template_files:
+  templateFiles:
    - config/alacritty/alacritty.toml
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/alacritty/themes/current.toml
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.toml
@@ -84,7 +78,9 @@ directories:
   target: $HOME/.config/foot
   rules:
   - rule: inPath("foot")
-  theme_files:
+  templateFiles:
+   - config/foot/foot.ini
+  themeFiles:
   - target: $HOME/.config/foot/themes/current.ini
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.ini
@@ -97,7 +93,7 @@ directories:
   target: $HOME/.config/kitty
   rules:
   - rule: inPath("kitty")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/kitty/themes/current.conf
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.conf
@@ -122,7 +118,7 @@ directories:
   target: $HOME/.config/btop
   rules:
   - rule: inPath("btop")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/btop/themes/current.theme
     sources:
       catppuccin-mocha: themes/catppuccin_mocha.theme
@@ -171,7 +167,7 @@ directories:
   target: $HOME/.config/bat
   rules:
   - rule: inPath("bat")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/bat/init/theme.sh
     sources:
       catppuccin-mocha: init/catppuccin-mocha.sh
@@ -184,7 +180,7 @@ directories:
   target: $HOME/.config/k9s
   rules:
   - rule: inPath("k9s")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/k9s/skins/current.yaml
     sources:
       catppuccin-mocha: skins/catppuccin-mocha.yaml
@@ -197,7 +193,7 @@ directories:
   target: $HOME/.config/lazygit
   rules:
   - rule: inPath("lazygit")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/lazygit/themes/current.yml
     sources:
       catppuccin-mocha: themes/mocha-blue.yml
@@ -214,7 +210,7 @@ directories:
   target: $HOME/.config/nvim
   rules:
   - rule: inPath("nvim")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/nvim/lua/philippheuer/themes/current.lua
     sources:
       catppuccin-mocha: lua/philippheuer/themes/catppuccin-mocha.lua
@@ -255,7 +251,7 @@ directories:
   target: $HOME/.config/fzf
   rules:
   - rule: inPath("fzf")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/fzf/init/theme.sh
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.sh
@@ -292,7 +288,7 @@ directories:
   target: $HOME/.config/waybar
   rules:
   - rule: inPath("waybar")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/waybar/themes/current.css
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.css
@@ -412,7 +408,7 @@ directories:
   target: $HOME/.config/qBittorrent
   rules:
   - rule: inPath("qbittorrent")
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/qBittorrent/themes/current.qbtheme
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.qbtheme
@@ -429,7 +425,7 @@ directories:
 # qt5
 - path: config/qt5ct
   target: $HOME/.config/qt5ct
-  theme_files:
+  themeFiles:
   - target: $HOME/.config/qt5ct/themes/current.conf
     sources:
       catppuccin-mocha: themes/catppuccin-mocha.conf
@@ -444,7 +440,7 @@ directories:
 # scripts
 - path: local/scripts
   target: $HOME/.local/scripts
-  template_files:
+  templateFiles:
   - local/scripts/actions/gtktheme.sh
 
 # backgrounds

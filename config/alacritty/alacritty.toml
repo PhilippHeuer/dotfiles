@@ -37,19 +37,19 @@ x = 0
 y = 0
 
 [font.bold]
-family = "{{ .Font }}"
+family = "{{ .FontFamily }}"
 style = "Bold"
 
 [font.bold_italic]
-family = "{{ .Font }}"
+family = "{{ .FontFamily }}"
 style = "BoldItalic"
 
 [font.italic]
-family = "{{ .Font }}"
+family = "{{ .FontFamily }}"
 style = "MediumItalic"
 
 [font.normal]
-family = "{{ .Font }}"
+family = "{{ .FontFamily }}"
 style = "Medium"
 
 # mouse curser
