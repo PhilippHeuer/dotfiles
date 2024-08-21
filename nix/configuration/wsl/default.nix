@@ -29,6 +29,7 @@
     wslConf.network.hostname = "nixos";
   };
 
+  # activation scripts
   system.activationScripts = {
     # remove x11 mount
     unmount-x11 = ''
@@ -45,6 +46,21 @@
     # start systemd user service for wsl user (sometimes it doesn't start automatically)
     start-systemd-user = ''
       ${pkgs.systemd}/bin/systemctl start user@1000.service
+    '';
+  };
+
+  # audio
+  services.mpd = {
+    extraConfig = lib.mkForce ''
+      # update library if files are added to musicDirectory
+      auto_update "yes"
+
+      # audio output
+      audio_output {
+        type "pulse"
+        name "Pulseaudio"
+        server "unix:/mnt/wslg/PulseServer"
+      }
     '';
   };
 

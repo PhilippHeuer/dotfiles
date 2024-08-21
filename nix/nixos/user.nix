@@ -35,6 +35,7 @@ in {
         "audio"
         "video"
         "networkmanager"
+        "pipewire"
       ]
       ++ lib.optionals config.virtualisation.lxd.enable ["lxd"]
       ++ lib.optionals config.virtualisation.docker.enable ["docker"]

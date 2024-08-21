@@ -137,6 +137,10 @@
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
       ./keepassxc.nix # password manager
+      ./mpd.nix # music player
+      ./mpv.nix # video player
+      ./mpvpaper.nix # video wallpaper
+      ./sxiv.nix # image viewer
     ];
   };
   ide = {
@@ -148,13 +152,6 @@
       ./ide-zed.nix # zed editor
       ./dbeaver.nix # database client
       ./bruno.nix # http client
-    ];
-  };
-  media = {
-    imports = [
-      ./mpv.nix # video player
-      ./mpvpaper.nix # video wallpaper
-      ./sxiv.nix # image viewer
     ];
   };
   # home network

@@ -56,7 +56,6 @@ in {
       nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
       nixosRoles.desktop
-      nixosRoles.media
       nixosRoles.ide
       nixosRoles.games
       nixosRoles.vpn
@@ -106,7 +105,6 @@ in {
       nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
       nixosRoles.desktop
-      nixosRoles.media
       nixosRoles.ide
       # variant
       ./laptop
@@ -148,6 +146,7 @@ in {
     extraModules = [
       # nixos
       ../nixos/user.nix
+      ../nixos/audio.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       # wsl
@@ -161,7 +160,6 @@ in {
       nixosRoles.administration-tools
       nixosRoles.wm-sway
       nixosRoles.desktop
-      nixosRoles.media
       nixosRoles.ide
       # communication
       ../roles/discord.nix
