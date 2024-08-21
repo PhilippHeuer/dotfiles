@@ -10,5 +10,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+    systemWide = true; # users require the pipewire group for access
   };
 }
