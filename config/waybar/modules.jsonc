@@ -316,7 +316,8 @@
             "paused": "",
             "playing": ""
         },
-        "on-click": "mpc toggle",
+        "on-click": "rmpc togglepause",
+        "on-click-right": "~/.local/scripts/terminal.sh --title fzf_popup rmpc",
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },

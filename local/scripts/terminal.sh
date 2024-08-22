@@ -45,10 +45,10 @@ executable=${1:-"bash"}
 
 # start terminal
 cd "$cwd"
-if command -v foot &> /dev/null; then
-  exec foot --title="${title:-foot}" --working-directory="$cwd" $@
-elif command -v kitty &> /dev/null; then
+if command -v kitty &> /dev/null; then
   exec kitty --title "${title:-kitty}" --working-directory "$cwd" $@
+elif command -v foot &> /dev/null; then
+  exec foot --title="${title:-foot}" --working-directory="$cwd" $@
 elif command -v alacritty &> /dev/null; then
   exec alacritty --title "${title:-alacritty}" --working-directory "$cwd" -e $@
 else
