@@ -347,6 +347,12 @@ directories:
   rules:
   - rule: inPath("albert")
 
+# media - rmpc
+- path: config/rmpc
+  target: $HOME/.config/rmpc
+  rules:
+  - rule: inPath("rmpc")
+
 # vscode
 - path: config/Code
   target: $HOME/.config/Code
