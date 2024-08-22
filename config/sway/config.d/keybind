@@ -11,30 +11,34 @@ set $right l
 # Basics:
 #
 
+# control
+bindsym $mod+l exec ~/.local/scripts/actions/hotkey.sh "mod+l"
+bindsym ctrl+$mod+l exec ~/.local/scripts/actions/hotkey.sh "ctrl+mod+l"
+
 # reload
-bindsym $mod+Shift+r reload; exec ~/.local/scripts/waybar/waybar.sh
+bindsym $mod+Shift+r reload; exec ~/.local/scripts/actions/hotkey.sh "mod+shift+r"
 
 # launcher
-bindsym $mod+Space exec $menu
-bindsym $mod+m exec $menu
+bindsym $mod+Space exec ~/.local/scripts/actions/hotkey.sh "mod+space"
+bindsym $mod+m exec ~/.local/scripts/actions/hotkey.sh "mod+m"
 
 # terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec ~/.local/scripts/actions/hotkey.sh "mod+return"
 
 # git
-bindsym $mod+g exec $term --title "lazygit" lazygit
+bindsym $mod+g exec ~/.local/scripts/actions/hotkey.sh "mod+g"
 
 # launcher
-bindsym F1 exec $term --title fzf_popup tmx project
-bindsym F2 exec $term --title fzf_popup tmx ssh
-bindsym F3 exec $term --title fzf_popup tmx menu
+bindsym F1 exec ~/.local/scripts/actions/hotkey.sh "f1"
+bindsym F2 exec ~/.local/scripts/actions/hotkey.sh "f2"
+bindsym F3 exec ~/.local/scripts/actions/hotkey.sh "f3"
+bindsym F3 exec ~/.local/scripts/actions/hotkey.sh "f4"
 
 # browser
-bindsym $mod+w exec $browser
-# bind = $mod, N, exec, brave --app=https://claude.ai/chats
+bindsym $mod+w exec ~/.local/scripts/actions/hotkey.sh "mod+w"
 
 # file explorer
-bindsym $mod+e exec dolphin
+bindsym $mod+e exec ~/.local/scripts/actions/hotkey.sh "mod+e"
 
 # kill focused window
 bindsym $mod+q exec "swaymsg kill"

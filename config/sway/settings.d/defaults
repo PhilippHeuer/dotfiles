@@ -3,10 +3,3 @@ set $displaySize "1080x720"
 
 # logo key
 set $mod Mod4
-
-# terminal
-set $term ~/.local/scripts/terminal.sh
-set $browser MOZ_ENABLE_WAYLAND=1 firefox -new-window
-
-# application launcher
-set $menu "~/.local/scripts/launcher.sh rofi"
