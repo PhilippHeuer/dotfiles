@@ -60,6 +60,7 @@
         type "pulse"
         name "Pulseaudio"
         server "unix:/mnt/wslg/PulseServer"
+        format "44100:16:2"
       }
     '';
   };
