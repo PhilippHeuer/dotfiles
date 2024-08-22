@@ -12,8 +12,8 @@ set $right l
 #
 
 # control
-bindsym $mod+l exec ~/.local/scripts/actions/hotkey.sh "mod+l"
-bindsym ctrl+$mod+l exec ~/.local/scripts/actions/hotkey.sh "ctrl+mod+l"
+# bindsym $mod+l exec ~/.local/scripts/actions/hotkey.sh "mod+l"
+# bindsym ctrl+$mod+l exec ~/.local/scripts/actions/hotkey.sh "ctrl+mod+l"
 
 # reload
 bindsym $mod+Shift+r reload; exec ~/.local/scripts/actions/hotkey.sh "mod+shift+r"
@@ -32,7 +32,7 @@ bindsym $mod+g exec ~/.local/scripts/actions/hotkey.sh "mod+g"
 bindsym F1 exec ~/.local/scripts/actions/hotkey.sh "f1"
 bindsym F2 exec ~/.local/scripts/actions/hotkey.sh "f2"
 bindsym F3 exec ~/.local/scripts/actions/hotkey.sh "f3"
-bindsym F3 exec ~/.local/scripts/actions/hotkey.sh "f4"
+bindsym F4 exec ~/.local/scripts/actions/hotkey.sh "f4"
 
 # browser
 bindsym $mod+w exec ~/.local/scripts/actions/hotkey.sh "mod+w"

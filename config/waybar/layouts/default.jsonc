@@ -59,6 +59,7 @@
 		"modules": [
 			"network",
             "bluetooth",
+            "mpd",
             "pulseaudio"
 		]
 	},
