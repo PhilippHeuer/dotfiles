@@ -67,7 +67,7 @@
         "format-alt-click": "click",
         "tooltip": true,
         "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
-        "on-click-right": "~/.local/scripts/terminal.sh --title fzf_popup btop"
+        "on-click-right": "~/.local/scripts/actions/terminal.sh --title fzf_popup btop"
     },
     "cpu": {
         "format": "<span color='#89b4fa'> 󰍛</span> {usage}%",
@@ -88,7 +88,7 @@
         "critical-threshold": 82,
         "format-critical": "<span color='#e57474'>󰈸</span> {temperatureC}°C",
         "format": "<span color='#94e2d5'> 󰈸</span> {temperatureC}°C ",
-        "on-click-right": "~/.local/scripts/terminal.sh --title fzf_popup nvtop"
+        "on-click-right": "~/.local/scripts/actions/terminal.sh --title fzf_popup nvtop"
     },
     "custom/nvidia": {
         "format": "<span color='#94e2d5'> 󰈸</span> {}% ",
@@ -286,21 +286,21 @@
     "custom/fuzzy-project": {
         "format": "󰝰 ",
         "exec": "echo; echo project",
-        "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx project",
+        "on-click": "~/.local/scripts/actions/terminal.sh --title fzf_popup tmx project",
         "interval": "once",
         "tooltip": true
     },
     "custom/fuzzy-ssh": {
         "format": "󰣀 ",
         "exec": "echo; echo ssh",
-        "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx ssh",
+        "on-click": "~/.local/scripts/actions/terminal.sh --title fzf_popup tmx ssh",
         "interval": "once",
         "tooltip": true
     },
     "custom/fuzzy-k8s": {
         "format": "󱃾 ",
         "exec": "echo; echo k8s",
-        "on-click": "~/.local/scripts/terminal.sh --title fzf_popup tmx kubernetes",
+        "on-click": "~/.local/scripts/actions/terminal.sh --title fzf_popup tmx kubernetes",
         "interval": "once",
         "tooltip": true
     },
@@ -317,7 +317,7 @@
             "playing": ""
         },
         "on-click": "rmpc togglepause",
-        "on-click-right": "~/.local/scripts/terminal.sh --title fzf_popup rmpc",
+        "on-click-right": "~/.local/scripts/actions/terminal.sh --title fzf_popup rmpc",
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
