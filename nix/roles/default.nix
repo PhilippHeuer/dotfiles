@@ -137,6 +137,7 @@
       ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
       ./keepassxc.nix # password manager
+      ./playerctl.nix # music player
       ./mpd.nix # music player
       ./mpv.nix # video player
       ./mpvpaper.nix # video wallpaper
