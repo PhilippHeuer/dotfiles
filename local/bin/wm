@@ -123,7 +123,7 @@ if [[ $WM_NAME == "sway" ]]; then
   fi
 
   # start sway
-  exec dbus-run-session sway -d
+  exec dbus-run-session sway --debug
 fi
 
 # start hyprland
