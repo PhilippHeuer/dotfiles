@@ -19,7 +19,5 @@
         name "PipeWire Output"
       }
     '';
-
-    startWhenNeeded = true;
   };
 }

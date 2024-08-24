@@ -4,40 +4,65 @@
 
 # dotfiles
 
-## overview
-
-| Component                                          | Description                                                 |
-| -------------------------------------------------- | ----------------------------------------------------------- |
-| [Nushell](https://www.nushell.sh)                  | Default Shell                                               |
-| [Starship](https://starship.rs/)                   | Shell Prompt                                                |
-| [TMUX](https://en.wikipedia.org/wiki/Tmux)         | Terminal Multiplexer                                        |
-| [Neovim](https://neovim.io/)                       | Text Editor                                                 |
-| [FuzzMux](https://github.com/PhilippHeuer/fuzzmux) | TMUX Session Manager - Fuzzy Search Projects, SSH, K8S, ... |
-
-**Tools**
-
-- [Ansible](https://www.ansible.com/) - Configuration Management
-- [KubeCTL](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/) - k8s cli
-- [K9S](https://github.com/derailed/k9s) - Kubernetes CLI
-- [Bat](https://github.com/sharkdp/bat) - cat with syntax highlighting
-- [Rg](https://github.com/BurntSushi/ripgrep) - gitignore aware recursive search
-
-**NOTE**: The Ansible Playbook installs all required software, but the default shell is not changed automatically. You can change the default shell by running `chsh -s $(which nu)`.
+This repository contains everything needed to reproduce my system and application configuration.
 
 ## installation
 
-- clone this repository
-- `/ansible` contains a ansible playbook to install the required software and prerequisites (see [ansible/README.md](ansible/README.md))
-  - `ansible-playbook --connection=local --inventory 127.0.0.1, --ask-become-pass ansible/playbook.yml` -> `./playbook.sh`
-- run `./setup.sh` to symlink the config files from this repository.
-- add the init scripts to your `.bashrc`: `. $HOME/.config/bash/init.sh`
+- [NixOS](./docs/install/nixos.md) **(preferred)**
+- [Arch](./docs/install/arch.md)
+- [Debian](./docs/install/debian.md)
+- [Ubuntu](./docs/install/ubuntu.md)
+- [openSUSE](./docs/install/opensuse.md)
 
-## authentication
+## design considerations
 
-- copilot: run `:copilot auth` and follow the instructions
+### system configuration
+
+**Requirements**
+
+- the system configuration *MUST* be reproducible
+- the system configuration *SHOULD* support multiple profiles
+
+**Implementation**
+
+- [NixOS Flakes](https://nixos.wiki/wiki/flakes)
+- [Ansible Playbook](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html): Arch, Debian, Ubuntu, openSUSE
+
+### config files
+
+**Requirements**
+
+- support for symlinking (for modifications) and copying files
+- rule-based configuration (e.g. only copy kitty config dir if kitty is installed)
+- theming support
+- templating support for theme-specific values
+- avoid using distro-specific tools to manage app configuration files (e.g. Nix Home Manager)
+
+**Implementation**
+
+I created a cli to manage my dotfiles: [dotfiles-cli](https://github.com/PhilippHeuer/dotfiles-cli).
+The configuration for the themes and directories is stored in [dotfiles.yaml](./dotfiles.yaml).
+
+### profiles
+
+**Requirements**
+
+- support for different profiles to cater to special environments (e.g. Workstation, Laptop, Windows Subsystem for Linux)
+
+**Implementation**
+
+The following profiles are available:
+
+| Name | Workstation | Laptop | WSL |
+| ---- | ----------- | ------ | --- |
+| Window Manager | Hyprland, Sway, Plasma  | Hyprland, Sway, Plasma | Sway |
+| Terminal Emulator | Kitty | Kitty | Kitty |
+| Audio | Pipewire | Pipewire | Pulseaudio |
 
 ## License
 
 Released under the [MIT license](./LICENSE).
 
-Some files (themes, color-palettes) included in this repository are released under different licenses. Check [CREDITS.md](./CREDITS.md) for more information.
+> [!CAUTION]
+> Some files (themes, color-palettes) included in this repository are released under a different license.
+> Check [CREDITS.md](./CREDITS.md) for more information.
