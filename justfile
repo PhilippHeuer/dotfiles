@@ -15,7 +15,7 @@ clean-wsl:
 
 # laptop
 apply-laptop:
-	rsync -a $(pwd)/* laptop:~/dotfiles
+	rsync -a --delete $(pwd)/* laptop:~/dotfiles
 	ssh -t laptop "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#laptop"
 
 clean-laptop:
@@ -24,7 +24,7 @@ clean-laptop:
 
 # desktop
 apply-desktop:
-	rsync -a $(pwd)/* desktop:~/dotfiles
+	rsync -a --delete $(pwd)/* desktop:~/dotfiles
 	ssh -t desktop "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#desktop"
 
 clean-desktop:
@@ -33,13 +33,9 @@ clean-desktop:
 
 # vault
 apply-vault:
-	rsync -a $(pwd)/* vault:~/dotfiles
+	rsync -a --delete $(pwd)/* vault:~/dotfiles
 	ssh -t vault "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#vault"
 
 clean-vault:
 	ssh -t vault "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 30d"
 	ssh -t vault "sudo nix-store --gc"
-
-# utilities
-perms:
-	git ls-tree -r --name-only $(git write-tree) | while read filename; do if [[ -x "$filename" ]]; then echo "+x $filename" && chmod +x "$filename"; fi; done

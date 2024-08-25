@@ -59,6 +59,7 @@ in {
       nixosRoles.ide
       nixosRoles.games
       nixosRoles.vpn
+      nixosRoles.forensic
       # communication
       ../roles/discord.nix
       ../roles/slack.nix
@@ -161,6 +162,7 @@ in {
       nixosRoles.wm-sway
       nixosRoles.desktop
       nixosRoles.ide
+      nixosRoles.forensic
       # communication
       ../roles/discord.nix
       ../roles/slack.nix
