@@ -20,21 +20,21 @@ This repository contains everything needed to reproduce my system and applicatio
 
 **Requirements**
 
-- the system configuration *MUST* be reproducible
+- the system configuration *SHOULD* be reproducible
 - the system configuration *SHOULD* support multiple profiles
 
 **Implementation**
 
-- [NixOS Flakes](https://nixos.wiki/wiki/flakes)
+- [Nix Flakes](https://nixos.wiki/wiki/flakes)
 - [Ansible Playbook](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html): Arch, Debian, Ubuntu, openSUSE
 
 ### config files
 
 **Requirements**
 
-- support for symlinking (for modifications) and copying files
-- rule-based configuration (e.g. only copy kitty config dir if kitty is installed)
-- theming support
+- support for symlinking (for modifications) and copying config files
+- rule-based configuration (e.g. only copy kitty config, if kitty is installed)
+- theming support (e.g. link different files based on the active theme)
 - templating support for theme-specific values
 - avoid using distro-specific tools to manage app configuration files (e.g. Nix Home Manager)
 
@@ -64,5 +64,5 @@ The following profiles are available:
 Released under the [MIT license](./LICENSE).
 
 > [!CAUTION]
-> Some files (themes, color-palettes) included in this repository are released under a different license.
+> Some of the included theme configuration files are released under different licenses.
 > Check [CREDITS.md](./CREDITS.md) for more information.

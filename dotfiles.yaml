@@ -409,6 +409,12 @@ directories:
   rules:
   - rule: inPath("waypaper")
 
+# ags
+- path: config/ags
+  target: $HOME/.config/ags
+  rules:
+  - rule: inPath("ags")
+
 # qbittorrent
 - path: config/qBittorrent
   target: $HOME/.config/qBittorrent

@@ -18,3 +18,7 @@ find -L ~/.local/share/backgrounds -maxdepth 3 -type l -delete
 # rebuild bat cache
 # bat cache --build
 # cd ~/.config/bat && silicon --build-cache
+
+# gh cli extensions
+# gh extension install github/gh-copilot
+# gh extension upgrade gh-copilot
