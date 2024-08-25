@@ -142,6 +142,7 @@
       ./mpv.nix # video player
       ./mpvpaper.nix # video wallpaper
       ./sxiv.nix # image viewer
+      ./ags.nix # gtk shell / widget library
     ];
   };
   ide = {
