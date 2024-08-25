@@ -56,6 +56,7 @@
       ./tokei.nix # code statistics
       ./openapi.nix # openapi linter, changes, ...
       ./primecodegen.nix # code generator
+      ./atac.nix # tui api client
 
       # editor
       ./neovim.nix
@@ -70,6 +71,12 @@
       ./golang.nix
       ./rust.nix
       ./zig.nix
+    ];
+  };
+  # forensic
+  forensic = {
+    imports = [
+      ./termshark.nix
     ];
   };
   # container runtime
