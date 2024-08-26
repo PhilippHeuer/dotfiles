@@ -76,7 +76,9 @@
   # forensic
   forensic = {
     imports = [
-      ./termshark.nix
+      ./termshark.nix # tui for wireshark
+      ./wireshark.nix # network protocol analyzer
+      #./ghidra.nix # reverse engineering
     ];
   };
   # container runtime
