@@ -16,7 +16,7 @@ return {
 
             -- disable for env json files (used by http.nvim)
             if string.match(fileName, '^dev.json$') or string.match(fileName, '^stage.json$') or string.match(fileName, '^prod.json$') then
-              return false 
+              return false
             end
 
             return true

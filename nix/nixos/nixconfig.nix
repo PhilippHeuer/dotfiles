@@ -16,7 +16,7 @@
       ];
 
       # Disable global flake registry
-      flake-registry = ""; 
+      flake-registry = "";
 
       # do not warn if the git repo is dirty
       warn-dirty = false;

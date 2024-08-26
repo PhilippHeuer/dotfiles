@@ -14,7 +14,7 @@ end
 M.find_project_dir = function()
   local current_dir = vim.fn.getcwd()
   local git_dir = M.find_git_directory(current_dir)
-  
+
   if git_dir then
       return git_dir
   else

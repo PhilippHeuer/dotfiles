@@ -7,7 +7,7 @@ in {
   # systemd container service
   virtualisation.oci-containers.containers = {
     pihole = {
-      
+
       image = "docker.io/pihole/pihole:" + version;
       autoStart = true;
       ports = [

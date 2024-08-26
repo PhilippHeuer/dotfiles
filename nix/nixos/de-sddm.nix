@@ -25,7 +25,7 @@
         FullBlur = "false";
         PartialBlur = "true";
         BlurRadius = "80";
-        
+
         # [Design Customizations]
         FormPosition = "left";
         Font = "JetBrainsMono Nerd Font Mono";

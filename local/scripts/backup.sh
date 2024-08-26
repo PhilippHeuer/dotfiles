@@ -36,7 +36,7 @@ files=(
 
   # podman
   ".config/containers/auth.json"
-  
+
   # wallpaper
   ".local/state/waypaper"
 
@@ -74,7 +74,7 @@ files=(
 filtered_files=()
 for file in "${files[@]}"; do
   expanded_files=( $file )
-  
+
   for f in "${expanded_files[@]}"; do
     if [ -e "$f" ]; then
       filtered_files+=("$f")

@@ -40,7 +40,7 @@
     # disable bluetooth
     "bluetooth"
     "btusb"
-  
+
     # disable webcam
     "uvcvideo"
 

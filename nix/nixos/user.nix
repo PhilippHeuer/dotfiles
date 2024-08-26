@@ -42,7 +42,7 @@ in {
       ++ lib.optionals config.virtualisation.podman.enable ["podman"]
       ++ lib.optionals config.virtualisation.libvirtd.enable ["libvirtd"]
       ++ lib.optionals config.programs.adb.enable ["adbusers"];
-    
+
     # ssh keys
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIAbhI9hxpDxO8QQ4mrGeAvyypyarZ6SQwb6Is+Iz3uJ phx"

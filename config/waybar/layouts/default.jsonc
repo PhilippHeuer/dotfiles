@@ -27,7 +27,7 @@
 
         // power and ui
         "group/control-group"
-        
+
     ],
     "group/workspace-group": {
         "orientation": "inherit",
