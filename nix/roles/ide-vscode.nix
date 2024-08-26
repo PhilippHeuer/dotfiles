@@ -15,7 +15,7 @@ in {
         extensions.vscode-marketplace.eamodio.gitlens # git info
         extensions.vscode-marketplace.oderwat.indent-rainbow # colorize indentation
         extensions.vscode-marketplace.wayou.vscode-todo-highlight # highlight todos
-        
+
         # productivity
         extensions.vscode-marketplace.vscodevim.vim # vim hotkeys
         extensions.vscode-marketplace.gruntfuggly.todo-tree # todo tree

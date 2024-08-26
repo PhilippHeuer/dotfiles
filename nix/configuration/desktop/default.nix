@@ -54,7 +54,7 @@
         workspace=8,monitor:DP-3
         workspace=9,monitor:DP-3
         workspace=10,monitor:DP-3
-        
+
 	      exec-once=xrandr --output DP-3 --primary
       '';
     };

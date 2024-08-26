@@ -24,7 +24,7 @@ local plugins = {
   'philippheuer.plugins.silicon', -- code screenshots (requirs local installation of silicon)
   'philippheuer.plugins.neorg', -- note taking
   -- Theme / UI
-  'philippheuer.themes.current', 
+  'philippheuer.themes.current',
 }
 
 -- Load Plugins

@@ -12,7 +12,7 @@
     glib # gsettings
     grim # screenshot functionality
     slurp # screenshot functionality
-    wdisplays # tool to configure displays 
+    wdisplays # tool to configure displays
   ];
 
   # desktop ipc

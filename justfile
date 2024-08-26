@@ -6,7 +6,7 @@ update:
 	cd nix && sudo nix flake update
 
 # wsl
-apply-wsl: 
+apply-wsl:
 	cd nix && sudo nixos-rebuild switch --flake path:.#wsl
 
 clean-wsl:

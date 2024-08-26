@@ -79,6 +79,8 @@
   commit-by = "!f() { GIT_COMMITTER_NAME=\"$2\" GIT_COMMITTER_EMAIL=\"$3\" git commit --allow-empty -m \"$1\"; }; f"
   # commit with author and timestamp - git commit-custom "feat: hello world" "John Doe" "john@doe" "2024-01-01 00:00:00 +0100"
   commit-custom = "!f() { GIT_COMMITTER_NAME=\"$2\" GIT_COMMITTER_EMAIL=\"$3\" GIT_COMMITTER_DATE=\"$4\" git commit --allow-empty -m \"$1\" --date=\"$4\"; }; f"
+  # manually run git hooks
+  pre-commit = !sh -c 'pre-commit run --config ~/.config/precommit/.pre-commit-config.yaml --hook-stage pre-commit --all-files'
 
 [interactive]
   diffFilter = delta --color-only

@@ -41,7 +41,7 @@ ghc-suggest() {
 alias ghs="ghc-suggest"
 
 # gh copilot explain
-# output: remove the first 8 lines with the banner, remove 2 leading spaces, remove trailing empty lines 
+# output: remove the first 8 lines with the banner, remove 2 leading spaces, remove trailing empty lines
 ghc-explain() {
   gh copilot explain "$@" | tail -n +8 | sed -E 's/^ {0,2}//' | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}'
 }

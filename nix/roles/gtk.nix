@@ -11,11 +11,11 @@ in {
   environment.systemPackages = [
     # gnome
     pkgs.gnome3.adwaita-icon-theme
-    
+
     # catppuccin
     catppuccin-mocha
     pkgs.catppuccin-cursors
- 
+
     # tokyonight
     pkgs.tokyo-night-gtk
 

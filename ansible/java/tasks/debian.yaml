@@ -18,6 +18,6 @@
 - name: openjdk > coretto 21 > install
   become: yes
   become_user: root
-  apt: 
+  apt:
     name: java-21-amazon-corretto-jdk
     state: latest
