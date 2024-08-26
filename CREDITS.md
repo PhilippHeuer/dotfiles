@@ -25,3 +25,4 @@ The following files are subject to the license of the respective repository:
 - [config/git/delta-themes/catppuccin-*](https://github.com/Anomalocaridid/delta)
 - [config/qbittorrent/themes/catppuccin-*](https://github.com/catppuccin/qbittorrent)
 - [config/qbittorrent/themes/rose-pine*](https://github.com/rose-pine/qbittorrent)
+- [config/atac/key-bindings/vim_key_bindings.toml](https://github.com/Julien-cpsn/ATAC)

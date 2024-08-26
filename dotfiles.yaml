@@ -403,6 +403,12 @@ directories:
   rules:
   - rule: inPath("htop")
 
+# atac
+- path: config/atac
+  target: $HOME/.config/atac
+  rules:
+  - rule: inPath("atac")
+
 # waypaper
 - path: config/waypaper
   target: $HOME/.config/waypaper

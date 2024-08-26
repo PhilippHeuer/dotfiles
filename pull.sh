@@ -74,3 +74,6 @@ curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/frappe.qbtheme
 curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/main.qbtheme" -o "config/qbittorrent/themes/rose-pine.qbtheme"
 curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/moon.qbtheme" -o "config/qbittorrent/themes/rose-pine-moon.qbtheme"
 curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/dawn.qbtheme" -o "config/qbittorrent/themes/rose-pine-dawn.qbtheme"
+
+# atac
+curl -S -s -L "https://raw.githubusercontent.com/Julien-cpsn/ATAC/main/example_resources/key_bindings/vim_key_bindings.toml" -o "config/atac/key-bindings/vim_key_bindings.toml"
