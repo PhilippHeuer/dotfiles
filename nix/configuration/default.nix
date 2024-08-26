@@ -147,7 +147,7 @@ in {
     extraModules = [
       # nixos
       ../nixos/user.nix
-      ../nixos/audio.nix
+      ../nixos/audio-wsl.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       # wsl
