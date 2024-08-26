@@ -60,7 +60,7 @@
 			"network",
             "bluetooth",
             "mpd",
-            "mpris",
+            // "mpris",
             "pulseaudio"
 		]
 	},
