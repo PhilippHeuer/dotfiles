@@ -33,6 +33,7 @@ bindsym F1 exec ~/.local/scripts/actions/hotkey.sh "f1"
 bindsym F2 exec ~/.local/scripts/actions/hotkey.sh "f2"
 bindsym F3 exec ~/.local/scripts/actions/hotkey.sh "f3"
 bindsym F4 exec ~/.local/scripts/actions/hotkey.sh "f4"
+bindsym F12 exec ~/.local/scripts/actions/hotkey.sh "f12"
 
 # browser
 bindsym $mod+w exec ~/.local/scripts/actions/hotkey.sh "mod+w"
