@@ -1,0 +1,68 @@
+{
+    "items": [
+        {
+            "tag": "Global",
+            "title": "Hotkey Cheatsheet : f12"
+        },
+        {
+            "tag": "Global",
+            "title": "Project FuzzyFinder : f1"
+        },
+        {
+            "tag": "Global",
+            "title": "Kubernetes FuzzyFinder : f2"
+        },
+        {
+            "tag": "Global",
+            "title": "SSH FuzzyFinder : f3"
+        },
+        {
+            "tag": "Global",
+            "title": "TMX FuzzyFinder : f4"
+        },
+        {
+            "tag": "Global",
+            "title": "Terminal : meta+enter"
+        },
+        {
+            "tag": "Global",
+            "title": "App Launcher : meta+space"
+        },
+        {
+            "tag": "Global",
+            "title": "App Launcher : meta+m"
+        },
+        {
+            "tag": "Global",
+            "title": "LazyGit : meta+g"
+        },
+        {
+            "tag": "Global",
+            "title": "Browser : meta+b"
+        },
+        {
+            "tag": "Global",
+            "title": "File Explorer : meta+e"
+        },
+        {
+            "tag": "Global",
+            "title": "Kill active window : meta+q"
+        },
+        {
+            "tag": "Global",
+            "title": "Reload UI : meta+shift+r"
+        },
+        {
+            "tag": "Global",
+            "title": "Lock Session : meta+l"
+        },
+        {
+            "tag": "Global",
+            "title": "Power Menu : meta+shift+l"
+        }
+    ],
+    "styles": {
+        "accent": "#b4befe",
+        "subtext": "#6c7086"
+    }
+}

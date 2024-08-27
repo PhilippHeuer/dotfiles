@@ -8,10 +8,7 @@
 
   # set pulseaudio socket for mpd
   services.mpd = {
-    extraConfig = lib.mkForce ''
-      # update library if files are added to musicDirectory
-      auto_update "yes"
-
+    extraConfig = ''
       # audio output
       audio_output {
         type "pulse"

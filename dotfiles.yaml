@@ -403,6 +403,12 @@ directories:
   rules:
   - rule: inPath("htop")
 
+# gocheat
+- path: config/gocheat
+  target: $HOME/.config/gocheat
+  rules:
+  - rule: inPath("gocheat")
+
 # atac
 - path: config/atac
   target: $HOME/.config/atac

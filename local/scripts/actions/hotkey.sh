@@ -32,13 +32,16 @@ case $KEY in
     "f4")
         $terminal --title fzf_popup tmx menu
         ;;
+    "f12")
+        $terminal --title fzf_popup gocheat
+        ;;
     "mod+return")
         $terminal
         ;;
     "mod+g")
         $terminal --title "lazygit" lazygit
         ;;
-    "mod+w")
+    "mod+b")
         $browser
         ;;
     "mod+l")
