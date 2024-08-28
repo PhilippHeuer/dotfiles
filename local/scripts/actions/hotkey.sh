@@ -41,7 +41,7 @@ case $KEY in
     "mod+g")
         $terminal --title "lazygit" lazygit
         ;;
-    "mod+b")
+    "mod+w")
         $browser
         ;;
     "mod+l")
