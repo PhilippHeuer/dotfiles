@@ -31,11 +31,9 @@ theme_preview() {
 case "$1" in
     select)
         select_theme
-        break
         ;;
     preview)
         theme_preview "$2"
-        break
         ;;
     *)
         echo "Usage: $0 {select|preview}"
