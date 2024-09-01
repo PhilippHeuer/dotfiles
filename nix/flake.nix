@@ -33,6 +33,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
+    # homemanager
+    home-manager = {
+       url = "github:nix-community/home-manager";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # utils
     flake-utils = {
       url = "github:numtide/flake-utils";
@@ -88,7 +94,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, sops, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, sops, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
