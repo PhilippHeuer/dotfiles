@@ -19,4 +19,8 @@
     pkgs-unstable.dive # inspect image layers
     pkgs-unstable.skopeo # various operations on container images and image repositories
   ];
+
+  environment.variables = {
+    PODMAN_IGNORE_CGROUPSV1_WARNING = "true"; # suppress warning about cgroup v1
+  };
 }
