@@ -1,7 +1,32 @@
 #!/usr/bin/env bash
 
+# common functions
+source ~/.local/scripts/common.sh
+
+# detect current working directory
+cwd=${HOME}
+WM=$(detect_wm)
+if [ "$WM" = "sway" ]; then
+  pid=$(swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true) | .pid')
+  cwd=$(readlink -e "/proc/$pid/cwd")
+fi
+if [ "$WM" = "i3" ]; then
+  pid=$(i3-msg -t get_tree | jq '.. | select(.focused==true) | .pid')
+  cwd=$(readlink -e "/proc/$pid/cwd")
+fi
+if [ "$WM" = "hyprland" ]; then
+  pid=$(hyprctl activewindow | awk '/pid:/ {print $2}')
+  cwd=$(readlink -e "/proc/$pid/cwd")
+fi
+
+# fallback to home directory, if cwd is not a valid directory
+if [ ! -d "$cwd" ]; then
+  cwd=${HOME}
+fi
+cd "$cwd"
+
 # configuration
-terminal="kitty"
+terminal="$HOME/.local/scripts/actions/terminal.sh"
 menu="$HOME/.local/scripts/launcher.sh rofi"
 browser="MOZ_ENABLE_WAYLAND=1 firefox -new-window"
 
