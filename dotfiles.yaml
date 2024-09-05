@@ -427,6 +427,12 @@ directories:
   rules:
   - rule: inPath("ags")
 
+# gowall
+- path: config/gowall
+  target: $HOME/.config/gowall
+  rules:
+  - rule: inPath("gowall")
+
 # qbittorrent
 - path: config/qBittorrent
   target: $HOME/.config/qBittorrent
