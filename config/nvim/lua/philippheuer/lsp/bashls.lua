@@ -1,3 +1,4 @@
 return {
-  filetypes = { "sh", "zsh", "bash" },
+  executable = 'bash-language-server',
+  filetypes = { 'sh', 'zsh', 'bash' },
 }
