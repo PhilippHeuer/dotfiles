@@ -1,4 +1,5 @@
 return {
+  executable = 'rust-analyzer',
   settings = {
     ['rust-analyzer'] = {
       cargo = {

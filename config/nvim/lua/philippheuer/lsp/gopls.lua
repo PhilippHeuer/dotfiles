@@ -1,5 +1,6 @@
 return {
-  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  executable = 'gopls',
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
   settings = {
     gopls = {
       completeUnimported = true, -- auto-import missing packages when using autocomplete

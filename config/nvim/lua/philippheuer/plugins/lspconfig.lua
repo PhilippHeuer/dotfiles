@@ -156,6 +156,7 @@ return {
         rust_analyzer = require("philippheuer.lsp.rustls"), -- rust
         zls = require("philippheuer.lsp.zls"), -- zig
         bashls = require("philippheuer.lsp.bashls"), -- bash
+        nixd = require("philippheuer.lsp.nixd"), -- nixd
 
         html = require("philippheuer.lsp.html"), -- html
         cssls = require("philippheuer.lsp.cssls"), -- css
@@ -169,8 +170,30 @@ return {
         vacuum = require("philippheuer.lsp.vacuum"), -- openapi spec
         terraformls = require("philippheuer.lsp.terraformls"), -- terraform
       }
+      local server_keys = vim.tbl_keys(servers or {})
 
-      -- Ensure the servers and tools above are installed
+      -- Mason Configuration
+      -- Only use mason, if the `executable` defined in the servers configuration is not available in PATH
+      local installed_servers = {}
+      for server_name, server in pairs(servers) do
+        if server.executable and vim.fn.executable(server.executable) == 1 then
+          installed_servers[server_name] = server
+        end
+      end
+      -- print(vim.inspect(installed_servers))
+
+      -- nvim-lspconfig (for installed tools)
+      for server_name, server in pairs(installed_servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        require('lspconfig')[server_name].setup {
+          capabilities = capabilities,
+          on_attach = on_attach,
+          settings = server,
+          filetypes = server.filetypes,
+        }
+      end
+
+      -- mason-lspconfig (for tools that need to be installed)
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
       --    :Mason
@@ -180,7 +203,13 @@ return {
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = {}
+      for _, server in ipairs(server_keys) do
+        if not installed_servers[server] then
+            table.insert(ensure_installed, server)
+        end
+      end
+      -- print(vim.inspect(ensure_installed))
       vim.list_extend(ensure_installed, {
         -- formatters
         'stylua', -- format lua code

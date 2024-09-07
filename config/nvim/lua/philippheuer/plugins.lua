@@ -22,7 +22,8 @@ local plugins = {
   'philippheuer.plugins.copilot', -- github copilot
   'philippheuer.plugins.completion', -- code completion
   'philippheuer.plugins.silicon', -- code screenshots (requirs local installation of silicon)
-  'philippheuer.plugins.neorg', -- note taking
+  -- 'philippheuer.plugins.neorg', -- note taking
+  'philippheuer.plugins.markdown', -- markdown support
   -- Theme / UI
   'philippheuer.themes.current',
 }
