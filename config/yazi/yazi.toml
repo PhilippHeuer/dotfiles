@@ -15,31 +15,30 @@ max_height = 900
 cache_dir = ""
 
 [opener]
-folder = [
-  { exec = 'hyprctl dispatch exec "[float; size 60% 60%; center 1] xdg-open" "$@"', desc = "Open in GUI File Manager" },
-  { exec = '$EDITOR "$@"' },
+edit = [
+	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
+	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
 ]
-archive = [{ exec = 'xdg-open "$1"', desc = "Extract here" }]
-pdf = [{ exec = 'xdg-open "$1"', desc = "Open" }]
-docx = [{ exec = 'xdg-open "$1"', desc = "Open" }]
-text = [
-  { exec = 'pypr hide yazi & kitty --detach $EDITOR "$@"', block = true, desc = "Open" },
+open = [
+	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
+	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
-image = [
-  { exec = 'xdg-open "$@"', desc = "Open" },
-  { exec = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF" },
+reveal = [
+	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
+	{ run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
-video = [
-  { exec = 'xdg-open "$@"' },
-  { exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
+extract = [
+	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+	{ run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
 ]
-audio = [
-  { exec = 'xdg-open "$@"' },
-  { exec = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
-]
-fallback = [
-  { exec = 'open "$@"', desc = "Open" },
-  { exec = 'open -R "$@"', desc = "Reveal in Finder" },
+play = [
+	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv --force-window %*', orphan = true, for = "windows" },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 
 [open]

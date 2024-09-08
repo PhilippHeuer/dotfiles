@@ -59,6 +59,7 @@ save_to_clipboard = true
 # window
 [window]
 opacity = 0.85
+blur = true
 
 [window.class]
 general = "Alacritty"
