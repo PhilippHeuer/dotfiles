@@ -35,8 +35,8 @@
 
     # homemanager
     home-manager = {
-       url = "github:nix-community/home-manager";
-       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # utils
@@ -94,26 +94,40 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-wsl, sops, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixos-wsl,
+      sops,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
-      systems = [ "x86_64-linux" "aarch64-linux" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
       forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
-        inherit system;
+      pkgsFor = lib.genAttrs systems (
+        system:
+        import nixpkgs {
+          inherit system;
 
-        # This value determines the NixOS release from which the default
-        # settings for stateful data, like file locations and database versions
-        # on your system were taken. It's perfectly fine and recommended to leave
-        # this value at the release version of the first install of this system.
-        # Before changing this value read the documentation for this option
-        # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-        stateVersion = "24.05";
+          # This value determines the NixOS release from which the default
+          # settings for stateful data, like file locations and database versions
+          # on your system were taken. It's perfectly fine and recommended to leave
+          # this value at the release version of the first install of this system.
+          # Before changing this value read the documentation for this option
+          # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+          stateVersion = "24.05";
 
-        # allow unfree packages
-        config.allowUnfree = true;
-      });
+          # allow unfree packages
+          config.allowUnfree = true;
+        }
+      );
     in
     {
       inherit lib;
