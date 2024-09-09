@@ -2,20 +2,28 @@
   inputs,
   outputs,
   self,
-}: let
+}:
+let
   nixosRoles = import ../roles;
 
   # utility function to create a configuration
-  mkConfiguration = {
-    username,
-    system ? "x86_64-linux",
-    defaultModules ? true,
-    extraModules ? [],
-  }:
+  mkConfiguration =
+    {
+      username,
+      system ? "x86_64-linux",
+      defaultModules ? true,
+      extraModules ? [ ],
+    }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {
-        inherit inputs outputs self username system;
+        inherit
+          inputs
+          outputs
+          self
+          username
+          system
+          ;
         pkgs-unstable = import inputs.nixpkgs-unstable {
           system = system;
           config.allowUnfree = true;
@@ -28,7 +36,8 @@
         ++ extraModules;
     };
 
-in {
+in
+{
   # desktop
   desktop = mkConfiguration {
     username = "phx";

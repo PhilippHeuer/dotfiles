@@ -1,7 +1,7 @@
 return {
   -- renovate: datasource=github-releases depName=stevearc/conform.nvim
   'stevearc/conform.nvim',
-  tag = 'v7.1.0',
+  tag = 'v8.0.0',
   event = {
     'BufReadPre',
     'BufNewFile'
@@ -16,7 +16,7 @@ return {
         -- python
         python = { 'isort', 'black' },
         -- javascript
-        javascript = { 'prettier' },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
         typescriptreact = { 'prettier' },
@@ -25,6 +25,10 @@ return {
         css = { 'prettier' },
         -- golang
         go = { 'gofmt', 'goimports' },
+        -- rust
+        rust = { 'rustfmt', lsp_format = 'fallback' },
+        -- nix
+        nix = { 'nixfmt' },
         -- serialization formats
         json = { 'prettier' },
         yaml = { 'prettier' },
