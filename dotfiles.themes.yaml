@@ -1,0 +1,65 @@
+themes:
+# color-schemes
+- name: catppuccin-mocha
+  colorScheme: catppuccino-mocha
+  wallpaperDir: ~/.local/share/backgrounds
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: catppuccin-mocha-pink-standard
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+- name: rose-pine
+  colorScheme: rose-pine
+  wallpaperDir: ~/.local/share/backgrounds
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: rose-pine
+  iconTheme: Papirus-Light
+  cursorTheme: Bibata-Modern-Ice
+
+- name: nord
+  colorScheme: nord
+  wallpaperDir: ~/.local/share/backgrounds
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: Nordic
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+- name: tokyo-night
+  colorScheme: tokyo-night
+  wallpaperDir: ~/.local/share/backgrounds
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: Tokyonight-Storm-BL
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+# topics
+- name: landscape
+  colorScheme: catppuccino-mocha
+  wallpaperDir: ~/.local/share/backgrounds/landscape
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: catppuccin-mocha-pink-standard
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+- name: space
+  colorScheme: catppuccino-mocha
+  wallpaperDir: ~/.local/share/backgrounds/space
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: catppuccin-mocha-pink-standard
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
+
+- name: network
+  colorScheme: catppuccino-mocha
+  wallpaperDir: ~/.local/share/backgrounds/network
+  fontFamily: JetBrainsMono Nerd Font Mono
+  fontSize: 11
+  gtkTheme: catppuccin-mocha-pink-standard
+  iconTheme: Papirus-Dark
+  cursorTheme: Bibata-Modern-Ice
