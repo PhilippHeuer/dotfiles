@@ -1,12 +1,31 @@
-{ lib, pkgs, config, ... }:
+{
+  pkgs,
+  ...
+}:
 
 let
   catppuccin-mocha = pkgs.catppuccin-gtk.override {
-    accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
+    accents = [
+      "blue"
+      "flamingo"
+      "green"
+      "lavender"
+      "maroon"
+      "mauve"
+      "peach"
+      "pink"
+      "red"
+      "rosewater"
+      "sapphire"
+      "sky"
+      "teal"
+      "yellow"
+    ];
     size = "standard";
     variant = "mocha";
   };
-in {
+in
+{
   # gtk themes
   environment.systemPackages = [
     # gnome

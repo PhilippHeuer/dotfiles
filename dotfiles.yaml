@@ -1,40 +1,7 @@
-# themes
-themes:
-- name: catppuccin-mocha
-  colorScheme: catppuccino-mocha
-  wallpaperDir: ~/.local/share/backgrounds/catppuccin-mocha
-  fontFamily: JetBrainsMono Nerd Font Mono
-  fontSize: 11
-  gtkTheme: catppuccin-mocha-pink-standard
-  iconTheme: Papirus-Dark
-  cursorTheme: Bibata-Modern-Ice
-
-- name: rose-pine
-  colorScheme: rose-pine
-  wallpaperDir: ~/.local/share/backgrounds/rose-pine
-  fontFamily: JetBrainsMono Nerd Font Mono
-  fontSize: 11
-  gtkTheme: rose-pine
-  iconTheme: Papirus-Light
-  cursorTheme: Bibata-Modern-Ice
-
-- name: nord
-  colorScheme: nord
-  wallpaperDir: ~/.local/share/backgrounds/nord
-  fontFamily: JetBrainsMono Nerd Font Mono
-  fontSize: 11
-  gtkTheme: Nordic
-  iconTheme: Papirus-Dark
-  cursorTheme: Bibata-Modern-Ice
-
-- name: tokyo-night
-  colorScheme: tokyo-night
-  wallpaperDir: ~/.local/share/backgrounds/tokyo-night
-  fontFamily: JetBrainsMono Nerd Font Mono
-  fontSize: 11
-  gtkTheme: Tokyonight-Storm-BL
-  iconTheme: Papirus-Dark
-  cursorTheme: Bibata-Modern-Ice
+# includes
+includes:
+- dotfiles.themes.yaml
+- dotfiles.local.yaml
 
 # activation commands
 activationCommands:
