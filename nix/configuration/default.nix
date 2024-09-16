@@ -54,6 +54,7 @@ in
       ../nixos/ssh.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/smartd.nix
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
@@ -104,6 +105,7 @@ in
       ../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/smartd.nix
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
@@ -135,6 +137,7 @@ in
       #../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/smartd.nix
       # roles
       nixosRoles.default
       nixosRoles.terminal
