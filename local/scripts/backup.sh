@@ -43,6 +43,9 @@ files=(
   # fzf
   ".local/share/fzf/history"
 
+  # vault
+  ".local/state/vault"
+
   # gsettings
   ".config/dconf/user"
 

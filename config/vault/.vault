@@ -1,1 +1,1 @@
-token_helper = "vault-token-helper"
+token_helper = "{{ .Home }}/.config/vault/vault-token-helper.py"

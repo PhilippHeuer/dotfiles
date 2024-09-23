@@ -395,10 +395,16 @@ directories:
   - rule: inPath("ags")
 
 # vault
+- path: config/vault
+  target: $HOME/.config/vault
+  rules:
+  - rule: inPath("vault")
 - path: config/vault/.vault
   target: $HOME/.vault
   rules:
-  - rule: inPath("vault") && inPath("vault-token-helper")
+  - rule: inPath("vault")
+  templateFiles:
+  - config/vault/.vault
 
 # gowall
 - path: config/gowall
