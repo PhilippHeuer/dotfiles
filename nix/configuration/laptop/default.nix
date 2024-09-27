@@ -18,7 +18,7 @@
   networking.networkmanager.wifi.scanRandMacAddress = false; # causes issues with some wifi networks
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
