@@ -34,7 +34,7 @@
   networking.networkmanager.enable = true;
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Display configuration
   environment.etc = {

@@ -87,5 +87,4 @@ layouts:
           - inPath("vault")
         commands:
           - command: export VAULT_ADDR="https://{{name}}"
-          - command: export VAULT_TOKEN="{{token}}"
           - command: exec bash
