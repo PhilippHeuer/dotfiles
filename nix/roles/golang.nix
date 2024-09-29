@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs.go
+    pkgs-unstable.go_1_23
     pkgs.gotools
   ];
 }

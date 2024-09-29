@@ -4,7 +4,7 @@
 
 {
   # kernel parameters
-  boot.kernelParams = [ "nvidia-drm.fbdev=1" ]; # https://www.reddit.com/r/hyprland/comments/1cva5g8/latest_version_crashing_on_nvidia/
+  boot.kernelParams = [ "nvidia-drm.fbdev=1" ]; # use nvidia's experimental framebuffer device, https://www.reddit.com/r/hyprland/comments/1cva5g8/latest_version_crashing_on_nvidia/
 
   # nvidia driver
   services.xserver.videoDrivers = ["nvidia"];
