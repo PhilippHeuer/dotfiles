@@ -24,6 +24,9 @@ files=(
   # kubernetes configs
   ".kube"
 
+  # k9s
+  ".local/share/k9s"
+
   # gradle properties
   ".gradle/gradle.properties"
 
