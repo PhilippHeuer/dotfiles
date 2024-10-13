@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs.rustup
+    #pkgs.rustup
+    pkgs.cargo
   ];
 }
