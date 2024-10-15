@@ -15,14 +15,6 @@ let
     ];
   };
 in {
-  users = {
-    # forbit user creation
-    mutableUsers = false;
-
-    # default shell
-    defaultUserShell = pkgs.bash;
-  };
-
   sops.secrets."user/${username}/hashedPassword".neededForUsers = true;
 
   users.users.${username} = {

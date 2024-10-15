@@ -47,6 +47,7 @@ in
       ../nixos/kernel.nix
       ../nixos/security.nix
       ../nixos/tpm.nix
+      ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
@@ -97,6 +98,7 @@ in
       ../nixos/kernel.nix
       ../nixos/security.nix
       ../nixos/tpm.nix
+      ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/virtualization.nix
@@ -131,6 +133,7 @@ in
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/security.nix
+      ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
       ../nixos/ssh.nix
@@ -158,6 +161,7 @@ in
     username = "phx";
     extraModules = [
       # nixos
+      ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio-wsl.nix
       ../nixos/cacerts.nix
