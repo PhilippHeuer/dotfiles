@@ -13,4 +13,7 @@
   #  "x-scheme-handler/about" = "librewolf.desktop";
   #  "x-scheme-handler/unknown" = "librewolf.desktop";
   #};
+
+  # privacy settings
+  # https://github.com/arkenfox/user.js/tree/master
 }

@@ -19,6 +19,7 @@
     pciutils # pci devices
     jq # json parser
     libgcc # gcc compiler
+    virt-what # virtualization detection
 
     nix-bash-completions # nix bash completions
     nix-index # nix-index and nix-locate
