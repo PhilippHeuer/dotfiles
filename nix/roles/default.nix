@@ -2,24 +2,23 @@
   default = {
     imports = [
       # core
-      ./vm.nix
-      ./ansible.nix
       ./base.nix
       ./gpg.nix
       ./atuin.nix # replacement for the shell history
-      ./git.nix # version control
+      ./development/git.nix
 
       # cli tools
-      ./bat.nix # cat replacement
-      ./fzf.nix # fuzzy finder
-      ./sd.nix # sed alternative
-      ./htop.nix # process monitor
-      ./btop.nix # resource monitor
-      ./fastfetch.nix # system info
-      ./eza.nix # modern ls replacement
-      ./zoxide.nix # modern cd replacement
-      ./dotfiles.nix # dotfiles manager
-      ./yazi.nix # terminal file manager
+      ./core/bat.nix # cat replacement
+      ./core/fzf.nix # fuzzy finder
+      ./core/sd.nix # sed alternative
+      ./core/htop.nix # process monitor
+      ./core/btop.nix # resource monitor
+      ./core/fastfetch.nix # system info
+      ./core/eza.nix # modern ls replacement
+      ./core/zoxide.nix # modern cd replacement
+      ./core/dotfiles.nix # dotfiles manager
+      ./core/yazi.nix # terminal file manager
+      ./core/just.nix # make alternative
 
       # ssh
       ./ssh.nix
@@ -39,76 +38,100 @@
       ./appimage.nix
     ];
   };
-  # development tools
+  terminal = {
+    imports = [
+      ./terminal/alacritty.nix
+      ./terminal/foot.nix
+      ./terminal/kitty.nix
+    ];
+  };
   development = {
     imports = [
-      ./git.nix # version control
-      ./gitdelta.nix # git diff
-      ./lazygit.nix # git ui
-      ./precommit.nix # git hooks
-      ./ripgrep.nix # search source code
-      ./onefetch.nix # git summary
-      ./just.nix # make alternative
-      ./kondo.nix # built output cleanup
-      ./reposync.nix # sync git repos
-      ./gh.nix # github cli
-      ./dyff.nix # yaml diff
-      ./tokei.nix # code statistics
-      ./openapi.nix # openapi linter, changes, ...
-      ./primecodegen.nix # code generator
-      ./atac.nix # tui api client
-
-      # editor
-      ./neovim.nix
-      ./fuzzmux.nix
+      ./development/git.nix # version control
+      ./development/gitdelta.nix # git diff
+      ./development/lazygit.nix # git tui
+      ./development/precommit.nix # git hooks
+      ./development/ripgrep.nix # search source code
+      ./development/onefetch.nix # git summary
+      ./development/kondo.nix # built output cleanup
+      ./development/reposync.nix # sync git repos
+      ./development/gh.nix # github cli
+      ./development/dyff.nix # yaml diff
+      ./development/tokei.nix # code statistics
+      ./development/openapi.nix # openapi linter, changes, ...
+      ./development/primecodegen.nix # code generator
+      ./development/atac.nix # tui api client
+      ./development/fuzzmux.nix
     ];
   };
-  language-toolchains = {
+  ide = {
     imports = [
-      ./java.nix
-      ./nodejs.nix
-      ./python.nix
-      ./golang.nix
-      ./rust.nix
-      ./zig.nix
+      ./ide/neovim.nix # code editor
+      #./ide/zed.nix # code editor
+      ./ide/vscode.nix # code editor
+      # ./ide/idea-community.nix # java ide
+      ./ide/idea-ultimate.nix # java ide
+      ./ide/goland.nix # java ide
+      ./ide/dbeaver.nix # database client
+      ./ide/bruno.nix # http client
     ];
   };
-  # forensic
+  lang = {
+    imports = [
+      ./lang/golang.nix
+      ./lang/java.nix
+      ./lang/nodejs.nix
+      ./lang/python.nix
+      ./lang/rust.nix
+      ./lang/zig.nix
+    ];
+  };
+  container = {
+    imports = [
+      ./container/podman.nix
+    ];
+  };
+  admin = {
+    imports = [
+      ./admin/kubectl.nix
+      ./admin/openshift.nix
+      ./admin/k9s.nix
+      ./admin/helm.nix
+      ./admin/click.nix
+      ./admin/usql.nix # universal sql client
+      ./admin/kafkactl.nix # message brokers
+      ./admin/minioclient.nix # s3
+      ./admin/s3fs.nix # s3
+      #./admin/vault.nix # vault
+      ./admin/ansible.nix # playbook automation
+    ];
+  };
+  communication = {
+    imports = [
+      ./communication/discord.nix
+      ./communication/slack.nix
+    ];
+  };
+  # streaming
+  streaming = {
+    imports = [
+      ./streaming/obsstudio.nix # recording and broadcasting
+      ./streaming/streamlink.nix # extract streams from various websites
+      ./streaming/chatterino.nix # chat client
+    ];
+  };
   forensic = {
     imports = [
-      ./termshark.nix # tui for wireshark
-      ./wireshark.nix # network protocol analyzer
-      #./ghidra.nix # reverse engineering
+      #./forensic/autopsy.nix # digital forensics
+      #./forensic/ghidra.nix # reverse engineering
+      ./forensic/termshark.nix # tui for wireshark
+      ./forensic/wireshark.nix # network protocol analyzer
     ];
   };
-  # container runtime
-  container-runtime = {
+  games = {
     imports = [
-      ./podman.nix
-    ];
-  };
-  # administration tools
-  administration-tools = {
-    imports = [
-      # k8s
-      ./kubectl.nix
-      ./openshift.nix
-      ./k9s.nix
-      ./helm.nix
-      ./click.nix
-
-      # database
-      ./usql.nix # universal sql client
-
-      # message brokers
-      ./kafkactl.nix
-
-      # s3
-      ./minioclient.nix
-      ./s3fs.nix
-
-      # vault
-      ./vault.nix
+      ./games/gamemode.nix # game mode
+      ./games/steam.nix # game client
     ];
   };
   # desktop environment
@@ -128,20 +151,13 @@
       ./clipboard.nix
     ];
   };
-  terminal = {
-    imports = [
-      ./terminal-alacritty.nix
-      ./terminal-foot.nix
-      ./terminal-kitty.nix
-    ];
-  };
   desktop = {
     imports = [
       ./wallpapers.nix # wallpapers
       ./gtk.nix # theming
       ./gocheat.nix # cheat sheet for hotkeys
-      ./browser-firefox.nix # web browser
-      ./browser-librewolf.nix # web browser
+      ./browser/firefox.nix # web browser
+      ./browser/librewolf.nix # web browser
       ./rofi.nix
       ./nemo.nix # file manager
       ./silicon.nix # create beautiful images of source code
@@ -153,17 +169,6 @@
       ./mpvpaper.nix # video wallpaper
       ./sxiv.nix # image viewer
       ./ags.nix # gtk shell / widget library
-    ];
-  };
-  ide = {
-    imports = [
-      ./ide-vscode.nix # code editor
-      # ./ide-idea-community.nix # java ide
-      ./ide-idea-ultimate.nix # java ide
-      ./ide-goland.nix # java ide
-      ./ide-zed.nix # zed editor
-      ./dbeaver.nix # database client
-      ./bruno.nix # http client
     ];
   };
   # home network
@@ -178,24 +183,6 @@
     imports = [
       ./plex.nix
       ./komga.nix
-    ];
-  };
-  # vpn
-  vpn = {
-    imports = [
-      ./protonvpn.nix
-    ];
-  };
-  # games
-  games = {
-    imports = [
-      ./steam.nix
-    ];
-  };
-  # drive encryption
-  driveencryption = {
-    imports = [
-      ./veracrypt.nix
     ];
   };
   # drive monitoring

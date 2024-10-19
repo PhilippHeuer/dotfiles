@@ -59,31 +59,25 @@ in
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
-      ../nixos/gamemode.nix
-      # roles
+      # core
       nixosRoles.default
       nixosRoles.terminal
-      nixosRoles.development
-      nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
       nixosRoles.desktop
-      nixosRoles.ide
-      nixosRoles.games
-      nixosRoles.vpn
-      nixosRoles.forensic
-      # communication
-      ../roles/discord.nix
-      ../roles/slack.nix
-      # creative
-      ../roles/krita.nix # painting
-      # streaming
-      ../roles/obsstudio.nix # recording
-      ../roles/streamlink.nix # extract streams from various websites
-      ../roles/chatterino.nix
-      # download
-      ../roles/qbittorrent.nix
+      # user
+      nixosRoles.development # development tools
+      nixosRoles.ide # ide
+      nixosRoles.lang # language toolchains
+      nixosRoles.container # container runtime
+      nixosRoles.admin # admin tools
+      nixosRoles.communication # communication
+      nixosRoles.streaming # streaming
+      nixosRoles.forensic # forensic
+      nixosRoles.games # games
       # misc
-      ../roles/gramps.nix # genealogy / family tree
+      ../roles/misc/qbittorrent.nix # torrent
+      ../roles/misc/gramps.nix # genealogy / family tree
+      ../roles/misc/krita.nix # creative / painting
       # variant
       ./desktop
     ];
@@ -111,15 +105,21 @@ in
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
       ../nixos/de-plasma.nix
-      ../nixos/gamemode.nix
-      # roles
+      # core
       nixosRoles.default
       nixosRoles.terminal
-      nixosRoles.development
-      nixosRoles.language-toolchains
       nixosRoles.wm-hyprland
       nixosRoles.desktop
-      nixosRoles.ide
+      # user
+      nixosRoles.development # development tools
+      nixosRoles.ide # ide
+      nixosRoles.lang # language toolchains
+      nixosRoles.container # container runtime
+      nixosRoles.admin # admin tools
+      nixosRoles.communication # communication
+      nixosRoles.streaming # streaming
+      nixosRoles.forensic # forensic
+      nixosRoles.games # games
       # variant
       ./laptop
     ];
@@ -141,11 +141,12 @@ in
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       ../nixos/smartd.nix
-      # roles
+      # core
       nixosRoles.default
       nixosRoles.terminal
-      nixosRoles.development
-      nixosRoles.container-runtime
+      # user
+      nixosRoles.container # container runtime
+
       nixosRoles.mediaserver
       nixosRoles.homeautomation
       nixosRoles.driveencryption
@@ -168,30 +169,24 @@ in
       ../nixos/proxy.nix
       # wsl
       inputs.nixos-wsl.nixosModules.wsl
-      # roles
+      # core
       nixosRoles.default
       nixosRoles.terminal
-      nixosRoles.development
-      nixosRoles.language-toolchains
-      nixosRoles.container-runtime
-      nixosRoles.administration-tools
       nixosRoles.wm-sway
       nixosRoles.desktop
-      nixosRoles.ide
-      nixosRoles.forensic
-      # communication
-      ../roles/discord.nix
-      ../roles/slack.nix
-      # creative
-      ../roles/krita.nix # painting
-      # streaming
-      ../roles/obsstudio.nix # recording
-      ../roles/streamlink.nix # extract streams from various websites
-      ../roles/chatterino.nix
-      # download
-      ../roles/qbittorrent.nix
+      # user
+      nixosRoles.development # development tools
+      nixosRoles.ide # ide
+      nixosRoles.lang # language toolchains
+      nixosRoles.container # container runtime
+      nixosRoles.admin # admin tools
+      nixosRoles.communication # communication
+      nixosRoles.streaming # streaming
+      nixosRoles.forensic # forensic
       # misc
-      ../roles/gramps.nix # genealogy / family tree
+      ../roles/misc/qbittorrent.nix # torrent
+      ../roles/misc/gramps.nix # genealogy / family tree
+      ../roles/misc/krita.nix # creative / painting
       # variant
       ./wsl
     ];
