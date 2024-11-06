@@ -88,3 +88,17 @@ layouts:
         commands:
           - command: export VAULT_ADDR="https://{{name}}"
           - command: exec bash
+  ldap-users:
+    apps:
+      - name: ldap
+        default: true
+        commands:
+          - command: ldapsearch -v -H {{ldapHost}} -D {{ldapBindDN}} -w "{{ldapBindPassword}}" -b "{{id}}"
+          - command: exec bash
+  ldap-groups:
+    apps:
+      - name: ldap
+        default: true
+        commands:
+          - command: ldapsearch -v -H {{ldapHost}} -D {{ldapBindDN}} -w "{{ldapBindPassword}}" -b "{{id}}"
+          - command: exec bash

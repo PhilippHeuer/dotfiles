@@ -67,7 +67,7 @@
   ide = {
     imports = [
       ./ide/neovim.nix # code editor
-      #./ide/zed.nix # code editor
+      ./ide/zed.nix # code editor
       ./ide/vscode.nix # code editor
       # ./ide/idea-community.nix # java ide
       ./ide/idea-ultimate.nix # java ide
@@ -104,6 +104,7 @@
       ./admin/s3fs.nix # s3
       #./admin/vault.nix # vault
       ./admin/ansible.nix # playbook automation
+      ./admin/ldap.nix # ldap client
     ];
   };
   communication = {

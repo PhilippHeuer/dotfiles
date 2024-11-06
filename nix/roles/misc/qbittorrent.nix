@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.qbittorrent
+    pkgs-unstable.qbittorrent
   ];
 }
