@@ -6,7 +6,7 @@ let
     "164" # ideavim
     "9792" # key-promoter-x
     "23451" # fuzzy file finder
-
+  
     # themes
     "18682" # catppuccin-theme
     "23029" # catppuccin-icons
@@ -16,9 +16,6 @@ let
 
     # auto completion
     "17718" # github copilot
-
-    # fun
-    "8575" # nyan-progress-bar
   ];
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
