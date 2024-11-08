@@ -62,6 +62,7 @@
       ./development/primecodegen.nix # code generator
       ./development/atac.nix # tui api client
       ./development/fuzzmux.nix
+      ./development/silicon.nix # create beautiful images of source code
     ];
   };
   ide = {
@@ -105,6 +106,7 @@
       #./admin/vault.nix # vault
       ./admin/ansible.nix # playbook automation
       ./admin/ldap.nix # ldap client
+      ./admin/rundeck.nix # rundeck runbook automation
     ];
   };
   communication = {
@@ -161,7 +163,6 @@
       ./browser/librewolf.nix # web browser
       ./rofi.nix
       ./nemo.nix # file manager
-      ./silicon.nix # create beautiful images of source code
       ./albert.nix # minimal launcher
       ./keepassxc.nix # password manager
       ./playerctl.nix # music player
