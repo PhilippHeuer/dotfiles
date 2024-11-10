@@ -29,6 +29,7 @@ cd "$cwd"
 terminal="$HOME/.local/scripts/actions/terminal.sh"
 menu="$HOME/.local/scripts/launcher.sh rofi"
 browser="MOZ_ENABLE_WAYLAND=1 firefox -new-window"
+default_shell=$(getent passwd "$USER" | cut -d: -f7)
 
 # handle keypress
 KEY=$1
@@ -61,7 +62,7 @@ case $KEY in
         $terminal --title fzf_popup gocheat
         ;;
     "mod+return")
-        $terminal
+        $terminal $default_shell
         ;;
     "mod+g")
         $terminal --title "lazygit" lazygit
