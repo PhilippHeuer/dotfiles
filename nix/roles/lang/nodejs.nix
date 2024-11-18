@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    nodejs_22
+  environment.systemPackages = [
+    pkgs-unstable.nodejs_23
   ];
 }
