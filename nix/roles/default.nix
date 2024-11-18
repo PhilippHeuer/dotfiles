@@ -181,7 +181,8 @@
   # home automation
   homeautomation = {
     imports = [
-      ./homeautomation/pihole.nix # network-wide ad blocker
+      ./homeautomation/pihole.nix # network-wide dns blocker
+      #./homeautomation/blocky.nix # network-wide dns blocker
       ./homeautomation/homeassistant.nix # home automation
     ];
   };
