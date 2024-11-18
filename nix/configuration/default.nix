@@ -65,6 +65,7 @@ in
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       # user
+      nixosRoles.secretmanagement # secret management
       nixosRoles.development # development tools
       nixosRoles.ide # ide
       nixosRoles.lang # language toolchains
@@ -111,6 +112,7 @@ in
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       # user
+      nixosRoles.secretmanagement # secret management
       nixosRoles.development # development tools
       nixosRoles.ide # ide
       nixosRoles.lang # language toolchains
@@ -146,12 +148,10 @@ in
       nixosRoles.terminal
       # user
       nixosRoles.container # container runtime
-
-      nixosRoles.mediaserver
-      nixosRoles.homeautomation
-      nixosRoles.driveencryption
-      nixosRoles.drivemonitoring
-      ../roles/nas-samba.nix
+      nixosRoles.mediaserver # media server
+      nixosRoles.homeautomation # home automation
+      nixosRoles.driveencryption # drive encryption
+      nixosRoles.drivemonitoring # drive health monitoring
       # variant
       ./vault
     ];
@@ -175,6 +175,7 @@ in
       nixosRoles.wm-sway
       nixosRoles.desktop
       # user
+      nixosRoles.secretmanagement # secret management
       nixosRoles.development # development tools
       nixosRoles.ide # ide
       nixosRoles.lang # language toolchains

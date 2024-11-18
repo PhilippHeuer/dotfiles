@@ -115,6 +115,12 @@
       ./communication/slack.nix
     ];
   };
+  secretmanagement = {
+    imports = [
+      ./secretmanagement/pass.nix # command-line password manager
+      ./secretmanagement/keepassxc.nix # graphical password manager
+    ];
+  };
   # streaming
   streaming = {
     imports = [
@@ -164,7 +170,6 @@
       ./rofi.nix
       ./nemo.nix # file manager
       ./albert.nix # minimal launcher
-      ./keepassxc.nix # password manager
       ./playerctl.nix # music player
       ./mpd.nix # music player
       ./mpv.nix # video player
@@ -173,21 +178,26 @@
       ./ags.nix # gtk shell / widget library
     ];
   };
-  # home network
+  # home automation
   homeautomation = {
     imports = [
-      ./homeassistant.nix
-      ./pihole.nix
+      ./homeautomation/pihole.nix # network-wide ad blocker
+      ./homeautomation/homeassistant.nix # home automation
     ];
   };
   # media server
   mediaserver = {
     imports = [
-      ./plex.nix
-      ./komga.nix
+      ./mediaserver/plex.nix # media server
+      ./mediaserver/komga.nix # ebook server
+      ./mediaserver/samba.nix # file server
     ];
   };
-  # drive monitoring
+  driveencryption = {
+    imports = [
+      ./cryptography/veracrypt.nix
+    ];
+  };
   drivemonitoring = {
     imports = [
       ./driveguard.nix # private, experimental code
