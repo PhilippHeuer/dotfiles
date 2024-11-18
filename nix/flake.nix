@@ -26,7 +26,7 @@
     #
     # To update nixpkgs (and thus NixOS), pick the nixos-unstable rev from https://status.nixos.org/
     #
-    # stable: github:nixos/nixpkgs/nixos-23.11
+    # stable: github:nixos/nixpkgs/nixos-24.05
     # unstable: github:nixos/nixpkgs/nixos-unstable
     #
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
