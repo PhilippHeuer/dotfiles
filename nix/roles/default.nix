@@ -164,7 +164,6 @@
     imports = [
       ./wallpapers.nix # wallpapers
       ./gtk.nix # theming
-      ./gocheat.nix # cheat sheet for hotkeys
       ./browser/firefox.nix # web browser
       ./browser/librewolf.nix # web browser
       ./rofi.nix

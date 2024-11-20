@@ -29,7 +29,7 @@ in
   # gtk themes
   environment.systemPackages = [
     # gnome
-    pkgs.gnome3.adwaita-icon-theme
+    pkgs.adwaita-icon-theme
 
     # catppuccin
     catppuccin-mocha

@@ -26,10 +26,10 @@
     #
     # To update nixpkgs (and thus NixOS), pick the nixos-unstable rev from https://status.nixos.org/
     #
-    # stable: github:nixos/nixpkgs/nixos-24.05
+    # stable: github:nixos/nixpkgs/nixos-24.11
     # unstable: github:nixos/nixpkgs/nixos-unstable
     #
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
@@ -121,7 +121,7 @@
           # this value at the release version of the first install of this system.
           # Before changing this value read the documentation for this option
           # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-          stateVersion = "24.05";
+          stateVersion = "24.11";
 
           # allow unfree packages
           config.allowUnfree = true;

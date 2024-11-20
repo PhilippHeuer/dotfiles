@@ -4,14 +4,10 @@
     "github>cidverse/renovate-config:default",
     "github>cidverse/renovate-config:assignee"
   ],
-  "baseBranches": [
-    "main"
-  ],
+  "baseBranches": ["main"],
   "timezone": "Europe/Berlin",
   "nix": {
     "enabled": true
   },
-  "ignorePaths": [
-    "ansible/playbook.yml"
-  ]
+  "ignorePaths": ["ansible/playbook.yml"]
 }
