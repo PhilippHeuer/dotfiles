@@ -25,8 +25,8 @@
     # process management
     htop # interactive process viewer
     btop # resource monitor
-    gnome.gnome-system-monitor # system monitor
-    mission-center # taskmanager-like utility
+    gnome-system-monitor # system monitor
+    # mission-center # taskmanager-like utility
 
     # lock screen
     swaylock-effects # needed for logout menu (swaylock with screenshot + blur)
