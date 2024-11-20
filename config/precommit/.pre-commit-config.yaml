@@ -1,6 +1,12 @@
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+  # renovate: datasource=github-releases depName=pre-commit/pre-commit-hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
     hooks:
-    -   id: trailing-whitespace
-    -   id: end-of-file-fixer
+      - id: trailing-whitespace # removes trailing whitespace
+      - id: end-of-file-fixer # ensures that files end with a newline
+      - id: check-executables-have-shebangs # checks that non-binary executables have a proper shebang
+      - id: check-yaml
+      - id: check-json
+      - id: check-xml
+      - id: check-toml
