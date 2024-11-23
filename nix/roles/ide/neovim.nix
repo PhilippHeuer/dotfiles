@@ -14,6 +14,9 @@
 
     # formatters
     pkgs-unstable.nixfmt-rfc-style
+
+    # lint
+    pkgs-unstable.pylint
   ];
 
   environment.variables.EDITOR = "nvim";
