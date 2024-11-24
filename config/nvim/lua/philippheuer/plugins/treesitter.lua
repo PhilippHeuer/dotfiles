@@ -16,7 +16,9 @@ return {
             'c',
             'cpp',
             'go',
+            'gomod',
             'lua',
+            'php',
             'python',
             'java',
             'rust',
@@ -27,6 +29,8 @@ return {
             'nix',
             -- scripting
             'bash',
+            'nu', -- nushell
+            'just', -- justfile
             -- files
             'json',
             'yaml',
