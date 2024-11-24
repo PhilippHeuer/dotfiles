@@ -155,8 +155,10 @@ return {
         lua_ls = require("philippheuer.lsp.luals"), -- lua
         rust_analyzer = require("philippheuer.lsp.rustls"), -- rust
         zls = require("philippheuer.lsp.zls"), -- zig
-        bashls = require("philippheuer.lsp.bashls"), -- bash
         nixd = require("philippheuer.lsp.nixd"), -- nixd
+
+        bashls = require("philippheuer.lsp.bashls"), -- bash
+        nushell = require("philippheuer.lsp.nuls"), -- nushell
 
         html = require("philippheuer.lsp.html"), -- html
         cssls = require("philippheuer.lsp.cssls"), -- css
