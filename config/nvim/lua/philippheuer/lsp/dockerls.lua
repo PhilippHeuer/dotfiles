@@ -1,3 +1,3 @@
 return {
-  filetypes = { "Dockerfile" },
+  filetypes = { 'Dockerfile' },
 }
