@@ -336,13 +336,13 @@ directories:
   rules:
   - rule: inPath("idea-community")
 - path: config/JetBrains/IntelliJ
-  target: $HOME/.config/JetBrains/IntelliJIdea2024.1
+  target: $HOME/.config/JetBrains/IntelliJIdea2024.3
   rules:
   - rule: inPath("idea-ultimate")
 
 # jetbrains - goland
 - path: config/JetBrains/GoLand
-  target: $HOME/.config/JetBrains/GoLand2024.1
+  target: $HOME/.config/JetBrains/GoLand2024.2
   rules:
   - rule: inPath("goland")
 
