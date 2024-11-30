@@ -168,7 +168,7 @@
       ./browser/librewolf.nix # web browser
       ./rofi.nix
       ./nemo.nix # file manager
-      ./albert.nix # minimal launcher
+      #./albert.nix # minimal launcher
       ./playerctl.nix # music player
       ./mpd.nix # music player
       ./mpv.nix # video player

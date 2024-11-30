@@ -3,22 +3,21 @@
 {
   services.samba = {
     enable = true;
-    securityType = "user";
     openFirewall = true;
-    extraConfig = ''
-      workgroup = WORKGROUP
-      server string = smbnix
-      netbios name = smbnix
-      #hosts allow = 10.98.0. 127.0.0.1 localhost
-      #hosts deny = 0.0.0.0/0
-      # perf
-      use sendfile = yes
-      socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
-      strict sync = yes
-      sync always = yes
-    '';
-    shares = {
-      main = {
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "smbnix";
+        "netbios name" = "smbnix";
+        "security" = "user";
+        #"hosts allow" = "10.98.0. 127.0.0.1 localhost";
+        #"hosts deny" = "0.0.0.0/0";
+        "use sendfile" = "yes";
+        "socket options" = "TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072";
+        "strict sync" = "yes";
+        "sync always" = "yes";
+      };
+      "main" = {
         path = "/mnt";
         browseable = "yes";
         public = "no";
