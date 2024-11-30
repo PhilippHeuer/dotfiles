@@ -1,7 +1,7 @@
 { self, inputs, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     inputs.nixpkgs-philippheuer.packages.${pkgs.system}.wallpapers
   ];
 }
