@@ -47,6 +47,7 @@ in
       ../nixos/kernel.nix
       ../nixos/security.nix
       ../nixos/tpm.nix
+      ../nixos/pullsecret.nix
       ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
@@ -94,6 +95,7 @@ in
       ../nixos/kernel.nix
       ../nixos/security.nix
       ../nixos/tpm.nix
+      ../nixos/pullsecret.nix
       ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
@@ -166,6 +168,7 @@ in
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
       ../nixos/security.nix
+      ../nixos/pullsecret.nix
       ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio.nix
@@ -194,6 +197,7 @@ in
     username = "phx";
     extraModules = [
       # nixos
+      ../nixos/pullsecret.nix
       ../nixos/user-defaults.nix
       ../nixos/user.nix
       ../nixos/audio-wsl.nix

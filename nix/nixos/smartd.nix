@@ -7,10 +7,18 @@
 
 {
   # secrets
-  sops.secrets."notify/email/server" = lib.mkDefault { };
-  sops.secrets."notify/email/username" = lib.mkDefault { };
-  sops.secrets."notify/email/password" = lib.mkDefault { };
-  sops.secrets."notify/email/to" = lib.mkDefault { };
+  sops.secrets."notify/email/server" = lib.mkDefault {
+    restartUnits = [ "smartd.service" ];
+  };
+  sops.secrets."notify/email/username" = lib.mkDefault {
+    restartUnits = [ "smartd.service" ];
+  };
+  sops.secrets."notify/email/password" = lib.mkDefault {
+    restartUnits = [ "smartd.service" ];
+  };
+  sops.secrets."notify/email/to" = lib.mkDefault {
+    restartUnits = [ "smartd.service" ];
+  };
 
   sops.templates."smartd-notification.sh".content = ''
     # log message
