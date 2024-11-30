@@ -14,7 +14,7 @@
   users.defaultUserShell = pkgs.bash;
 
   # hostname
-  networking.hostName = "phx-vault";
+  networking.hostName = "vault";
 
   # Enable networking
   networking.networkmanager.enable = true;
