@@ -7,7 +7,6 @@
 
     autoPrune = {
       enable = true;
-      flags = [ "--keep-tag-revisions=5" ];
       dates = "weekly";
     };
   };
