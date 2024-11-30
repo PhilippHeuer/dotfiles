@@ -171,6 +171,7 @@ in
       inputs.nixos-wsl.nixosModules.wsl
       # core
       nixosRoles.default
+      nixosRoles.security
       nixosRoles.terminal
       nixosRoles.wm-sway
       nixosRoles.desktop
