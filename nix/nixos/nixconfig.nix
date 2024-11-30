@@ -12,6 +12,7 @@
       experimental-features = [
         "nix-command"
         "flakes"
+        "configurable-impure-env"
       ];
 
       # Disable global flake registry
