@@ -61,6 +61,7 @@ in
       ../nixos/de-plasma.nix
       # core
       nixosRoles.default
+      nixosRoles.security
       nixosRoles.terminal
       nixosRoles.wm-hyprland
       nixosRoles.desktop
@@ -108,6 +109,7 @@ in
       ../nixos/de-plasma.nix
       # core
       nixosRoles.default
+      nixosRoles.security
       nixosRoles.terminal
       nixosRoles.wm-hyprland
       nixosRoles.desktop
@@ -124,6 +126,34 @@ in
       nixosRoles.games # games
       # variant
       ./laptop
+    ];
+  };
+
+  # mhd
+  mhd = mkConfiguration {
+    username = "phx";
+    extraModules = [
+      # nixos
+      ../nixos/bootloader.nix
+      ../nixos/kernel.nix
+      ../nixos/security.nix
+      ../nixos/user-defaults.nix
+      ../nixos/user.nix
+      ../nixos/audio.nix
+      ../nixos/ssh.nix
+      #../nixos/wifi.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
+      ../nixos/smartd.nix
+      # core
+      nixosRoles.default
+      nixosRoles.security
+      nixosRoles.terminal
+      # user
+      nixosRoles.container # container runtime
+      ../roles/homeautomation/blocky.nix # blocky dns
+      # variant
+      ./mhd
     ];
   };
 
@@ -145,6 +175,7 @@ in
       ../nixos/smartd.nix
       # core
       nixosRoles.default
+      nixosRoles.security
       nixosRoles.terminal
       # user
       nixosRoles.container # container runtime

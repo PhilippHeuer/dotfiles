@@ -39,3 +39,12 @@ apply-vault:
 clean-vault:
 	ssh -t vault "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 30d"
 	ssh -t vault "sudo nix-store --gc"
+
+# mhd
+apply-mhd:
+	rsync -a --delete $(pwd)/* mhd:~/dotfiles
+	ssh -t mhd "cd ~/dotfiles/nix && sudo nixos-rebuild switch --flake path:.#mhd"
+
+clean-mhd:
+	ssh -t mhd "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 30d"
+	ssh -t mhd "sudo nix-store --gc"
