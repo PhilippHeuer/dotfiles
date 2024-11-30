@@ -152,6 +152,7 @@ in
       # user
       nixosRoles.container # container runtime
       ../roles/homeautomation/blocky.nix # blocky dns
+      ../roles/ide/neovim.nix # editor
       # variant
       ./mhd
     ];

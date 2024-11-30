@@ -22,4 +22,5 @@
 
   # secrets
   sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";
+  sops.defaultSopsFile = lib.mkForce ../../secrets/mhd.yaml;
 }
