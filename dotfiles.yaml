@@ -388,12 +388,6 @@ directories:
   rules:
   - rule: inPath("waypaper")
 
-# ags
-- path: config/ags
-  target: $HOME/.config/ags
-  rules:
-  - rule: inPath("ags")
-
 # vault
 - path: config/vault
   target: $HOME/.config/vault
