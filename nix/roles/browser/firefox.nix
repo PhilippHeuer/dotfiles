@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, lib, ... }:
 
 {
   programs.firefox = {
@@ -39,6 +39,11 @@
       # file picker
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
+  };
+
+  programs.firejail.wrappedBinaries.firefox = {
+    executable = "${lib.getBin pkgs.firefox}/bin/firefox";
+    profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
   };
 
   environment.sessionVariables = {

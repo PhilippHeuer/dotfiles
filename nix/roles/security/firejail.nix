@@ -24,27 +24,5 @@ in
 {
   programs.firejail = {
     enable = true;
-
-    wrappedBinaries = lib.mapAttrs mkFirejail {
-      # browsers
-      firefox = { };
-      librewolf = { };
-
-      # communication
-      discord = { };
-      slack = { };
-      telegram-desktop = { };
-
-      # editor
-      vscodium = { };
-
-      # multimedia
-      mpv = { };
-
-      # forensic
-      #ghidra = {};
-      tshark = { };
-      wireshark = { };
-    };
   };
 }

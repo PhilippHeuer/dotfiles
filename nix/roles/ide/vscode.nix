@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, inputs, system, ... }:
+{ pkgs, pkgs-unstable, inputs, system, lib, ... }:
 
 let
   extensions = inputs.nix-vscode-extensions.extensions.${system};
@@ -48,6 +48,11 @@ in {
       ];
     })
   ];
+
+  programs.firejail.wrappedBinaries.vscodium = {
+    executable = "${lib.getBin pkgs-unstable.vscodium}/bin/vscodium";
+    profile = "${pkgs.firejail}/etc/firejail/vscodium.profile";
+  };
 
   environment.sessionVariables = rec {
     DONT_PROMPT_WSL_INSTALL = "true"; # allows running vscode in wsl without windows host
