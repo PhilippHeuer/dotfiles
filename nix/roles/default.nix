@@ -121,6 +121,14 @@
       ./secretmanagement/keepassxc.nix # graphical password manager
     ];
   };
+  security = {
+    imports = [
+      ./security/apparmor.nix
+      ./security/clamav.nix
+      ./security/fail2ban.nix
+      ./security/firejail.nix
+    ];
+  };
   # streaming
   streaming = {
     imports = [
