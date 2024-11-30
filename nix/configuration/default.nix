@@ -178,6 +178,7 @@ in
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
       ../nixos/smartd.nix
+      ../nixos/systemupdate.nix
       # core
       nixosRoles.default
       nixosRoles.security
