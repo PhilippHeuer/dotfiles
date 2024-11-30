@@ -3,10 +3,12 @@
 # properties
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# fix permissions
-chmod +x "$script_dir/setup.sh"
-find "$script_dir/local/bin" -type f -exec sh -c 'chmod +x "$1" && git update-index --chmod=+x "$1"' _ {} \;
-find "$script_dir/local/scripts" -type f -exec sh -c 'chmod +x "$1" && git update-index --chmod=+x "$1"' _ {} \;
+# fix permissions (if dir is owned by current user)
+if [ "$(stat -c '%U' "$script_dir")" == "$(whoami)" ]; then
+  chmod +x "$script_dir/setup.sh"
+  find "$script_dir/local/bin" -type f -exec sh -c 'chmod +x "$1" && git update-index --chmod=+x "$1"' _ {} \;
+  find "$script_dir/local/scripts" -type f -exec sh -c 'chmod +x "$1" && git update-index --chmod=+x "$1"' _ {} \;
+fi
 
 # install dotfiles
 dotfiles install "$script_dir" --mode symlink
