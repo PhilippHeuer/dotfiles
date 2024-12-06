@@ -3,7 +3,7 @@
 
 let
   # renovate: datasource=docker depName=docker.io/homeassistant/home-assistant
-  version = "2024.12.0";
+  version = "2024.12.1";
 in {
   # systemd container service
   virtualisation.oci-containers.containers = {
