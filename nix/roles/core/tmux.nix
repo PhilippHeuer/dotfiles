@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    tmux
+  environment.systemPackages = [
+    pkgs.tmux
   ];
 
   systemd.user.services.tmux-server = {

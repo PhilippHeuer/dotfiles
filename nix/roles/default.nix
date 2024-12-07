@@ -1,10 +1,11 @@
 {
+  # core tooling
   default = {
     imports = [
       # core
-      ./base.nix
-      ./gpg.nix
-      ./atuin.nix # replacement for the shell history
+      ./base.nix  
+      ./core/gpg.nix
+      ./core/atuin.nix # replacement for the shell history
       ./development/git.nix
 
       # cli tools
@@ -21,23 +22,29 @@
       ./core/just.nix # make alternative
 
       # ssh
-      ./ssh.nix
-      ./sshfs.nix
+      ./core/ssh.nix
+      ./core/sshfs.nix
 
-      # terminal
-      ./tmux.nix
-      # ./zellij.nix
-      ./nushell.nix
-      ./starship.nix
+      # terminal shell
+      ./shell/bash.nix # default shell
+      ./shell/nushell.nix # mocern cross-platform shell
 
-      # secret management
-      ./sops.nix
-      ./yubikey.nix
+      # terminal multiplexer
+      ./core/tmux.nix
+      # ./core/zellij.nix
 
-      # appimage
-      ./appimage.nix
+      # terminal prompt
+      ./shell/starship.nix # customizable prompt for any shell
+
+      # secret management (required)
+      ./secretmanagement/sops.nix
+      ./secretmanagement/yubikey.nix
+
+      # package formats
+      ./packageformat/appimage.nix
     ];
   };
+  # terminal emulators
   terminal = {
     imports = [
       ./terminal/alacritty.nix
@@ -45,6 +52,32 @@
       ./terminal/kitty.nix
     ];
   };
+  # security
+  security = {
+    imports = [
+      ./security/apparmor.nix
+      ./security/clamav.nix
+      ./security/fail2ban.nix
+      ./security/firejail.nix
+    ];
+  };
+  # secret management
+  secretmanagement = {
+    imports = [
+      ./secretmanagement/pass.nix # command-line password manager
+      ./secretmanagement/keepassxc.nix # graphical password manager
+      ./secretmanagement/sops.nix # secrets encryption
+      ./secretmanagement/yubikey.nix # hardware security key
+    ];
+  };
+  # container runtime
+  container = {
+    imports = [
+      ./container/podman.nix
+    ];
+  };
+
+  # development tools
   development = {
     imports = [
       ./development/git.nix # version control
@@ -65,6 +98,7 @@
       ./development/silicon.nix # create beautiful images of source code
     ];
   };
+  # code editors
   ide = {
     imports = [
       ./ide/neovim.nix # code editor
@@ -77,6 +111,7 @@
       ./ide/bruno.nix # http client
     ];
   };
+  # language toolchains
   lang = {
     imports = [
       ./lang/golang.nix
@@ -87,11 +122,7 @@
       ./lang/zig.nix
     ];
   };
-  container = {
-    imports = [
-      ./container/podman.nix
-    ];
-  };
+  # admin tools
   admin = {
     imports = [
       ./admin/kubectl.nix
@@ -109,24 +140,39 @@
       ./admin/rundeck.nix # rundeck runbook automation
     ];
   };
+
+  # communication and collaboration
   communication = {
     imports = [
       ./communication/discord.nix
       ./communication/slack.nix
     ];
   };
-  secretmanagement = {
+
+  # forensic
+  forensic = {
     imports = [
-      ./secretmanagement/pass.nix # command-line password manager
-      ./secretmanagement/keepassxc.nix # graphical password manager
+      #./forensic/autopsy.nix # digital forensics
+      #./forensic/ghidra.nix # reverse engineering
+      ./forensic/termshark.nix # tui for wireshark
+      ./forensic/wireshark.nix # network protocol analyzer
     ];
   };
-  security = {
+  # multimedia
+  multimedia = {
     imports = [
-      ./security/apparmor.nix
-      ./security/clamav.nix
-      ./security/fail2ban.nix
-      ./security/firejail.nix
+      ./multimedia/playerctl.nix # music player
+      ./multimedia/mpd.nix # music player
+      ./multimedia/mpv.nix # video player
+      ./multimedia/mpvpaper.nix # video wallpaper
+      ./multimedia/sxiv.nix # image viewer
+    ];
+  };
+  # gaming
+  games = {
+    imports = [
+      ./games/gamemode.nix # game mode
+      ./games/steam.nix # game client
     ];
   };
   # streaming
@@ -137,20 +183,24 @@
       ./streaming/chatterino.nix # chat client
     ];
   };
-  forensic = {
+
+  # home automation
+  homeautomation = {
     imports = [
-      #./forensic/autopsy.nix # digital forensics
-      #./forensic/ghidra.nix # reverse engineering
-      ./forensic/termshark.nix # tui for wireshark
-      ./forensic/wireshark.nix # network protocol analyzer
+      ./homeautomation/pihole.nix # network-wide dns blocker
+      #./homeautomation/blocky.nix # network-wide dns blocker
+      ./homeautomation/homeassistant.nix # home automation
     ];
   };
-  games = {
+  # media server
+  mediaserver = {
     imports = [
-      ./games/gamemode.nix # game mode
-      ./games/steam.nix # game client
+      ./mediaserver/plex.nix # media server
+      ./mediaserver/komga.nix # ebook server
+      ./mediaserver/samba.nix # file server
     ];
   };
+
   # desktop environment
   wm-sway = {
     imports = [
@@ -177,30 +227,10 @@
       ./rofi.nix
       ./nemo.nix # file manager
       #./albert.nix # minimal launcher
-      ./playerctl.nix # music player
-      ./mpd.nix # music player
-      ./mpv.nix # video player
-      ./mpvpaper.nix # video wallpaper
-      ./sxiv.nix # image viewer
       ./ags.nix # gtk shell / widget library
     ];
   };
-  # home automation
-  homeautomation = {
-    imports = [
-      ./homeautomation/pihole.nix # network-wide dns blocker
-      #./homeautomation/blocky.nix # network-wide dns blocker
-      ./homeautomation/homeassistant.nix # home automation
-    ];
-  };
-  # media server
-  mediaserver = {
-    imports = [
-      ./mediaserver/plex.nix # media server
-      ./mediaserver/komga.nix # ebook server
-      ./mediaserver/samba.nix # file server
-    ];
-  };
+  # cryptography
   driveencryption = {
     imports = [
       ./cryptography/veracrypt.nix
