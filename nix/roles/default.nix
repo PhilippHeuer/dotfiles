@@ -138,6 +138,7 @@
       ./admin/ansible.nix # playbook automation
       ./admin/ldap.nix # ldap client
       ./admin/rundeck.nix # rundeck runbook automation
+      ./admin/rcon.nix # rcon console for various games
     ];
   };
 
