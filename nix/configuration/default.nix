@@ -64,6 +64,7 @@ in
       nixosRoles.default
       nixosRoles.security
       nixosRoles.terminal
+      nixosRoles.multimedia
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       # user
@@ -113,6 +114,7 @@ in
       nixosRoles.default
       nixosRoles.security
       nixosRoles.terminal
+      nixosRoles.multimedia
       nixosRoles.wm-hyprland
       nixosRoles.desktop
       # user
@@ -211,6 +213,7 @@ in
       nixosRoles.default
       nixosRoles.security
       nixosRoles.terminal
+      nixosRoles.multimedia
       nixosRoles.wm-sway
       nixosRoles.desktop
       # user

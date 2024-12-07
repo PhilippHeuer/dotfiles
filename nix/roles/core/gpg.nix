@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    gnupg
-    pinentry-curses
+  environment.systemPackages = [
+    pkgs.gnupg
+    pkgs.pinentry-curses
   ];
 
   programs.gnupg.agent = {
