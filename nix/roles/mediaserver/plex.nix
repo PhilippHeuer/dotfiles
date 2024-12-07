@@ -5,7 +5,7 @@
   services.plex = {
     enable = true;
     openFirewall = true;
-    user = "root"; # TODO: remove after permission issues are resolved
+    user = "phx"; # needed to access mounted media
     extraPlugins = [
       (builtins.path {
         name = "Hama.bundle";

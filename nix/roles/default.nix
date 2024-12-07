@@ -197,6 +197,7 @@
   mediaserver = {
     imports = [
       ./mediaserver/plex.nix # media server
+      ./mediaserver/jellyfin.nix # media server
       ./mediaserver/komga.nix # ebook server
       ./mediaserver/samba.nix # file server
     ];
