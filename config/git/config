@@ -156,6 +156,7 @@
 	meta = yellow bold
 
 [format]
+	# signoff = true
 	# based on 'fuller' format, but adds color customization
 	pretty = "\
 %C(bold)commit%C(reset)  %C(yellow)%H%C(auto)%d%n\
