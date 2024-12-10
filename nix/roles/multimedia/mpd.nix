@@ -1,9 +1,8 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = [
     pkgs.mpd
-    pkgs-unstable.rmpc # TODO: not available in stable
   ];
 
   services.mpd = {
