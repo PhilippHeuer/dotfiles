@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  pulseProxyCommand = "${pkgs.socat}/bin/socat TCP-LISTEN:4713,reuseaddr,fork UNIX-CONNECT:/mnt/wslg/PulseServer";
+  pulseProxyCommand = "${pkgs.socat}/bin/socat TCP-LISTEN:4713,bind=127.0.0.1,reuseaddr,fork UNIX-CONNECT:/mnt/wslg/PulseServer";
 in
 {
   # wsl uses pulseaudio as of now
