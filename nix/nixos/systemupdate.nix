@@ -15,7 +15,8 @@ let
     # update
     cd /etc/nixos/dotfiles/nix && ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake path:.#${config.networking.hostName}
   '';
-in {
+in
+{
   systemd.services."system-update" = {
     serviceConfig = {
       Type = "oneshot";

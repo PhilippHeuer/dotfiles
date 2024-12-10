@@ -4,7 +4,8 @@ let
   jdk21 = pkgs-unstable.jdk21;
   jdk17 = pkgs-unstable.jdk17;
   jdk11 = pkgs-unstable.jdk11;
-in {
+in
+{
   environment.systemPackages = [
     jdk21
     jdk17

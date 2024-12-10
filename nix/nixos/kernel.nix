@@ -1,4 +1,9 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   boot = {
@@ -7,7 +12,7 @@
     tmp.cleanOnBoot = !config.boot.tmp.useTmpfs;
 
     # supported filesystems
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = [ "ntfs" ];
 
     # kernel parameters
     kernelParams = lib.optionals config.boot.initrd.systemd.enable ["systemd.show_status=false"];

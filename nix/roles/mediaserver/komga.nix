@@ -3,7 +3,8 @@
 let
   # renovate: datasource=docker depName=ghcr.io/gotson/komga
   version = "1.14.1";
-in {
+in
+{
   # systemd container
   virtualisation.oci-containers.containers = {
     komga = {

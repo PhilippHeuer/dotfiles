@@ -14,13 +14,18 @@
       jetbrains-mono
       material-design-icons
       noto-fonts-color-emoji
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "JetBrainsMono"
+        ];
+      })
     ];
 
     # set default fonts
     fontconfig = {
       defaultFonts = {
-        emoji = ["Noto Color Emoji"];
+        emoji = [ "Noto Color Emoji" ];
         monospace = [
           "JetBrainsMono Nerd Font Mono"
           "Noto Sans Mono CJK SC"

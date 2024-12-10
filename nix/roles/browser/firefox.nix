@@ -1,4 +1,9 @@
-{ pkgs, pkgs-unstable, lib, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}:
 
 {
   programs.firefox = {
@@ -29,7 +34,7 @@
         ImportEnterpriseRoots = true;
 
         # extension settings
-        ExtensionSettings = {};
+        ExtensionSettings = { };
       };
     };
     preferences = {

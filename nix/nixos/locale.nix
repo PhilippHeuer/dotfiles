@@ -5,7 +5,8 @@
 let
   ENGLISH = "en_US.UTF-8";
   GERMAN = "de_DE.UTF-8";
-in {
+in
+{
   # time zone
   time.timeZone = lib.mkDefault "Europe/Berlin";
 

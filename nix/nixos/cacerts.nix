@@ -1,5 +1,11 @@
 # add custom ca certs
-{ config, pkgs, system, lib, ... }:
+{
+  config,
+  pkgs,
+  system,
+  lib,
+  ...
+}:
 
 let
   caBundle = config.environment.etc."ssl/certs/ca-certificates.crt".source;
@@ -8,9 +14,11 @@ let
       "--sysconfdir=/etc"
       (lib.mesonEnable "systemd" false)
       (lib.mesonOption "bashcompdir" "${placeholder "bin"}/share/bash-completion/completions")
-      (lib.mesonOption "trust_paths" (lib.concatStringsSep ":" [
-        "${caBundle}"
-      ]))
+      (lib.mesonOption "trust_paths" (
+        lib.concatStringsSep ":" [
+          "${caBundle}"
+        ]
+      ))
     ];
   });
   javaCaCerts = derivation {
@@ -25,7 +33,8 @@ let
     inherit system;
     outputs = [ "out" ];
   };
-in {
+in
+{
   security = {
     pki = {
       # append trusted certificate authorities

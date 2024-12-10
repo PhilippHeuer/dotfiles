@@ -1,8 +1,16 @@
-{ pkgs, pkgs-unstable, inputs, system, lib, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  system,
+  lib,
+  ...
+}:
 
 let
   extensions = inputs.nix-vscode-extensions.extensions.${system};
-in {
+in
+{
   ###
   # vscode with extenstions
   # url: https://marketplace.visualstudio.com/vscode

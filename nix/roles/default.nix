@@ -3,7 +3,7 @@
   default = {
     imports = [
       # core
-      ./base.nix  
+      ./base.nix
       ./core/gpg.nix
       ./core/atuin.nix # replacement for the shell history
       ./development/git.nix
