@@ -163,7 +163,9 @@
   multimedia = {
     imports = [
       ./multimedia/playerctl.nix # music player
-      ./multimedia/mpd.nix # music player
+      #./multimedia/mpd.nix # local music player
+      ./multimedia/mopidy.nix # music player
+      ./multimedia/rmpc.nix # terminal client for mpd
       ./multimedia/mpv.nix # video player
       ./multimedia/mpvpaper.nix # video wallpaper
       ./multimedia/sxiv.nix # image viewer
