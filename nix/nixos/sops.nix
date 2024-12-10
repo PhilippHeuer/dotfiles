@@ -9,5 +9,5 @@
 
   sops.age.keyFile = lib.mkDefault "/home/phx/dotfiles/config/sops/age/keys.txt";
 
-  sops.secrets."user/phx/hashedPassword" = lib.mkDefault {};
+  sops.secrets."user/phx/hashedPassword" = lib.mkDefault { };
 }

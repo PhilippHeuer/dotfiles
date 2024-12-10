@@ -3,7 +3,8 @@
   username,
   lib,
   ...
-}: {
+}:
+{
   # timezone
   time.timeZone = "Europe/Berlin";
 

@@ -3,7 +3,8 @@
 let
   # renovate: datasource=docker depName=docker.io/pihole/pihole
   version = "2024.07.0";
-in {
+in
+{
   # systemd container service
   virtualisation.oci-containers.containers = {
     pihole = {
@@ -15,7 +16,7 @@ in {
         "53:53/udp"
         "67:67/udp"
         "9010:80/tcp"
-        ];
+      ];
       volumes = [
         "/var/lib/pihole/config:/etc/pihole"
         "/var/lib/pihole/dnsmasq:/etc/dnsmasq.d"

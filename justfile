@@ -1,6 +1,10 @@
 _default:
 	@just -l
 
+# format
+format:
+	find nix -name "*.nix" -type f -exec nixfmt -w 200 {} \;
+
 # tasks
 update:
 	cd nix && sudo nix flake update

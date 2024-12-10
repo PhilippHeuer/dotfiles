@@ -16,7 +16,10 @@
       # used to resolve the IP addresses of the upstream DNS servers and the denylist URLs
       bootstrapDns = {
         upstream = "https://one.one.one.one/dns-query";
-        ips = [ "1.1.1.1" "1.0.0.1" ];
+        ips = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
       };
 
       # upstreams
@@ -84,7 +87,11 @@
 
         # client groups
         clientGroupsBlock = {
-          default = [ "ads" "malicious" "tracking" ];
+          default = [
+            "ads"
+            "malicious"
+            "tracking"
+          ];
           "1.2.3.4/32" = [ ]; # supports host-specific overrides
         };
       };

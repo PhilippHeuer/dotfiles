@@ -1,6 +1,11 @@
 # nvidia gpu
 #
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # opengl

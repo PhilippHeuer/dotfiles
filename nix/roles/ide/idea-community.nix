@@ -1,4 +1,9 @@
-{ pkgs, pkgs-unstable, inputs, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  ...
+}:
 
 let
   pluginList = [
@@ -27,7 +32,8 @@ let
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   idea-community = addPlugins pkgs-unstable.jetbrains.idea-community-bin pluginList;
-in {
+in
+{
   environment.systemPackages = [
     idea-community
   ];

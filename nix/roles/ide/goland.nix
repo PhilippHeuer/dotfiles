@@ -1,4 +1,9 @@
-{ pkgs, pkgs-unstable, inputs, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  ...
+}:
 
 let
   pluginList = [
@@ -20,7 +25,8 @@ let
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   goland = addPlugins pkgs-unstable.jetbrains.goland pluginList;
-in {
+in
+{
   environment.systemPackages = [
     goland
   ];

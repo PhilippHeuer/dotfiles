@@ -2,19 +2,26 @@
 #
 # generate a hashed password with: mkpasswd -m sha-512 <password>
 
-{ lib, config, username, pkgs, ... }:
+{
+  lib,
+  config,
+  username,
+  pkgs,
+  ...
+}:
 
 let
   sudoRule = {
-    users = ["${username}"];
+    users = [ "${username}" ];
     commands = [
       {
         command = "ALL";
-        options = ["NOPASSWD"];
+        options = [ "NOPASSWD" ];
       }
     ];
   };
-in {
+in
+{
   sops.secrets."user/${username}/hashedPassword".neededForUsers = true;
 
   users.users.${username} = {
@@ -29,11 +36,11 @@ in {
         "networkmanager"
         "pipewire"
       ]
-      ++ lib.optionals config.virtualisation.lxd.enable ["lxd"]
-      ++ lib.optionals config.virtualisation.docker.enable ["docker"]
-      ++ lib.optionals config.virtualisation.podman.enable ["podman"]
-      ++ lib.optionals config.virtualisation.libvirtd.enable ["libvirtd"]
-      ++ lib.optionals config.programs.adb.enable ["adbusers"];
+      ++ lib.optionals config.virtualisation.lxd.enable [ "lxd" ]
+      ++ lib.optionals config.virtualisation.docker.enable [ "docker" ]
+      ++ lib.optionals config.virtualisation.podman.enable [ "podman" ]
+      ++ lib.optionals config.virtualisation.libvirtd.enable [ "libvirtd" ]
+      ++ lib.optionals config.programs.adb.enable [ "adbusers" ];
 
     # ssh keys
     openssh.authorizedKeys.keys = [
