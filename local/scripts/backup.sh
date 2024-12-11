@@ -30,6 +30,10 @@ files=(
   # gradle properties
   ".gradle/gradle.properties"
 
+  # neovim
+  ".local/share/nvim/lazy"
+  ".local/state/nvim/lazy"
+
   # copilot
   ".config/github-copilot/hosts.json"
   ".config/github-copilot/versions.json"

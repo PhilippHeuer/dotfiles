@@ -1,6 +1,6 @@
 return {
-  -- renovate: datasource=github-releases depName=stevearc/conform.nvim
   'stevearc/conform.nvim',
+  -- renovate: datasource=github-releases depName=stevearc/conform.nvim
   tag = 'v8.2.0',
   event = {
     'BufReadPre',
