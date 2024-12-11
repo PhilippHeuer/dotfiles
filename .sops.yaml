@@ -14,6 +14,10 @@ creation_rules:
     key_groups:
       - age:
         - *primary
+  - path_regex: nix/secrets/mopidy.yaml$
+    key_groups:
+      - age:
+        - *primary
   - path_regex: nix/secrets/pullsecret.yaml$
     key_groups:
       - age:
