@@ -3,7 +3,8 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- renovate: datasource=github-releases depName=nvim-telescope/telescope.nvim
+    tag = '0.1.8',
     dependencies = {
       -- required
       'nvim-lua/plenary.nvim',
