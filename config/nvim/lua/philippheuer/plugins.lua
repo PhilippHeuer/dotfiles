@@ -36,4 +36,18 @@ for _, plugin in ipairs(plugins) do
 end
 
 -- Plugins
-require('lazy').setup(loadedPlugins, {})
+require('lazy').setup(loadedPlugins, {
+  -- Git options
+  git = {
+    -- kill processes that take more than 30 seconds
+    timeout = 30,
+    -- throttle
+    throttle = {
+      enabled = true,
+      rate = 5,
+      duration = 1 * 1000,
+    },
+    -- time in seconds to wait before running fetch again for a plugin.
+    cooldown = 0,
+  },
+})
