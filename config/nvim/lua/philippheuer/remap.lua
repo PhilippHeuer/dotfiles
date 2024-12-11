@@ -11,9 +11,9 @@ vim.keymap.set("n", "<C-q>", "<nop>")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- builtin file explorer
 vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end) -- show open buffers
 vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>") -- close current buffer
+vim.keymap.set("n", "<leader>wq", "<cmd>w<bar>bd<CR>") -- write and close current buffer
 vim.keymap.set("n", "<leader>Q", "<cmd>qa<CR>") -- close all buffers
 vim.keymap.set({"n", "i"}, "<C-w>", "<cmd>w<CR>") -- write current buffer
-vim.keymap.set("n", "<leader>q", "<cmd>w<bar>bd<CR>") -- write and close current buffer
 
 -- buffer navigation
 --vim.keymap.set("n", "<C-k>", "<cmd>bnext<CR>zz")
@@ -68,7 +68,7 @@ vim.keymap.set("n", "<leader>xd", "<cmd>:TroubleToggle document_diagnostics<CR>"
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
