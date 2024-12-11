@@ -12,8 +12,8 @@ Host *
 
 # cache ssh connections
 Host *
-  ControlMaster auto
-  ControlPath ~/.ssh/S.%r@%h:%p
+  ControlMaster no
+  ControlPath ~/.ssh/sockets/%r@%h:%p
   ControlPersist 15m
 
 # user config
