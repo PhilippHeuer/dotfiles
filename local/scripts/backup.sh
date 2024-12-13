@@ -60,8 +60,9 @@ files=(
   #".local/share/zoxide/db.zo"
 
   # atuin
-  #".local/share/atuin/history.db"
-  #".local/share/atuin/key"
+  ".local/share/atuin/history.db"
+  ".local/share/atuin/key"
+  ".local/share/atuin/session"
 
   # dbeaver workspaces
   ".local/share/DBeaverData"

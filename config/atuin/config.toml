@@ -51,7 +51,7 @@ workspaces = true
 ## which filter mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "filter_mode"
 ## leave unspecified to use same mode set in "filter_mode"
-filter_mode_shell_up_key_binding = "global"
+filter_mode_shell_up_key_binding = "directory"
 
 ## which search mode to use when atuin is invoked from a shell up-key binding
 ## the accepted values are identical to those of "search_mode"
@@ -98,10 +98,7 @@ style = "compact"
 ## with ^ or end with $, they'll match anywhere in the command.
 ## For details on the supported regular expression syntax, see
 ## https://docs.rs/regex/latest/regex/#syntax
-# history_filter = [
-#   "^secret-cmd",
-#   "^innocuous-cmd .*--secret=.+"
-# ]
+history_filter = ["^secret-cmd", "^innocuous-cmd .*--secret=.+"]
 
 ## prevent commands run with cwd matching any of these regexes from being written
 ## to history. Note that these regular expressions are unanchored, i.e. if they don't
@@ -157,16 +154,25 @@ enter_accept = true
 [stats]
 # Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
 common_subcommands = [
+  "apt",
   "cargo",
-  "go",
+  "composer",
+  "dnf",
+  "docker",
   "git",
-  "npm",
-  "yarn",
-  "pnpm",
+  "go",
+  "ip",
   "kubectl",
-  "oc",
-  "helm",
+  "nix",
+  "nmcli",
+  "npm",
+  "pecl",
+  "pnpm",
   "podman",
+  "port",
+  "systemctl",
+  "tmux",
+  "yarn",
 ]
 #
 # Set commands that should be totally stripped and ignored from stats
