@@ -180,20 +180,32 @@ $env.config = {
 }
 
 # config
-source ~/.config/nushell/config/keybindings.nu
-source ~/.config/nushell/config/aliases.nu
+source ~/.config/nushell/modules/keybindings.nu
+source ~/.config/nushell/modules/aliases.nu
+
+# completions
+source ~/.config/nushell/completions/bat.nu
+source ~/.config/nushell/completions/cargo.nu
+source ~/.config/nushell/completions/composer.nu
+source ~/.config/nushell/completions/dotnet.nu
+source ~/.config/nushell/completions/eza.nu
+source ~/.config/nushell/completions/gh.nu
+source ~/.config/nushell/completions/gradlew.nu
+source ~/.config/nushell/completions/git.nu
+source ~/.config/nushell/completions/just.nu
+source ~/.config/nushell/completions/make.nu
+source ~/.config/nushell/completions/nix.nu
+source ~/.config/nushell/completions/npm.nu
+source ~/.config/nushell/completions/pre-commit.nu
+source ~/.config/nushell/completions/rg.nu
+source ~/.config/nushell/completions/tar.nu
+source ~/.config/nushell/completions/yarn.nu
 
 # zoxide
-if ('~/.cache/zoxide/init.nu' | path exists) == true {
-    source ~/.cache/zoxide/init.nu
-}
+source ~/.config/nushell/plugins/zoxide.nu
 
-# starship prompt
-if ('~/.cache/starship/init.nu' | path exists) == true {
-    source ~/.cache/starship/init.nu
-}
+# starship
+use ~/.config/nushell/plugins/starship.nu
 
 # atuin
-if ('~/.cache/atuin/init.nu' | path exists) == true {
-    source ~/.cache/atuin/init.nu
-}
+source ~/.config/nushell/plugins/atuin.nu
