@@ -118,3 +118,4 @@ k9s:
       indicator:
         fgColor: *red
         bgColor: *selection
+

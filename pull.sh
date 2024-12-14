@@ -1,43 +1,55 @@
 #!/usr/bin/env bash
 
 ###
+# Functions
+
+function download_file {
+    local url=$1
+    local file=$2
+    echo "downloading $url to $file ..."
+    curl -S -s -L "$url" -o "$file"
+}
+
+###
 # Pulls scripts from their respective repositories.
 #
 
 # fzf
-curl -S -s -L "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh" -o "config/bash/init/fzf-bash-completion.sh"
+download_file "https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh" "config/bash/init/fzf-bash-completion.sh"
 
 ###
 # Pulls the latest versions of the themes from their respective repositories.
 #
 
-# alacritty themes
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.toml" -o "config/alacritty/themes/catppuccin-mocha.toml"
-curl -S -s -L "https://raw.githubusercontent.com/rose-pine/alacritty/main/dist/rose-pine.toml" -o "config/alacritty/themes/rose-pine.toml"
+# alacritty
+download_file "https://raw.githubusercontent.com/catppuccin/alacritty/main/catppuccin-mocha.toml" "config/alacritty/themes/catppuccin-mocha.toml"
+download_file "https://raw.githubusercontent.com/rose-pine/alacritty/main/dist/rose-pine.toml" "config/alacritty/themes/rose-pine.toml"
 
 # foot terminal
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/foot/main/themes/catppuccin-mocha.ini" -o "config/foot/themes/catppuccin-mocha.ini"
-curl -S -s -L "https://codeberg.org/dnkl/foot/raw/branch/master/themes/tokyonight-storm" -o "config/foot/themes/tokyo-night.ini"
-curl -S -s -L "https://raw.githubusercontent.com/EuCaue/foot/main/rose-pine" -o "config/foot/themes/rose-pine.ini"
-curl -S -s -L "https://codeberg.org/dnkl/foot/raw/branch/master/themes/nord" -o "config/foot/themes/nord.ini"
+download_file "https://raw.githubusercontent.com/catppuccin/foot/main/themes/catppuccin-mocha.ini" "config/foot/themes/catppuccin-mocha.ini"
+download_file "https://codeberg.org/dnkl/foot/raw/branch/master/themes/tokyonight-storm" "config/foot/themes/tokyo-night.ini"
+download_file "https://raw.githubusercontent.com/EuCaue/foot/main/rose-pine" "config/foot/themes/rose-pine.ini"
+download_file "https://codeberg.org/dnkl/foot/raw/branch/master/themes/nord" "config/foot/themes/nord.ini"
 
 # kitty
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/kitty/main/themes/mocha.conf" -o "config/kitty/themes/catppuccin-mocha.conf"
-curl -S -s -L "https://raw.githubusercontent.com/davidmathers/tokyo-night-kitty-theme/trunk/tokyo-night-kitty.conf" -o "config/kitty/themes/tokyo-night.conf"
-curl -S -s -L "https://raw.githubusercontent.com/rose-pine/kitty/main/dist/rose-pine.conf" -o "config/kitty/themes/rose-pine.conf"
-curl -S -s -L "https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf" -o "config/kitty/themes/nord.conf"
+download_file "https://raw.githubusercontent.com/catppuccin/kitty/main/themes/mocha.conf" "config/kitty/themes/catppuccin-mocha.conf"
+download_file "https://raw.githubusercontent.com/davidmathers/tokyo-night-kitty-theme/trunk/tokyo-night-kitty.conf" "config/kitty/themes/tokyo-night.conf"
+download_file "https://raw.githubusercontent.com/rose-pine/kitty/main/dist/rose-pine.conf" "config/kitty/themes/rose-pine.conf"
+download_file "https://raw.githubusercontent.com/connorholyday/nord-kitty/master/nord.conf" "config/kitty/themes/nord.conf"
 
-# bat themes
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Frappe.tmTheme" -o "config/bat/themes/catppuccin-frappe.tmTheme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Latte.tmTheme" -o "config/bat/themes/catppuccin-latte.tmTheme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Macchiato.tmTheme" -o "config/bat/themes/catppuccin-macchiato.tmTheme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Mocha.tmTheme" -o "config/bat/themes/catppuccin-mocha.tmTheme"
+# bat
+download_file "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Frappe.tmTheme" "config/bat/themes/catppuccin-frappe.tmTheme"
+download_file "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Latte.tmTheme" "config/bat/themes/catppuccin-latte.tmTheme"
+download_file "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Macchiato.tmTheme" "config/bat/themes/catppuccin-macchiato.tmTheme"
+download_file "https://raw.githubusercontent.com/catppuccin/bat/main/themes/Catppuccin%20Mocha.tmTheme" "config/bat/themes/catppuccin-mocha.tmTheme"
 
-# btop themes
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_frappe.theme" -o "config/btop/themes/catppuccin_frappe.theme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_latte.theme" -o "config/btop/themes/catppuccin_latte.theme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_macchiato.theme" -o "config/btop/themes/catppuccin_macchiato.theme"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme" -o "config/btop/themes/catppuccin_mocha.theme"
+# btop
+download_file "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_frappe.theme" "config/btop/themes/catppuccin_frappe.theme"
+download_file "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_latte.theme" "config/btop/themes/catppuccin_latte.theme"
+download_file "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_macchiato.theme" "config/btop/themes/catppuccin_macchiato.theme"
+download_file "https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme" "config/btop/themes/catppuccin_mocha.theme"
+
+# btop transparent background
 sed -i 's/theme\[main_bg\]="#[0-9A-Fa-f]\{6\}"/theme[main_bg]=""/' config/btop/themes/*.theme
 
 # sway themes
@@ -50,16 +62,16 @@ curl -S -s -L "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-p
 curl -S -s -L "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine-dawn.theme" -o "config/sway/themes/rose-pine-dawn"
 
 # lazygit
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/lazygit/main/themes-mergable/mocha/blue.yml" -o "config/lazygit/themes/mocha-blue.yml"
+download_file "https://raw.githubusercontent.com/catppuccin/lazygit/main/themes-mergable/mocha/blue.yml" "config/lazygit/themes/mocha-blue.yml"
 
 # git-delta
 #curl -S -s -L "https://raw.githubusercontent.com/Anomalocaridid/delta/main/themes/mocha.gitconfig" -o "config/git/delta-themes/catppuccin-mocha.gitconfig"
 
 # k9s
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/k9s/main/dist/catppuccin-mocha-transparent.yaml" -o "config/k9s/skins/catppuccin-mocha.yaml"
-curl -S -s -L "https://raw.githubusercontent.com/axkirillov/k9s-tokyonight/main/skin.yml" -o "config/k9s/skins/tokyo-night.yaml"
-curl -S -s -L "https://raw.githubusercontent.com/derailed/k9s/master/skins/rose-pine.yaml" -o "config/k9s/skins/rose-pine.yaml"
-curl -S -s -L "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yaml" -o "config/k9s/skins/nord.yaml"
+download_file "https://raw.githubusercontent.com/catppuccin/k9s/main/dist/catppuccin-mocha-transparent.yaml" "config/k9s/skins/catppuccin-mocha.yaml"
+download_file "https://raw.githubusercontent.com/axkirillov/k9s-tokyonight/main/skin.yml" "config/k9s/skins/tokyo-night.yaml"
+download_file "https://raw.githubusercontent.com/derailed/k9s/master/skins/rose-pine.yaml" "config/k9s/skins/rose-pine.yaml"
+download_file "https://raw.githubusercontent.com/derailed/k9s/master/skins/nord.yaml" "config/k9s/skins/nord.yaml"
 
 # k9s transparent background
 sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background "default"/' "config/k9s/skins/tokyo-night.yaml"
@@ -67,13 +79,36 @@ sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background
 sed -i -E 's/background: &background "\#[0-9a-fA-F]{6}"/background: \&background "default"/' "config/k9s/skins/nord.yaml"
 
 # qbittorrent
-curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/mocha.qbtheme" -o "config/qbittorrent/themes/catppuccin-mocha.qbtheme"
-curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/macchiato.qbtheme" -o "config/qbittorrent/themes/catppuccin-macchiato.qbtheme"
-curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/latte.qbtheme" -o "config/qbittorrent/themes/catppuccin-latte.qbtheme"
-curl -S -s -L "https://github.com/catppuccin/qbittorrent/raw/main/frappe.qbtheme" -o "config/qbittorrent/themes/catppuccin-frappe.qbtheme"
-curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/main.qbtheme" -o "config/qbittorrent/themes/rose-pine.qbtheme"
-curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/moon.qbtheme" -o "config/qbittorrent/themes/rose-pine-moon.qbtheme"
-curl -S -s -L "https://github.com/rose-pine/qbittorrent/raw/main/dist/dawn.qbtheme" -o "config/qbittorrent/themes/rose-pine-dawn.qbtheme"
+download_file "https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/catppuccin-mocha.qbtheme" "config/qBittorrent/themes/catppuccin-mocha.qbtheme"
+download_file "https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/catppuccin-macchiato.qbtheme" "config/qBittorrent/themes/catppuccin-macchiato.qbtheme"
+download_file "https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/catppuccin-latte.qbtheme" "config/qBittorrent/themes/catppuccin-latte.qbtheme"
+download_file "https://github.com/catppuccin/qbittorrent/releases/download/v2.0.1/catppuccin-frappe.qbtheme" "config/qBittorrent/themes/catppuccin-frappe.qbtheme"
+download_file "https://github.com/rose-pine/qbittorrent/raw/main/dist/main.qbtheme" "config/qBittorrent/themes/rose-pine.qbtheme"
+download_file "https://github.com/rose-pine/qbittorrent/raw/main/dist/moon.qbtheme" "config/qBittorrent/themes/rose-pine-moon.qbtheme"
+download_file "https://github.com/rose-pine/qbittorrent/raw/main/dist/dawn.qbtheme" "config/qBittorrent/themes/rose-pine-dawn.qbtheme"
 
 # atac
-curl -S -s -L "https://raw.githubusercontent.com/Julien-cpsn/ATAC/main/example_resources/key_bindings/vim_key_bindings.toml" -o "config/atac/key-bindings/vim_key_bindings.toml"
+download_file "https://raw.githubusercontent.com/Julien-cpsn/ATAC/main/example_resources/key_bindings/vim_key_bindings.toml" "config/atac/key-bindings/vim_key_bindings.toml"
+
+###
+# Pulls and generates shell completions.
+#
+
+# nushell completions
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/bat/bat-completions.nu" "config/nushell/completions/bat.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/git/git-completions.nu" "config/nushell/completions/git.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/just/just-completions.nu" "config/nushell/completions/just.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/gradlew/gradlew-completions.nu" "config/nushell/completions/gradlew.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/yarn/yarn-v4-completions.nu" "config/nushell/completions/yarn.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/tar/tar-completions.nu" "config/nushell/completions/tar.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/rg/rg-completions.nu" "config/nushell/completions/rg.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/pre-commit/pre-commit-completions.nu" "config/nushell/completions/pre-commit.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/nix/nix-completions.nu" "config/nushell/completions/nix.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/npm/npm-completions.nu" "config/nushell/completions/npm.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/mvn/mvn-completions.nu" "config/nushell/completions/mvn.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/make/make-completions.nu" "config/nushell/completions/make.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/gh/gh-completions.nu" "config/nushell/completions/gh.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/eza/eza-completions.nu" "config/nushell/completions/eza.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/dotnet/dotnet-completions.nu" "config/nushell/completions/dotnet.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/composer/composer-completions.nu" "config/nushell/completions/composer.nu"
+download_file "https://raw.githubusercontent.com/nushell/nu_scripts/refs/heads/main/custom-completions/cargo/cargo-completions.nu" "config/nushell/completions/cargo.nu"
