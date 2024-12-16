@@ -232,6 +232,7 @@
       ./nemo.nix # file manager
       #./albert.nix # minimal launcher
       ./ags.nix # gtk shell / widget library
+      ./misc/hellwal.nix # color palette generator
     ];
   };
   # cryptography

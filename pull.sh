@@ -53,13 +53,13 @@ download_file "https://raw.githubusercontent.com/catppuccin/btop/main/themes/cat
 sed -i 's/theme\[main_bg\]="#[0-9A-Fa-f]\{6\}"/theme[main_bg]=""/' config/btop/themes/*.theme
 
 # sway themes
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-frappe" -o "config/sway/themes/catppuccin-frappe"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-latte" -o "config/sway/themes/catppuccin-latte"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-macchiato" -o "config/sway/themes/catppuccin-macchiato"
-curl -S -s -L "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-mocha" -o "config/sway/themes/catppuccin-mocha"
-curl -S -s -L "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine.theme" -o "config/sway/themes/rose-pine"
-curl -S -s -L "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine-moon.theme" -o "config/sway/themes/rose-pine-moon"
-curl -S -s -L "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine-dawn.theme" -o "config/sway/themes/rose-pine-dawn"
+download_file "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-frappe" "config/sway/themes/catppuccin-frappe"
+download_file "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-latte" "config/sway/themes/catppuccin-latte"
+download_file "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-macchiato" "config/sway/themes/catppuccin-macchiato"
+download_file "https://raw.githubusercontent.com/catppuccin/i3/main/themes/catppuccin-mocha" "config/sway/themes/catppuccin-mocha"
+download_file "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine.theme" "config/sway/themes/rose-pine"
+download_file "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine-moon.theme" "config/sway/themes/rose-pine-moon"
+download_file "https://raw.githubusercontent.com/rose-pine/i3/main/themes/rose-pine-dawn.theme" "config/sway/themes/rose-pine-dawn"
 
 # lazygit
 download_file "https://raw.githubusercontent.com/catppuccin/lazygit/main/themes-mergable/mocha/blue.yml" "config/lazygit/themes/mocha-blue.yml"
