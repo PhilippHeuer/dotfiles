@@ -13,6 +13,9 @@ return {
       formatters_by_ft = {
         -- lua
         lua = { 'stylua' },
+        -- bash
+        bash = { 'shfmt' },
+        nushell = { 'nufmt' },
         -- python
         python = { 'isort', 'black' },
         -- javascript
