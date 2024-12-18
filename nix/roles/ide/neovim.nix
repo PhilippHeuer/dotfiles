@@ -15,6 +15,8 @@
 
     # formatters
     pkgs-unstable.nixfmt-rfc-style
+    pkgs-unstable.shfmt
+    pkgs-unstable.nufmt
 
     # lint
     pkgs-unstable.pylint
