@@ -201,6 +201,11 @@ source ~/.config/nushell/completions/rg.nu
 source ~/.config/nushell/completions/tar.nu
 source ~/.config/nushell/completions/yarn.nu
 
+# command wrappers
+source ~/.config/nushell/wrappers/cid.nu
+source ~/.config/nushell/wrappers/reposync.nu
+source ~/.config/nushell/wrappers/tmx.nu
+
 # zoxide
 source ~/.config/nushell/plugins/zoxide.nu
 
