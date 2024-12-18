@@ -182,6 +182,7 @@ $env.config = {
 # config
 source ~/.config/nushell/modules/keybindings.nu
 source ~/.config/nushell/modules/aliases.nu
+source ~/.config/nushell/hooks/display-output.nu
 
 # completions
 source ~/.config/nushell/completions/bat.nu
@@ -205,6 +206,7 @@ source ~/.config/nushell/completions/yarn.nu
 source ~/.config/nushell/wrappers/cid.nu
 source ~/.config/nushell/wrappers/reposync.nu
 source ~/.config/nushell/wrappers/tmx.nu
+source ~/.config/nushell/wrappers/df.nu
 
 # zoxide
 source ~/.config/nushell/plugins/zoxide.nu
