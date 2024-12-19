@@ -54,6 +54,9 @@
   services.smartd = {
     enable = true;
     autodetect = true; # monitor all devices connected when the machine is booted
+    extraOptions = [
+      "-q never" # disable checking of devices without SMART capability
+    ];
     # See smartd.conf(5) man page for details about these options:
     # "-a": enable all checks
     # "-o VALUE": enable/disable automatic offline testing on device (on/off)

@@ -8,16 +8,9 @@
 }:
 
 {
-  # opengl
-  hardware.opengl = {
+  # graphics
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
-
-  # for 24.11+
-  #hardware.graphics = {
-  #  enable = true;
-  #  enable32Bit = true;
-  #};
 }
