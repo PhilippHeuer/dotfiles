@@ -29,7 +29,7 @@
   users.defaultUserShell = pkgs.bash;
 
   # hostname
-  networking.hostName = "phx-desktop";
+  networking.hostName = "desktop";
 
   # Enable networking
   networking.networkmanager.enable = true;

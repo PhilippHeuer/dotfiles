@@ -96,6 +96,7 @@
       ./development/atac.nix # tui api client
       ./development/fuzzmux.nix
       ./development/silicon.nix # create beautiful images of source code
+      ./development/cid.nix # ci cd tool
     ];
   };
   # code editors
