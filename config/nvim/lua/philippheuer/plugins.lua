@@ -18,6 +18,7 @@ local plugins = {
   'philippheuer.plugins.treesitter', -- syntax highlighting
   'philippheuer.plugins.harpoon', -- bookmark files
   'philippheuer.plugins.oil', -- file explorer
+  'philippheuer.plugins.snacks', -- collection of small qol plugins
   -- 'philippheuer.plugins.http', -- http client
   'philippheuer.plugins.copilot', -- github copilot
   'philippheuer.plugins.completion', -- code completion
