@@ -3,11 +3,11 @@ return {
   settings = {
     ['rust-analyzer'] = {
       cargo = {
-        loadOutDirsFromCheck = true
+        loadOutDirsFromCheck = true,
       },
       procMacro = {
-        enable = true
-      }
-    }
+        enable = true,
+      },
+    },
   },
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # properties
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # fix permissions (if dir is owned by current user)
 if [ "$(stat -c '%U' "$script_dir")" == "$(whoami)" ]; then
