@@ -38,3 +38,7 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
 
   echo "WSL cleanup completed."
 fi
+
+# pre-commit
+pre-commit gc
+# pre-commit nuke

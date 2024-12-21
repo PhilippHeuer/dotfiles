@@ -20,6 +20,10 @@
 
     # lint
     pkgs-unstable.pylint
+
+    # sast
+    pkgs.gitleaks
+    pkgs.semgrep
   ];
 
   environment.variables.EDITOR = "nvim";
