@@ -6,14 +6,17 @@ let
 
     # pull
     if [ -d /etc/nixos/dotfiles ]; then
-      cd /etc/nixos/dotfiles && ${pkgs.git}/bin/git pull
+      cd /etc/nixos/dotfiles
+      ${pkgs.git}/bin/git fetch
+      ${pkgs.git}/bin/git reset --hard origin/main
     else
       mkdir -p /etc/nixos/dotfiles
       ${pkgs.git}/bin/git clone https://github.com/PhilippHeuer/dotfiles.git /etc/nixos/dotfiles
     fi
 
     # update
-    cd /etc/nixos/dotfiles/nix && ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake path:.#${config.networking.hostName}
+    cd /etc/nixos/dotfiles/nix
+    ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch --flake path:.#${config.networking.hostName}
   '';
 in
 {

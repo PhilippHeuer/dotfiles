@@ -109,7 +109,7 @@
       ./ide/idea-ultimate.nix # java ide
       ./ide/goland.nix # java ide
       ./ide/dbeaver.nix # database client
-      ./ide/bruno.nix # http client
+      #./ide/bruno.nix # http client
     ];
   };
   # language toolchains

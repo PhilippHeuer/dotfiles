@@ -189,6 +189,7 @@ in
       nixosRoles.container # container runtime
       nixosRoles.mediaserver # media server
       nixosRoles.homeautomation # home automation
+      ../roles/homeautomation/netalertx.nix # netalertx
       nixosRoles.driveencryption # drive encryption
       nixosRoles.drivemonitoring # drive health monitoring
       # variant
