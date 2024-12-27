@@ -7,8 +7,7 @@ let
     # pull
     if [ -d /etc/nixos/dotfiles ]; then
       cd /etc/nixos/dotfiles
-      ${pkgs.git}/bin/git fetch
-      ${pkgs.git}/bin/git reset --hard origin/main
+      ${pkgs.git}/bin/git pull
     else
       mkdir -p /etc/nixos/dotfiles
       ${pkgs.git}/bin/git clone https://github.com/PhilippHeuer/dotfiles.git /etc/nixos/dotfiles

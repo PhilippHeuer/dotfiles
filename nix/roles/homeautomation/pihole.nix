@@ -28,4 +28,8 @@ in
       extraOptions = [ "--dns=1.1.1.1" ];
     };
   };
+
+  # firewall
+  networking.firewall.allowedTCPPorts = [ 53 9010 ];
+  networking.firewall.allowedUDPPorts = [ 53 67 ];
 }
