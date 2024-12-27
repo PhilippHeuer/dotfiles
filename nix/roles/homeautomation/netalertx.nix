@@ -26,6 +26,9 @@ in
   sops.secrets."netalert/subnet" = lib.mkDefault {
     restartUnits = [ "podman-netalertx.service" ];
   };
+  sops.secrets."netalert/password" = lib.mkDefault {
+    restartUnits = [ "podman-netalertx.service" ];
+  };
 
   sops.templates."netalertx-config.env" = {
     content = ''
@@ -37,7 +40,11 @@ in
         config.sops.placeholder."notify/email/password"
       }","SMTP_REPORT_TO":"${
         config.sops.placeholder."netalert/email/to"
-      }","SMTP_REPORT_FROM":"NetAlertX <${config.sops.placeholder."notify/email/username"}>"}
+      }","SMTP_REPORT_FROM":"NetAlertX <${
+        config.sops.placeholder."notify/email/username"
+      }>","SETPWD_enable_password":"True","SETPWD_password":"${
+        config.sops.placeholder."netalert/password"
+      }"}
     '';
   };
 
