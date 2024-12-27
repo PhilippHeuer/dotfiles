@@ -16,4 +16,7 @@ in
       volumes = [ "/var/lib/hass:/config" ];
     };
   };
+
+  # firewall (8123 = home-assistant ui)
+  networking.firewall.allowedTCPPorts = [ 8123 ];
 }

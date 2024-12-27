@@ -104,4 +104,8 @@
       };
     };
   };
+
+  # firewall
+  networking.firewall.allowedTCPPorts = [ 53 4000 ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 }
