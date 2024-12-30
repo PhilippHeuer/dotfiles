@@ -205,6 +205,7 @@ source ~/.config/nushell/completions/yarn.nu
 # command wrappers
 source ~/.config/nushell/wrappers/cid.nu
 source ~/.config/nushell/wrappers/reposync.nu
+source ~/.config/nushell/wrappers/primecodegen.nu
 source ~/.config/nushell/wrappers/tmx.nu
 source ~/.config/nushell/wrappers/df.nu
 
