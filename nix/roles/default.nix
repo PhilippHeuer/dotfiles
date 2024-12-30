@@ -49,6 +49,7 @@
     imports = [
       ./terminal/alacritty.nix
       ./terminal/foot.nix
+      ./terminal/ghostty.nix
       ./terminal/kitty.nix
     ];
   };
