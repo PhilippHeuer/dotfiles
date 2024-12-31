@@ -81,6 +81,8 @@
   commit-custom = "!f() { GIT_COMMITTER_NAME=\"$2\" GIT_COMMITTER_EMAIL=\"$3\" GIT_COMMITTER_DATE=\"$4\" git commit --allow-empty -m \"$1\" --date=\"$4\"; }; f"
   # manually run git hooks
   pre-commit = !sh -c 'pre-commit run --config ~/.config/precommit/.pre-commit-config.yaml --hook-stage pre-commit --all-files'
+  # run fsck and fix common issues
+  fix = !sh -c 'git fsck --full --unreachable --strict && git commit-graph write --reachable&& git gc --auto'
 
 [interactive]
   diffFilter = delta --color-only
