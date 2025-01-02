@@ -56,6 +56,7 @@ in
       ../nixos/ssh.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/ntp.nix
       ../nixos/smartd.nix
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
@@ -106,6 +107,7 @@ in
       ../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/ntp.nix
       ../nixos/smartd.nix
       #../nixos/flatpak.nix
       ../nixos/de-sddm.nix
@@ -148,6 +150,7 @@ in
       #../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/ntp.nix
       ../nixos/smartd.nix
       ../nixos/systemupdate.nix
       # core
@@ -179,6 +182,7 @@ in
       #../nixos/wifi.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/ntp.nix
       ../nixos/smartd.nix
       ../nixos/systemupdate.nix
       # core
@@ -208,6 +212,7 @@ in
       ../nixos/audio-wsl.nix
       ../nixos/cacerts.nix
       ../nixos/proxy.nix
+      ../nixos/ntp.nix
       # wsl
       inputs.nixos-wsl.nixosModules.wsl
       # core
