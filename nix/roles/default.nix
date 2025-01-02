@@ -49,7 +49,7 @@
     imports = [
       ./terminal/alacritty.nix
       ./terminal/foot.nix
-      ./terminal/ghostty.nix
+      #./terminal/ghostty.nix
       ./terminal/kitty.nix
     ];
   };
@@ -98,6 +98,8 @@
       ./development/fuzzmux.nix
       ./development/silicon.nix # create beautiful images of source code
       ./development/cid.nix # ci cd tool
+      ./development/oras.nix # oci registry as storage
+      ./development/syft.nix # software bill of materials
     ];
   };
   # code editors
