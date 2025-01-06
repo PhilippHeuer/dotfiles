@@ -12,6 +12,7 @@
     pkgs-unstable.jdt-language-server # java
     pkgs-unstable.yaml-language-server # yaml
     pkgs-unstable.bash-language-server # bash
+    pkgs-unstable.ansible-language-server # ansible
 
     # formatters
     pkgs-unstable.nixfmt-rfc-style
