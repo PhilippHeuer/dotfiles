@@ -1,4 +1,5 @@
 return {
+  executable = 'ansible-language-server',
   filetypes = { 'yaml.ansible' },
   settings = {
     ansible = {
