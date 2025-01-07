@@ -28,6 +28,10 @@ let
           system = system;
           config.allowUnfree = true;
         };
+        pkgs-ph = import inputs.nixpkgs-philippheuer {
+          system = system;
+          config.allowUnfree = true;
+        };
       };
       modules =
         inputs.nixpkgs.lib.optionals defaultModules [
