@@ -24,6 +24,24 @@ alias sshu="~/.local/scripts/sshu.sh"
 # editor
 alias v="nvim"
 
+# notes (nvim)
+nt() {
+  cd ~/source/notes || return
+  if [ "$(date +%H)" -ge 12 ]; then
+    nvim "$(date -d 'tomorrow' +%Y-%m-%d).md"
+  else
+    nvim "$(date +%Y-%m-%d).md"
+  fi
+}
+ny() {
+  cd ~/source/notes || return
+  if [ "$(date +%H)" -ge 12 ]; then
+    nvim "$(date +%Y-%m-%d).md"
+  else
+    nvim "$(date -d 'yesterday' +%Y-%m-%d).md"
+  fi
+}
+
 # navigate
 alias ".."="cd .."
 
@@ -55,3 +73,6 @@ alias list-adapters="nmcli dev status"
 alias list-wifi="nmcli dev wifi list"
 alias list-connections="nmcli con show"
 alias logs-network="sudo journalctl -fu NetworkManager"
+
+# qemu
+alias qemu-register="sudo podman run --rm --privileged multiarch/qemu-user-static --reset -p yes"
