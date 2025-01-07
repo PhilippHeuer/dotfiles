@@ -118,6 +118,7 @@
   # language toolchains
   lang = {
     imports = [
+      ./lang/dotnet.nix
       ./lang/golang.nix
       ./lang/java.nix
       ./lang/nodejs.nix
