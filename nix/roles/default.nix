@@ -85,6 +85,7 @@
       ./development/gitdelta.nix # git diff
       ./development/lazygit.nix # git tui
       ./development/precommit.nix # git hooks
+      ./development/devenv.nix # reproducible development environment
       ./development/ripgrep.nix # search source code
       ./development/onefetch.nix # git summary
       ./development/kondo.nix # built output cleanup
