@@ -4,7 +4,7 @@ _default:
 format:
 	find nix -name "*.nix" -type f -exec nixfmt -w 200 {} \;
 
-update: nix-update nvim-update
+update: nix-update
 
 nix-update:
 	cd nix && sudo nix flake update
