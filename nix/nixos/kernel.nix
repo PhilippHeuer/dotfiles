@@ -50,9 +50,6 @@
 
       # security
       "kernel.dmesg_restrict" = 1; # restrict access to dmesg messages
-
-      # misc
-      "kernel.sysrq" = 1; # enable sysrq
     };
 
     #extraModprobeConfig = ''
