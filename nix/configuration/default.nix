@@ -239,7 +239,6 @@ in
       # misc
       ../roles/misc/qbittorrent.nix # torrent
       ../roles/misc/gramps.nix # genealogy / family tree
-      ../roles/misc/krita.nix # creative / painting
       # variant
       ./wsl
     ];

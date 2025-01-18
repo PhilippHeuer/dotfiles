@@ -78,6 +78,9 @@ files=(
   # slack
   ".config/Slack"
 
+  # pass pw manager
+  ".password-store"
+
   # gramps
   ".config/gramps"
 )

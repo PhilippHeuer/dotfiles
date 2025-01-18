@@ -34,7 +34,7 @@
 
 [fetch]
   prune = true # remove remote branches that no longer exist on the server
-  writeCommitGraph = true # incrementally update the commit graph
+  # writeCommitGraph = true # incrementally update the commit graph
 
 [alias]
   s = status --short --branch
