@@ -14,12 +14,17 @@ alias l="eza --long --header"
 alias ls="eza --icons -T -L 1 -x"
 alias ll="eza --icons -T -L 2 -x"
 
+# gpg
+alias gpg-list-pub="gpg --list-keys --keyid-format LONG"
+alias gpg-list-priv="gpg --list-secret-keys --keyid-format LONG"
+
 # scripts
 alias backup="~/.local/scripts/backup.sh"
 alias cleanup="~/.local/scripts/cleanup.sh"
 alias reload="~/.local/scripts/reload.sh"
 alias sshm="~/.local/scripts/sshm.sh"
 alias sshu="~/.local/scripts/sshu.sh"
+alias wallpaper="~/.local/scripts/actions/wallpaper.sh"
 
 # editor
 alias v="nvim"
@@ -41,6 +46,7 @@ ny() {
     nvim "$(date -d 'yesterday' +%Y-%m-%d).md"
   fi
 }
+nsync='~/.local/scripts/notes/jira.py "$(pass show work/one/jira/server)" "$(pass show work/one/jira/token)"'
 
 # navigate
 alias ".."="cd .."

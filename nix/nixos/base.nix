@@ -15,6 +15,7 @@
   system.stateVersion = lib.mkDefault "24.05"; # Did you read the comment?
 
   boot = {
+    readOnlyNixStore = true;
     plymouth.enable = true;
     # tmp.useTmpfs = true;
     tmp.cleanOnBoot = !config.boot.tmp.useTmpfs;
