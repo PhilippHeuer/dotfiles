@@ -180,7 +180,7 @@ export extern "nix build" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -215,7 +215,7 @@ export extern "nix develop" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -245,7 +245,7 @@ export extern "nix flake archive" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -256,7 +256,7 @@ export extern "nix flake archive" [
 
 #check whether the flake evaluates and run its tests
 export extern "nix flake check" [
-  --no-build    #Do not build checks. 
+  --no-build    #Do not build checks.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -265,7 +265,7 @@ export extern "nix flake check" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -285,7 +285,7 @@ export extern "nix flake clone" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -296,7 +296,7 @@ export extern "nix flake clone" [
 
 #show flake metadata
 export extern "nix flake info" [
-  --json    #Produce output in JSON format, suitable for consumption by another program. 
+  --json    #Produce output in JSON format, suitable for consumption by another program.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -305,7 +305,7 @@ export extern "nix flake info" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -336,7 +336,7 @@ export extern "nix flake lock" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
   --recreate-lock-file    #Recreate the flake's lock file from scratch.
@@ -346,7 +346,7 @@ export extern "nix flake lock" [
 
 #show flake metadata
 export extern "nix flake metadata" [
-  --json    #Produce output in JSON format, suitable for consumption by another program. 
+  --json    #Produce output in JSON format, suitable for consumption by another program.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -355,7 +355,7 @@ export extern "nix flake metadata" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -378,7 +378,7 @@ export extern "nix flake new" [
 
 #download the source tree denoted by a flake reference into the Nix
 export extern "nix flake prefetch" [
-  --json    #Produce output in JSON format, suitable for consumption by another program. 
+  --json    #Produce output in JSON format, suitable for consumption by another program.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -387,7 +387,7 @@ export extern "nix flake prefetch" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -408,7 +408,7 @@ export extern "nix flake show" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -417,7 +417,7 @@ export extern "nix flake show" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#update flake lock file 
+#update flake lock file
 export extern "nix flake update" [
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
@@ -427,7 +427,7 @@ export extern "nix flake update" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
   ...args: any                              # Arguments to be passed to your program
 ]
@@ -450,7 +450,7 @@ export extern "nix profile diff-closures" [
 
 #show all versions of a profile
 export extern "nix profile history" [
-  --profile    #The profile to update. 
+  --profile    #The profile to update.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -462,7 +462,7 @@ export extern "nix profile history" [
 
 #install a package into a profile
 export extern "nix profile install" [
-  --profile    #The profile to update. 
+  --profile    #The profile to update.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -471,7 +471,7 @@ export extern "nix profile install" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -485,7 +485,7 @@ export extern "nix profile install" [
 
 #list installed packages
 export extern "nix profile list" [
-  --profile    #The profile to update. 
+  --profile    #The profile to update.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -497,7 +497,7 @@ export extern "nix profile list" [
 
 #remove packages from a profile
 export extern "nix profile remove" [
-  --profile    #The profile to update. 
+  --profile    #The profile to update.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -517,7 +517,7 @@ export extern "nix profile rollback" [
 
 #upgrade packages using their most recent flake
 export extern "nix profile upgrade" [
-  --profile    #The profile to update. 
+  --profile    #The profile to update.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -526,7 +526,7 @@ export extern "nix profile upgrade" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -538,7 +538,7 @@ export extern "nix profile upgrade" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#delete non-current versions of a profile 
+#delete non-current versions of a profile
 export extern "nix profile wipe-history" [
   --dry-run    #Show what this command would do without doing it.
   --older-than    #Delete versions older than the specified age. age must be in the format Nd, where N denotes
@@ -567,7 +567,7 @@ export extern "nix run" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -581,7 +581,7 @@ export extern "nix run" [
 
 #search for packages
 export extern "nix search" [
-  --json    #Produce output in JSON format, suitable for consumption by another program. 
+  --json    #Produce output in JSON format, suitable for consumption by another program.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -590,7 +590,7 @@ export extern "nix search" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -602,7 +602,7 @@ export extern "nix search" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#run a shell in which the specified packages are available 
+#run a shell in which the specified packages are available
 export extern "nix shell" [
   --command(-c)    #command args
   --ignore-environment(-i)    #Clear the entire environment (except those specified with --keep).
@@ -616,7 +616,7 @@ export extern "nix shell" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -640,7 +640,7 @@ export extern "nix bundle" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -666,7 +666,7 @@ export extern "nix copy" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -690,7 +690,7 @@ export extern "nix edit" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -717,7 +717,7 @@ export extern "nix eval" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -739,7 +739,7 @@ export extern "nix fmt" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -761,7 +761,7 @@ export extern "nix log" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -788,7 +788,7 @@ export extern "nix path-info" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -809,7 +809,7 @@ export extern "nix registry" [
 
 #add/replace flake in user flake registry
 export extern "nix registry add" [
-  --registry    #The registry to operate on. 
+  --registry    #The registry to operate on.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -826,7 +826,7 @@ export extern "nix registry list" [
 
 #pin a flake to its current version or to the current version of a flake
 export extern "nix registry pin" [
-  --registry    #The registry to operate on. 
+  --registry    #The registry to operate on.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -836,13 +836,13 @@ export extern "nix registry pin" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#remove flake from user flake registry 
+#remove flake from user flake registry
 export extern "nix registry remove" [
   --registry    #The registry to operate on.
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#show why a package has another package in its closure 
+#show why a package has another package in its closure
 export extern "nix why-depends" [
   --all(-a)    #Show all edges in the dependency graph leading from package to dependency, rather than just
   --precise    #For each edge in the dependency graph, show the files in the parent that cause the
@@ -854,7 +854,7 @@ export extern "nix why-depends" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -957,7 +957,7 @@ export extern "nix nar dump-path" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#show information about a path inside a NAR file 
+#show information about a path inside a NAR file
 export extern "nix nar ls" [
   --directory(-d)    #Show directories rather than their contents.
   --json    #Produce output in JSON format, suitable for consumption by another program.
@@ -979,7 +979,7 @@ export extern "nix print-dev-env" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -998,7 +998,7 @@ export extern "nix realisation" [
 
 #query information about one or several realisations
 export extern "nix realisation info" [
-  --json    #Produce output in JSON format, suitable for consumption by another program. 
+  --json    #Produce output in JSON format, suitable for consumption by another program.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -1007,7 +1007,7 @@ export extern "nix realisation info" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1029,7 +1029,7 @@ export extern "nix show-config" [
 
 #show the contents of a store derivation
 export extern "nix show-derivation" [
-  --recursive(-r)    #Include the dependencies of the specified derivations. 
+  --recursive(-r)    #Include the dependencies of the specified derivations.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -1038,7 +1038,7 @@ export extern "nix show-derivation" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1050,7 +1050,7 @@ export extern "nix show-derivation" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#manipulate a Nix store 
+#manipulate a Nix store
 export extern "nix store" [
   ...args: any                              # Arguments to be passed to your program
 ]
@@ -1085,7 +1085,7 @@ export extern "nix store copy-sigs" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1101,7 +1101,7 @@ export extern "nix store copy-sigs" [
 
 #delete paths from the Nix store
 export extern "nix store delete" [
-  --ignore-liveness    #Do not check whether the paths are reachable from a root. 
+  --ignore-liveness    #Do not check whether the paths are reachable from a root.
   --arg    #Pass the value expr as the argument name to Nix functions.
   --argstr    #Pass the string string as the argument name to Nix functions.
   --eval-store    #The Nix store to use for evaluations.
@@ -1110,7 +1110,7 @@ export extern "nix store delete" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1134,7 +1134,7 @@ export extern "nix store diff-closures" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1156,7 +1156,7 @@ export extern "nix store dump-path" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1199,7 +1199,7 @@ export extern "nix store make-content-addressed" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1229,7 +1229,7 @@ export extern "nix store prefetch-file" [
   --expected-hash    #The expected hash of the file.
   --hash-type    #hash algorithm ('md5', 'sha1', 'sha256', or 'sha512')
   --json    #Produce output in JSON format, suitable for consumption by another program.
-  --name    #Override the name component of the resulting store path. It defaults to the base name of 
+  --name    #Override the name component of the resulting store path. It defaults to the base name of
   ...args: any                              # Arguments to be passed to your program
 ]
 
@@ -1243,7 +1243,7 @@ export extern "nix store repair" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1268,7 +1268,7 @@ export extern "nix store sign" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1282,7 +1282,7 @@ export extern "nix store sign" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#verify the integrity of store paths 
+#verify the integrity of store paths
 export extern "nix store verify" [
   --no-contents    #Do not verify the contents of each store path.
   --no-trust    #Do not verify whether each store path is trusted.
@@ -1296,7 +1296,7 @@ export extern "nix store verify" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1322,7 +1322,7 @@ export extern "nix store copy-log" [
   --override-flake    #Override the flake registries, redirecting original-ref to resolved-ref.
   --commit-lock-file    #Commit changes to the flake's lock file.
   --inputs-from    #Use the inputs of the specified flake as registry entries.
-  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use 
+  --no-registries    #Don't allow lookups in the flake registries. This option is deprecated; use
   --no-update-lock-file    #Do not allow any updates to the flake's lock file.
   --no-write-lock-file    #Do not write the flake's newly generated lock file.
   --override-input    #Override a specific flake input (e.g. dwarffs/nixpkgs). This implies --no-write-lock-file.
@@ -1339,7 +1339,7 @@ export extern "nix doctor" [
   ...args: any                              # Arguments to be passed to your program
 ]
 
-#upgrade Nix to the latest stable version 
+#upgrade Nix to the latest stable version
 export extern "nix upgrade-nix" [
   --dry-run    #Show what this command would do without doing it.
   --nix-store-paths-url    #The URL of the file that contains the store paths of the latest Nix release.

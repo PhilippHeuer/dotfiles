@@ -41,7 +41,7 @@ filename, extension = os.path.splitext(inputFile)
 outputFile = f"{filename}[HEVC]{extension}"
 ffmpeg_args = [
     "-v", "error",
-    "-i", inputFile, 
+    "-i", inputFile,
     "-n",  # don't overwrite existing files
     "-map", "0",  # map all streams (audio, video, subtitles, etc.)
     "-map_metadata", "0",  # map metadata from input file
@@ -82,7 +82,7 @@ if videoCodec == "libx265":
         "refine-intra=4",  # Intra prediction refinement level
         "refine-mv=3",  # Motion vector refinement level
         "rskip=0",  # Disable residual skipping optimization
-        
+
         # Motion estimation
         "subme=5",  # Subpixel motion estimation quality level
         "me=3",  # Motion estimation method
@@ -90,11 +90,11 @@ if videoCodec == "libx265":
         "ref=6",  # Number of reference frames
         "bframes=8",  # Maximum number of consecutive B-frames
         "rd=6",  # Rate-distortion optimization level
-        
+
         # Coding tree units (CTU)
         "ctu=64",  # Maximum CTU size (64x64, the largest allowed in HEVC)
         "merange=57",  # Motion estimation range (57 pixels)
-        
+
         # Quantization and in-loop filtering
         "rdoq-level=2",  # Rate-distortion optimized quantization (RDOQ) level
         "no-tskip",  # Disable transform skipping

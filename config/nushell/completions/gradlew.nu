@@ -1,22 +1,22 @@
 def "nu-complete gradlew" [] {
     ./gradlew tasks
-    | lines 
+    | lines
     | parse --regex '(?P<value>[a-zA-Z]+) - (?P<description>.+)'
 }
 
 def "nu-complete gradlew console" [] {
     [
-        "plain" 
-        "auto" 
-        "rich" 
+        "plain"
+        "auto"
+        "rich"
         "verbose"
     ]
 }
 
 def "nu-complete gradlew deps-verify" [] {
     [
-        "strict" 
-        "lenient" 
+        "strict"
+        "lenient"
         "off"
     ]
 }
