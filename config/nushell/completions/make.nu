@@ -1,10 +1,10 @@
 def "nu-complete make" [] {
-    ls 
+    ls
 	| find --ignore-case makefile
 	| open $in.0.name
-	| lines 
-	| find --regex '^[\w\.-]+\s*:' 
-	| where ($it | str starts-with '.') == false 
+	| lines
+	| find --regex '^[\w\.-]+\s*:'
+	| where ($it | str starts-with '.') == false
 	| split column ':' target
 	| get target
 	| str trim

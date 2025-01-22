@@ -1,10 +1,10 @@
 
 def "nu-complete gh" [] {
-    ^gh --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -14,11 +14,11 @@ export extern "gh" [
 ]
 
 def "nu-complete gh auth" [] {
-    ^gh auth --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh auth --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -41,11 +41,11 @@ export extern "gh browse" [
 ]
 
 def "nu-complete gh codespace" [] {
-    ^gh codespace --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh codespace --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -55,11 +55,11 @@ export extern "gh codespace" [
 ]
 
 def "nu-complete gh gist" [] {
-    ^gh gist --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh gist --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -127,11 +127,11 @@ export extern "gh gist view" [
 ]
 
 def "nu-complete gh issue" [] {
-    ^gh issue --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh issue --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -142,11 +142,11 @@ export extern "gh issue" [
 ]
 
 def "nu-complete gh org" [] {
-    ^gh org --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh org --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -166,7 +166,7 @@ export extern "gh pr" [
 ]
 
 def "nu-complete gh list prs" [] {
-    gh pr list --json title,number,author,updatedAt | from json | update author {|row| $row.author.login } | rename --column { number: value } | insert description { |row| ( $row.updatedAt | date humanize) + " - " + $row.title + " by " + $row.author } | select value description 
+    gh pr list --json title,number,author,updatedAt | from json | update author {|row| $row.author.login } | rename --column { number: value } | insert description { |row| ( $row.updatedAt | date humanize) + " - " + $row.title + " by " + $row.author } | select value description
 }
 
 export extern "gh pr checkout" [
@@ -174,17 +174,17 @@ export extern "gh pr checkout" [
    --branch(-b): string           # Local branch name to use (default: the name of the head branch)
    --detach                       # Checkout PR with a detached HEAD
    --force(-f)                    # Reset the existing local branch to the latest state of the pull request
-   --recurse-submodules           # Update all submodules after checkout   
+   --recurse-submodules           # Update all submodules after checkout
    --repo(-R)                     # Select another repository using the [HOST/]OWNER/REPO format
    --help                         # Show help for command
 ]
 
 def "nu-complete gh project" [] {
-    ^gh project --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh project --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -194,11 +194,11 @@ export extern "gh project" [
 ]
 
 def "nu-complete gh release" [] {
-    ^gh release --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh release --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -209,11 +209,11 @@ export extern "gh release" [
 ]
 
 def "nu-complete gh repo" [] {
-    ^gh repo --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh repo --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -308,11 +308,11 @@ export extern "gh repo fork" [
 ]
 
 def "nu-complete gh cache" [] {
-    ^gh cache --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh cache --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -323,11 +323,11 @@ export extern "gh cache" [
 ]
 
 def "nu-complete gh run" [] {
-    ^gh run --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh run --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -337,11 +337,11 @@ export extern "gh run" [
 ]
 
 def "nu-complete gh workflow" [] {
-    ^gh workflow --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh workflow --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -352,11 +352,11 @@ export extern "gh workflow" [
 ]
 
 def "nu-complete gh alias" [] {
-    ^gh alias --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh alias --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -401,11 +401,11 @@ export extern "gh completion" [
 ]
 
 def "nu-complete gh config" [] {
-    ^gh config --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh config --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -415,11 +415,11 @@ export extern "gh config" [
 ]
 
 def "nu-complete gh extension" [] {
-    ^gh extension --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh extension --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -429,11 +429,11 @@ export extern "gh extension" [
 ]
 
 def "nu-complete gh gpg-key" [] {
-    ^gh gpg-key --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh gpg-key --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -443,11 +443,11 @@ export extern "gh gpg-key" [
 ]
 
 def "nu-complete gh label" [] {
-    ^gh label --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh label --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -458,11 +458,11 @@ export extern "gh label" [
 ]
 
 def "nu-complete gh ruleset" [] {
-    ^gh ruleset --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh ruleset --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -473,11 +473,11 @@ export extern "gh ruleset" [
 ]
 
 def "nu-complete gh search" [] {
-    ^gh search --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh search --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -493,17 +493,17 @@ export extern "gh search" [
     --repo(-R)       # Filter on repository
     --size           # Filter on size range, in kilobytes
     --template(-t)   # Format JSON output using a Go template; see "gh help formatting"
-    --web(-w) a      # Open the search query in the web browser   
+    --web(-w) a      # Open the search query in the web browser
     --help           # Show help for command
     command?: string@"nu-complete gh search"
 ]
 
 def "nu-complete gh secret" [] {
-    ^gh secret --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh secret --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -514,11 +514,11 @@ export extern "gh secret" [
 ]
 
 def "nu-complete gh ssh-key" [] {
-    ^gh ssh-key --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh ssh-key --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 
@@ -534,11 +534,11 @@ export extern "gh status" [
 ]
 
 def "nu-complete gh variable" [] {
-    ^gh variable --help 
-    | lines 
-    | filter { str starts-with "  " } 
-    | skip 1 
-    | parse "{value}: {description}" 
+    ^gh variable --help
+    | lines
+    | filter { str starts-with "  " }
+    | skip 1
+    | parse "{value}: {description}"
     | str trim
 }
 

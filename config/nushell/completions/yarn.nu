@@ -5,17 +5,17 @@
 def "nu-complete yarn run" [] {
 
   let userScripts = try {
-    open ./package.json 
-    | get scripts 
-    | transpose 
+    open ./package.json
+    | get scripts
+    | transpose
     | rename value description
   } catch {[]}
 
   let binaries = try {
-    yarn bin --json 
-    | lines 
-    | each { |it| $it | from json } 
-    | select name source 
+    yarn bin --json
+    | lines
+    | each { |it| $it | from json }
+    | select name source
     | rename value description
   } catch {[]}
 
@@ -83,7 +83,7 @@ def 'nu-complete yarn' [] {
   ]
 
  let runnables = try {(nu-complete yarn run)} catch {[]}
-  
+
  $commands | append $runnables
 }
 

@@ -47,7 +47,7 @@ extern "mvn" [
 extern "mvn clean" [
 ]
 
-# Clean project and Skip test and Install the built artifact into the local repository. 
+# Clean project and Skip test and Install the built artifact into the local repository.
 extern "mvn clean install -DskipTests" [
     --debug(-X)                    # Produce execution debug output
     --define(-D)                   # Define a user property
