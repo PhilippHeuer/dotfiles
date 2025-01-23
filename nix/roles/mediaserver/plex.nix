@@ -21,8 +21,8 @@
       (pkgs.fetchFromGitHub {
         owner = "ZeroQI";
         repo = "Absolute-Series-Scanner";
-        rev = "33ce1de7199918371eff75e894d35d52bb9a6f30";
-        sha256 = "sha256-dqcAGAFPps0Hd18j54FTPGVH8KK0iYBfpI4Q3qRT+H0=";
+        rev = "6145eec212be2b21004f2eea52cff9840ea2646b";
+        sha256 = "sha256-Hi4fhIlbEhpOy5QLMW5hsWLBnoXnhAsJWJ+x2iTYe9Q=";
       })
     ];
     package = pkgs-unstable.plex;
