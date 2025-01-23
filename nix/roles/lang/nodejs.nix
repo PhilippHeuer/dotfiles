@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.nodejs_23
+    pkgs.nodejs_23
     pkgs.yarn
   ];
 }
