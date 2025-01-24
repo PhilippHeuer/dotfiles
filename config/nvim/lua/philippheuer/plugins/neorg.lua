@@ -5,7 +5,7 @@ return {
     ft = 'norg', -- lazy load on file type
     cmd = 'Neorg', -- lazy load on command
     -- renovate: datasource=github-releases depName=nvim-neorg/neorg
-    version = '9.2.0',
+    version = 'v9.2.0',
     config = function()
       require('neorg').setup {
         load = {
