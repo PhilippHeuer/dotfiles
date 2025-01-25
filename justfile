@@ -13,7 +13,8 @@ nvim-update:
 	nvim --headless "+Lazy! update" +qa
 
 apply-local +PROFILE:
-	cd nix && sudo nixos-rebuild switch --flake path:.#{{PROFILE}}
+	#cd nix && sudo nixos-rebuild switch --flake path:.#{{PROFILE}}
+	nh os switch ./nix -H {{PROFILE}} --ask
 
 apply-to +HOST:
 	rsync -a --delete $(pwd)/* {{HOST}}:~/dotfiles

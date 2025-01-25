@@ -28,5 +28,6 @@
 
     nix-bash-completions # nix bash completions
     nix-index # nix-index and nix-locate
+    nh # nix helper
   ];
 }
