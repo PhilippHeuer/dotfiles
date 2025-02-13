@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.zed-editor
+    #pkgs.zed-editor
   ];
 }
