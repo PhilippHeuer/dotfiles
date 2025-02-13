@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = [
-    pkgs.veracrypt
+    pkgs-unstable.veracrypt
   ];
 
   # auto disamount all volumes on shutdown
