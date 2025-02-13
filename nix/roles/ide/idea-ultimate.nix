@@ -31,7 +31,7 @@ let
   ];
 
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idea-ultimate = addPlugins pkgs-unstable.jetbrains.idea-ultimate pluginList;
+  idea-ultimate = addPlugins pkgs.jetbrains.idea-ultimate pluginList;
 in
 {
   environment.systemPackages = [
