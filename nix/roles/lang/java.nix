@@ -13,8 +13,8 @@ in
   ];
 
   environment.variables = {
-    JAVA_21_HOME = jdk21.outPath;
-    JAVA_17_HOME = jdk17.outPath;
-    JAVA_11_HOME = jdk11.outPath;
+    JAVA_HOME_21 = jdk21.outPath;
+    JAVA_HOME_17 = jdk17.outPath;
+    JAVA_HOME_11 = jdk11.outPath;
   };
 }
