@@ -22,8 +22,7 @@ in
       ];
       environment = {
         TZ = "Europe/Berlin";
-        VIRTUAL_HOST = "0.0.0.0:9010";
-        #WEBPASSWORD = "";
+        #FTLCONF_webserver_api_password = "";
       };
       extraOptions = [ "--dns=1.1.1.1" ];
     };
