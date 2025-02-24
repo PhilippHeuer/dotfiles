@@ -110,7 +110,7 @@
       ./ide/neovim.nix # code editor
       ./ide/zed.nix # code editor
       ./ide/vscode.nix # code editor
-      # ./ide/idea-community.nix # java ide
+      ./ide/idea-community.nix # java ide
       ./ide/idea-ultimate.nix # java ide
       ./ide/goland.nix # java ide
       ./ide/dbeaver.nix # database client
