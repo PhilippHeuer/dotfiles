@@ -70,6 +70,9 @@ files=(
   # chatterino
   ".local/share/chatterino"
 
+  # cryptomator
+  ".config/Cryptomator"
+
   # qbittorrent
   ".config/qBittorrent/categories.json"
   ".config/qBittorrent/watched_folders.json"
