@@ -604,11 +604,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1740349400,
-        "narHash": "sha256-7ueT4BFryXd8zNvbzDmQT5mF0jkFwx4By3Iu2SQIlIs=",
+        "lastModified": 1740432039,
+        "narHash": "sha256-M+/9KBEAe0LlF1TCvCKWzOGjswBYe1VwEqI5IpRzC5Y=",
         "owner": "philippheuer",
         "repo": "nixpkgs",
-        "rev": "b3fd733d6917bd565e87dc9e7149e936784a5836",
+        "rev": "91edaf27d0d71a9b5636339f6dd2a033e296a9c3",
         "type": "github"
       },
       "original": {
