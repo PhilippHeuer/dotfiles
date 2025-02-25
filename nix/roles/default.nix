@@ -96,6 +96,7 @@
       ./development/tokei.nix # code statistics
       ./development/openapi.nix # openapi linter, changes, ...
       ./development/primecodegen.nix # code generator
+      ./development/openapi-generator.nix # code generator
       ./development/atac.nix # tui api client
       ./development/fuzzmux.nix
       ./development/silicon.nix # create beautiful images of source code
