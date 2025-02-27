@@ -8,13 +8,13 @@
   };
 
   # gpg agent (supports SSH Keys and GPG Keys)
-  #programs.gnupg.agent = {
-  #  enable = true;
-  #  enableSSHSupport = true; # will set SSH_AUTH_SOCK
-  #  enableBrowserSocket = true;
-  #  settings = {
-  #    default-cache-ttl = 3600; # 1 hour
-  #    default-cache-ttl-ssh = 3600; # 1 hour
-  #  };
-  #};
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = false; # will set SSH_AUTH_SOCK
+    enableBrowserSocket = false;
+    settings = {
+      default-cache-ttl = 3600; # 1 hour
+      default-cache-ttl-ssh = 3600; # 1 hour
+    };
+  };
 }
