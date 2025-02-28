@@ -5,7 +5,7 @@ servers:
     type: github
     auth:
       username: PhilippHeuer
-      password-file: ~/.config/reposync/github-com.token
+      password-command: pass show personal/github/readonly-token
     mirror:
       dir: ~/source
       default-action: include
