@@ -7,7 +7,7 @@
 # link: https://github.com/jokob-sk/NetAlertX
 let
   # renovate: datasource=docker depName=docker.io/jokobsk/netalertx
-  version = "25.2.8";
+  version = "25.3.1";
 in
 {
   # secrets
