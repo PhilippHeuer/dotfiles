@@ -116,6 +116,7 @@
       ./ide/goland.nix # java ide
       ./ide/dbeaver.nix # database client
       #./ide/bruno.nix # http client
+      ./ide/restish.nix # http client
     ];
   };
   # language toolchains
