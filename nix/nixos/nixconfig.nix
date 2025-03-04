@@ -49,5 +49,9 @@
       # allow unfree packages
       allowUnfree = true;
     };
+
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
   };
 }

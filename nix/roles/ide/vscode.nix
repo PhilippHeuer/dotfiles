@@ -19,40 +19,40 @@ in
       vscode = vscodium;
       vscodeExtensions = [
         # general
-        extensions.vscode-marketplace.editorconfig.editorconfig # editorconfig
-        extensions.vscode-marketplace.eamodio.gitlens # git info
-        extensions.vscode-marketplace.oderwat.indent-rainbow # colorize indentation
-        extensions.vscode-marketplace.wayou.vscode-todo-highlight # highlight todos
+        pkgs.vscode-marketplace.editorconfig.editorconfig # editorconfig
+        pkgs.vscode-marketplace.eamodio.gitlens # git info
+        pkgs.vscode-marketplace.oderwat.indent-rainbow # colorize indentation
+        pkgs.vscode-marketplace.wayou.vscode-todo-highlight # highlight todos
 
         # productivity
-        extensions.vscode-marketplace.vscodevim.vim # vim hotkeys
-        extensions.vscode-marketplace.gruntfuggly.todo-tree # todo tree
-        extensions.vscode-marketplace.rlivings39.fzf-quick-open
+        pkgs.vscode-marketplace.vscodevim.vim # vim hotkeys
+        pkgs.vscode-marketplace.gruntfuggly.todo-tree # todo tree
+        pkgs.vscode-marketplace.rlivings39.fzf-quick-open
 
         # whiteboard
-        extensions.vscode-marketplace.pomdtr.excalidraw-editor
+        pkgs.vscode-marketplace.pomdtr.excalidraw-editor
 
         # lsp
-        extensions.vscode-marketplace.ms-python.python # python
-        extensions.vscode-marketplace.golang.go # go
-        extensions.vscode-marketplace.ziglang.vscode-zig # zig
-        extensions.vscode-marketplace.jnoortheen.nix-ide # nix
-        extensions.vscode-marketplace.tamasfe.even-better-toml # toml
-        extensions.vscode-marketplace.redhat.vscode-yaml # yaml
+        pkgs.vscode-marketplace.ms-python.python # python
+        pkgs.vscode-marketplace.golang.go # go
+        pkgs.vscode-marketplace.ziglang.vscode-zig # zig
+        pkgs.vscode-marketplace.jnoortheen.nix-ide # nix
+        pkgs.vscode-marketplace.tamasfe.even-better-toml # toml
+        pkgs.vscode-marketplace.redhat.vscode-yaml # yaml
 
         # auto completion
-        extensions.vscode-marketplace.github.copilot
-        extensions.vscode-marketplace.github.copilot-chat
+        pkgs.vscode-marketplace.github.copilot
+        pkgs.vscode-marketplace.github.copilot-chat
 
         # theme
-        extensions.vscode-marketplace.catppuccin.catppuccin-vsc
-        extensions.vscode-marketplace.catppuccin.catppuccin-vsc-icons
-        extensions.vscode-marketplace.enkia.tokyo-night
-        extensions.vscode-marketplace.arcticicestudio.nord-visual-studio-code
-        extensions.vscode-marketplace.mvllow.rose-pine
+        pkgs.vscode-marketplace.catppuccin.catppuccin-vsc
+        pkgs.vscode-marketplace.catppuccin.catppuccin-vsc-icons
+        pkgs.vscode-marketplace.enkia.tokyo-night
+        pkgs.vscode-marketplace.arcticicestudio.nord-visual-studio-code
+        pkgs.vscode-marketplace.mvllow.rose-pine
 
         # other
-        extensions.vscode-marketplace.adpyke.codesnap # code screenshots
+        pkgs.vscode-marketplace.adpyke.codesnap # code screenshots
       ];
     })
   ];
