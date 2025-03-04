@@ -23,8 +23,8 @@ let
     "17718" # github copilot
   ];
 
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  goland = addPlugins pkgs-unstable.jetbrains.goland pluginList;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
+  goland = addPlugins inputs.nixpkgs-philippheuer.packages.${pkgs.system}.goland-eap pluginList;
 in
 {
   environment.systemPackages = [
