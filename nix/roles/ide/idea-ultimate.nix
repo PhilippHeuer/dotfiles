@@ -30,8 +30,8 @@ let
     "17718" # github copilot
   ];
 
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idea-ultimate = addPlugins pkgs.jetbrains.idea-ultimate pluginList;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
+  idea-ultimate = addPlugins inputs.nixpkgs-philippheuer.packages.${pkgs.system}.idea-ultimate-eap pluginList;
 in
 {
   environment.systemPackages = [

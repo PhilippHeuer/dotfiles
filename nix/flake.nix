@@ -124,7 +124,10 @@
           stateVersion = "24.11";
 
           # allow unfree packages
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            allowUnfreePredicate = _: true;
+          };
         }
       );
     in
