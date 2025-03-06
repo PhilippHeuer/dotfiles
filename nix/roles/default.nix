@@ -136,6 +136,7 @@
   admin = {
     imports = [
       ./admin/kubectl.nix
+      ./admin/kubecolor.nix
       ./admin/openshift.nix
       ./admin/k9s.nix
       ./admin/helm.nix

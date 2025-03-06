@@ -18,6 +18,10 @@ alias ll="eza --icons -T -L 2 -x"
 alias gpg-list-pub="gpg --list-keys --keyid-format LONG"
 alias gpg-list-priv="gpg --list-secret-keys --keyid-format LONG"
 
+# k8s
+alias kubectl="kubecolor"
+alias oc="env KUBECTL_COMMAND=oc kubecolor"
+
 # scripts
 alias backup="~/.local/scripts/backup.sh"
 alias cleanup="~/.local/scripts/cleanup.sh"
