@@ -81,6 +81,9 @@ files=(
   # slack
   ".config/Slack"
 
+  # mitm-proxy certs
+  ".mitmproxy"
+
   # pass pw manager
   ".password-store"
 

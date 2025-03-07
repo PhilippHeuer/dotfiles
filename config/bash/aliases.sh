@@ -86,3 +86,6 @@ alias logs-network="sudo journalctl -fu NetworkManager"
 
 # qemu
 alias qemu-register="sudo podman run --rm --privileged multiarch/qemu-user-static --reset -p yes"
+
+# useful tools
+alias run-mitm-proxy="podman run --rm -it -p 8080:8080 -p 127.0.0.1:8081:8081 -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy docker.io/mitmproxy/mitmproxy:11.1.3 mitmweb --web-host 0.0.0.0"
