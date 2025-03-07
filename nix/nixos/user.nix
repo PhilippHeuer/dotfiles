@@ -35,6 +35,7 @@ in
         "video"
         "networkmanager"
         "pipewire"
+        "wireshark"
       ]
       ++ lib.optionals config.virtualisation.lxd.enable [ "lxd" ]
       ++ lib.optionals config.virtualisation.docker.enable [ "docker" ]
