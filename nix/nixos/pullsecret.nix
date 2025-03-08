@@ -32,11 +32,7 @@
 
   # impure env vars with vcs credentials
   sops.templates.impure-env-conf.content = ''
-    impure-env = NIX_GITHUB_PRIVATE_USERNAME=${
-      config.sops.placeholder."github/username"
-    } NIX_GITHUB_PRIVATE_PASSWORD=${
-      config.sops.placeholder."github/password"
-    } NIX_GITLAB_PRIVATE_USERNAME=${
+    impure-env = NIX_GITHUB_PRIVATE_USERNAME=${config.sops.placeholder."github/username"} NIX_GITHUB_PRIVATE_PASSWORD=${config.sops.placeholder."github/password"} NIX_GITLAB_PRIVATE_USERNAME=${
       config.sops.placeholder."gitlab/username"
     } NIX_GITLAB_PRIVATE_PASSWORD=${config.sops.placeholder."gitlab/password"}
   '';

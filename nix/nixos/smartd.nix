@@ -62,9 +62,7 @@
     # "-o VALUE": enable/disable automatic offline testing on device (on/off)
     # "-s REGEXP": do a short test every day at 3am and a long test every sunday at 3am.
     # "-M exec COMMAND": execute COMMAND when smartd detects a problem
-    defaults.autodetected = "-a -o on -s (S/../.././03|L/../../7/03) -M exec ${
-      config.sops.templates."smartd-notification.sh".path
-    }";
+    defaults.autodetected = "-a -o on -s (S/../.././03|L/../../7/03) -M exec ${config.sops.templates."smartd-notification.sh".path}";
 
     notifications = {
       test = false;
