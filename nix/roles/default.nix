@@ -117,7 +117,6 @@
       ./ide/goland.nix # java ide
       ./ide/dbeaver.nix # database client
       #./ide/bruno.nix # http client
-      ./ide/restish.nix # http client
     ];
   };
   # language toolchains
@@ -150,6 +149,8 @@
       ./admin/ldap.nix # ldap client
       ./admin/rundeck.nix # rundeck runbook automation
       ./admin/rcon.nix # rcon console for various games
+      ./admin/restish.nix # http client
+      ./admin/oauth2c.nix # oauth2 client
     ];
   };
 
@@ -237,8 +238,8 @@
     imports = [
       ./wallpapers.nix # wallpapers
       ./gtk.nix # theming
-      ./browser/firefox.nix # web browser
-      ./browser/librewolf.nix # web browser
+      ./browser/chrome.nix # web browser
+      ./browser/floorp.nix # web browser
       ./rofi.nix
       ./nemo.nix # file manager
       #./albert.nix # minimal launcher
