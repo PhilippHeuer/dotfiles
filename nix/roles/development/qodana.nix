@@ -7,6 +7,6 @@
 
 {
   environment.systemPackages = [
-    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.primecodegen
+    inputs.nixpkgs-philippheuer.packages.${pkgs.system}.qodana
   ];
 }
