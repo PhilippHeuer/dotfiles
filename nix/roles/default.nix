@@ -104,6 +104,7 @@
       ./development/cid.nix # ci cd tool
       ./development/oras.nix # oci registry as storage
       ./development/syft.nix # software bill of materials
+      ./development/qodana.nix # code quality
     ];
   };
   # code editors
