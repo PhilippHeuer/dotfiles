@@ -105,6 +105,7 @@
       ./development/oras.nix # oci registry as storage
       ./development/syft.nix # software bill of materials
       ./development/qodana.nix # code quality
+      ./development/upx.nix # executable packer
     ];
   };
   # code editors
