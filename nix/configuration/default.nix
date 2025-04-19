@@ -67,7 +67,7 @@ in
       ../nixos/de-plasma.nix
       # core
       nixosRoles.default
-      nixosRoles.security
+      nixosRoles.security-server
       nixosRoles.terminal
       nixosRoles.multimedia
       nixosRoles.wm-hyprland
@@ -118,7 +118,7 @@ in
       ../nixos/de-plasma.nix
       # core
       nixosRoles.default
-      nixosRoles.security
+      nixosRoles.security-server
       nixosRoles.terminal
       nixosRoles.multimedia
       nixosRoles.wm-hyprland
@@ -159,7 +159,7 @@ in
       ../nixos/systemupdate.nix
       # core
       nixosRoles.default
-      nixosRoles.security
+      nixosRoles.security-server
       nixosRoles.terminal
       # user
       nixosRoles.container # container runtime
@@ -191,7 +191,7 @@ in
       ../nixos/systemupdate.nix
       # core
       nixosRoles.default
-      nixosRoles.security
+      nixosRoles.security-server
       nixosRoles.terminal
       # user
       nixosRoles.container # container runtime

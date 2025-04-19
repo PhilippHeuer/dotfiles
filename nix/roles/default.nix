@@ -58,6 +58,13 @@
     imports = [
       ./security/apparmor.nix
       ./security/clamav.nix
+      ./security/firejail.nix
+    ];
+  };
+  security-server = {
+    imports = [
+      ./security/apparmor.nix
+      ./security/clamav.nix
       ./security/fail2ban.nix
       ./security/firejail.nix
     ];
