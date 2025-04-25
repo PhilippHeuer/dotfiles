@@ -123,7 +123,8 @@
       ./ide/vscode.nix # code editor
       ./ide/idea-community.nix # java ide
       ./ide/idea-ultimate.nix # java ide
-      ./ide/goland.nix # java ide
+      ./ide/goland.nix # go ide
+      ./ide/pycharm.nix # python ide
       ./ide/dbeaver.nix # database client
       #./ide/bruno.nix # http client
     ];

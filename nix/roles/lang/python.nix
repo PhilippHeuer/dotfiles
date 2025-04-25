@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = [
@@ -10,5 +10,7 @@
       ]
     ))
     pkgs.pipenv
+    pkgs-unstable.poetry
+    pkgs-unstable.uv
   ];
 }
