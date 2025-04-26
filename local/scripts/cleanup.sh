@@ -40,5 +40,9 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
 fi
 
 # pre-commit
-pre-commit gc
-# pre-commit nuke
+if command -v pre-commit >/dev/null 2>&1; then
+  pre-commit gc
+  # pre-commit nuke
+else
+  echo "pre-commit not found in PATH, skipping gc."
+fi
