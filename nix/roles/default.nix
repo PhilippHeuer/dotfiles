@@ -42,6 +42,9 @@
 
       # package formats
       ./packageformat/appimage.nix
+
+      # misc
+      ./misc/faketime.nix # fake time
     ];
   };
   # terminal emulators
