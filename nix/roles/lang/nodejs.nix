@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs.nodejs_23
+    pkgs.nodejs_24
     #kgs.yarn
     pkgs-unstable.tailwindcss_4
   ];
