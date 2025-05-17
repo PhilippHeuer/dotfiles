@@ -5,7 +5,7 @@ let
 in
 {
   # wsl uses pulseaudio as of now
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire.enable = false;
 
