@@ -219,6 +219,8 @@ in
       ../nixos/ntp.nix
       # wsl
       inputs.nixos-wsl.nixosModules.wsl
+      # package managers
+      ../nixos/flatpak.nix
       # core
       nixosRoles.default
       nixosRoles.security
