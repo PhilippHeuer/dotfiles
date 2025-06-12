@@ -15,19 +15,21 @@ let
     # themes
     #"18682" # catppuccin-theme
     #"23029" # catppuccin-icons
-    # "18820" # tokyo-night-theme
+    #"18820" # tokyo-night-theme
     #"18141" # rose-pine
     #"10321" # nord
 
     # auto completion
     #"17718" # github copilot
   ];
-
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
-  pycharm = addPlugins pkgs-unstable.jetbrains.pycharm-community-bin pluginList;
+  basePkg = pkgs-unstable.jetbrains.pycharm-community-bin;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
+  idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
+    disallowedReferences = [];
+  });
 in
 {
   environment.systemPackages = [
-    pycharm
+    idePkg
   ];
 }
