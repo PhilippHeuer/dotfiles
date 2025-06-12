@@ -29,12 +29,14 @@ let
     # auto completion
     "17718" # github copilot
   ];
-
+  basePkg = pkgs-unstable.jetbrains.idea-community-bin;
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idea-community = addPlugins pkgs-unstable.jetbrains.idea-community-bin pluginList;
+  idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
+    disallowedReferences = [];
+  });
 in
 {
   environment.systemPackages = [
-    idea-community
+    idePkg
   ];
 }

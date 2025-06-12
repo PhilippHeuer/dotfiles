@@ -12,13 +12,6 @@ let
     "9792" # key-promoter-x
     "23451" # fuzzy file finder
 
-    # extensions
-    "6317" # lombok
-    "8607" # nixidea
-
-    # sast
-    "7973" # sonarlint
-
     # themes
     "18682" # catppuccin-theme
     "23029" # catppuccin-icons
@@ -29,14 +22,12 @@ let
     # auto completion
     "17718" # github copilot
   ];
-  basePkg = pkgs-unstable.jetbrains.idea-ultimate;
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
-    disallowedReferences = [];
-  });
+
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
+  goland = addPlugins inputs.nixpkgs-philippheuer.packages.${pkgs.system}.goland-eap pluginList;
 in
 {
   environment.systemPackages = [
-    idePkg
+    goland
   ];
 }
