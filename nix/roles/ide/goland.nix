@@ -22,12 +22,14 @@ let
     # auto completion
     "17718" # github copilot
   ];
-
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
-  goland = addPlugins inputs.nixpkgs-philippheuer.packages.${pkgs.system}.goland-eap pluginList;
+  basePkg = pkgs-unstable.jetbrains.goland;
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
+  idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
+    disallowedReferences = [];
+  });
 in
 {
   environment.systemPackages = [
-    goland
+    idePkg
   ];
 }
