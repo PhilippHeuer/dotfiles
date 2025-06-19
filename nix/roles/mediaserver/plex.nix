@@ -28,4 +28,19 @@
     package = pkgs-unstable.plex;
     dataDir = "/var/lib/plex";
   };
+
+  services.traefik.dynamicConfigOptions.http.routers.plex = {
+    rule = "Host(`plex.home`)";
+    service = "plex";
+    entrypoints = [ "web" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.plex = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:32400";
+        }
+      ];
+    };
+  };
 }

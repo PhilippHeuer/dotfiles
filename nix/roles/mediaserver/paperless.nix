@@ -33,7 +33,4 @@
       ];
     };
   };
-
-  # firewall (28981 = paperless web interface)
-  networking.firewall.allowedTCPPorts = [ 28981 ];
 }
