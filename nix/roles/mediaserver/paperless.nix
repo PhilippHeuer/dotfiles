@@ -22,7 +22,7 @@
   services.traefik.dynamicConfigOptions.http.routers.paperless = {
     rule = "Host(`paperless.home`)";
     service = "paperless";
-    entrypoints = [ "web" ];
+    entrypoints = [ "web" "websecure" ];
   };
   services.traefik.dynamicConfigOptions.http.services.paperless = {
     loadBalancer = {

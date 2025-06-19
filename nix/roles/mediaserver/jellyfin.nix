@@ -18,7 +18,7 @@
   services.traefik.dynamicConfigOptions.http.routers.jellyfin = {
     rule = "Host(`jellyfin.home`)";
     service = "jellyfin";
-    entrypoints = [ "web" ];
+    entrypoints = [ "web" "websecure" ];
   };
   services.traefik.dynamicConfigOptions.http.services.jellyfin = {
     loadBalancer = {
