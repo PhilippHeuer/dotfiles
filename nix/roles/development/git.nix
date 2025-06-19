@@ -3,6 +3,7 @@
 {
   environment.systemPackages = [
     pkgs.git
+    pkgs.git-filter-repo
   ];
 
   programs.git = {
