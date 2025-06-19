@@ -215,6 +215,7 @@
   # home automation
   homeautomation = {
     imports = [
+      ./homeautomation/homepage.nix # homepage
       ./homeautomation/pihole.nix # network-wide dns blocker
       #./homeautomation/blocky.nix # network-wide dns blocker
       ./homeautomation/homeassistant.nix # home automation
@@ -227,6 +228,7 @@
       ./mediaserver/jellyfin.nix # media server
       ./mediaserver/komga.nix # ebook server
       ./mediaserver/samba.nix # file server
+      ./mediaserver/paperless.nix # paperless document management
     ];
   };
 
