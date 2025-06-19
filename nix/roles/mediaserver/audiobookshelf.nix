@@ -10,7 +10,6 @@
   services.traefik.dynamicConfigOptions.http.routers.audiobookshelf = {
     rule = "Host(`audiobookshelf.home`)";
     service = "audiobookshelf";
-    middlewares = [ "headers" ];
     entrypoints = [ "web" ];
   };
   services.traefik.dynamicConfigOptions.http.services.audiobookshelf = {

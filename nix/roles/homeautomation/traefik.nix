@@ -42,4 +42,7 @@
       http.services = {};
     };
   };
+
+  # firewall for entrypoints
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

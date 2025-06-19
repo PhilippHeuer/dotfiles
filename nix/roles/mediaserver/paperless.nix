@@ -22,7 +22,6 @@
   services.traefik.dynamicConfigOptions.http.routers.paperless = {
     rule = "Host(`paperless.home`)";
     service = "paperless";
-    middlewares = [ "headers" ];
     entrypoints = [ "web" ];
   };
   services.traefik.dynamicConfigOptions.http.services.paperless = {
