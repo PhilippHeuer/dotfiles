@@ -43,6 +43,6 @@
     };
   };
 
-  # firewall for entrypoints
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  # firewall for entrypoints and dashboard
+  networking.firewall.allowedTCPPorts = [ 80 443 8080 ];
 }

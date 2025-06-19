@@ -14,4 +14,19 @@
     pkgs.jellyfin-web
     pkgs.jellyfin-ffmpeg
   ];
+
+  services.traefik.dynamicConfigOptions.http.routers.jellyfin = {
+    rule = "Host(`jellyfin.home`)";
+    service = "jellyfin";
+    entrypoints = [ "web" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.jellyfin = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:8096";
+        }
+      ];
+    };
+  };
 }
