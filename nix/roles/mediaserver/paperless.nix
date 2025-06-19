@@ -18,4 +18,23 @@
       #PAPERLESS_URL = "https://paperless.example.com";
     };
   };
+
+  services.traefik.dynamicConfigOptions.http.routers.paperless = {
+    rule = "Host(`paperless.home`)";
+    service = "paperless";
+    middlewares = [ "headers" ];
+    entrypoints = [ "web" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.paperless = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:28981";
+        }
+      ];
+    };
+  };
+
+  # firewall (28981 = paperless web interface)
+  networking.firewall.allowedTCPPorts = [ 28981 ];
 }
