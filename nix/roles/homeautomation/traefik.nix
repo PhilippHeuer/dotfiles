@@ -35,6 +35,7 @@
       #};
 
       api.dashboard = true;
+      api.insecure = true;
     };
 
     dynamicConfigOptions = {

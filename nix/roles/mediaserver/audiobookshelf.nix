@@ -21,7 +21,4 @@
       ];
     };
   };
-
-  # firewall (8000 = audiobookshelf web interface)
-  networking.firewall.allowedTCPPorts = [ 8000 ];
 }
