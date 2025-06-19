@@ -10,7 +10,7 @@
   services.traefik.dynamicConfigOptions.http.routers.audiobookshelf = {
     rule = "Host(`audiobookshelf.home`)";
     service = "audiobookshelf";
-    entrypoints = [ "web" ];
+    entrypoints = [ "web" "websecure" ];
   };
   services.traefik.dynamicConfigOptions.http.services.audiobookshelf = {
     loadBalancer = {

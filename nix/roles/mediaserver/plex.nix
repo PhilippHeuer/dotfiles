@@ -32,7 +32,7 @@
   services.traefik.dynamicConfigOptions.http.routers.plex = {
     rule = "Host(`plex.home`)";
     service = "plex";
-    entrypoints = [ "web" ];
+    entrypoints = [ "web" "websecure" ];
   };
   services.traefik.dynamicConfigOptions.http.services.plex = {
     loadBalancer = {

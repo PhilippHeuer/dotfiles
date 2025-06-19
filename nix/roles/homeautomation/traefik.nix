@@ -44,6 +44,21 @@
     };
   };
 
+  services.traefik.dynamicConfigOptions.http.routers.traefikdashboard = {
+    rule = "Host(`traefik.home`)";
+    service = "traefikdashboard";
+    entrypoints = [ "web" "websecure" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.traefikdashboard = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:8080";
+        }
+      ];
+    };
+  };
+
   # firewall for entrypoints and dashboard
   networking.firewall.allowedTCPPorts = [ 80 443 8080 ];
 }
