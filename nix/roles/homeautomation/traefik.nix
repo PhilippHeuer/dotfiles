@@ -24,7 +24,7 @@
 
       log = {
         level = "INFO";
-        filePath = "${config.services.traefik.dataDir}/traefik.log";
+        #filePath = "${config.services.traefik.dataDir}/traefik.log";
         format = "json";
       };
 
