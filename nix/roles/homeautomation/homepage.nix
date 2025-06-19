@@ -11,25 +11,25 @@
         Services = [
           {
             Nextcloud = {
-              href = "https://nextcloud.${domain}";
+              href = "https://nextcloud.home";
               icon = "nextcloud";
             };
           }
           {
             Paperless = {
-              href = "https://paperless.${domain}";
+              href = "https://paperless.home";
               icon = "paperless";
             };
           }
           {
             Miniflux = {
-              href = "https://rss.${domain}";
+              href = "https://rss.home";
               icon = "miniflux";
             };
           }
           {
             Immich = {
-              href = "https://immich.${domain}";
+              href = "https://immich.home";
               icon = "immich";
             };
           }
@@ -39,13 +39,13 @@
         Utilities = [
           {
             Traefik = {
-              href = "https://traefik.${domain}";
+              href = "https://traefik.home";
               icon = "traefik";
             };
           }
           {
             Blocky = {
-              href = "https://blocky.${domain}";
+              href = "https://blocky.home";
               icon = "blocky";
             };
           }
@@ -56,7 +56,7 @@
           {
             Jellyfin = {
               icon = "jellyfin";
-              href = "https://jellyfin.${domain}";
+              href = "https://jellyfin.home";
             };
           }
         ];
