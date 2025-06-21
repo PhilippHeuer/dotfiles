@@ -38,4 +38,7 @@
       ];
     };
   };
+
+  # firewall for entrypoints and dashboard
+  networking.firewall.allowedTCPPorts = [ 28981 ];
 }
