@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, lib, ... }:
 
 let
   # renovate: datasource=docker depName=ghcr.io/gotson/komga

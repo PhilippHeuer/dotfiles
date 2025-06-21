@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   services.audiobookshelf = {
@@ -8,7 +8,7 @@
   };
 
   services.traefik.dynamicConfigOptions.http.routers.audiobookshelf = {
-    rule = "Host(`audiobookshelf.home`)";
+    rule = lib.mkDefault "Host(`audiobookshelf.home`)";
     service = "audiobookshelf";
     entrypoints = [ "web" "websecure" ];
   };
