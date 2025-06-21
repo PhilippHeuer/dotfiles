@@ -5,6 +5,7 @@
   services.paperless = {
     enable = true;
     consumptionDirIsPublic = true;
+    dataDir = "/var/lib/paperless";
     settings = {
       PAPERLESS_CONSUMER_IGNORE_PATTERN = [
         ".DS_STORE/*"
@@ -17,6 +18,10 @@
       };
       #PAPERLESS_URL = "https://paperless.example.com";
     };
+  };
+
+  users.users.paperless = {
+    extraGroups = [ "veracrypt-volume" ];
   };
 
   services.traefik.dynamicConfigOptions.http.routers.paperless = {

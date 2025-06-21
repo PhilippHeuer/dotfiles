@@ -45,4 +45,7 @@
 
   # secrets
   sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";
+
+  # paperless media directory
+  services.paperless.mediaDir = "/mnt/ironwolf_zl22hc50/application-data/paperless-media";
 }
