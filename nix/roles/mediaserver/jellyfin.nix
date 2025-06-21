@@ -16,7 +16,7 @@
   ];
 
   services.traefik.dynamicConfigOptions.http.routers.jellyfin = {
-    rule = "Host(`jellyfin.home`)";
+    rule = lib.mkDefault "Host(`jellyfin.home`)";
     service = "jellyfin";
     entrypoints = [ "web" "websecure" ];
   };

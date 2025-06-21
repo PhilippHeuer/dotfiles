@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, lib, ... }:
 
 {
   # plex service
@@ -30,7 +30,7 @@
   };
 
   services.traefik.dynamicConfigOptions.http.routers.plex = {
-    rule = "Host(`plex.home`)";
+    rule = lib.mkDefault "Host(`plex.home`)";
     service = "plex";
     entrypoints = [ "web" "websecure" ];
   };

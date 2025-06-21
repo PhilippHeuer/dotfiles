@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # admin user is created with sudo paperless-manage createsuperuser
@@ -16,7 +16,6 @@
         optimize = 1;
         pdfa_image_compression = "lossless";
       };
-      #PAPERLESS_URL = "https://paperless.example.com";
     };
   };
 
@@ -25,7 +24,7 @@
   };
 
   services.traefik.dynamicConfigOptions.http.routers.paperless = {
-    rule = "Host(`paperless.home`)";
+    rule = lib.mkDefault "Host(`paperless.home`)";
     service = "paperless";
     entrypoints = [ "web" "websecure" ];
   };
@@ -38,7 +37,4 @@
       ];
     };
   };
-
-  # firewall for entrypoints and dashboard
-  networking.firewall.allowedTCPPorts = [ 28981 ];
 }

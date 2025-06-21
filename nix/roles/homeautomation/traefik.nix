@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, lib, ... }:
 
 {
   services.traefik = {
@@ -45,7 +45,7 @@
   };
 
   services.traefik.dynamicConfigOptions.http.routers.traefikdashboard = {
-    rule = "Host(`traefik.home`)";
+    rule = lib.mkDefault "Host(`traefik.home`)";
     service = "traefikdashboard";
     entrypoints = [ "web" "websecure" ];
   };
