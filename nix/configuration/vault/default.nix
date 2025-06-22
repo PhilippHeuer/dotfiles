@@ -46,8 +46,9 @@
   # secrets
   sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";
 
-  # paperless media directory
+  # media directories
   services.paperless.mediaDir = "/mnt/ironwolf_zl22hc50/application-data/paperless-media";
+  services.immich.mediaLocation = "/mnt/ironwolf_zl22hc50/application-data/immich-media";
 
   # endpoints
   services.traefik.dynamicConfigOptions.http.routers.traefikdashboard.rule = lib.mkForce "Host(`traefik.philippheuer.de`)";
