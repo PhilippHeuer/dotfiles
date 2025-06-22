@@ -10,6 +10,7 @@
     machine-learning.enable = true;
     settings = null;
     user = "immich";
+    group = "veracrypt-volume";
   };
 
   users.users.immich = {
