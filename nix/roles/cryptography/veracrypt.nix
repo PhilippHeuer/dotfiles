@@ -6,7 +6,9 @@
   ];
 
   # veracrypt group for volume access
-  users.groups.veracrypt-volume = {};
+  users.groups.veracrypt-volume = {
+    gid = 986;
+  };
 
   # auto disamount all volumes on shutdown
   systemd.services.veracrypt-shutdown = {
