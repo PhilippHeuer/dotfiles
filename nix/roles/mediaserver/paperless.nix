@@ -6,6 +6,7 @@
     enable = true;
     consumptionDirIsPublic = true;
     dataDir = "/var/lib/paperless";
+    address = "0.0.0.0";
     settings = {
       PAPERLESS_CONSUMER_IGNORE_PATTERN = [
         ".DS_STORE/*"
@@ -37,4 +38,7 @@
       ];
     };
   };
+
+  # firewall for local access
+  networking.firewall.allowedTCPPorts = [ 28981 ];
 }
