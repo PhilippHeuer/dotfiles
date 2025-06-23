@@ -13,10 +13,6 @@
     group = "veracrypt-volume";
   };
 
-  users.users.immich = {
-    extraGroups = [ "veracrypt-volume" ];
-  };
-
   services.traefik.dynamicConfigOptions.http.routers.immich = {
     rule = "Host(`immich.home`)";
     service = "immich";
