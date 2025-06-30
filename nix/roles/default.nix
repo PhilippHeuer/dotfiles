@@ -95,11 +95,12 @@
       ./development/lazygit.nix # git tui
       ./development/precommit.nix # git hooks
       ./development/direnv.nix # dir based env hooks
-      ./development/devenv.nix # reproducible development environment
+      #./development/devenv.nix # reproducible development environment
       ./development/ripgrep.nix # search source code
       ./development/onefetch.nix # git summary
       ./development/kondo.nix # built output cleanup
-      ./development/reposync.nix # sync git repos
+      ./development/repofork.nix # fork git repositories
+      ./development/reposync.nix # sync git repositories
       ./development/gh.nix # github cli
       ./development/dyff.nix # yaml diff
       ./development/tokei.nix # code statistics
