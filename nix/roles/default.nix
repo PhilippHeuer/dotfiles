@@ -105,6 +105,8 @@
       ./development/dyff.nix # yaml diff
       ./development/tokei.nix # code statistics
       ./development/openapi.nix # openapi linter, changes, ...
+      ./development/opencode.nix # coding agent for the terminal
+      ./development/ollama.nix # ollama cli
       ./development/primecodegen.nix # code generator
       ./development/openapi-generator.nix # code generator
       ./development/speakeasy.nix # speakeasy
@@ -124,10 +126,10 @@
       ./ide/neovim.nix # code editor
       ./ide/zed.nix # code editor
       ./ide/vscode.nix # code editor
-      ./ide/idea-community.nix # java ide
-      ./ide/idea-ultimate.nix # java ide
-      ./ide/goland.nix # go ide
-      ./ide/pycharm.nix # python ide
+      #./ide/idea-community.nix # java ide
+      #./ide/idea-ultimate.nix # java ide
+      #./ide/goland.nix # go ide
+      #./ide/pycharm.nix # python ide
       ./ide/dbeaver.nix # database client
       #./ide/bruno.nix # http client
     ];
