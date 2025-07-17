@@ -18,4 +18,19 @@ in
       ];
     };
   };
+
+  services.traefik.dynamicConfigOptions.http.routers.komga = {
+    rule = lib.mkDefault "Host(`komga.home`)";
+    service = "komga";
+    entrypoints = [ "web" "websecure" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.komga = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:25600";
+        }
+      ];
+    };
+  };
 }
