@@ -22,7 +22,9 @@ let
     # auto completion
     "17718" # github copilot
   ];
-  basePkg = pkgs-unstable.jetbrains.goland;
+  basePkg = (pkgs-unstable.jetbrains.goland.override {
+     jdk = pkgs.openjdk21;
+  });
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
     disallowedReferences = [];
