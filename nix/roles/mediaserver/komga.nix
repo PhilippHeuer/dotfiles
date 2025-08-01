@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=ghcr.io/gotson/komga
-  version = "1.23.0";
+  version = "1.23.1";
 in
 {
   # systemd container
