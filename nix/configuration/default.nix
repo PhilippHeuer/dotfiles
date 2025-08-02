@@ -170,6 +170,37 @@ in
     ];
   };
 
+  # ahd
+  ahd = mkConfiguration {
+    username = "phx";
+    extraModules = [
+      # nixos
+      ../nixos/bootloader.nix
+      ../nixos/kernel.nix
+      ../nixos/security.nix
+      ../nixos/user-defaults.nix
+      ../nixos/user.nix
+      ../nixos/audio.nix
+      ../nixos/ssh.nix
+      #../nixos/wifi.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
+      ../nixos/ntp.nix
+      ../nixos/smartd.nix
+      ../nixos/systemupdate.nix
+      # core
+      nixosRoles.default
+      nixosRoles.security-server
+      nixosRoles.terminal
+      # user
+      nixosRoles.container # container runtime
+      ../roles/homeautomation/blocky.nix # blocky dns
+      ../roles/ide/neovim.nix # editor
+      # variant
+      ./ahd
+    ];
+  };
+
   # vault
   vault = mkConfiguration {
     username = "phx";
