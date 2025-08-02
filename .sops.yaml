@@ -1,6 +1,7 @@
 keys:
 - &primary age18hgjjawusp6al8kjgyt9r85zss3kw6dlws8e9ylw859z2a8umg2qkm5nx0
 - &mhd age176m4mry0d6698p4hxng92sccr58mreranqaqyalqqdvzqg295a5q8fwdne
+- &ahd age1dm60j4f3kxjekd8mkm7ueds07lmmgtrud9xmwzusnl7ppryvxsysjgc3me
 creation_rules:
   - path_regex: nix/secrets/default.yaml$
     key_groups:
@@ -10,6 +11,10 @@ creation_rules:
     key_groups:
       - age:
         - *mhd
+  - path_regex: nix/secrets/ahd.yaml$
+    key_groups:
+      - age:
+        - *ahd
   - path_regex: nix/secrets/wifi.yaml$
     key_groups:
       - age:
