@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=docker.io/pihole/pihole
-  version = "2025.07.1";
+  version = "2025.08.0";
 in
 {
   # systemd container service
