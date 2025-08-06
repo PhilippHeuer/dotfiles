@@ -231,6 +231,10 @@ in
       #../roles/homeautomation/netalertx.nix # netalertx
       nixosRoles.driveencryption # drive encryption
       nixosRoles.drivemonitoring # drive health monitoring
+      # misc
+      ../roles/services/qdrant.nix # qdrant vector database
+      ../roles/services/pgvector.nix # postgres database
+      ../roles/services/openwebui.nix # openwebui
       # variant
       ./vault
     ];
