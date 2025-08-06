@@ -234,7 +234,6 @@
       ./mediaserver/paperless.nix # paperless document management
       ./mediaserver/immich.nix # photo management
       ./mediaserver/audiobookshelf.nix # audiobook server
-      ./mediaserver/qdrant.nix # qdrant vector database
     ];
   };
 
