@@ -232,7 +232,7 @@
       ./mediaserver/komga.nix # ebook server
       ./mediaserver/samba.nix # file server
       ./mediaserver/paperless.nix # paperless document management
-      ./mediaserver/immich.nix # photo management
+      #./mediaserver/immich.nix # photo management
       ./mediaserver/audiobookshelf.nix # audiobook server
     ];
   };
