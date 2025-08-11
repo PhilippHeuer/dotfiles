@@ -21,10 +21,14 @@ let
 
     # auto completion
     "17718" # github copilot
+    "22282" # jetbrains ai assistant
+    "26104" # jetbrains junie
   ];
-
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs).addPlugins;
-  goland = addPlugins inputs.nixpkgs-philippheuer.packages.${pkgs.system}.goland-eap pluginList;
+  basePkg = (inputs.nixpkgs-philippheuer.packages.${pkgs.system}.goland-eap.override {
+     jdk = pkgs.openjdk21;
+  });
+  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
+  idePkg = addPlugins basePkg "latest" pluginList;
 in
 {
   environment.systemPackages = [

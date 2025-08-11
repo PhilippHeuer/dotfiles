@@ -28,14 +28,14 @@ let
 
     # auto completion
     "17718" # github copilot
+    "22282" # jetbrains ai assistant
+    "26104" # jetbrains junie
   ];
   basePkg = (pkgs-unstable.jetbrains.idea-ultimate.override {
-     jdk = pkgs.openjdk21;
+    jdk = pkgs.openjdk21;
   });
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idePkg = (addPlugins basePkg pluginList).overrideAttrs (_: {
-    disallowedReferences = [];
-  });
+  idePkg = addPlugins basePkg "latest" pluginList;
 in
 {
   environment.systemPackages = [
