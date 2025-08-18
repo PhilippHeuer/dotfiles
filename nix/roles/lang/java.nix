@@ -28,4 +28,7 @@ in
       ln -s "${jdk17}/lib/openjdk" /opt/java/jdk-17
     fi
   '';
+
+  # workaround for java awt on wayland
+  environment.sessionVariables._JAVA_AWT_WM_NONREPARENTING = "1";
 }
