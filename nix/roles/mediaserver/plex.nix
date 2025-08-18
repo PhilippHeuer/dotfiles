@@ -25,7 +25,7 @@
         sha256 = "sha256-Hi4fhIlbEhpOy5QLMW5hsWLBnoXnhAsJWJ+x2iTYe9Q=";
       })
     ];
-    package = pkgs-unstable.plex;
+    package = pkgs.plex;
     dataDir = "/var/lib/plex";
   };
 
