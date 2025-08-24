@@ -1,7 +1,7 @@
 return {
   'stevearc/conform.nvim',
   -- renovate: datasource=github-releases depName=stevearc/conform.nvim
-  tag = 'v9.0.0',
+  tag = '9.1.0',
   event = {
     'BufReadPre',
     'BufNewFile'
