@@ -30,7 +30,7 @@ in
         DB_PORT = "5432";
         DB_USER = "endurain";
         DB_PASSWORD = "endurain";
-        ENDURAIN_HOST = "http://10.98.0.55:8191";
+        ENDURAIN_HOST = "http://endurain.philippheuer.de";
       };
 
     };
@@ -45,12 +45,9 @@ in
     loadBalancer = {
       servers = [
         {
-          url = "http://localhost:8096";
+          url = "http://localhost:8191";
         }
       ];
     };
   };
-
-  # firewall (8191 = endurain)
-  networking.firewall.allowedTCPPorts = [ 8191 ];
 }
