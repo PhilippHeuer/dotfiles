@@ -19,6 +19,7 @@ in
       ];
       volumes = [
         "/var/lib/endurain/data:/app/backend/data"
+        "/var/lib/endurain/logs:/app/backend/logs"
       ];
       environment = {
         TZ = "Europe/Berlin";
