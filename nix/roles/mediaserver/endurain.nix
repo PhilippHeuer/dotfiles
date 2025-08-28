@@ -36,6 +36,21 @@ in
     };
   };
 
+  services.traefik.dynamicConfigOptions.http.routers.endurain = {
+    rule = lib.mkDefault "Host(`endurain.home`)";
+    service = "endurain";
+    entrypoints = [ "web" "websecure" ];
+  };
+  services.traefik.dynamicConfigOptions.http.services.endurain = {
+    loadBalancer = {
+      servers = [
+        {
+          url = "http://localhost:8096";
+        }
+      ];
+    };
+  };
+
   # firewall (8191 = endurain)
   networking.firewall.allowedTCPPorts = [ 8191 ];
 }

@@ -58,4 +58,5 @@
   services.traefik.dynamicConfigOptions.http.routers.immich.rule = lib.mkForce "Host(`immich.philippheuer.de`)";
   services.traefik.dynamicConfigOptions.http.routers.audiobookshelf.rule = lib.mkForce "Host(`audiobookshelf.philippheuer.de`)";
   services.traefik.dynamicConfigOptions.http.routers.komga.rule = lib.mkForce "Host(`komga.philippheuer.de`)";
+  services.traefik.dynamicConfigOptions.http.routers.endurain.rule = lib.mkForce "Host(`endurain.philippheuer.de`)";
 }
