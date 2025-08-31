@@ -12,18 +12,18 @@
 
   # bootloader
   boot.loader.systemd-boot.enable = true;
-
-  # bootloader
-  #boot.loader.grub = {
-  #  enable = true;
-  #  device = "/dev/sda";
-  #  useOSProber = true;
-  #  efiSupport = true;
-  #};
-  #boot.loader.systemd-boot = {
-  #  enable = false;
-  #};
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 10; # wait 10 seconds before the default item is booted
+  # boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+
+  # dual-boot
+  boot.loader.systemd-boot.windows = {
+    "win11" = {
+      title = "Windows 11";
+      efiDeviceHandle = "HD0c";
+      sortKey = "o_windows_11";
+    };
+  };
 
   # shell
   users.defaultUserShell = pkgs.bash;

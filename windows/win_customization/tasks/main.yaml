@@ -19,3 +19,12 @@
   win_shell: |
     # 0 = Dark, 1 = Light
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0 -Type DWord
+
+# Power: Sleep Mode
+- name: Power -> Disable Sleep
+  win_shell: |
+    # Disable Sleep (plugged in)
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20" -Name "ACSettingIndex" -Value 0 -Type DWord
+
+    # Disable Sleep (on battery)
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20" -Name "DCSettingIndex" -Value 0 -Type DWord
