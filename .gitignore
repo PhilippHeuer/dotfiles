@@ -29,3 +29,6 @@ docs_wip
 
 # dotfiles
 dotfiles.local.yaml
+
+# windows
+windows/inventory.ini

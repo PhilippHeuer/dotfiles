@@ -1,0 +1,7 @@
+---
+# KeePassXC
+- name: KeePassXC
+  win_package:
+    path: "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.10/KeePassXC-2.7.10-Win64.msi"
+    product_id: "KeePassXC"
+    state: present

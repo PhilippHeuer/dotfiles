@@ -1,0 +1,51 @@
+---
+# Disable Telemetry
+- name: Debloat -> Disable Advertising ID for Relevant Ads
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" -Name "Enabled" -Value 0 -Type DWord
+
+- name: Debloat -> Disable Tailored Experiences with Diagnostic Data
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy" -Name "TailoredExperiencesWithDiagnosticDataEnabled" -Value 0 -Type DWord
+
+#- name: Debloat -> Disable Online Speech Recognition
+#  win_shell: |
+#    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy" -Name "HasAccepted" -Value 0 -Type DWord
+
+- name: Debloat -> Disable Improve Inking & Typing Recognition
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Input\TIPC" -Name "Enabled" -Value 0 -Type DWord
+
+- name: Debloat -> Restrict Inking & Typing Personalization
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitInkCollection" -Value 1 -Type DWord
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Value 1 -Type DWord
+
+- name: Debloat -> Disable Harvesting Contacts
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization\TrainedDataStore" -Name "HarvestContacts" -Value 0 -Type DWord
+
+- name: Debloat -> Reset Personalization Settings
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Personalization\Settings" -Name "AcceptedPrivacyPolicy" -Value 0 -Type DWord
+
+- name: Debloat -> Send only Required Diagnostic and Usage Data
+  win_shell: |
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Value 0 -Type DWord
+
+- name: Debloat -> Disable Start menu app tracking
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Start_TrackProgs" -Value 0 -Type DWord
+
+- name: Debloat -> Disable Activity History
+  win_shell: |
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Value 0 -Type DWord
+
+#- name: Debloat -> Set Feedback Frequency to Never
+#  win_shell: |
+#    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInPeriod" -Value 0 -Type DWord
+#    # PeriodInNanoSeconds is skipped since the value is unclear ("-")
+
+#- name: Debloat -> Disable Microsoft Edge personalization reporting
+#  win_shell: |
+#    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "PersonalizationReportingEnabled" -Value 0 -Type DWord
