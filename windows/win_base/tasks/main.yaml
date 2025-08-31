@@ -1,0 +1,7 @@
+---
+# 7ZIP
+- name: Base -> 7ZIP
+  win_package:
+    path: "https://www.7-zip.org/a/7z2501-x64.msi"
+    product_id: "7-Zip 25.01 (x64 edition)"
+    state: present

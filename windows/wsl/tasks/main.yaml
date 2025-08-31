@@ -1,0 +1,32 @@
+
+---
+# Windows Feature - VirtualMachinePlatform
+- name: WSL -> Windows Features -> Check if VirtualMachinePlatform is enabled
+  win_shell: |
+    $feature = Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
+    if ($feature.State -eq "Enabled") { Write-Output "Enabled" } else { Write-Output "Disabled" }
+  register: vmp_feature_check
+
+- name: WSL -> Windows Features -> Enable VirtualMachinePlatform
+  win_shell: |
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+  when: vmp_feature_check.stdout.strip() != "Enabled"
+  failed_when: "'The operation completed successfully' not in vmp_enable.stdout"
+
+# Windows Feature - Microsoft-Windows-Subsystem-Linux
+- name: WSL -> Windows Features -> Check if Microsoft-Windows-Subsystem-Linux is enabled
+  win_shell: |
+    $feature = Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+    if ($feature.State -eq "Enabled") { Write-Output "Enabled" } else { Write-Output "Disabled" }
+  register: wsl_feature_check
+- name: WSL -> Windows Features -> Enable Microsoft-Windows-Subsystem-Linux
+  win_shell: |
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  when: wsl_feature_check.stdout.strip() != "Enabled"
+  register: wsl_enable
+  failed_when: "'The operation completed successfully' not in wsl_enable.stdout"
+
+# WSL Settings
+- name: WSL -> Ensure WSL default version is 2
+  win_shell: |
+    wsl --set-default-version 2

@@ -1,0 +1,28 @@
+---
+- name: Windows Setup
+  hosts: windows
+  gather_facts: no
+
+  # tags
+  tags:
+    - default
+  # - weekly
+
+  # roles
+  roles:
+    #- role: wsl
+    - role: win_base
+    - role: win_telemetry
+    - role: win_customization
+    - role: win_debloat
+    #- role: win_debloatsoftware
+    - role: keypassxc
+    - role: firefox
+
+  # variables
+  vars:
+    user: "{{ lookup('env','USER') }}"
+    proxy_env:
+      http_proxy: "{{ lookup('env','http_proxy') }}"
+      https_proxy: "{{ lookup('env','https_proxy') }}"
+      no_proxy: "{{ lookup('env','no_proxy') }}"

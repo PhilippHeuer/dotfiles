@@ -1,0 +1,33 @@
+---
+# reference: https://github.com/Raphire/Win11Debloat/blob/master/Win11Debloat.ps1
+# Settings
+#- name: Debloat -> Disable Bing search suggestions in Windows search
+#  win_shell: |
+#    Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer" -Name "DisableSearchBoxSuggestions" -Value 1 -Type DWord
+#- name: Debloat -> Disable Cortana in Windows search (machine-wide)
+#  win_shell: |
+#    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Value 0 -Type DWord
+#    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "CortanaConsent" -Value 0 -Type DWord
+- name: Debloat -> Disable Windows fun facts and tips on lock screen
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Value 0 -Type DWord
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Value 0 -Type DWord
+# AI
+- name: Debloat -> Disable Recall
+  win_shell: |
+    $cuPath = "HKCU:\Software\Policies\Microsoft\Windows\WindowsAI"
+    if (-not (Test-Path $cuPath)) { New-Item -Path $cuPath -Force | Out-Null }
+    $lmPath = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI"
+    if (-not (Test-Path $lmPath)) { New-Item -Path $lmPath -Force | Out-Null }
+
+    # Disable AI Data Analysis for current user
+    Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
+
+    # Disable AI Data Analysis for all users (machine-wide)
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
+
+    # Disable Recall Enablement (machine-wide)
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" -Name "AllowRecallEnablement" -Value 0 -Type DWord
+
+    # Turn off saving snapshots (machine-wide)
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" -Name "TurnOffSavingSnapshots" -Value 1 -Type DWord
