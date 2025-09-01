@@ -32,3 +32,4 @@ dotfiles.local.yaml
 
 # windows
 windows/inventory.ini
+windows/inventory.yaml

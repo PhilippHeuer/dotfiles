@@ -1,0 +1,9 @@
+---
+- name: VSCode > Check
+  win_shell: winget list --id Microsoft.VisualStudioCode
+  register: winget_check
+  ignore_errors: yes
+- name: VSCode > Install
+  win_shell: |
+    winget install -e --id Microsoft.VisualStudioCode --silent
+  when: winget_check.rc != 0

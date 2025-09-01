@@ -1,0 +1,10 @@
+---
+- name: Proton -> ProtonVPN
+  include_tasks: protonvpn.yaml
+  when: hostvars[inventory_hostname].app_protonvpn | default(false)
+- name: Proton -> ProtonPass
+  include_tasks: protonpass.yaml
+  when: hostvars[inventory_hostname].app_protonpass | default(false)
+- name: Proton -> ProtonDrive
+  include_tasks: protondrive.yaml
+  when: hostvars[inventory_hostname].app_protondrive | default(false)

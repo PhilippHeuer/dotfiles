@@ -1,6 +1,6 @@
 ---
 - name: Windows Setup
-  hosts: windows
+  hosts: all
   gather_facts: no
 
   # tags
@@ -12,12 +12,22 @@
   roles:
     #- role: wsl
     - role: win_base
-    - role: win_telemetry
-    - role: win_customization
+    - role: win_fonts
+    #- role: win_telemetry
+    #- role: win_customization
     - role: win_debloat
     #- role: win_debloatsoftware
+    - role: flowlauncher
+      when: hostvars[inventory_hostname].app_flowlauncher | default(false)
+    - role: proton
     - role: keypassxc
+      when: hostvars[inventory_hostname].app_keepassxc | default(false)
     - role: firefox
+      when: hostvars[inventory_hostname].app_firefox | default(false)
+    - role: vscode
+      when: hostvars[inventory_hostname].app_vscode | default(false)
+    - role: vscodium
+      when: hostvars[inventory_hostname].app_vscodium | default(false)
 
   # variables
   vars:

@@ -1,0 +1,9 @@
+---
+- name: ProtonDrive > Check
+  win_shell: winget list --id Proton.ProtonDrive
+  register: winget_check
+  ignore_errors: yes
+- name: ProtonDrive > Install
+  win_shell: |
+    winget install -e --id Proton.ProtonDrive --silent
+  when: winget_check.rc != 0
