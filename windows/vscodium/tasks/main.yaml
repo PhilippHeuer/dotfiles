@@ -1,0 +1,9 @@
+---
+- name: VSCodium > Check
+  win_shell: winget list --id VSCodium.VSCodium
+  register: winget_check
+  ignore_errors: yes
+- name: VSCodium > Install
+  win_shell: |
+    winget install -e --id VSCodium.VSCodium --silent
+  when: winget_check.rc != 0

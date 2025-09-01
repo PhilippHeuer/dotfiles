@@ -1,0 +1,9 @@
+---
+- name: ProtonPass > Check
+  win_shell: winget list --id Proton.ProtonPass
+  register: winget_check
+  ignore_errors: yes
+- name: ProtonPass > Install
+  win_shell: |
+    winget install -e --id Proton.ProtonPass --silent
+  when: winget_check.rc != 0

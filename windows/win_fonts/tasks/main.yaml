@@ -1,0 +1,4 @@
+---
+- name: Fonts -> JetBrains Mono
+  include_tasks: jetbrains.yaml
+  when: hostvars[inventory_hostname].font_jetbrains | default(false)

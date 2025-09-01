@@ -1,0 +1,9 @@
+---
+- name: ProtonVPN > Check
+  win_shell: winget list --id Proton.ProtonVPN
+  register: winget_check
+  ignore_errors: yes
+- name: ProtonVPN > Install
+  win_shell: |
+    winget install -e --id Proton.ProtonVPN --silent
+  when: winget_check.rc != 0

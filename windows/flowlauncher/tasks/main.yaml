@@ -1,0 +1,9 @@
+---
+- name: Flow Launcher > Check
+  win_shell: winget list --id Flow-Launcher.Flow-Launcher
+  register: winget_check
+  ignore_errors: yes
+- name: Flow Launcher > Install
+  win_shell: |
+    winget install -e --id Flow-Launcher.Flow-Launcher
+  when: winget_check.rc != 0

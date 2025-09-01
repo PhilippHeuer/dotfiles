@@ -1,7 +1,9 @@
 ---
-# Firefox
-- name: Mozilla Firefox
-  win_package:
-    path: "https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=de"
-    product_id: "Mozilla Firefox"
-    state: present
+- name: Mozilla Firefox > Check
+  win_shell: winget list --id Mozilla.Firefox
+  register: winget_check
+  ignore_errors: yes
+- name: Mozilla Firefox > Install
+  win_shell: |
+    winget install -e --id Mozilla.Firefox --silent
+  when: winget_check.rc != 0

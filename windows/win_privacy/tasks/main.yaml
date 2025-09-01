@@ -1,0 +1,33 @@
+---
+- name: Privacy -> Disable Bing Web Search in Windows Search
+  win_shell: |
+    # Disable Bing search
+    $bingPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"
+    if (-not (Test-Path $bingPath)) { New-Item -Path $bingPath -Force | Out-Null }
+    Set-ItemProperty -Path $bingPath -Name "BingSearchEnabled" -Value 0 -Type DWord
+
+    Set-ItemProperty -Path $bingPath -Name "DeviceHistoryEneabled" -Value 0 -Type DWord
+
+- name: Privacy -> Disable Search History
+  win_shell: |
+    $path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
+    if (-not (Test-Path $path)) { New-Item -Path $path -Force | Out-Null }
+    Set-ItemProperty -Path $path -Name "IsDeviceSearchHistoryEnabled" -Value 0 -Type DWord
+
+
+- name: Privacy -> Disable Cortana in Windows search (machine-wide)
+  win_shell: |
+    $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
+    if (-not (Test-Path $path)) { New-Item -Path $path -Force | Out-Null }
+    Set-ItemProperty -Path $path -Name "AllowCortana" -Value 0 -Type DWord
+    Set-ItemProperty -Path $path -Name "CortanaConsent" -Value 0 -Type DWord
+- name: Privacy -> Disable Windows fun facts and tips on lock screen
+  win_shell: |
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Value 0 -Type DWord
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Value 0 -Type DWord
+
+# sideloading
+# PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+
+# developer mode
+# PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"

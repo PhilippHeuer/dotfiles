@@ -1,7 +1,9 @@
 ---
-# KeePassXC
-- name: KeePassXC
-  win_package:
-    path: "https://github.com/keepassxreboot/keepassxc/releases/download/2.7.10/KeePassXC-2.7.10-Win64.msi"
-    product_id: "KeePassXC"
-    state: present
+- name: KeePassXC > Check
+  win_shell: winget list --id KeePassXCTeam.KeePassXC
+  register: winget_check
+  ignore_errors: yes
+- name: KeePassXC > Install
+  win_shell: |
+    winget install -e --id KeePassXCTeam.KeePassXC --silent
+  when: winget_check.rc != 0

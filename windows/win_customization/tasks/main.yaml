@@ -23,8 +23,27 @@
 # Power: Sleep Mode
 - name: Power -> Disable Sleep
   win_shell: |
-    # Disable Sleep (plugged in)
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20" -Name "ACSettingIndex" -Value 0 -Type DWord
+    # GUIDs
+    $subSleep   = "238C9FA8-0AAD-41ED-83F4-97BE242C8F20"  # Sleep settings subgroup
+    $sleepIdle  = "29F6C1DB-86DA-48C5-9FDB-F2B67B1F44DA"  # Sleep after idle
+    $hibernate  = "9D7815A6-7EE4-497E-8888-515A05F02364"  # Hibernate after idle
 
-    # Disable Sleep (on battery)
-    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20" -Name "DCSettingIndex" -Value 0 -Type DWord
+    $subDisplay = "7516B95F-F776-4464-8C53-06167F40CC99"  # Display settings subgroup
+    $dispIdle   = "3C0BC021-C8A8-4E07-A973-6B14CBCB2B7E"  # Turn off display after idle
+
+    $base = "HKLM:\SYSTEM\CurrentControlSet\Control\Power\PowerSettings"
+
+    # Disable sleep (plugged in + battery)
+    Set-ItemProperty -Path "$base\$subSleep\$sleepIdle" -Name "ACSettingIndex" -Value 0 -Type DWord
+    Set-ItemProperty -Path "$base\$subSleep\$sleepIdle" -Name "DCSettingIndex" -Value 0 -Type DWord
+
+    # Disable hibernate (plugged in + battery)
+    Set-ItemProperty -Path "$base\$subSleep\$hibernate" -Name "ACSettingIndex" -Value 0 -Type DWord
+    Set-ItemProperty -Path "$base\$subSleep\$hibernate" -Name "DCSettingIndex" -Value 0 -Type DWord
+
+    # Prevent display from turning off (plugged in + battery)
+    Set-ItemProperty -Path "$base\$subDisplay\$dispIdle" -Name "ACSettingIndex" -Value 0 -Type DWord
+    Set-ItemProperty -Path "$base\$subDisplay\$dispIdle" -Name "DCSettingIndex" -Value 0 -Type DWord
+
+    # Optional: disable hibernate entirely
+    powercfg /hibernate off

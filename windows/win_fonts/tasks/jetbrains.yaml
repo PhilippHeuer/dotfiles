@@ -1,0 +1,39 @@
+---
+- name: Fonts -> Create Directory Structure
+  win_file:
+    path: "C:\\AnsibleConfigurationManagement\\{{ item }}"
+    state: directory
+  loop:
+    - Scripts
+    - Assets\\Fonts
+
+- name: Fonts -> Copy Install-SysFont.ps1
+  win_copy:
+    src: files/Install-SysFont.ps1
+    dest: "C:\\AnsibleConfigurationManagement\\Scripts\\Install-SysFont.ps1"
+
+- name: Fonts -> JetBrains Mono -> Ensure temp directory exists
+  win_file:
+    path: "C:\\Windows\\Temp\\JetBrainsMono"
+    state: directory
+
+- name: Fonts -> JetBrains Mono -> Download ZIP
+  win_get_url:
+    url: "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip"
+    dest: "C:\\Windows\\Temp\\JetBrainsMono\\JetBrainsMono.zip"
+    checksum: "bf8657fd1ebb7d6f02fa5cbab035051286a9f43a"
+  register: jetbrains_zip
+
+- name: Fonts -> JetBrains Mono -> Unzip
+  win_unzip:
+    src: "C:\\Windows\\Temp\\JetBrainsMono\\JetBrainsMono.zip"
+    dest: "C:\\Windows\\Temp\\JetBrainsMono\\extracted"
+    creates: "C:\\Windows\\Temp\\JetBrainsMono\\extracted\\fonts\\ttf"
+  when: jetbrains_zip.changed
+
+- name: Fonts -> JetBrains Mono -> Install system fonts
+  win_shell: |
+    Get-ChildItem "C:\Windows\Temp\JetBrainsMono\extracted\fonts\ttf\*.ttf" | ForEach-Object {
+      powershell.exe -ExecutionPolicy Bypass -File "C:\AnsibleConfigurationManagement\Scripts\Install-SysFont.ps1" $_.FullName
+    }
+  when: jetbrains_zip.changed
