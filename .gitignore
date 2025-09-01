@@ -1,3 +1,6 @@
+# IDEs
+.idea
+
 # nushell
 config/nushell/history.txt
 
