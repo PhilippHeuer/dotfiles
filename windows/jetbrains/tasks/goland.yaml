@@ -1,0 +1,9 @@
+---
+- name: JetBrains Goland > Check
+  win_shell: winget list --id JetBrains.GoLand
+  register: winget_check
+  ignore_errors: yes
+- name: JetBrains Goland > Install
+  win_shell: |
+    winget install -e --id JetBrains.GoLand --silent
+  when: winget_check.rc != 0

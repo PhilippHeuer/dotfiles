@@ -1,0 +1,9 @@
+---
+- name: JetBrains Idea > Check
+  win_shell: winget list --id JetBrains.IntelliJIDEA.Ultimate
+  register: winget_check
+  ignore_errors: yes
+- name: JetBrains Idea > Install
+  win_shell: |
+    winget install -e --id JetBrains.IntelliJIDEA.Ultimate --silent
+  when: winget_check.rc != 0

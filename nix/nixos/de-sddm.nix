@@ -20,7 +20,7 @@
     inputs.nixpkgs-philippheuer.packages.${pkgs.system}.wallpapers
 
     # sddm theme
-    (pkgs-unstable.sddm-astronaut.override {
+    (pkgs.sddm-astronaut.override {
       themeConfig = {
         # [Background]
         CustomBackground = "true";

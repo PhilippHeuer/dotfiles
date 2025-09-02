@@ -1,0 +1,10 @@
+---
+- name: JetBrains -> IDEA
+  include_tasks: idea-ultimate.yaml
+  when: hostvars[inventory_hostname].app_jetbrains_idea | default(false)
+- name: JetBrains -> Goland
+  include_tasks: goland.yaml
+  when: hostvars[inventory_hostname].app_jetbrains_goland | default(false)
+- name: JetBrains -> PyCharm
+  include_tasks: pycharm.yaml
+  when: hostvars[inventory_hostname].app_jetbrains_pycharm | default(false)

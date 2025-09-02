@@ -6,28 +6,38 @@
   # tags
   tags:
     - default
-  # - weekly
 
   # roles
   roles:
-    #- role: wsl
+    # windows
     - role: win_base
     - role: win_fonts
     #- role: win_telemetry
     #- role: win_customization
     - role: win_debloat
     #- role: win_debloatsoftware
+    # wsl
+    - role: wsl
+      when: hostvars[inventory_hostname].feature_wsl | default(false)
+    # launcher
     - role: flowlauncher
       when: hostvars[inventory_hostname].app_flowlauncher | default(false)
+    # proton
     - role: proton
+    # security
     - role: keypassxc
       when: hostvars[inventory_hostname].app_keepassxc | default(false)
+    - role: veracrypt
+      when: hostvars[inventory_hostname].app_veracrypt | default(false)
+    # browser
     - role: firefox
       when: hostvars[inventory_hostname].app_firefox | default(false)
+    # development
     - role: vscode
       when: hostvars[inventory_hostname].app_vscode | default(false)
     - role: vscodium
       when: hostvars[inventory_hostname].app_vscodium | default(false)
+    - role: jetbrains
 
   # variables
   vars:

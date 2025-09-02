@@ -1,0 +1,9 @@
+---
+- name: JetBrains PyCharm > Check
+  win_shell: winget list --id JetBrains.PyCharm
+  register: winget_check
+  ignore_errors: yes
+- name: JetBrains PyCharm > Install
+  win_shell: |
+    winget install -e --id JetBrains.PyCharm --silent
+  when: winget_check.rc != 0
