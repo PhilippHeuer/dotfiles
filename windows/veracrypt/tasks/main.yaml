@@ -1,0 +1,9 @@
+---
+- name: VeraCrypt > Check
+  win_shell: winget list --id IDRIX.VeraCrypt
+  register: winget_check
+  ignore_errors: yes
+- name: VeraCrypt > Install
+  win_shell: |
+    winget install -e --id IDRIX.VeraCrypt --silent
+  when: winget_check.rc != 0
