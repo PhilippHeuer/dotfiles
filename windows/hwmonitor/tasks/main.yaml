@@ -1,0 +1,9 @@
+---
+- name: HWMonitor > Check
+  win_shell: winget list --id CPUID.HWMonitor
+  register: winget_check
+  ignore_errors: yes
+- name: HWMonitor > Install
+  win_shell: |
+    winget install -e --id CPUID.HWMonitor
+  when: winget_check.rc != 0

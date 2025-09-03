@@ -12,7 +12,7 @@
     # windows
     - role: win_base
     - role: win_fonts
-    #- role: win_telemetry
+    - role: win_telemetry
     #- role: win_customization
     - role: win_debloat
     #- role: win_debloatsoftware
@@ -38,6 +38,9 @@
     - role: vscodium
       when: hostvars[inventory_hostname].app_vscodium | default(false)
     - role: jetbrains
+    # misc
+    - role: hwmonitor
+      when: hostvars[inventory_hostname].app_hwmonitor | default(false)
 
   # variables
   vars:
