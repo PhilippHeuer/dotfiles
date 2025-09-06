@@ -1,0 +1,9 @@
+---
+- name: Media -> Jellyfin Media Player > Check
+  win_shell: winget list --id Jellyfin.JellyfinMediaPlayer
+  register: winget_check
+  ignore_errors: yes
+- name: Media -> Jellyfin Media Player > Install
+  win_shell: |
+    winget install -e --id Jellyfin.JellyfinMediaPlayer
+  when: winget_check.rc != 0

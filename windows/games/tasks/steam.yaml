@@ -1,0 +1,9 @@
+---
+- name: Games -> Steam > Check
+  win_shell: winget list --id Valve.Steam
+  register: winget_check
+  ignore_errors: yes
+- name: Games -> Steam > Install
+  win_shell: |
+    winget install -e --id Valve.Steam
+  when: winget_check.rc != 0

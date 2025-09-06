@@ -38,9 +38,13 @@
     - role: vscodium
       when: hostvars[inventory_hostname].app_vscodium | default(false)
     - role: jetbrains
+    # media
+    - role: media
     # misc
     - role: hwmonitor
       when: hostvars[inventory_hostname].app_hwmonitor | default(false)
+    # games
+    - role: games
 
   # variables
   vars:

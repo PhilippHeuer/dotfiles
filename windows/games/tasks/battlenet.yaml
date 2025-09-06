@@ -1,0 +1,9 @@
+---
+- name: Games -> BattleNet > Check
+  win_shell: winget list --id Blizzard.BattleNet
+  register: winget_check
+  ignore_errors: yes
+- name: Games -> BattleNet > Install
+  win_shell: |
+    winget install -e --id Blizzard.BattleNet
+  when: winget_check.rc != 0

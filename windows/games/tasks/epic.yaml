@@ -1,0 +1,9 @@
+---
+- name: Games -> Epic Games > Check
+  win_shell: winget list --id EpicGames.EpicGamesLauncher
+  register: winget_check
+  ignore_errors: yes
+- name: Games -> Epic Games > Install
+  win_shell: |
+    winget install -e --id EpicGames.EpicGamesLauncher
+  when: winget_check.rc != 0
