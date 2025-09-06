@@ -1,0 +1,10 @@
+---
+- name: Games -> Steam
+  include_tasks: steam.yaml
+  when: hostvars[inventory_hostname].app_steam | default(false)
+- name: Games -> BattleNet
+  include_tasks: battlenet.yaml
+  when: hostvars[inventory_hostname].app_battlenet | default(false)
+- name: Games -> Epic Games
+  include_tasks: epic.yaml
+  when: hostvars[inventory_hostname].app_epicgames | default(false)

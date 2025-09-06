@@ -1,0 +1,4 @@
+---
+- name: Media -> Jellyfin Media Player
+  include_tasks: jellyfin.yaml
+  when: hostvars[inventory_hostname].app_jellyfin_player | default(false)
