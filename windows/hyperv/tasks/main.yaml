@@ -1,0 +1,14 @@
+---
+# Windows Feature - Microsoft-Hyper-V-All
+- name: Hyper-V -> Windows Features -> Check if Microsoft-Hyper-V-All is enabled
+  win_shell: |
+    $feature = Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+    if ($feature.State -eq "Enabled") { Write-Output "Enabled" } else { Write-Output "Disabled" }
+  register: hyperv_feature_check
+
+- name: Hyper-V -> Windows Features -> Enable Microsoft-Hyper-V-All
+  win_shell: |
+    dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V-All /all /norestart
+  when: hyperv_feature_check.stdout.strip() != "Enabled"
+  register: hyperv_enable
+  failed_when: "'The operation completed successfully' not in hyperv_enable.stdout"

@@ -1,0 +1,9 @@
+---
+- name: OBS-Studio > Check
+  win_shell: winget list --id OBSProject.OBSStudio
+  register: winget_check
+  ignore_errors: yes
+- name: OBS-Studio > Install
+  win_shell: |
+    winget install -e --id OBSProject.OBSStudio --silent
+  when: winget_check.rc != 0

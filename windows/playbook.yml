@@ -16,7 +16,9 @@
     #- role: win_customization
     - role: win_debloat
     #- role: win_debloatsoftware
-    # wsl
+    # windows features
+    - role: hyperv
+      when: hostvars[inventory_hostname].feature_hyperv | default(false)
     - role: wsl
       when: hostvars[inventory_hostname].feature_wsl | default(false)
     # launcher
@@ -40,6 +42,8 @@
     - role: jetbrains
     # media
     - role: media
+    # streaming
+    - role: streaming
     # misc
     - role: hwmonitor
       when: hostvars[inventory_hostname].app_hwmonitor | default(false)
