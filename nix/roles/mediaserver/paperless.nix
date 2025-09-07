@@ -1,10 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, pkgs-unstable, lib, ... }:
 
 {
   # admin user is created with sudo paperless-manage createsuperuser
   services.paperless = {
     enable = true;
     consumptionDirIsPublic = true;
+    package = pkgs-unstable.paperless-ngx;
     dataDir = "/var/lib/paperless";
     address = "0.0.0.0";
     settings = {
