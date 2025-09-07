@@ -31,6 +31,8 @@
       when: hostvars[inventory_hostname].app_keepassxc | default(false)
     - role: veracrypt
       when: hostvars[inventory_hostname].app_veracrypt | default(false)
+    - role: yubikey
+      when: hostvars[inventory_hostname].app_yubikey | default(false)
     # browser
     - role: firefox
       when: hostvars[inventory_hostname].app_firefox | default(false)
@@ -47,6 +49,11 @@
     # misc
     - role: hwmonitor
       when: hostvars[inventory_hostname].app_hwmonitor | default(false)
+    - role: crystaldiskinfo
+      when: hostvars[inventory_hostname].app_crystaldiskinfo | default(false)
+    # download
+    - role: qbittorrent
+      when: hostvars[inventory_hostname].app_qbittorrent | default(false)
     # games
     - role: games
 

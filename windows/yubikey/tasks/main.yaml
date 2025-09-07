@@ -1,0 +1,9 @@
+---
+- name: YubiKey -> YubiKey Manager CLI
+  include_tasks: manager-cli.yaml
+- name: YubiKey -> YubiKey Manager
+  include_tasks: manager.yaml
+- name: YubiKey -> YubiKey Authenticator
+  include_tasks: auth.yaml
+- name: YubiKey -> YubiKey PIV Tool
+  include_tasks: pivtool.yaml

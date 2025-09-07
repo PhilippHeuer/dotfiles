@@ -1,0 +1,9 @@
+---
+- name: YubiKey Manager CLI > Check
+  win_shell: winget list --id Yubico.YubiKeyManagerCLI
+  register: winget_check
+  ignore_errors: yes
+- name: YubiKey Manager CLI > Install
+  win_shell: |
+    winget install -e --id Yubico.YubiKeyManagerCLI --silent
+  when: winget_check.rc != 0

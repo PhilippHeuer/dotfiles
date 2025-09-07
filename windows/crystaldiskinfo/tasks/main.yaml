@@ -1,0 +1,9 @@
+---
+- name: CrystalDiskInfo > Check
+  win_shell: winget list --id CrystalDewWorld.CrystalDiskInfo.ShizukuEdition
+  register: winget_check
+  ignore_errors: yes
+- name: CrystalDiskInfo > Install
+  win_shell: |
+    winget install -e --id CrystalDewWorld.CrystalDiskInfo.ShizukuEdition
+  when: winget_check.rc != 0
