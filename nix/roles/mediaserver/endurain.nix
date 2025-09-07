@@ -12,7 +12,7 @@ in
   # systemd container service
   virtualisation.oci-containers.containers = {
     endurain = {
-      image = "ghcr.io/joaovitoriasilva/endurain:" + version;
+      image = "ghcr.io/joaovitoriasilva/endurain:v" + version;
       autoStart = true;
       ports = [
         "8191:8080/tcp"
