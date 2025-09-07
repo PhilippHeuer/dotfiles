@@ -1,0 +1,4 @@
+---
+- name: Streaming -> OBS-Studio
+  include_tasks: obsstudio.yaml
+  when: hostvars[inventory_hostname].app_obsstudio | default(false)
