@@ -1,0 +1,9 @@
+---
+- name: qBittorrent > Check
+  win_shell: winget list --id qBittorrent.qBittorrent
+  register: winget_check
+  ignore_errors: yes
+- name: qBittorrent > Install
+  win_shell: |
+    winget install -e --id qBittorrent.qBittorrent --silent
+  when: winget_check.rc != 0

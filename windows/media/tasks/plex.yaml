@@ -1,0 +1,9 @@
+---
+- name: Media -> Plex Media Player > Check
+  win_shell: winget list --id Plex.Plex
+  register: winget_check
+  ignore_errors: yes
+- name: Media -> Plex Media Player > Install
+  win_shell: |
+    winget install -e --id Plex.Plex
+  when: winget_check.rc != 0

@@ -1,0 +1,9 @@
+---
+- name: Yubico -> PIV Tool > Check
+  win_shell: winget list --id Yubico.PIVTool
+  register: winget_check
+  ignore_errors: yes
+- name: Yubico -> PIV Tool > Install
+  win_shell: |
+    winget install -e --id Yubico.PIVTool
+  when: winget_check.rc != 0
