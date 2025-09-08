@@ -1,5 +1,10 @@
 # Windows Ansible Playbook
 
+## WinRM Setup
+
+To set up PowerShell Remoting on your Windows host use the provided script [winrm.ps1](winrm.ps1).
+This script creates a firewall rule for access from trusted networks (Domain, Private).
+
 ## Inventory
 
 > Example inventory file for Windows hosts using PowerShell Remote Management
