@@ -1,0 +1,9 @@
+---
+- name: Media -> MPV > Check
+  win_shell: winget list --id mpv.net
+  register: winget_check
+  ignore_errors: yes
+- name: Media -> MPV > Install
+  win_shell: |
+    winget install -e --id mpv.net
+  when: winget_check.rc != 0
