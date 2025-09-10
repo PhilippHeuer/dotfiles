@@ -20,6 +20,21 @@
     # 0 = Dark, 1 = Light
     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0 -Type DWord
 
+# Disable Animations
+- name: UI -> Disable window animations
+  win_shell: |
+    # Disable minimize / maximize animations
+    # MinAnimate = 1 → animate windows when minimizing/maximizing
+    # MinAnimate = 0 → disable animations (instant open/close)
+    Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Value 0
+
+    # VisualFXSetting controls Windows "Performance Options":
+    # 0 → Let Windows decide (default)
+    # 1 → Adjust for best appearance (enable all effects)
+    # 2 → Adjust for best performance (disable all effects/animations)
+    # 3 → Custom (user-configured mix of options)
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
+
 # Power: Sleep Mode
 - name: Power -> Disable Sleep
   win_shell: |

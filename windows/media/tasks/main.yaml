@@ -5,3 +5,9 @@
 - name: Media -> Plex Media Player
   include_tasks: plex.yaml
   when: hostvars[inventory_hostname].app_plex_player | default(false)
+- name: Media -> VLC
+  include_tasks: vlc.yaml
+  when: hostvars[inventory_hostname].app_vlc | default(false)
+- name: Media -> MPV
+  include_tasks: mpv.yaml
+  when: hostvars[inventory_hostname].app_mpv | default(false)

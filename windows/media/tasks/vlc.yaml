@@ -1,0 +1,9 @@
+---
+- name: Media -> VLC > Check
+  win_shell: winget list --id VideoLAN.VLC
+  register: winget_check
+  ignore_errors: yes
+- name: Media -> VLC > Install
+  win_shell: |
+    winget install -e --id VideoLAN.VLC
+  when: winget_check.rc != 0

@@ -5,5 +5,5 @@
   ignore_errors: yes
 - name: VeraCrypt > Install
   win_shell: |
-    winget install -e --id IDRIX.VeraCrypt --silent
+    winget install -e --id IDRIX.VeraCrypt --silent --accept-source-agreements --accept-package-agreements
   when: winget_check.rc != 0
