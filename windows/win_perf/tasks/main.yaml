@@ -1,0 +1,53 @@
+---
+- name: Windows Registry -> Performance
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Disable Background Apps"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications'
+        Name: 'GlobalUserDisabled'
+        Value: 1
+        Type: DWord
+      - Title: "Disable Visual Effects"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects'
+        Name: 'VisualFXSetting'
+        Value: 2
+        Type: DWord
+
+- name: GameDVR -> Registry
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Disable GameDVR FSE Behavior"
+        Path: 'HKCU:\System\GameConfigStore'
+        Name: 'GameDVR_FSEBehavior'
+        Value: 2
+        Type: DWord
+
+      - Title: "Disable GameDVR"
+        Path: 'HKCU:\System\GameConfigStore'
+        Name: 'GameDVR_Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Honor User FSE Behavior Mode"
+        Path: 'HKCU:\System\GameConfigStore'
+        Name: 'GameDVR_HonorUserFSEBehaviorMode'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable EFSE Feature Flags"
+        Path: 'HKCU:\System\GameConfigStore'
+        Name: 'GameDVR_EFSEFeatureFlags'
+        Value: 0
+        Type: DWord
+
+      - Title: "Block GameDVR via Policy"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR'
+        Name: 'AllowGameDVR'
+        Value: 0
+        Type: DWord

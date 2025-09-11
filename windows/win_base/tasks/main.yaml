@@ -11,11 +11,42 @@
   win_shell: |
     tzutil /s "W. Europe Standard Time"
 - name: Locale -> German (Date/Time Formats)
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name "LocaleName" -Value "de-DE"
-    Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name "sShortDate" -Value "dd.MM.yyyy"
-    Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name "sLongDate" -Value "dddd, d. MMMM yyyy"
-    Set-ItemProperty -Path "HKCU:\Control Panel\International" -Name "sTimeFormat" -Value "HH:mm:ss"
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Set Locale to German (Germany)"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'LocaleName'
+        Value: 'de-DE'
+        Type: String
+      - Title: "Set Short Date Format"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'sShortDate'
+        Value: 'dd.MM.yyyy'
+        Type: String
+      - Title: "Set Long Date Format"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'sLongDate'
+        Value: 'dddd, d. MMMM yyyy'
+        Type: String
+      - Title: "Set Short Time Format"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'sShortTime'
+        Value: 'HH:mm'
+        Type: String
+      - Title: "Set Long Time Format"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'sTimeFormat'
+        Value: 'HH:mm:ss'
+        Type: String
+      - Title: "Use 24-Hour Clock"
+        Path: 'HKCU:\Control Panel\International'
+        Name: 'iTime'
+        Value: 1
+        Type: String
+
 - name: Keyboard -> German Layout
   win_shell: |
     # German keyboard layout code: 00000407
@@ -52,3 +83,15 @@
 #- name: Performance -> Disable Visual Effects
 #  win_shell: |
 #    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
+
+- name: BSoD -> Enable Detailed Info
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Enable Detailed BSoD"
+        Path: 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        Name: 'DisplayParameters'
+        Value: 1
+        Type: DWord
