@@ -1,5 +1,13 @@
 ---
-- name: Telemetry -> Disable cheduled Telemetry Tasks
+# Anti-Virus
+- name: Telemetry -> Disable Defender Auto Sample Submission
+  win_shell: |
+    # 0 = Always Prompt, 1 = Send Safe Samples Automatically, 2 = Never Send
+    Set-MpPreference -SubmitSamplesConsent 2 -ErrorAction SilentlyContinue
+  ignore_errors: yes
+
+# Scheduled Tasks
+- name: Telemetry -> Disable scheduled Telemetry Tasks
   win_shell: |
     schtasks /Change /TN "{{ item }}" /Disable
   loop:
@@ -16,97 +24,273 @@
     - "Microsoft\\Windows\\Application Experience\\PcaPatchDbTask"
     - "Microsoft\\Windows\\Maps\\MapsUpdateTask"
 
-- name: Telemetry -> Apply Telemetry and Privacy Registry Tweaks
-  win_shell: |
-    if (-not (Test-Path "{{ item.Path }}")) {
-        New-Item -Path "{{ item.Path }}" -Force | Out-Null
-    }
-    Set-ItemProperty -Path "{{ item.Path }}" -Name "{{ item.Name }}" -Value {{ item.Value }} -Type {{ item.Type }}
-  loop:
-    - { Path: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection', Name: 'AllowTelemetry', Value: 0, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection', Name: 'AllowTelemetry', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'ContentDeliveryAllowed', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'OemPreInstalledAppsEnabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'PreInstalledAppsEnabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'PreInstalledAppsEverEnabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SilentInstalledAppsEnabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SubscribedContent-338387Enabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SubscribedContent-338388Enabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SubscribedContent-338389Enabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SubscribedContent-353698Enabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager', Name: 'SystemPaneSuggestionsEnabled', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Siuf\Rules', Name: 'NumberOfSIUFInPeriod', Value: 0, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection', Name: 'DoNotShowFeedbackNotifications', Value: 1, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent', Name: 'DisableTailoredExperiencesWithDiagnosticData', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo', Name: 'DisabledByGroupPolicy', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting', Name: 'Disabled', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance', Name: 'fAllowToGetHelp', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager', Name: 'EnthusiastMode', Value: 1, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced', Name: 'ShowTaskViewButton', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People', Name: 'PeopleBand', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced', Name: 'LaunchTo', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem', Name: 'LongPathsEnabled', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile', Name: 'SystemResponsiveness', Value: 0, Type: DWord }
-    - { Path: 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile', Name: 'NetworkThrottlingIndex', Value: 4294967295, Type: DWord }
-    - { Path: 'HKCU:\Control Panel\Desktop', Name: 'MenuShowDelay', Value: 1, Type: DWord }
-    - { Path: 'HKCU:\Control Panel\Desktop', Name: 'AutoEndTasks', Value: 1, Type: DWord }
-    - { Path: 'HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters', Name: 'IRPStackSize', Value: 30, Type: DWord }
-    - { Path: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds', Name: 'EnableFeeds', Value: 0, Type: DWord }
-    - { Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer', Name: 'HideSCAMeetNow', Value: 1, Type: DWord }
-    - { Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement', Name: 'ScoobeSystemSettingEnabled', Value: 0, Type: DWord }
+# Registry
+- name: Telemetry -> Windows Registry Privacy Tweaks
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Disable Advertising ID for Relevant Ads"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo'
+        Name: 'Enabled'
+        Value: 0
+        Type: DWord
 
-# Anti-Virus
-- name: Telemetry -> Disable Defender Auto Sample Submission
-  win_shell: |
-    Set-MpPreference -SubmitSamplesConsent 2 -ErrorAction SilentlyContinue
+      - Title: "Disable Tailored Experiences with Diagnostic Data"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy'
+        Name: 'TailoredExperiencesWithDiagnosticDataEnabled'
+        Value: 0
+        Type: DWord
 
-# Disable Telemetry
-- name: Telemetry -> Disable Advertising ID for Relevant Ads
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo" -Name "Enabled" -Value 0 -Type DWord
+      - Title: "Disable Online Speech Recognition"
+        Path: 'HKCU:\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy'
+        Name: 'HasAccepted'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Disable Tailored Experiences with Diagnostic Data
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy" -Name "TailoredExperiencesWithDiagnosticDataEnabled" -Value 0 -Type DWord
+      - Title: "Disable Improve Inking & Typing Recognition"
+        Path: 'HKCU:\Software\Microsoft\Input\TIPC'
+        Name: 'Enabled'
+        Value: 0
+        Type: DWord
 
-#- name: Telemetry -> Disable Online Speech Recognition
-#  win_shell: |
-#    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy" -Name "HasAccepted" -Value 0 -Type DWord
+      - Title: "Restrict Inking & Typing Personalization (Ink Collection)"
+        Path: 'HKCU:\Software\Microsoft\InputPersonalization'
+        Name: 'RestrictImplicitInkCollection'
+        Value: 1
+        Type: DWord
 
-- name: Telemetry -> Disable Improve Inking & Typing Recognition
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Input\TIPC" -Name "Enabled" -Value 0 -Type DWord
+      - Title: "Restrict Inking & Typing Personalization (Text Collection)"
+        Path: 'HKCU:\Software\Microsoft\InputPersonalization'
+        Name: 'RestrictImplicitTextCollection'
+        Value: 1
+        Type: DWord
 
-- name: Telemetry -> Restrict Inking & Typing Personalization
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitInkCollection" -Value 1 -Type DWord
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization" -Name "RestrictImplicitTextCollection" -Value 1 -Type DWord
+      - Title: "Disable Harvesting Contacts"
+        Path: 'HKCU:\Software\Microsoft\InputPersonalization\TrainedDataStore'
+        Name: 'HarvestContacts'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Disable Harvesting Contacts
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\InputPersonalization\TrainedDataStore" -Name "HarvestContacts" -Value 0 -Type DWord
+      - Title: "Reset Personalization Settings"
+        Path: 'HKCU:\Software\Microsoft\Personalization\Settings'
+        Name: 'AcceptedPrivacyPolicy'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Reset Personalization Settings
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Personalization\Settings" -Name "AcceptedPrivacyPolicy" -Value 0 -Type DWord
+      - Title: "Send only Required Diagnostic and Usage Data"
+        Path: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection'
+        Name: 'AllowTelemetry'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Send only Required Diagnostic and Usage Data
-  win_shell: |
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Value 0 -Type DWord
+      - Title: "Disable Start menu app tracking"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Name: 'Start_TrackProgs'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Disable Start menu app tracking
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Start_TrackProgs" -Value 0 -Type DWord
+      - Title: "Disable Activity History"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System'
+        Name: 'PublishUserActivities'
+        Value: 0
+        Type: DWord
 
-- name: Telemetry -> Disable Activity History
-  win_shell: |
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name "PublishUserActivities" -Value 0 -Type DWord
+      - Title: "Set Feedback Frequency to Never"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Siuf\Rules'
+        Name: 'NumberOfSIUFInPeriod'
+        Value: 0
+        Type: DWord
 
-#- name: Telemetry -> Set Feedback Frequency to Never
-#  win_shell: |
-#    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" -Name "NumberOfSIUFInPeriod" -Value 0 -Type DWord
-#    # PeriodInNanoSeconds is skipped since the value is unclear ("-")
+      - Title: "Disable Microsoft Edge personalization reporting"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Edge'
+        Name: 'PersonalizationReportingEnabled'
+        Value: 0
+        Type: DWord
 
-#- name: Telemetry -> Disable Microsoft Edge personalization reporting
-#  win_shell: |
-#    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Edge" -Name "PersonalizationReportingEnabled" -Value 0 -Type DWord
+      - Title: "Send only Required Diagnostic and Usage Data (HKLM CurrentVersion)"
+        Path: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection'
+        Name: 'AllowTelemetry'
+        Value: 0
+        Type: DWord
+
+      - Title: "Send only Required Diagnostic and Usage Data (HKLM Policies)"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection'
+        Name: 'AllowTelemetry'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Content Delivery (ContentDeliveryAllowed)"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'ContentDeliveryAllowed'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable OEM Pre-Installed Apps"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'OemPreInstalledAppsEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Pre-Installed Apps"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'PreInstalledAppsEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Pre-Installed Apps Ever Enabled"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'PreInstalledAppsEverEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Silent App Installation"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SilentInstalledAppsEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Subscribed Content 338387"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SubscribedContent-338387Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Subscribed Content 338388"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SubscribedContent-338388Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Subscribed Content 338389"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SubscribedContent-338389Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Subscribed Content 353698"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SubscribedContent-353698Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable System Pane Suggestions"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SystemPaneSuggestionsEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Set Feedback Frequency to Never"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Siuf\Rules'
+        Name: 'NumberOfSIUFInPeriod'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Feedback Notifications"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection'
+        Name: 'DoNotShowFeedbackNotifications'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Tailored Experiences via Policy"
+        Path: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\CloudContent'
+        Name: 'DisableTailoredExperiencesWithDiagnosticData'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Advertising ID via Group Policy"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo'
+        Name: 'DisabledByGroupPolicy'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Windows Error Reporting"
+        Path: 'HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting'
+        Name: 'Disabled'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Remote Assistance"
+        Path: 'HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance'
+        Name: 'fAllowToGetHelp'
+        Value: 0
+        Type: DWord
+
+      - Title: "Enable Enthusiast Mode in Explorer Status"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager'
+        Name: 'EnthusiastMode'
+        Value: 1
+        Type: DWord
+
+      - Title: "Hide Task View Button"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Name: 'ShowTaskViewButton'
+        Value: 0
+        Type: DWord
+
+      - Title: "Hide People Bar"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People'
+        Name: 'PeopleBand'
+        Value: 0
+        Type: DWord
+
+      - Title: "Launch Explorer to This PC"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Name: 'LaunchTo'
+        Value: 1
+        Type: DWord
+
+      - Title: "Enable Long Path Support"
+        Path: 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem'
+        Name: 'LongPathsEnabled'
+        Value: 1
+        Type: DWord
+
+      - Title: "Optimize System Responsiveness"
+        Path: 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile'
+        Name: 'SystemResponsiveness'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Network Throttling"
+        Path: 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile'
+        Name: 'NetworkThrottlingIndex'
+        Value: 4294967295
+        Type: DWord
+
+      - Title: "Speed Up Menu Display"
+        Path: 'HKCU:\Control Panel\Desktop'
+        Name: 'MenuShowDelay'
+        Value: 1
+        Type: DWord
+
+      - Title: "Auto End Tasks on Shutdown"
+        Path: 'HKCU:\Control Panel\Desktop'
+        Name: 'AutoEndTasks'
+        Value: 1
+        Type: DWord
+
+      - Title: "Increase IRPStackSize"
+        Path: 'HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters'
+        Name: 'IRPStackSize'
+        Value: 30
+        Type: DWord
+
+      - Title: "Disable Windows Feeds"
+        Path: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds'
+        Name: 'EnableFeeds'
+        Value: 0
+        Type: DWord
+
+      - Title: "Hide Meet Now Button"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer'
+        Name: 'HideSCAMeetNow'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable User Engagement (Scoobe)"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement'
+        Name: 'ScoobeSystemSettingEnabled'
+        Value: 0
+        Type: DWord

@@ -1,0 +1,7 @@
+- name: "Windows Registry{{ ' -> ' + item.Title if item.Title is defined and item.Title|length > 0 else '' }}"
+  win_shell: |
+    if (-not (Test-Path "{{ item.Path }}")) {
+        New-Item -Path "{{ item.Path }}" -Force | Out-Null
+    }
+    Set-ItemProperty -Path "{{ item.Path }}" -Name "{{ item.Name }}" -Value "{{ item.Value }}" -Type {{ item.Type }}
+  loop: "{{ registry_entries }}"

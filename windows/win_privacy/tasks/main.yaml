@@ -1,30 +1,126 @@
 ---
-- name: Privacy -> Disable Bing Web Search in Windows Search
-  win_shell: |
-    # Disable Bing search
-    $bingPath = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search"
-    if (-not (Test-Path $bingPath)) { New-Item -Path $bingPath -Force | Out-Null }
-    Set-ItemProperty -Path $bingPath -Name "BingSearchEnabled" -Value 0 -Type DWord
-
-    Set-ItemProperty -Path $bingPath -Name "DeviceHistoryEneabled" -Value 0 -Type DWord
-
 - name: Privacy -> Disable Search History
   win_shell: |
     $path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings"
     if (-not (Test-Path $path)) { New-Item -Path $path -Force | Out-Null }
     Set-ItemProperty -Path $path -Name "IsDeviceSearchHistoryEnabled" -Value 0 -Type DWord
 
+# Registry
+- name: Privacy -> Windows Registry Privacy Tweaks
+  include_role:
+    name: library
+    tasks_from: registry
+  vars:
+    registry_entries:
+      - Title: "Disable Bing Web Search in Windows Search"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search'
+        Name: 'BingSearchEnabled'
+        Value: 0
+        Type: DWord
 
-- name: Privacy -> Disable Cortana in Windows search (machine-wide)
-  win_shell: |
-    $path = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search"
-    if (-not (Test-Path $path)) { New-Item -Path $path -Force | Out-Null }
-    Set-ItemProperty -Path $path -Name "AllowCortana" -Value 0 -Type DWord
-    Set-ItemProperty -Path $path -Name "CortanaConsent" -Value 0 -Type DWord
-- name: Privacy -> Disable Windows fun facts and tips on lock screen
-  win_shell: |
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338387Enabled" -Value 0 -Type DWord
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Value 0 -Type DWord
+      - Title: "Disable Device Search History"
+        Path: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search'
+        Name: 'DeviceHistoryEneabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Search History"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\SearchSettings'
+        Name: 'IsDeviceSearchHistoryEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Cortana in Windows Search (Machine-Wide)"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search'
+        Name: 'AllowCortana'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Cortana Consent"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search'
+        Name: 'CortanaConsent'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Windows Fun Facts & Tips on Lock Screen (SubscribedContent)"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'SubscribedContent-338387Enabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Windows Fun Facts & Tips on Lock Screen (Rotating Overlay)"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        Name: 'RotatingLockScreenOverlayEnabled'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Show Frequently Used Folders"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Name: 'Start_TrackDocs'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Show Recently Opened Items"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Name: 'NoRecentDocs'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Quick Access Recent Folders"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
+        Name: 'ShowRecent'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Quick Access Frequent Folders"
+        Path: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
+        Name: 'ShowFrequent'
+        Value: 0
+        Type: DWord
+
+      # activity history
+      - Title: "Disable Activity Feed"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System'
+        Name: 'EnableActivityFeed'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Publishing User Activities"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System'
+        Name: 'PublishUserActivities'
+        Value: 0
+        Type: DWord
+
+      - Title: "Disable Uploading User Activities"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\System'
+        Name: 'UploadUserActivities'
+        Value: 0
+        Type: DWord
+
+      # recall
+      - Title: "Disable AI Data Analysis (Current User)"
+        Path: 'HKCU:\Software\Policies\Microsoft\Windows\WindowsAI'
+        Name: 'DisableAIDataAnalysis'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable AI Data Analysis (Machine-Wide)"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI'
+        Name: 'DisableAIDataAnalysis'
+        Value: 1
+        Type: DWord
+
+      - Title: "Disable Recall Enablement (Machine-Wide)"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI'
+        Name: 'AllowRecallEnablement'
+        Value: 0
+        Type: DWord
+
+      - Title: "Turn Off Saving Snapshots (Machine-Wide)"
+        Path: 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI'
+        Name: 'TurnOffSavingSnapshots'
+        Value: 1
+        Type: DWord
 
 # sideloading
 # PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"

@@ -13,8 +13,8 @@
     - role: win_base
     - role: win_fonts
     - role: win_telemetry
-    #- role: win_customization
-    - role: win_debloat
+    - role: win_perf
+    - role: win_customization
     #- role: win_debloatsoftware
     # windows features
     - role: hyperv
