@@ -14,7 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -44,6 +44,16 @@
     xkbVariant = "nodeadkeys";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+  };
+
+  # Audio
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
   # Configure console keymap

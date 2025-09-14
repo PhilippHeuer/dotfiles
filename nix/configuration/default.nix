@@ -133,7 +133,6 @@ in
       nixosRoles.communication # communication
       nixosRoles.streaming # streaming
       nixosRoles.forensic # forensic
-      nixosRoles.games # games
       # variant
       ./laptop
     ];

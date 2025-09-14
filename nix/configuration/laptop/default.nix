@@ -9,8 +9,22 @@
   imports = [
     ./hardware-configuration.nix
     ../shared/gpu-default.nix
-    ../shared/gpu-nvidia.nix
   ];
+
+  # bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 10; # wait 10 seconds before the default item is booted
+  #boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+
+  # dual-boot
+  boot.loader.systemd-boot.windows = {
+    "win11" = {
+      title = "Windows 11";
+      efiDeviceHandle = "HD0c";
+      sortKey = "o_windows_11";
+    };
+  };
 
   # shell
   users.defaultUserShell = pkgs.bash;
@@ -26,5 +40,5 @@
   # services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 }

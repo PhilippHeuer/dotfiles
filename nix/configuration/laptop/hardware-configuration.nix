@@ -19,12 +19,13 @@
     "snd_hda_intel" # Audio
   ];
   boot.kernelModules = [
-    "kvm-amd" # AMD virtualization
+    "mt7921e"       # MediaTek Wi-Fi driver
+    "kvm-amd"       # AMD virtualization
   ];
   boot.extraModulePackages = [ ];
-  hardware.firmware = [
-    "mediatek/mt7921e.bin" # Wi-Fi firmware
-  ];
+
+  hardware.enableAllFirmware = true;
+  hardware.firmware = [ pkgs.linux-firmware ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/aac63fee-26c4-4a05-94bd-4c1b8f788d3b";
@@ -32,7 +33,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A638-7A69";
+    { device = "/dev/disk/by-uuid/278D-BB37";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
