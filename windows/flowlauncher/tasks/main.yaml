@@ -5,5 +5,5 @@
   ignore_errors: yes
 - name: Flow Launcher > Install
   win_shell: |
-    winget install -e --id Flow-Launcher.Flow-Launcher
+    winget install -e --id Flow-Launcher.Flow-Launcher --silent --accept-source-agreements --accept-package-agreements
   when: winget_check.rc != 0

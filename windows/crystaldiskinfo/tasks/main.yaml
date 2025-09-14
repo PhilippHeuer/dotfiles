@@ -5,5 +5,5 @@
   ignore_errors: yes
 - name: CrystalDiskInfo > Install
   win_shell: |
-    winget install -e --id CrystalDewWorld.CrystalDiskInfo.ShizukuEdition
+    winget install -e --id CrystalDewWorld.CrystalDiskInfo.ShizukuEdition --silent --accept-source-agreements --accept-package-agreements
   when: winget_check.rc != 0

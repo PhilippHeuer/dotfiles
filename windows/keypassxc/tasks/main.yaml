@@ -5,5 +5,5 @@
   ignore_errors: yes
 - name: KeePassXC > Install
   win_shell: |
-    winget install -e --id KeePassXCTeam.KeePassXC --silent
+    winget install -e --id KeePassXCTeam.KeePassXC --silent --accept-source-agreements --accept-package-agreements
   when: winget_check.rc != 0
