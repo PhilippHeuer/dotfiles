@@ -7,3 +7,7 @@
   win_shell: |
     winget install -e --id KeePassXCTeam.KeePassXC --silent --accept-source-agreements --accept-package-agreements
   when: winget_check.rc != 0
+- name: KeePassXC > Disable autostart
+  win_shell: |
+    Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "KeePassXC" -ErrorAction SilentlyContinue
+  ignore_errors: yes

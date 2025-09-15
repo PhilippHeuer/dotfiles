@@ -15,7 +15,7 @@
     - role: win_telemetry
     - role: win_perf
     - role: win_customization
-    #- role: win_debloatsoftware
+    - role: win_unwantedsoftware
     # windows features
     - role: hyperv
       when: hostvars[inventory_hostname].feature_hyperv | default(false)
