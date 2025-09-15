@@ -1,6 +1,6 @@
 ---
 # reference: https://github.com/Raphire/Win11Debloat/blob/master/Win11Debloat.ps1
-- name: Debloat -> Unwanted Software
+- name: Unwanted Software -> Remove Software
   win_shell: |
     $apps = @(
       "Microsoft.OneDrive",
@@ -57,3 +57,14 @@
 
     # Wait for all jobs to finish
     $jobs | ForEach-Object { Receive-Job -Job $_ -Wait; Remove-Job -Job $_ }
+
+- name: Unwanted Software > Disable autostart
+  win_shell: |
+    Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "OneDrive" -ErrorAction SilentlyContinue
+    Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" |
+      Get-Member -MemberType NoteProperty |
+      Where-Object { $_.Name -like "MicrosoftEdgeAutoLaunch_*" } |
+      ForEach-Object {
+        Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name $_.Name -ErrorAction SilentlyContinue
+      }
+  ignore_errors: yes
