@@ -133,6 +133,8 @@ in
       nixosRoles.communication # communication
       nixosRoles.streaming # streaming
       nixosRoles.forensic # forensic
+      ../roles/multimedia/plex-player.nix
+      ../roles/multimedia/jellyfin-player.nix
       # variant
       ./laptop
     ];
