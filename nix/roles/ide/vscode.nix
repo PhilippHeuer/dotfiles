@@ -27,7 +27,6 @@ in
         # productivity
         pkgs.vscode-marketplace.vscodevim.vim # vim hotkeys
         pkgs.vscode-marketplace.gruntfuggly.todo-tree # todo tree
-        pkgs.vscode-marketplace.rlivings39.fzf-quick-open
 
         # whiteboard
         pkgs.vscode-marketplace.pomdtr.excalidraw-editor
