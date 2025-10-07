@@ -235,6 +235,7 @@ in
       # misc
       ../roles/services/postgresql.nix # postgres database
       ../roles/services/openwebui.nix # openwebui
+      ../roles/services/sillytavern.nix # sillytavern
       # variant
       ./vault
     ];
