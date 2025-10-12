@@ -25,7 +25,7 @@ in
         pkgs.vscode-marketplace.wayou.vscode-todo-highlight # highlight todos
 
         # productivity
-        pkgs.vscode-marketplace.vscodevim.vim # vim hotkeys
+        #pkgs.vscode-marketplace.vscodevim.vim # vim hotkeys
         pkgs.vscode-marketplace.gruntfuggly.todo-tree # todo tree
 
         # whiteboard
