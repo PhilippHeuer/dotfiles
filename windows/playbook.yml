@@ -26,6 +26,9 @@
       when: hostvars[inventory_hostname].app_flowlauncher | default(false)
     # proton
     - role: proton
+    # wireguard
+    - role: wireguard
+      when: hostvars[inventory_hostname].app_wireguard | default(false)
     # security
     - role: keypassxc
       when: hostvars[inventory_hostname].app_keepassxc | default(false)

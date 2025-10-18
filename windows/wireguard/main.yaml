@@ -1,0 +1,9 @@
+---
+- name: WireGuard > Check
+  win_shell: winget list --id WireGuard.WireGuard
+  register: winget_check
+  ignore_errors: yes
+- name: WireGuard > Install
+  win_shell: |
+    winget install -e --id WireGuard.WireGuard --silent --accept-source-agreements --accept-package-agreements
+  when: winget_check.rc != 0
