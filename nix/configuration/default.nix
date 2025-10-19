@@ -123,6 +123,11 @@ in
       nixosRoles.multimedia
       nixosRoles.wm-hyprland
       nixosRoles.desktop
+      # temporary
+      ../roles/mediaserver/plex.nix
+      ../roles/mediaserver/samba.nix
+      nixosRoles.driveencryption # drive encryption
+      nixosRoles.drivemonitoring # drive health monitoring
       # user
       nixosRoles.secretmanagement # secret management
       nixosRoles.development # development tools
