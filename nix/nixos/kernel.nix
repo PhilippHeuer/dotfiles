@@ -49,7 +49,7 @@
       #"net.ipv6.conf.all.accept_redirects" = 1;
 
       # security
-      "kernel.dmesg_restrict" = 1; # restrict access to dmesg messages
+      #"kernel.dmesg_restrict" = 1; # restrict access to dmesg messages
     };
 
     #extraModprobeConfig = ''

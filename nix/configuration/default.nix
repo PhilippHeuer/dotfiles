@@ -209,7 +209,7 @@ in
       # nixos
       ../nixos/bootloader.nix
       ../nixos/kernel.nix
-      ../nixos/security.nix
+      #../nixos/security.nix
       ../nixos/pullsecret.nix
       ../nixos/user-defaults.nix
       ../nixos/user.nix
