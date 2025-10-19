@@ -41,4 +41,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  # secrets
+  sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";
 }
