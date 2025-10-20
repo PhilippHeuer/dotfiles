@@ -5,11 +5,10 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -39,21 +38,19 @@
 
   # Configure keymap in X11
   services.xserver = {
-    enable = true;
+    enable = false;
     layout = "de";
     xkbVariant = "nodeadkeys";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = false;
+    desktopManager.plasma6.enable = false;
   };
 
   # Audio
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
   };
 
   # Configure console keymap

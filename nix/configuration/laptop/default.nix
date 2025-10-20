@@ -2,6 +2,7 @@
   config,
   pkgs,
   username,
+  lib,
   ...
 }:
 
@@ -41,6 +42,11 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  # NTFS
+  environment.systemPackages = [
+    pkgs.ntfs3g
+  ];
 
   # secrets
   sops.age.keyFile = lib.mkForce "/home/${username}/.config/sops/age/keys.txt";

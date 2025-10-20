@@ -125,6 +125,8 @@ in
       nixosRoles.desktop
       # temporary
       ../roles/mediaserver/plex.nix
+      ../roles/mediaserver/jellyfin.nix
+      ../roles/mediaserver/komga.nix
       ../roles/mediaserver/samba.nix
       nixosRoles.driveencryption # drive encryption
       nixosRoles.drivemonitoring # drive health monitoring
@@ -240,7 +242,6 @@ in
       # misc
       ../roles/services/postgresql.nix # postgres database
       ../roles/services/openwebui.nix # openwebui
-      ../roles/services/sillytavern.nix # sillytavern
       # variant
       ./vault
     ];
