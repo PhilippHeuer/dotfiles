@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.veracrypt
+    pkgs.veracrypt
   ];
 
   # veracrypt group for volume access

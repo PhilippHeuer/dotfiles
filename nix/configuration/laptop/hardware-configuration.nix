@@ -13,6 +13,9 @@
     "xhci_pci"       # USB 3.0
     "rtsx_pci_sdmmc" # SD card reader
     "btusb"          # Bluetooth USB support
+    "usbhid"         # USB Human Interface Devices
+    "usb_storage"    # USB Mass Storage
+    "sd_mod"         # SCSI disk devices
   ];
   boot.initrd.kernelModules = [
     "mt7921e"       # MediaTek Wi-Fi driver

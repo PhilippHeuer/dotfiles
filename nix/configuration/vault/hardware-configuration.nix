@@ -18,6 +18,7 @@
     "xhci_pci"
     "ahci"
     "nvme"
+    "uas"
     "usbhid"
     "usb_storage"
     "sd_mod"
@@ -29,19 +30,20 @@
   ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d524e519-9698-4e4d-ba0e-3f33d3d594c0";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/0947df8c-d75f-4805-ad05-524b3ee54b4d";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/18BA-D4EE";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/AFEC-8C0B";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/a878b26b-9bec-4210-85c4-7a8f5e9fc981"; }
-  ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/c38c47f1-d7ac-46be-96cc-a5e9f3ee85dd"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
