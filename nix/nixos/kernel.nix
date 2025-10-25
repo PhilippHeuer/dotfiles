@@ -23,7 +23,7 @@
       #"quiet" # hide splash screen
       #"fbcon=nodefer" # disable framebuffer console
 
-      "preempt=full" # kernel preemption
+      #"preempt=full" # kernel preemption
       #"vt.global_cursor_default=0"
       #"kernel.modules_disabled=1"
       #"lsm=landlock,lockdown,yama,integrity,apparmor,bpf,tomoyo,selinux"

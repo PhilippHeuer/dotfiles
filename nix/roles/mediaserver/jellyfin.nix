@@ -29,4 +29,7 @@
       ];
     };
   };
+
+  # firewall (8096 = jellyfin)
+  networking.firewall.allowedTCPPorts = [ 8096 ];
 }
