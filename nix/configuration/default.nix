@@ -227,7 +227,7 @@ in
       ../nixos/proxy.nix
       ../nixos/ntp.nix
       ../nixos/smartd.nix
-      ../nixos/systemupdate.nix
+      #../nixos/systemupdate.nix
       # core
       nixosRoles.default
       nixosRoles.security-server
@@ -236,7 +236,6 @@ in
       nixosRoles.container # container runtime
       nixosRoles.mediaserver # media server
       nixosRoles.homeautomation # home automation
-      #../roles/homeautomation/netalertx.nix # netalertx
       nixosRoles.driveencryption # drive encryption
       nixosRoles.drivemonitoring # drive health monitoring
       # misc
