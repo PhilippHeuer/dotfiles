@@ -245,6 +245,41 @@ in
       ./vault
     ];
   };
+  vault-standby = mkConfiguration {
+    username = "phx";
+    extraModules = [
+      # nixos
+      ../nixos/bootloader.nix
+      ../nixos/kernel.nix
+      #../nixos/security.nix
+      ../nixos/pullsecret.nix
+      ../nixos/user-defaults.nix
+      ../nixos/user.nix
+      ../nixos/audio.nix
+      ../nixos/ssh.nix
+      #../nixos/wifi.nix
+      ../nixos/cacerts.nix
+      ../nixos/proxy.nix
+      ../nixos/ntp.nix
+      ../nixos/smartd.nix
+      #../nixos/systemupdate.nix
+      # core
+      nixosRoles.default
+      nixosRoles.security-server
+      nixosRoles.terminal
+      # user
+      nixosRoles.container # container runtime
+      nixosRoles.mediaserver # media server
+      nixosRoles.homeautomation # home automation
+      nixosRoles.driveencryption # drive encryption
+      nixosRoles.drivemonitoring # drive health monitoring
+      # misc
+      ../roles/services/postgresql.nix # postgres database
+      ../roles/services/openwebui.nix # openwebui
+      # variant
+      ./vault
+    ];
+  };
 
   # wsl
   wsl = mkConfiguration {
