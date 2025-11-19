@@ -8,6 +8,6 @@
       pp.ansible-core
       pp.pywinrm # Windows Remote Management
     ]))
-    pkgs.ansible-lint
+    #pkgs.ansible-lint
   ];
 }

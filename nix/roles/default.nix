@@ -118,6 +118,7 @@
       ./development/syft.nix # software bill of materials
       ./development/qodana.nix # code quality
       ./development/upx.nix # executable packer
+      ./development/minikube.nix # local kubernetes cluster for testing
     ];
   };
   # code editors
@@ -235,6 +236,7 @@
       #./mediaserver/immich.nix # photo management
       ./mediaserver/audiobookshelf.nix # audiobook server
       ./mediaserver/endurain.nix # activity tracking
+      ./mediaserver/garage.nix # s3 file storage
     ];
   };
 
