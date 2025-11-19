@@ -12,7 +12,7 @@
         "security" = "user";
         #"hosts allow" = "10.98.0. 127.0.0.1 localhost";
         #"hosts deny" = "0.0.0.0/0";
-        "use sendfile" = "yes";
+        "use sendfile" = "no";
         "socket options" = "TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072";
         "strict sync" = "yes";
         "sync always" = "yes";
