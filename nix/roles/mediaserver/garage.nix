@@ -7,6 +7,15 @@
 let
   # renovate: datasource=docker depName=docker.io/dxflrs/garage
   version = "2.1.0";
+
+  # quick setup
+  # garage layout assign -z homelab -c 200G <nodeId>
+  # garage layout apply --version 1
+  # garage bucket create aidocuments
+  # garage key create aidocuments-app-key
+  # garage bucket allow --read --write --owner aidocuments --key aidocuments-app-key
+  # garage bucket list
+  # garage bucket info aidocuments
 in
 {
   # systemd container service
