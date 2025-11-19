@@ -119,6 +119,7 @@ style = "bright-white"
 disabled = false
 
 [aws]
+disabled = true
 symbol = " "
 
 [buf]

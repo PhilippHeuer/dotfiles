@@ -150,6 +150,7 @@
   # admin tools
   admin = {
     imports = [
+      ./admin/awscli.nix
       ./admin/kubectl.nix
       ./admin/kubecolor.nix
       ./admin/openshift.nix
