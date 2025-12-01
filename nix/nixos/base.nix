@@ -15,7 +15,6 @@
   system.stateVersion = lib.mkDefault "24.05"; # Did you read the comment?
 
   boot = {
-    readOnlyNixStore = true;
     plymouth.enable = true;
     # tmp.useTmpfs = true;
     tmp.cleanOnBoot = !config.boot.tmp.useTmpfs;
@@ -41,9 +40,9 @@
   ];
 
   # systemd extra config
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   # default shell
   users.defaultUserShell = pkgs.bash;

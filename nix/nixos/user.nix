@@ -37,7 +37,6 @@ in
         "pipewire"
         "wireshark"
       ]
-      ++ lib.optionals config.virtualisation.lxd.enable [ "lxd" ]
       ++ lib.optionals config.virtualisation.docker.enable [ "docker" ]
       ++ lib.optionals config.virtualisation.podman.enable [ "podman" ]
       ++ lib.optionals config.virtualisation.libvirtd.enable [ "libvirtd" ]

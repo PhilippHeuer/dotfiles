@@ -20,27 +20,32 @@
       pkgs.mopidy-mpd # playback from mpd clients
       pkgs.mopidy-jellyfin # source: jellyfin libraries
     ];
-    configuration = ''
-      [http]
-      enabled = true
-      hostname = 127.0.0.1
-      port = 6680
-      allowed_origins =
-      csrf_protection = true
-      default_app = iris
 
-      [iris]
-      enabled = true
-      country = de
-      locale = en_US
+    settings = {
+      http = {
+        enabled = true;
+        hostname = "::";
+        port = 6680;
+        csrf_protection = true;
+        default_app = "iris";
+      };
 
-      [mpd]
-      enabled = true
-      hostname = 0.0.0.0
+      iris = {
+        enabled = true;
+        country = "de";
+        locale = "en_US";
+      };
 
-      [audio]
-      output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! pulsesink client-name=mopidy server=tcp:127.0.0.1:4713
-    '';
+      mpd = {
+        enabled = true;
+        hostname = "::";
+      };
+
+      audio = {
+        output = "audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! pulsesink client-name=mopidy server=tcp:127.0.0.1:4713";
+      };
+    };
+
     # pipewire audio output
     # output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/run/snapserver/pipewire
     extraConfigFiles = [ config.sops.secrets."mopidy/jellyfin".path ];

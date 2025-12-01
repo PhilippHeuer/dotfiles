@@ -36,7 +36,7 @@ in
     pkgs.catppuccin-cursors
 
     # tokyonight
-    pkgs.tokyo-night-gtk
+    pkgs.tokyonight-gtk-theme
 
     # rosepine
     pkgs.rose-pine-gtk-theme
