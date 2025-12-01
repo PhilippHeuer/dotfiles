@@ -7,6 +7,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.floorp
+    pkgs.floorp-bin
   ];
 }
