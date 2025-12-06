@@ -123,25 +123,20 @@ in
       nixosRoles.multimedia
       nixosRoles.wm-hyprland
       nixosRoles.desktop
-      # temporary
-      ../roles/mediaserver/plex.nix
-      ../roles/mediaserver/jellyfin.nix
-      ../roles/mediaserver/komga.nix
-      ../roles/mediaserver/samba.nix
-      nixosRoles.driveencryption # drive encryption
-      nixosRoles.drivemonitoring # drive health monitoring
+      #nixosRoles.driveencryption # drive encryption
+      #nixosRoles.drivemonitoring # drive health monitoring
       # user
       nixosRoles.secretmanagement # secret management
       nixosRoles.development # development tools
-      nixosRoles.ide # ide
+      #nixosRoles.ide # ide
       nixosRoles.lang # language toolchains
       nixosRoles.container # container runtime
       nixosRoles.admin # admin tools
       nixosRoles.communication # communication
-      nixosRoles.streaming # streaming
-      nixosRoles.forensic # forensic
-      ../roles/multimedia/plex-player.nix
-      ../roles/multimedia/jellyfin-player.nix
+      #nixosRoles.streaming # streaming
+      #nixosRoles.forensic # forensic
+      #../roles/multimedia/plex-player.nix
+      #../roles/multimedia/jellyfin-player.nix
       # variant
       ./laptop
     ];
@@ -295,6 +290,7 @@ in
       ../nixos/ntp.nix
       # wsl
       inputs.nixos-wsl.nixosModules.wsl
+      ../roles/clipboard-sync.nix
       # package managers
       ../nixos/flatpak.nix
       # core
