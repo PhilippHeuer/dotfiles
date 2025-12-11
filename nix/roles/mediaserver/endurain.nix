@@ -6,7 +6,7 @@
 
 let
   # renovate: datasource=docker depName=ghcr.io/joaovitoriasilva/endurain
-  version = "0.16.1";
+  version = "0.16.2";
 in
 {
   # systemd container service
