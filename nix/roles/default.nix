@@ -238,6 +238,7 @@
       ./mediaserver/audiobookshelf.nix # audiobook server
       ./mediaserver/endurain.nix # activity tracking
       ./mediaserver/garage.nix # s3 file storage
+      ./mediaserver/watchstate.nix # watchstate sync
     ];
   };
 
