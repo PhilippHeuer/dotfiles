@@ -31,7 +31,7 @@ let
     "22282" # jetbrains ai assistant
     "26104" # jetbrains junie
   ];
-  basePkg = (pkgs-unstable.jetbrains.idea-ultimate.override {
+  basePkg = (pkgs-unstable.jetbrains.idea.override {
     jdk = pkgs.openjdk21;
   });
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;

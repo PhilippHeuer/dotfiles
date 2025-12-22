@@ -31,7 +31,7 @@ let
     "22282" # jetbrains ai assistant
     "26104" # jetbrains junie
   ];
-  basePkg = pkgs-unstable.jetbrains.idea-community-bin;
+  basePkg = pkgs-unstable.jetbrains.idea;
   addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
   idePkg = addPlugins basePkg "latest" pluginList;
 in
