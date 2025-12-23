@@ -2,13 +2,13 @@
 
 let
   # renovate: datasource=docker depName=ghcr.io/arabcoders/watchstate
-  version = "v1.0.3";
+  version = "1.0.4";
 in
 {
   # systemd container
   virtualisation.oci-containers.containers = {
     watchstate = {
-      image = "ghcr.io/arabcoders/watchstate:" + version;
+      image = "ghcr.io/arabcoders/watchstate:v" + version;
       autoStart = true;
       ports = [ "25699:8080/tcp" ];
       user = "0:0";
