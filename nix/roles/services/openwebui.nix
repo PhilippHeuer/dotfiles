@@ -4,7 +4,7 @@
   # systemd container
   virtualisation.oci-containers.containers = {
     openwebui = {
-      image = "ghcr.io/open-webui/open-webui:v0.6.41";
+      image = "ghcr.io/open-webui/open-webui:v0.6.43";
       autoStart = true;
       ports = [ "3000:8080/tcp" ];
       volumes = [
