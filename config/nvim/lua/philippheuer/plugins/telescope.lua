@@ -4,7 +4,7 @@ return {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
     -- renovate: datasource=github-releases depName=nvim-telescope/telescope.nvim
-    tag = '0.2.0',
+    tag = '0.2.1',
     dependencies = {
       -- required
       'nvim-lua/plenary.nvim',
