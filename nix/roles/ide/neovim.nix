@@ -15,7 +15,7 @@
     pkgs.zls # zig
 
     # formatters
-    pkgs-unstable.nixfmt-rfc-style
+    pkgs-unstable.nixfmt
     pkgs-unstable.shfmt
     pkgs-unstable.nufmt
     pkgs-unstable.google-java-format

@@ -197,8 +197,12 @@ in
       nixosRoles.terminal
       # user
       nixosRoles.container # container runtime
-      ../roles/homeautomation/blocky.nix # blocky dns
       ../roles/ide/neovim.nix # editor
+      # services
+      ../roles/homeautomation/traefik.nix # traefik reverse proxy
+      ../roles/homeautomation/blocky.nix # blocky dns
+      ../roles/homeautomation/homeassistant.nix # home automation
+      ../roles/mediaserver/paperless.nix # paperless document management
       # variant
       ./ahd
     ];
