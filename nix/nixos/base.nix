@@ -58,4 +58,9 @@
     glib
     zlib
   ];
+
+  # no idea where this dependency comes from
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebengine-5.15.19"
+  ];
 }
