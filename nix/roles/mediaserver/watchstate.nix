@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=ghcr.io/arabcoders/watchstate
-  version = "1.0.7";
+  version = "1.0.8";
 in
 {
   # systemd container
