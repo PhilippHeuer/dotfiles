@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=docker.io/homeassistant/home-assistant
-  version = "2026.2.2";
+  version = "2026.2.3";
 in
 {
   # systemd container service
