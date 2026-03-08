@@ -5,14 +5,14 @@
 }:
 
 let
-  # renovate: datasource=docker depName=ghcr.io/joaovitoriasilva/endurain
-  version = "0.16.2";
+  # renovate: datasource=docker depName=ghcr.io/endurain-project/endurain
+  version = "0.17.4";
 in
 {
   # systemd container service
   virtualisation.oci-containers.containers = {
     endurain = {
-      image = "ghcr.io/joaovitoriasilva/endurain:v" + version;
+      image = "ghcr.io/endurain-project/endurain:v" + version;
       autoStart = true;
       ports = [
         "8191:8080/tcp"
