@@ -239,6 +239,7 @@ in
       nixosRoles.drivemonitoring # drive health monitoring
       # misc
       ../roles/services/postgresql.nix # postgres database
+      ../roles/services/neo4j.nix # neo4j
       ../roles/services/openwebui.nix # openwebui
       # variant
       ./vault
