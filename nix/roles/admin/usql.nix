@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.usql
+    pkgs.usql
   ];
 }
