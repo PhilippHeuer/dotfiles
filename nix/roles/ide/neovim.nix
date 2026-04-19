@@ -19,6 +19,7 @@
     pkgs-unstable.shfmt
     pkgs-unstable.nufmt
     pkgs-unstable.google-java-format
+    pkgs-unstable.ktfmt
 
     # lint
     pkgs-unstable.pylint
