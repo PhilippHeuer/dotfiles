@@ -23,6 +23,7 @@
 
     # lint
     pkgs-unstable.pylint
+    pkgs.ansible-lint
 
     # sast
     pkgs.gitleaks
