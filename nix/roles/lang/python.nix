@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    (pkgs.python312.withPackages (
+    (pkgs.python314.withPackages (
       ps: with ps; [
         pyyaml # some of the python scripts require yaml
         inquirer # select ui for python scripts

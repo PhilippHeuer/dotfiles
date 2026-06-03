@@ -26,16 +26,16 @@
     #
     # To update nixpkgs (and thus NixOS), pick the nixos-unstable rev from https://status.nixos.org/
     #
-    # stable: github:nixos/nixpkgs/nixos-25.11
+    # stable: github:nixos/nixpkgs/nixos-26.05
     # unstable: github:nixos/nixpkgs/nixos-unstable
     #
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     hardware.url = "github:nixos/nixos-hardware";
 
     # secureboot
     #lanzaboote = {
-    #  url = "github:nix-community/lanzaboote/v0.4.2";
+    #  url = "github:nix-community/lanzaboote/v1.0.0";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
 
@@ -45,21 +45,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # utils
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
-
     # alternative registries
     nixpkgs-philippheuer = {
       url = "github:philippheuer/nixpkgs/main";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixos-unstable.follows = "nixpkgs-unstable";
     };
 
     # jetbrains plugins
     nix-jetbrains-plugins = {
       url = "github:PhilippHeuer/nix-jetbrains-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixos-unstable.follows = "nixpkgs-unstable";
     };
 
     # vscode marketplace
@@ -93,7 +90,7 @@
 
     # wsl
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL?rev=64d679540fa4d7e2afdbbb53ea63e3e5019c1f52";
+      url = "github:nix-community/NixOS-WSL?rev=5482f113fd31ebac131d1ebeb2ae90bf0d5e41f5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
