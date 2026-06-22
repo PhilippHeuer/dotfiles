@@ -241,6 +241,7 @@ in
       ../roles/services/postgresql.nix # postgres database
       ../roles/services/neo4j.nix # neo4j
       ../roles/services/openwebui.nix # openwebui
+      ../roles/services/litellm.nix # litellm
       # variant
       ./vault
     ];
