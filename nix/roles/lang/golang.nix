@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.go_1_25
+    pkgs.go_1_26
     pkgs.gotools
     pkgs-unstable.templ # write html templates in go
   ];
