@@ -453,3 +453,9 @@ directories:
 # ssh
 - path: config/ssh
   target: $HOME/.ssh
+
+# opencode
+- path: config/opencode
+  target: $HOME/.config/opencode
+  rules:
+  - rule: inPath("opencode")
