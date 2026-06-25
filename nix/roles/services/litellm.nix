@@ -22,5 +22,5 @@ in
   };
 
   # firewall (4000 = litellm ui)
-  networking.firewall.allowedTCPPorts = [ 4000 ];
+  networking.firewall.allowedTCPPorts = [ 4000 4001 4002 ];
 }
