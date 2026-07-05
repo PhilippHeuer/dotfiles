@@ -49,14 +49,11 @@
     nixpkgs-philippheuer = {
       url = "github:philippheuer/nixpkgs/main";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixos-unstable.follows = "nixpkgs-unstable";
     };
 
     # jetbrains plugins
     nix-jetbrains-plugins = {
       url = "github:PhilippHeuer/nix-jetbrains-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixos-unstable.follows = "nixpkgs-unstable";
     };
 
     # vscode marketplace
