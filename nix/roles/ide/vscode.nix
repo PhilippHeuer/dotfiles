@@ -8,50 +8,51 @@
 }:
 
 let
-  extensions = inputs.nix-vscode-extensions.extensions.${system};
+  vscodiumPkg = inputs.nixpkgs-philippheuer.packages.${pkgs.system}.vscodium;
+  marketplace = (inputs.nix-vscode-extensions.extensions.${system}.forVSCodeVersion vscodiumPkg.vscodeVersion).vscode-marketplace-release;
 in
 {
   ###
   # vscode with extenstions
   # url: https://marketplace.visualstudio.com/vscode
-  environment.systemPackages = with pkgs-unstable; [
-    (vscode-with-extensions.override {
-      vscode = vscodium;
+  environment.systemPackages = [
+    (pkgs-unstable.vscode-with-extensions.override {
+      vscode = vscodiumPkg;
       vscodeExtensions = [
         # general
-        pkgs.vscode-marketplace.editorconfig.editorconfig # editorconfig
-        pkgs.vscode-marketplace.eamodio.gitlens # git info
-        pkgs.vscode-marketplace.oderwat.indent-rainbow # colorize indentation
-        pkgs.vscode-marketplace.wayou.vscode-todo-highlight # highlight todos
+        marketplace.editorconfig.editorconfig # editorconfig
+        marketplace.eamodio.gitlens # git info
+        marketplace.oderwat.indent-rainbow # colorize indentation
+        marketplace.wayou.vscode-todo-highlight # highlight todos
 
         # productivity
-        #pkgs.vscode-marketplace.vscodevim.vim # vim hotkeys
-        pkgs.vscode-marketplace.gruntfuggly.todo-tree # todo tree
+        #marketplace.vscodevim.vim # vim hotkeys
+        marketplace.gruntfuggly.todo-tree # todo tree
 
         # whiteboard
-        pkgs.vscode-marketplace.pomdtr.excalidraw-editor
+        marketplace.pomdtr.excalidraw-editor
 
         # lsp
-        pkgs.vscode-marketplace.ms-python.python # python
-        pkgs.vscode-marketplace.golang.go # go
-        pkgs.vscode-marketplace.ziglang.vscode-zig # zig
-        pkgs.vscode-marketplace.jnoortheen.nix-ide # nix
-        pkgs.vscode-marketplace.tamasfe.even-better-toml # toml
-        pkgs.vscode-marketplace.redhat.vscode-yaml # yaml
+        marketplace.ms-python.python # python
+        marketplace.golang.go # go
+        marketplace.ziglang.vscode-zig # zig
+        marketplace.jnoortheen.nix-ide # nix
+        marketplace.tamasfe.even-better-toml # toml
+        marketplace.redhat.vscode-yaml # yaml
 
         # auto completion
-        pkgs.vscode-marketplace.github.copilot
-        pkgs.vscode-marketplace.github.copilot-chat
+        #marketplace.github.copilot
+        #marketplace.github.copilot-chat
 
         # theme
-        pkgs.vscode-marketplace.catppuccin.catppuccin-vsc
-        pkgs.vscode-marketplace.catppuccin.catppuccin-vsc-icons
-        pkgs.vscode-marketplace.enkia.tokyo-night
-        pkgs.vscode-marketplace.arcticicestudio.nord-visual-studio-code
-        pkgs.vscode-marketplace.mvllow.rose-pine
+        marketplace.catppuccin.catppuccin-vsc
+        marketplace.catppuccin.catppuccin-vsc-icons
+        marketplace.enkia.tokyo-night
+        marketplace.arcticicestudio.nord-visual-studio-code
+        marketplace.mvllow.rose-pine
 
         # other
-        pkgs.vscode-marketplace.adpyke.codesnap # code screenshots
+        marketplace.adpyke.codesnap # code screenshots
       ];
     })
   ];
