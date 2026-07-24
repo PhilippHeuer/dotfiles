@@ -10,7 +10,7 @@
       ]
     ))
     pkgs.pipenv
-    pkgs-unstable.poetry
+    #pkgs-unstable.poetry
     pkgs-unstable.uv
   ];
 }
