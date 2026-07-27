@@ -8,27 +8,23 @@
 let
   pluginList = [
     # productivity
-    "164" # ideavim
-    "9792" # key-promoter-x
-    "23451" # fuzzy file finder
+    "IdeaVIM" # ideavim
+    "Key Promoter X" # key-promoter-x
 
     # themes
-    "18682" # catppuccin-theme
-    "23029" # catppuccin-icons
-    # "18820" # tokyo-night-theme
-    "18141" # rose-pine
-    "10321" # nord
+    "com.github.catppuccin.jetbrains"
+    "com.github.catppuccin.jetbrains_icons"
+    "com.github.jmorjsm.rosepineintellij"
+    "com.arcticicestudio.nord.jetbrains"
 
     # auto completion
-    "17718" # github copilot
-    "22282" # jetbrains ai assistant
-    "26104" # jetbrains junie
+    "com.github.copilot" # github copilot
+    "com.intellij.ml.llm" # jetbrains ai assistant
+    "org.jetbrains.junie" # jetbrains junie
   ];
-  basePkg = (pkgs-unstable.jetbrains.goland.override {
-     jdk = pkgs.openjdk21;
-  });
-  addPlugins = (inputs.nix-jetbrains-plugins.import pkgs-unstable).addPlugins;
-  idePkg = addPlugins basePkg "latest" pluginList;
+  basePkg = pkgs-unstable.jetbrains.goland;
+
+  idePkg = inputs.nix-jetbrains-plugins.lib.buildIdeWithPlugins pkgs-unstable basePkg pluginList;
 in
 {
   environment.systemPackages = [

@@ -53,7 +53,8 @@
 
     # jetbrains plugins
     nix-jetbrains-plugins = {
-      url = "github:PhilippHeuer/nix-jetbrains-plugins";
+      url = "github:nix-community/nix-jetbrains-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # vscode marketplace
