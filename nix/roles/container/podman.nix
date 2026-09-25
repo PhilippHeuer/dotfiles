@@ -17,6 +17,7 @@
     pkgs-unstable.buildkit
     pkgs-unstable.dive # inspect image layers
     pkgs-unstable.skopeo # various operations on container images and image repositories
+    pkgs-unstable.podman-compose
   ];
 
   environment.variables = {

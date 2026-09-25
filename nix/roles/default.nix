@@ -106,7 +106,7 @@
       ./development/tokei.nix # code statistics
       ./development/openapi.nix # openapi linter, changes, ...
       ./development/opencode.nix # coding agent for the terminal
-      ./development/ollama.nix # ollama cli
+      #./development/ollama.nix # ollama cli
       ./development/primecodegen.nix # code generator
       ./development/openapi-generator.nix # code generator
       ./development/speakeasy.nix # speakeasy
