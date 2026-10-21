@@ -2,7 +2,7 @@
 
 let
   # renovate: datasource=docker depName=ghcr.io/berriai/litellm
-  version = "1.106.0";
+  version = "1.106.2";
 in
 {
   # systemd container service
