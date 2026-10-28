@@ -6,7 +6,7 @@
 
 let
   # renovate: datasource=docker depName=docker.io/dxflrs/garage
-  version = "2.4.1";
+  version = "2.5.0";
 
   # quick setup example
   # garage layout assign -z homelab -c 200G <nodeId>
